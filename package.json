@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "jquery": "^3.6.4",
     "pinia": "^2.0.33",
     "sass": "^1.59.3",
     "unplugin-auto-import": "^0.15.1",

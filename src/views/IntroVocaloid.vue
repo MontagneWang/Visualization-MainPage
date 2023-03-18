@@ -4,7 +4,6 @@ import RightMenu from "../components/RightMenu.vue";
 </script>
 
 <template>
-	<right-menu/>
 	<section class="g-word">Top</section>
 	<section class="img g-img1"></section>
 	<section class="g-word">Content1</section>
