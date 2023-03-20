@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --open",
     "build": "vue-tsc && vite build",
+    "build-withoutTsc": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "unplugin-auto-import": "^0.15.1",
     "unplugin-vue-components": "^0.24.1",
     "vue": "^3.2.47",
+    "vue-fullpage.js": "^0.2.13",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

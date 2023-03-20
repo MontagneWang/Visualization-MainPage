@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import NavBar from "./components/NavBar.vue";
 import RightMenu from "./components/RightMenu.vue";
+import CircularNav from "./components/CircularNav.vue";
 </script>
 
 <template>
-	<NavBar/>
+	<!--<nav-bar/>-->
+	<circular-nav/>
 	<right-menu/>
 </template>
 
 <style>
 body{
-	margin: 0 auto;
 	text-align: center;
 }
 </style>

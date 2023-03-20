@@ -1,14 +1,45 @@
 <script lang="ts" setup>
-import {ref} from 'vue'
-import RightMenu from "../components/RightMenu.vue";
-
-const count = ref(0)
+import CircularNav from "../components/CircularNav.vue";
 </script>
 
 <template>
-	<div>
-		<button type="button" @click="count++">count is {{ count }}</button>
-	</div>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
+	<h1>0</h1>
 </template>
 
 <style scoped>
