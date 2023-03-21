@@ -1,9 +1,25 @@
 <script setup>
+function throttle(func, delay) {
+	let start = 0
+	//let start=+new Date() 不可以这样写，会导致无法第一次就执行函数
+	return function (...args) {
+		let now = +new Date() //通过+号可以转化成时间戳
+		if (now - start > delay) {
+			func.apply(this, args)
+			start = now
+		}
+	}
+	//第一次会立即触发事件调用函数，通过判断前后触发事件的时间间隔是否大于设置的等待时间
+	//大于就证明已经过了规定时间，可以再次调用函数，否则反之
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 	let nav = document.querySelector('.mainCircularNav');
 	let routerLink = document.querySelectorAll('.mainCircularNav > div > ul > li a');
 	let menuItems = document.querySelectorAll('.menu li');
-	let lastScrollPosition, transform, angle = 0
+	let [lastScrollPosition, transform, angle, delayTime, count, fullRound] = [0, 0, 0, 0, 0, 0, 0, 0]
+	let firstWheelFlag = true
+	let wheelDirection = 1
 
 	// 鼠标滑轮下滚返回 true，否则返回 false
 	function judgeScrollDirection() {
@@ -14,33 +30,53 @@ document.addEventListener('DOMContentLoaded', function () {
 		return flag
 	}
 
-	// 监听滚轮事件
-	nav.addEventListener('wheel', function (e) {
-		e.preventDefault(); // 阻止默认滚动事件
-		// 当前鼠标一次 150
-		// let delta = e.deltaY; // 获取滚轮滚动距离
-		// todo 只能是每次 45° 滚动？还是每个度数都可以？
-		// todo 需要添加节流
 
+	function handleWheel(e) {
+		window.addEventListener('wheel', (e) => {
+			// console.log(e.wheelDelta)
+			// 下滚时为 1，上滚为 -1
+			e.wheelDelta < 0 ? wheelDirection = 1 : wheelDirection = -1
+		})
+
+		firstWheelFlag = false
 		menuItems.forEach((item, index) => {
 			// 获取当前角度，由于 transform 输出的是矩阵，获取角度需要进行如下变化 | 例：matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)
 			transform = window.getComputedStyle(item).getPropertyValue("transform")
 			let values = transform.split('(')[1].split(')')[0].split(',');
 			angle = Math.round(Math.atan2(values[1], values[0]) * (180 / Math.PI));
-
+			// 先全部转换为正数
 			if (angle < 0) {
 				angle = 360 + angle
 			}
-			console.log(angle, index, item.childNodes[0].text)
 			// 根据滚轮方向改变转动方向
-			// judgeScrollDirection() ? angle += 45 : angle -= 45
-			angle += 45
-
-			// if (angle === 360) angle = 359
-			// todo 当前问题：超过 360° 的元素会旋转一圈至下一个位置（可能原因度数超过 360° 被归零后再加上 45° 导致的）
+			// todo 原文：angle += 45 + fullRound * 360
+			angle += (45 + fullRound * 360)*wheelDirection
+			// 第1次滚动无问题，第2次需要给第7号添加，第3次给第6号与第7号添加
+			// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题
+			if (8 - count <= index) {
+				angle += 360
+			}
+			// 需要解决上滚时的角度旋转问题
+			console.log(angle, index, item.childNodes[0].text,count)
 			item.style.transform = `rotate(${angle}deg)`;
 			item.childNodes[0].style.transform = `rotate(-${angle}deg)`;
 		});
+		// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题
+		count < 7 ? count += 1 : (() => {
+			// 将转动次数置零
+			count = 0;
+			// 全部滚动次数 +1
+			fullRound = fullRound + 1
+		})()
+	}
+
+	// 监听滚轮事件，对菜单进行滚动
+	let throttledHandleWheel = throttle(handleWheel, 700);
+	nav.addEventListener('wheel', function (e) {
+		// 阻止默认滚动事件
+		e.preventDefault();
+		// 节流滚动函数
+		throttledHandleWheel(e)
 	}, {passive: false});
 
 	// 导航栏，上滑隐藏下滑显示
@@ -48,13 +84,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		judgeScrollDirection() ? nav.classList.add('hide') : nav.classList.remove('hide')
 	});
 
-	// 延时 0.75 秒后添加类名，让路由变宽
+	// 延时添加类名，让路由变宽
 	nav.addEventListener('mouseenter', function () {
+		firstWheelFlag ? delayTime = 500 : delayTime = 270
 		setTimeout(function () {
 			routerLink.forEach((item) => {
 				item.classList.add('expand')
 			})
-		}, 500)
+		}, delayTime)
 	});
 	nav.addEventListener('mouseleave', function () {
 		routerLink.forEach((item) => {
@@ -100,12 +137,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	width: 16vh !important;
 	border-radius: 3vh !important;
 	transition: all 0.5s !important;
-	position: absolute!important;
-	top: 0!important;
-	left: -1vh!important;
+	position: absolute !important;
+	top: 0 !important;
+	left: -1vh !important;
 }
 
 .mainCircularNav {
+	z-index: 10000;
 	position: fixed;
 	top: 10vh;
 	left: -50vh;
@@ -121,14 +159,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	opacity: 0.6;
 	transition: all 0.5s;
-}
 
-.mainCircularNav .words {
-	//float: left;
-	//transform: translate(16vh, 14vh) !important;
+	.words {
+		float: left;
+		width: 1vh;
+		transform: translate(32vh, 15vh) !important;
 
-	line-height: 1em;
-	transition: all 0.5s;
+		line-height: 1em;
+		transition: all 0.5s;
+	}
 }
 
 .mainCircularNav:hover {
@@ -141,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	transition: all 0.5s;
 
 	span {
-		transform: translate(16vh, 5vh) !important;
+		transform: translate(23vh, 15vh) !important;
 		transition: all 0.5s;
 	}
 
