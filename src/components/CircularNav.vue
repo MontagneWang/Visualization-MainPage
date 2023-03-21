@@ -32,42 +32,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 	function handleWheel(e) {
-		window.addEventListener('wheel', (e) => {
-			// console.log(e.wheelDelta)
-			// 下滚时为 1，上滚为 -1
-			e.wheelDelta < 0 ? wheelDirection = 1 : wheelDirection = -1
-		})
-
 		firstWheelFlag = false
 		menuItems.forEach((item, index) => {
 			// 获取当前角度，由于 transform 输出的是矩阵，获取角度需要进行如下变化 | 例：matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)
 			transform = window.getComputedStyle(item).getPropertyValue("transform")
 			let values = transform.split('(')[1].split(')')[0].split(',');
 			angle = Math.round(Math.atan2(values[1], values[0]) * (180 / Math.PI));
-			// 先全部转换为正数
+
 			if (angle < 0) {
 				angle = 360 + angle
 			}
+
+			console.log(angle, index, item.childNodes[0].text, count)
+
 			// 根据滚轮方向改变转动方向
 			// todo 原文：angle += 45 + fullRound * 360
-			angle += (45 + fullRound * 360)*wheelDirection
+			angle += (45) * wheelDirection + fullRound * 360
+			console.log(angle, index)
 			// 第1次滚动无问题，第2次需要给第7号添加，第3次给第6号与第7号添加
 			// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题
 			if (8 - count <= index) {
 				angle += 360
 			}
 			// 需要解决上滚时的角度旋转问题
-			console.log(angle, index, item.childNodes[0].text,count)
 			item.style.transform = `rotate(${angle}deg)`;
-			item.childNodes[0].style.transform = `rotate(-${angle}deg)`;
+			item.childNodes[0].style.transform = `rotate(${-angle}deg)`;
 		});
 		// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题
-		count < 7 ? count += 1 : (() => {
-			// 将转动次数置零
-			count = 0;
-			// 全部滚动次数 +1
-			fullRound = fullRound + 1
-		})()
+		// 往前转是不是要减一（通过正负判断）
+		if (wheelDirection === 1) {
+			if (count < 7) {
+				count += 1
+			} else {
+				// 将转动次数置零
+				count = 0;
+				// 全部滚动次数 +1
+				fullRound = fullRound + 1
+			}
+		} else {
+			if (count < 7) {
+				count -= 1
+			} else {
+				count = 0;
+				fullRound = fullRound + 1
+			}
+		}
 	}
 
 	// 监听滚轮事件，对菜单进行滚动
@@ -75,6 +84,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	nav.addEventListener('wheel', function (e) {
 		// 阻止默认滚动事件
 		e.preventDefault();
+		// console.log(e.wheelDelta)
+		// 下滚时为 1，上滚为 -1
+		e.wheelDelta < 0 ? wheelDirection = 1 : wheelDirection = -1
 		// 节流滚动函数
 		throttledHandleWheel(e)
 	}, {passive: false});
