@@ -120,6 +120,9 @@ onMounted(() => {
 		}
 	})(jQuery);
 });
+function showNav(){
+
+}
 </script>
 
 <template>
@@ -129,7 +132,7 @@ onMounted(() => {
 				<a class="eachItem" href="/"></a>
 				<a class="eachItem" href="/"></a>
 				<a class="eachItem" href="/"></a>
-				<a class="eachItem" href="/"></a>
+				<a class="eachItem" @click.prevent="showNav"></a>
 				<a class="eachItem" href="/"></a>
 				<a class="eachItem" href="/"></a>
 			</div>

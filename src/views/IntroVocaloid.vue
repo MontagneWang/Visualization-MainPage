@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-
-import RightMenu from "../components/RightMenu.vue";
 </script>
 
 <template>
-	<section class="g-word">Top</section>
-	<section class="img g-img1"></section>
-	<section class="g-word">Content1</section>
-	<section class="img g-img2"></section>
-	<section class="g-word">Content2</section>
-	<section class="img g-img3"></section>
-	<section class="g-word">Footer</section>
+	<div>
+		<section class="g-word">Top</section>
+		<section class="img g-img1"></section>
+		<section class="g-word">Content1</section>
+		<section class="img g-img2"></section>
+		<section class="g-word">Content2</section>
+		<section class="img g-img3"></section>
+		<section class="g-word">Footer</section>
+	</div>
 </template>
 
 <style lang="scss" scoped>
@@ -22,6 +22,7 @@ section {
 	line-height: 100vh;
 	text-align: center;
 	font-size: 20vh;
+
 }
 
 .img {
