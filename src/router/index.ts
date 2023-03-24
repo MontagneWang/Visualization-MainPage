@@ -16,7 +16,13 @@ const routes = [
         path: '/vocaloid',
         name: 'vocaloid',
         component: () => import('../views/IntroVocaloid.vue')
-    }
+    },
+    {
+        path: '/test',
+        name: 'test',
+        component: () => import('../components/TestTemp.vue')
+    },
+
 ]
 
 const router = VueRouter.createRouter({

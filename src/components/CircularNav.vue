@@ -167,7 +167,6 @@ const route = useRoute()
 		<div class="insideNav">
 			<span class="words"> 导航 </span>
 			<ul class="menu">
-				<li><a class="fa fa-icon" href="#">8</a></li>
 				<li>
 					<router-link to="/"> 首页</router-link>
 				</li>
@@ -177,10 +176,13 @@ const route = useRoute()
 				<li>
 					<router-link to="/vocaloid">Vocaloid</router-link>
 				</li>
-				<li><a class="fa fa-icon" href="#">4</a></li>
+				<li>
+					<router-link to="/test">test</router-link>
+				</li>
 				<li><a class="fa fa-icon" href="#">5</a></li>
 				<li><a class="fa fa-icon" href="#">6</a></li>
 				<li><a class="fa fa-icon" href="#">7</a></li>
+				<li><a class="fa fa-icon" href="#">8</a></li>
 			</ul>
 		</div>
 	</div>

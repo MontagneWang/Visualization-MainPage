@@ -2,7 +2,7 @@
 import NavBar from "./components/NavBar.vue";
 import RightMenu from "./components/RightMenu.vue";
 import CircularNav from "./components/CircularNav.vue";
-// import TestTemp from "./components/TestTemp.vue";
+import TestTemp from "./components/TestTemp.vue";
 </script>
 
 <template>
