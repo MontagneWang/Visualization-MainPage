@@ -13,11 +13,13 @@ function throttle(func, delay) {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+onMounted(() => {
+// document.addEventListener('DOMContentLoaded', function () {
+	// 可以使用 ref 获取元素
 	let nav = document.querySelector('.mainCircularNav');
 	let routerLink = document.querySelectorAll('.mainCircularNav > div > ul > li a');
 	let menuItems = document.querySelectorAll('.menu li');
-	let [lastScrollPosition, transform, angle, waitLock, delayTime, count, fullRound] = [0, 0, 0, 0, 0, 0, 0, 0]
+	let [lastScrollPosition, transform, angle, waitSecond, delayTime, count, fullRound] = [0, 0, 0, 0, 0, 0, 0, 0]
 	let firstWheelFlag = true
 	let wheelDirection = 1, lastWheelDirection = 0
 
@@ -57,20 +59,20 @@ document.addEventListener('DOMContentLoaded', function () {
 					angle -= 360
 				}
 			}
+			// todo bugfix 正向逆向滚动交错时会产生错位
+			// 正向滚动逆向滚动分开独立计算，每次滚动方向发生改变的时候 count 和 full 重置
+			// 或者直接重置所有位置，然后再对应滚动一次
+			// if (wheelDirection === lastWheelDirection || firstWheelFlag) {
+			// 	// console.log(' 方向一致 ')
+			// } else {
+			// 	// console.log(' 方向发生改变 ')
+			// 	count = 0
+			// 	fullRound = 0
+			// }
 			console.log(angle, index, item.childNodes[0].text, count)
 			item.style.transform = `rotate(${angle}deg)`;
 			item.childNodes[0].style.transform = `rotate(${-angle}deg)`;
 		});
-		// todo bugfix 正向逆向滚动交错时会产生错位
-		// 正向滚动逆向滚动分开独立计算，每次滚动方向发生改变的时候 count 和 full 重置
-		// if (wheelDirection === lastWheelDirection || firstWheelFlag) {
-		// 	//	方向一致
-		// 	console.log(' 方向一致 ')
-		// } else {
-		// 	console.log(' 方向发生改变 ')
-		// 	count = 0
-		// 	fullRound = 0
-		// }
 		// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题
 		if (wheelDirection === 1) {
 			if (count < 7) {
@@ -93,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	// todo 当前路由动态展示在最右侧
+	// region
 	// watchEffect(() => {
 	// 	let menuItems = document.querySelectorAll('.menu li');
 	// 	menuItems.forEach((item, index) => {
@@ -115,26 +118,17 @@ document.addEventListener('DOMContentLoaded', function () {
 	// 		}
 	// 	});
 	// })
+	// endregion
 
-	// 监听滚轮事件，对菜单进行滚动
+	// 节流滚动事件，下滚时为 1，上滚为 -1
 	let throttledHandleWheel = throttle(handleWheel, 700);
-	let waiter
 	nav.addEventListener('wheel', function (e) {
-		// 阻止默认滚动事件
 		e.preventDefault();
-		// console.log(e.wheelDelta)
-		// 下滚时为 1，上滚为 -1
 		e.wheelDelta < 0 ? wheelDirection = 1 : wheelDirection = -1
-		// todo bugfix 第一次滑入不滚动第二次滑入快速滚动仍会触发错误
-		// todo 尝试加锁
-		// 在第一次滚动前需要暂停 700ms，此间禁止滚动，需要等待全部元素排列好后再滚动
-		if (firstWheelFlag) {
-			waiter = setTimeout(() => {
-				throttledHandleWheel(e)
-			}, 700)
-		} else {
-			throttledHandleWheel(e)
-		}
+		// todo Lock
+		// 1. 在第一次全部元素排列好前禁止滚动（700ms）
+		// 2. 第一次滑入不滚动，第二次滑入快速滚动仍会触发错误
+		throttledHandleWheel(e)
 	}, {passive: false});
 
 	// 导航栏，上滑隐藏下滑显示
@@ -143,19 +137,16 @@ document.addEventListener('DOMContentLoaded', function () {
 				nav.classList.add('hide') : nav.classList.remove('hide')
 	});
 
-	// 延时添加类名，让路由变宽
+	// 延时添加 id 属性，让路由变宽（不使用添加类名，因为会在路由切换时被覆盖类名）
 	nav.addEventListener('mouseenter', function () {
-		clearTimeout(waiter)
-		firstWheelFlag ? delayTime = 500 : delayTime = 270
+		firstWheelFlag ? delayTime = 500 : delayTime = 150
 		setTimeout(function () {
 			routerLink.forEach((item) => {
-				// 不使用添加类名，因为会在路由切换时被覆盖类名
 				item.setAttribute('id', 'expand');
 			})
 		}, delayTime)
 	});
 	nav.addEventListener('mouseleave', function () {
-		clearTimeout(waiter)
 		routerLink.forEach((item) => {
 			item.removeAttribute('id');
 		})
@@ -193,7 +184,6 @@ const route = useRoute()
 			</ul>
 		</div>
 	</div>
-	<router-view/>
 </template>
 
 <style lang="scss" scoped>
@@ -226,7 +216,7 @@ const route = useRoute()
 	z-index: 10000;
 	position: fixed;
 	top: 10vh;
-	// left: -50vh;
+	left: -50vh;
 
 	// top: -50vh;
 	// left: 63vh;
@@ -250,7 +240,7 @@ const route = useRoute()
 	}
 
 	&:hover {
-		// left: -35vh;
+		left: -35vh;
 
 		// top: -35vh;
 		opacity: 1;

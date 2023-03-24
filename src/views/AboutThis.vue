@@ -1,6 +1,6 @@
-<script lang="ts" setup>
+<script setup>
 import {useCounterStore} from '../stores'
-import {watchEffect} from "vue";
+import {onMounted, watchEffect} from "vue";
 
 // 不能用 computed，因为在 computed 函数中，
 // 对 useCounterStore() 的调用是异步的，而 Counter 在模板中使用时是同步的，
@@ -10,45 +10,175 @@ let Counter
 watchEffect(() => {
 	Counter = useCounterStore()
 })
+
+onMounted(() => {
+//实现滚动效果
+	const container = document.querySelector('.container')
+	const lis = document.querySelectorAll('.controls li')
+	var viewHeight = null //声明页面高度
+
+	var index = 0; //当前索引
+	var flag = true; //节流开关
+	document.addEventListener('mousewheel', function (e) {
+		e = e || window.event
+		console.log(e);
+		// 获取整屏的高度
+		viewHeight = document.body.clientHeight;
+		if (flag) {  //节流阀
+			flag = false
+			if (e.wheelDelta > 0) {
+				index--
+				if (index < 0) {
+					index = 0
+				}
+			} else {
+				index++;
+				if (index > lis.length - 1) {
+					index = lis.length - 1
+				}
+			}
+			container.style.top = -index * viewHeight + 'px'
+			changeColor(index)
+			setTimeout(function () {
+				flag = true
+			}, 500)
+		}
+
+	})
+
+	//绑定点击事件
+	for (let i = 0; i < lis.length; i++) {
+		lis[i].onclick = function () {
+			viewHeight = document.body.clientHeight
+			index = i
+			changeColor(index)
+			container.style.top = -index * viewHeight + 'px'
+		}
+	}
+	//改变小li颜色
+	function changeColor(index) {
+		for (var j = 0; j < lis.length; j++) {
+			lis[j].className = ''
+		}
+		lis[index].className = 'active'
+	}
+})
+
+
 </script>
 
 <template>
-	<div>
-		<full-page ref="fullpage" :options="options">
-			<div class="section">
-				<button class="next" @click="$refs.fullpage.api.moveSectionDown()">
-					Next
-				</button>
-				Section 1
-			</div>
-			<div class="section">
-				<button class="prev" @click="$refs.fullpage.api.moveSectionUp()">
-					Prev
-				</button>
-				Section 2
-			</div>
-			<div class="section">
-				<button class="prev" @click="$refs.fullpage.api.moveSectionUp()">
-					Prev
-				</button>
-				Section 3
-			</div>
-			<!--<div class="section">-->
-			<!--	<button class="prev" @click="$refs.fullpage.api.moveSectionUp()">-->
-			<!--		Prev-->
-			<!--	</button>-->
-			<!--	Section 4-->
-			<!--</div>-->
-			<!--<div class="section">-->
-			<!--	<button class="prev" @click="$refs.fullpage.api.moveSectionUp()">-->
-			<!--		Prev-->
-			<!--	</button>-->
-			<!--	Section 5-->
-			<!--</div>-->
-		</full-page>
+	<div class="container">
+		<div class="section section1">
+			<h1>第1屏</h1>
+		</div>
+		<div class="section section2">
+			<h1>第2屏</h1>
+		</div>
+		<div class="section section3">
+			<h1>第3屏</h1>
+		</div>
+		<div class="section section4">
+			<h1>第4屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
 	</div>
+
+	<ul class="controls">
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+
 </template>
 
 <style lang="scss" scoped>
+* {
+	padding: 0;
+	margin: 0;
+}
 
+html,
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.container {
+	width: 100%;
+	height: 500%;
+	position: absolute;
+	top: 0;
+	transition: all 0.3s ease;
+}
+
+
+.section1 {
+	background-color: rebeccapurple;
+
+}
+
+.section2 {
+	background-color: skyblue;
+
+}
+
+.section3 {
+	background-color: red;
+
+}
+
+.section4 {
+	background-color: orange;
+
+}
+
+.section5 {
+	background-color: lightgreen;
+
+}
+
+.section {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	background-size: cover;
+}
+
+
+.controls {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translateY(-50%);
+	list-style: none;
+}
+
+.controls li {
+	width: 50px;
+	height: 50px;
+	font: bold 22px/50px '宋体';
+	text-align: center;
+	background-color: #000;
+	color: white;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.controls li+li {
+	margin-top: 5px;
+}
+
+.controls li.active {
+	background-color: #fff;
+	color: red;
+}
 </style>

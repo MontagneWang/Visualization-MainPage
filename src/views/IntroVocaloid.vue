@@ -22,7 +22,6 @@ section {
 	line-height: 100vh;
 	text-align: center;
 	font-size: 20vh;
-
 }
 
 .img {

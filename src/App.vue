@@ -10,6 +10,7 @@ import CircularNav from "./components/CircularNav.vue";
 	<!--<test-temp/>-->
 	<circular-nav/>
 	<right-menu/>
+	<router-view/>
 </template>
 
 <style>

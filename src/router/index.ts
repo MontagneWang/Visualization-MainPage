@@ -22,6 +22,10 @@ const routes = [
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHashHistory(),
     routes,
+    // 每次切换路由页面滚动到顶部
+    scrollBehavior () {
+        return { top: 0 }
+    }
 })
 
 export default router
