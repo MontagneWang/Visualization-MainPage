@@ -39,7 +39,7 @@ onMounted(() => {
 			let values = transform.split('(')[1].split(')')[0].split(',');
 			angle = Math.round(Math.atan2(values[1], values[0]) * (180 / Math.PI));
 
-			if (wheelDirection === 1) {
+			if (wheelDirection === -1) {
 				if (angle < 0) {
 					angle = 360 + angle
 				}
@@ -48,7 +48,7 @@ onMounted(() => {
 				if (8 - count <= index) {
 					angle += 360
 				}
-			} else if (wheelDirection === -1) {
+			} else if (wheelDirection === 1) {
 				if (angle > 0) {
 					angle = angle - 360
 				}
@@ -74,7 +74,7 @@ onMounted(() => {
 			item.childNodes[0].style.transform = `rotate(${-angle}deg)`;
 		});
 		// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题
-		if (wheelDirection === 1) {
+		if (wheelDirection === -1) {
 			if (count < 7) {
 				count += 1
 			} else {
@@ -165,24 +165,24 @@ const route = useRoute()
 <template>
 	<div class="mainCircularNav">
 		<div class="insideNav">
-			<span class="words"> 导航 </span>
+			<span class="words">导航</span>
 			<ul class="menu">
 				<li>
-					<router-link to="/"> 首页</router-link>
+					<router-link to="/">歌曲数据</router-link>
 				</li>
 				<li>
-					<router-link to="/about">About</router-link>
+					<router-link to="/ling">乐正绫</router-link>
 				</li>
 				<li>
 					<router-link to="/vocaloid">Vocaloid</router-link>
 				</li>
+				<li><a class="fa fa-icon" href="#">创作者</a></li>
+				<li><a class="fa fa-icon" href="#">创作社团</a></li>
+				<li><a class="fa fa-icon" href="#">歌曲的诞生</a></li>
+				<li><a class="fa fa-icon" href="#">留言板</a></li>
 				<li>
-					<router-link to="/test">test</router-link>
+					<router-link to="/about">关于本站</router-link>
 				</li>
-				<li><a class="fa fa-icon" href="#">5</a></li>
-				<li><a class="fa fa-icon" href="#">6</a></li>
-				<li><a class="fa fa-icon" href="#">7</a></li>
-				<li><a class="fa fa-icon" href="#">8</a></li>
 			</ul>
 		</div>
 	</div>

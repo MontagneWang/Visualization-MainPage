@@ -18,9 +18,9 @@ const routes = [
         component: () => import('../views/IntroVocaloid.vue')
     },
     {
-        path: '/test',
-        name: 'test',
-        component: () => import('../components/TestTemp.vue')
+        path: '/ling',
+        name: 'ling',
+        component: () => import('../components/LingIntro.vue')
     },
 
 ]

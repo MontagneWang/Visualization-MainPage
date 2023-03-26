@@ -2,7 +2,7 @@
 import NavBar from "./components/NavBar.vue";
 import RightMenu from "./components/RightMenu.vue";
 import CircularNav from "./components/CircularNav.vue";
-import TestTemp from "./components/TestTemp.vue";
+import TestTemp from "./components/LingIntro.vue";
 </script>
 
 <template>
@@ -14,7 +14,8 @@ import TestTemp from "./components/TestTemp.vue";
 </template>
 
 <style>
-body{
-	text-align: center;
+html *
+{
+	font-family: LXGW WenKai Lite, serif !important;
 }
 </style>
