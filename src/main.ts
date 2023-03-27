@@ -7,6 +7,7 @@ import 'vue-fullpage.js/dist/style.css'
 // import './fullpage.scrollHorizontally.min' // Optional. When using fullpage extensions
 // @ts-ignore
 // import VueFullPage from 'vue-fullpage.js'
+import 'animate.css/animate.min.css' //引入
 
 const pinia = createPinia()
 const app = createApp(App)
