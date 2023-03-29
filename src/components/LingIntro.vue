@@ -5,6 +5,8 @@ import WOW from "wow.js";
 let history = ref(null)
 let bubbleBox = ref(null)
 let nowPage = ref(0)
+let finalPageShowFlag = ref(false)
+let bubbleBoxShowFlag = ref(false)
 onMounted(() => {
 	let timeLineItems = document.querySelectorAll('.el-timeline-item')
 	timeLineItems.forEach((item, index) => {
@@ -27,15 +29,7 @@ onMounted(() => {
 	wow.init();
 	// 滚动监听
 	window.addEventListener('scroll', function () {
-		if (window.innerHeight + window.pageYOffset
-				>= document.body.offsetHeight - 100) {
-			// todo 尝试直接写到模板中
-
-			history.value.classList.add('show')
-		} else {
-			history.value.classList.remove('show')
-		}
-
+		finalPageShowFlag.value = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100
 		// 存储每页高度，单位为 vh
 		let pageHeight = [100, 220, 220, 220, 220, 100];
 		let totalHeight = 0;
@@ -56,7 +50,6 @@ onMounted(() => {
 	let endX = screenWidth * 0.85;
 	let startY = screenHeight * 0.3;
 	let endY = screenHeight;
-	// todo 除了时间线发展，还需要添加人物属性  hover 当前立绘（鼠标XY位置判断）时，出现一个对话框式的方框，里面显示属性【取自萌百】
 	// 通过 scrollTop 判断卷去的高度，从而算出是在第几页，需要传入第几代的数据
 	// 也需要根据不同的页数微调样式，比如把气泡框左移一点
 	document.addEventListener('mousemove', function (event) {
@@ -64,17 +57,15 @@ onMounted(() => {
 		let mouseY = event.clientY;
 		const rect = bubbleBox.value.getBoundingClientRect();
 		if (mouseX >= startX && mouseX <= endX && mouseY >= startY && mouseY <= endY) {
-			// todo 尝试直接写到模板中
-			bubbleBox.value.classList.add('show')
+			bubbleBoxShowFlag = true
 		} else if (event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom) {
 			// 鼠标在气泡框内，保持不变
 		} else {
-			bubbleBox.value.classList.remove('show')
+			bubbleBoxShowFlag = false;
 		}
 	});
 })
-
-const parentMessage = ref('属性')
+// todo ⚠ fix 时间轴渐入出错，保存当前代码，然后回滚
 const items = ref([
 			{},
 			{
@@ -142,8 +133,12 @@ const items = ref([
 
 <template>
 	<!--todo 通过 <Transition> 来增加 v-show 消失与进入的效果-->
-	<div v-show="nowPage!==0&&nowPage!==5" ref="bubbleBox" class="bubbleBox">
+	<div v-show="nowPage!==0&&nowPage!==5"
+	     ref="bubbleBox"
+	     :class="{show:bubbleBoxShowFlag}"
+	     class="bubbleBox">
 		<ul>
+			<!--todo 撑大缩小盒子时也添加动效-->
 			<li v-for="(value, key) in items[nowPage]" :key="key">
 				<!--第{{ nowPage + 1 }}页 - -->
 				{{ key }} - {{ value }}
@@ -157,14 +152,19 @@ const items = ref([
 	<div class="page head">
 		<div class="history show animate__animated animate__fadeIn animate__delay-1s">
 			<div class="inside">
-				<h2>悠悠八年，一瞬永远</h2>
+				<div class="words">
+					<span class="titleLeft animate__animated animate__fadeIn">悠悠八年</span>
+					<span class="titleMid animate__animated animate__fadeIn">|</span>
+					<span class="titleRight animate__animated animate__fadeIn">一瞬永远</span>
+				</div>
 			</div>
 		</div>
 	</div>
 	<!--todo 背景图上添加文字+持续年份（VOCALOID™ China Project、Vocaloid™3、Vocaloid™5、ACE-Studio）-->
 	<!--     可以尝试设置两张背景图？或者直接把文字 P 到一张图上-->
-	<!--     文字内容需要体现时代变化-->
+	<!--     文字内容 + 时间选取需要体现时代变化（跨时代意义）-->
 	<!--     图片切换到 B 站图床-->
+	<!--     TimeLine 美化，查看文档切换其他样式-->
 	<div id="lingcaiyin" class="page">
 		<div class="story">
 			<div class="bg"></div>
@@ -453,7 +453,9 @@ const items = ref([
 	</div>
 	<!--尾页-->
 	<div class="page final">
-		<div ref="history" class="history">
+		<div ref="history"
+		     :class="{show:finalPageShowFlag}"
+		     class="history">
 			<div class="inside">
 				<p>在此歌唱 从零开始万千景象延伸远方</p>
 				<p>（注：这里动态展示时间线）</p>
@@ -463,6 +465,72 @@ const items = ref([
 </template>
 
 <style lang="scss" scoped>
+.head {
+	.inside {
+		font-size: 5em;
+
+		div {
+			text-align: center;
+			line-height: 70vh;
+		}
+	}
+}
+
+//span.titleMid {
+//	animation: blink 2s infinite;
+//	position: relative;
+//	left: 24vw;
+//}
+//
+//span.titleLeft {
+//	float: right;
+//	text-align: center;
+//	animation: leftEaseInAnimate 2s ease 1;
+//	animation-fill-mode: forwards; /*定义动画结束的状态*/
+//}
+//
+//span.titleRight {
+//	float: right;
+//	text-align: center;
+//	animation: rightEaseInAnimate 2s ease 1;
+//	animation-fill-mode: forwards; /*定义动画结束的状态*/
+//}
+//
+//@keyframes blink {
+//	0% {
+//		opacity: 1;
+//	}
+//	50% {
+//		opacity: 0;
+//	}
+//	100% {
+//		opacity: 1;
+//	}
+//}
+//
+//@keyframes leftEaseInAnimate { /*定义从右边滑入文字的动画*/
+//	0% {
+//		transform: translateX(0vw);
+//		opacity: 0;
+//	}
+//	100% {
+//		transform: translateX(-47vw);
+//		opacity: 1;
+//	}
+//}
+//
+//// 一瞬永远
+//@keyframes rightEaseInAnimate { /*定义从左边滑入文字的动画*/
+//	0% {
+//		transform: translateX(-35vw);
+//		opacity: 0;
+//	}
+//	100% {
+//		transform: translateX(12vw);
+//		opacity: 1;
+//	}
+//}
+
 body,
 html {
 	height: 100vh;
@@ -559,7 +627,8 @@ html {
 }
 
 .head {
-	background: url(../assets/繁华唱遍.png) fixed;
+	background: url(../assets/首页.png) fixed;
+	background-position: center !important;
 }
 
 #lingcaiyin {
