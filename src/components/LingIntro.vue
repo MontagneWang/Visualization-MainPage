@@ -56,6 +56,7 @@ onMounted(() => {
 		let mouseX = event.clientX;
 		let mouseY = event.clientY;
 		const rect = bubbleBox.value.getBoundingClientRect();
+		// fixme 气泡框显示错误
 		if (mouseX >= startX && mouseX <= endX && mouseY >= startY && mouseY <= endY) {
 			bubbleBoxShowFlag = true
 		} else if (event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom) {
