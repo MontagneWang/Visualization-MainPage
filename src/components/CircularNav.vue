@@ -61,7 +61,7 @@ onMounted(() => {
 				}
 			}
 			// todo ⚠ 直接设置一个全局数组变量，用于保存每一个路由的旋转角度，然后做加减运算，这样就不用每次重新获取 css 角度然后计算了
-			// todo bugfix 正向逆向滚动交错时会产生错位
+			// fixme 正向逆向滚动交错时会产生错位
 			// 正向滚动逆向滚动分开独立计算，每次滚动方向发生改变的时候 count 和 full 重置
 			// 或者直接重置所有位置，然后再对应滚动一次
 			// if (wheelDirection === lastWheelDirection || firstWheelFlag) {
@@ -127,7 +127,7 @@ onMounted(() => {
 	nav.addEventListener('wheel', function (e) {
 		e.preventDefault();
 		e.wheelDelta < 0 ? wheelDirection = 1 : wheelDirection = -1
-		// todo Lock
+		// fixme Lock
 		// 1. 在第一次全部元素排列好前禁止滚动（700ms）
 		// 2. 第一次滑入不滚动，第二次滑入快速滚动仍会触发错误
 		throttledHandleWheel(e)
