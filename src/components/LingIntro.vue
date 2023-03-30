@@ -56,13 +56,12 @@ onMounted(() => {
 		let mouseX = event.clientX;
 		let mouseY = event.clientY;
 		const rect = bubbleBox.value.getBoundingClientRect();
-		// fixme 气泡框显示错误
 		if (mouseX >= startX && mouseX <= endX && mouseY >= startY && mouseY <= endY) {
-			bubbleBoxShowFlag = true
+			bubbleBoxShowFlag.value = true
 		} else if (event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom) {
 			// 鼠标在气泡框内，保持不变
 		} else {
-			bubbleBoxShowFlag = false;
+			bubbleBoxShowFlag.value = false;
 		}
 	});
 
