@@ -122,6 +122,7 @@ onMounted(() => {
 	// })
 	// endregion
 
+
 	// 节流滚动事件，下滚时为 1，上滚为 -1
 	let throttledHandleWheel = throttle(handleWheel, 700);
 	nav.addEventListener('wheel', function (e) {
