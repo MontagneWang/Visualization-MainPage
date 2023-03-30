@@ -64,8 +64,53 @@ onMounted(() => {
 			bubbleBoxShowFlag = false;
 		}
 	});
+
+	// region
+	// 整页滚动
+	// function wholePageScroll(e) {
+	// 	if (e.deltaY > 0 && window.scrollY === 0) {
+	// 		scrollPage()
+	// 	}
+	// }
+	//
+	// function topScrollJudge() {
+	// 	document.documentElement.style.overflowY = (window.scrollY === 0) ? '' : '';
+	// }
+	//
+	// ;(function PageUpDown() {
+	// 	// 先解禁滚动 + 移除事件绑定
+	// 	// 注意：这里不能写 = 'scroll' 否则会导致 侧边栏的 sticky 无法正常进行 fix
+	// 	document.documentElement.style.overflowY = '';
+	// 	window.removeEventListener('wheel', wholePageScroll)
+	// 	window.removeEventListener('scroll', topScrollJudge)
+	// 	if (window.innerWidth >= 720) {
+	// 		topScrollJudge()
+	// 		window.addEventListener('wheel', wholePageScroll)
+	// 		window.addEventListener('scroll', topScrollJudge)
+	// 	}
+	// })()
+	//
+	// // 解决平板无法滚动的问题
+	// document.addEventListener('touchstart', function () {
+	// 	document.documentElement.style.overflowY = ''
+	// })
+	// endregion
 })
-// todo ⚠ fix 时间轴渐入出错，保存当前代码，然后回滚
+
+function scrollPage() {
+	const sectionHeight = document.documentElement.clientHeight;
+	const currentScroll = document.documentElement.scrollTop;
+
+	// 计算滚动距离
+	const scrollTo = currentScroll + sectionHeight;
+
+	// 使用scrollTo方法实现平滑滚动
+	window.scrollTo({
+		top: scrollTo,
+		behavior: 'smooth'
+	});
+}
+
 const items = ref([
 			{},
 			{
@@ -146,16 +191,13 @@ const items = ref([
 		</ul>
 	</div>
 	<!--首页-->
-	<!--todo 动效（背景图前覆盖一层黑透明，文字像博客那样由中间向两边推出，
-					 中间的 | 闪烁几下后，
-					 全部文字 fadeOut 然后自动滑入下一页）-->
-	<div class="page head">
-		<div class="history show animate__animated animate__fadeIn animate__delay-1s">
+	<div class="page head" @click="scrollPage">
+		<div class="history show ">
 			<div class="inside">
-				<div class="words">
-					<span class="titleLeft animate__animated animate__fadeIn">悠悠八年</span>
-					<span class="titleMid animate__animated animate__fadeIn">|</span>
-					<span class="titleRight animate__animated animate__fadeIn">一瞬永远</span>
+				<div class="words ">
+					<span class="animate__animated animate__fadeIn animate__delay-1s">悠悠八年</span>
+					<span class="titleMid animate__animated animate__fadeIn">&nbsp;|&nbsp;</span>
+					<span class="animate__animated animate__fadeIn animate__delay-2s">一瞬永远</span>
 				</div>
 			</div>
 		</div>
@@ -199,40 +241,6 @@ const items = ref([
 					<el-timeline-item placement="top" timestamp="2015/07/17">
 						todo，可根据需要增删长度
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-
 				</el-timeline>
 			</div>
 		</div>
@@ -276,37 +284,6 @@ const items = ref([
 					<el-timeline-item placement="top" timestamp="2015/07/17">
 						todo，可根据需要增删长度
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-
 				</el-timeline>
 			</div>
 		</div>
@@ -337,36 +314,6 @@ const items = ref([
 						</el-card>
 					</el-timeline-item>
 
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
 					<el-timeline-item placement="top" timestamp="2015/07/17">
 						todo，可根据需要增删长度
 					</el-timeline-item>
@@ -416,37 +363,6 @@ const items = ref([
 					<el-timeline-item placement="top" timestamp="2015/07/17">
 						todo，可根据需要增删长度
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-
 				</el-timeline>
 			</div>
 		</div>
@@ -476,11 +392,13 @@ const items = ref([
 	}
 }
 
-//span.titleMid {
-//	animation: blink 2s infinite;
-//	position: relative;
-//	left: 24vw;
-//}
+// todo 这里可以使用 animate.css 替代
+span.titleMid {
+	animation: blink 1.5s infinite;
+	//position: relative;
+	//left: 24vw;
+}
+
 //
 //span.titleLeft {
 //	float: right;
@@ -496,18 +414,18 @@ const items = ref([
 //	animation-fill-mode: forwards; /*定义动画结束的状态*/
 //}
 //
-//@keyframes blink {
-//	0% {
-//		opacity: 1;
-//	}
-//	50% {
-//		opacity: 0;
-//	}
-//	100% {
-//		opacity: 1;
-//	}
-//}
-//
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 //@keyframes leftEaseInAnimate { /*定义从右边滑入文字的动画*/
 //	0% {
 //		transform: translateX(0vw);
@@ -556,9 +474,6 @@ html {
 
 .el-timeline-item {
 	width: 75vw;
-	//.el-card{
-	//	height: 15vh;
-	//}
 }
 
 .show {
@@ -573,7 +488,7 @@ html {
 	.history {
 		height: 90vh;
 		width: 90vw;
-		background-image: linear-gradient(to bottom, transparent 0, transparent 10vh, rgba(255, 255, 255, 0.8) 10vh, rgba(255, 255, 255, 0.8) 90vh, transparent 90vh, transparent 100vh);
+		background-image: linear-gradient(to bottom, transparent 0, transparent 10vh, rgba(255, 255, 255, 0.3) 10vh, rgba(255, 255, 255, 0.5) 90vh, transparent 90vh, transparent 100vh);
 		margin: 0 auto;
 		opacity: 0;
 		transition: all 0.5s;
@@ -583,8 +498,6 @@ html {
 			margin: 5vh 3vw;
 		}
 	}
-
-
 }
 
 .page {
