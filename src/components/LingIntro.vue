@@ -4,6 +4,7 @@ import WOW from "wow.js";
 
 let history = ref(null)
 let bubbleBox = ref(null)
+let headPage = ref(null)
 let nowPage = ref(0)
 let finalPageShowFlag = ref(false)
 let bubbleBoxShowFlag = ref(false)
@@ -87,6 +88,13 @@ onMounted(() => {
 		}
 	});
 
+	setTimeout(() => {
+		if (document.documentElement.scrollTop === 0) {
+			smoothScroll(document.documentElement.clientHeight, 700);
+			// headPage.value.click()
+		}
+	}, 5000)
+
 	// region
 	// 整页滚动
 	// function wholePageScroll(e) {
@@ -118,6 +126,35 @@ onMounted(() => {
 	// })
 	// endregion
 })
+
+// 滚动函数（不同于默认平滑滚动，这个通过这个函数设置滚动时长）
+function smoothScroll(targetPosition, duration) {
+	const startPosition = window.pageYOffset;
+	const distance = targetPosition - startPosition;
+	let startTime = null;
+
+	function animation(currentTime) {
+		if (startTime === null) {
+			startTime = currentTime;
+		}
+		const timeElapsed = currentTime - startTime;
+		const run = ease(timeElapsed, startPosition, distance, duration);
+		window.scrollTo(0, run);
+		if (timeElapsed < duration) {
+			requestAnimationFrame(animation);
+		}
+	}
+
+	function ease(t, b, c, d) {
+		t /= d / 2;
+		if (t < 1) return c / 2 * t * t + b;
+		t--;
+		return -c / 2 * (t * (t - 2) - 1) + b;
+	}
+
+	requestAnimationFrame(animation);
+}
+
 
 function scrollPage() {
 	const sectionHeight = document.documentElement.clientHeight;
@@ -212,11 +249,11 @@ const items = ref([
 	</div>
 	<!--</Transition>-->
 	<!--首页-->
-	<div class="page head" @click="scrollPage">
+	<div ref="headPage" class="page head" @click="scrollPage">
 		<div class="history show ">
 			<div class="inside">
 				<div class="words ">
-					<span class="animate__animated animate__fadeIn animate__delay-1s">悠悠八年</span>
+					<span class="animate__animated animate__fadeIn animate__delay-1s">悠悠十年</span>
 					<span class="titleMid animate__animated animate__fadeIn">&nbsp;|&nbsp;</span>
 					<span class="animate__animated animate__fadeIn animate__delay-2s">一瞬永远</span>
 				</div>
@@ -276,18 +313,18 @@ const items = ref([
 					<el-timeline-item icon="Promotion" placement="top" timestamp="2014/04/05" type="primary">
 						<p>《云端》发布 —— 「三年孤寂愿与你相伴」</p>
 						<p> P 主与 STAFF 们以这一首无声歌曲，献给当时仍未发售声库的乐正绫</p>
-						<p>某种意义上算是阿绫的<strong>第一首</strong>歌曲</p>
+						<p>某种意义上算是阿绫的<strong> 第一首 </strong>歌曲</p>
 						<p>「作曲：卫星（音绕阁） | 填词：萌兔（音绕阁） | 绘师：碎影无痕、锦冲田 | 编曲：bz86nick | PV：墨兰花语 | 演唱：乐正绫」</p>
 						<p>『乐正绫作为同洛天依一起第一批被VC选中的人设，一直没有音源，</p>
-						<p> UP 主和众多喜欢她的小伙伴一直都很想听她唱歌，</p>
-						<p>但是，两年了，UP 主终于等不起了，和一些喜欢绫的人一起创作了这首属于这个没有音源的歌姬的曲子，</p>
-						<p>希望喜欢绫的大家不要忘记她，也希望有更多的人能喜欢上这个中国红元气娘 —— 乐正绫』 —— 萌兔兔兔子</p>
+						<p>&emsp;UP 主和众多喜欢她的小伙伴一直都很想听她唱歌，</p>
+						<p>&emsp;但是，两年了，UP 主终于等不起了，和一些喜欢绫的人一起创作了这首属于这个没有音源的歌姬的曲子，</p>
+						<p>&emsp;希望喜欢绫的大家不要忘记她，也希望有更多的人能喜欢上这个中国红元气娘 —— 乐正绫』 —— 萌兔兔兔子</p>
 					</el-timeline-item>
 				</el-timeline>
 			</div>
 		</div>
 	</div>
-	<!--2012 -> 2015-->
+	<!--2015 -> 2021-->
 	<div id="v3" class="page">
 		<div class="story">
 			<div class="bg"></div>
@@ -300,12 +337,33 @@ const items = ref([
 					</el-timeline-item>
 					<el-timeline-item color="rgb(238,0,0)" icon="StarFilled" placement="top" timestamp="2015/06/12">
 						<el-card>
-							<h2 style="color: #ee0000">「记住我，鲜艳的红色」</h2>
-							<p>官方发布了「乐正绫」第一首试听曲 —— 《Scarlet Drop》</p>
+							<h2 style="color: #ee0000">「记住我&emsp;鲜艳的红色」</h2>
+							<h3>&nbsp;官方发布了「乐正绫」第一首试听曲 —— 《Scarlet Drop》</h3>
+							<p>“作为乐正绫爱好者们急切期盼的曲目，激昂的旋律从头至尾弥漫着重金属的味道，<br/>
+								&nbsp;歌词字里行间抒发着乐正绫不顾被世间
+								<del>官方</del>
+								与未来所阻隔和遗忘，努力唱响自己的歌声。”
+							</p>
+							<p>『抵达梦的尽头　之后放声而歌</p>
+							<p>&emsp;已不再是过客　<span style="color: #ee0000">因为彼此约定着</span>』</p>
 						</el-card>
 					</el-timeline-item>
 					<el-timeline-item icon="headset" placement="top" timestamp="2015/07/04" type="primary">
-						<h3>「将这份无用思念，与你再讲一遍」，乐正绫第二首官方试听曲《梦语》发布</h3>
+						<el-card>
+							<h2 style="color: rgb(64, 88, 164)">「将这份无用思念&emsp;与你再讲一遍」</h2>
+							<h3>&nbsp;乐正绫第二首官方试听曲《梦语》发布</h3>
+							<p>“本曲是 Vsinger 官方发布的第二首乐正绫无参试听 Demo 曲。<br/>
+								&nbsp;与前一首试听曲《Scarlet Drop》不同，本曲采用了柔美抒情的曲风。<br/>
+								&nbsp;歌词的字里行间都充满了温柔的思念之情，<br/>
+								&nbsp;强烈地抒发了乐正绫作为一个
+								<del>被官方遗忘许久的</del>
+								虚拟歌手，对观众的思念之情。”
+							</p>
+							<p>『如果说　有一天　再相见</p>
+							<p>&emsp;将这份无用思念　与你再讲一遍</p>
+							<p>&emsp;那我再看一眼　在你眼中流转的世界</p>
+							<p><span style="color: #ee0000;font-size:1.5em;">&emsp;一瞬永远&nbsp;</span>』</p>
+						</el-card>
 					</el-timeline-item>
 					<el-timeline-item center icon="mic" placement="top" timestamp="2015/07/17" type="success">
 						<el-card>
@@ -313,20 +371,95 @@ const items = ref([
 							<p>VOCALOID™3 中文声库「乐正绫」正式发售，从此声库走向民间创作者，一个新的时代开启了</p>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item icon="" placement="top" timestamp="2015/07/17" type="primary">
-						todo，可根据需要增删长度
+					<el-timeline-item icon="List"  placement="top" timestamp="2016 年" type="primary">
+						<p>2016 是一个神奇的年份，在这一年，乐正绫登上了拜年祭的舞台，留下了一曲传唱千古的《九九八十一》</p>
+						<p>8 月 25 日，COP 投稿了《世末歌者》，这首歌后来成为了乐正绫再生数第二高的歌曲，
+							<del>同时也为 V 家留下了 2018 coming soon 的传说</del>
+						</p>
+						<p>同年还有「妄想症系列」、「白石溪」、「节气物语」等作品，越来越多的 P 主开始借绫之口抒发心中所想。</p>
+						<p>当然，16 年还有一个企划 —— 「时之歌Project」，不知道如今的你，还在听这些曲子吗</p>
+						<p>2016-08-06&nbsp;《破晓将至》【乐正绫原创】<br />
+						2016-04-09&nbsp;《黑暗审判》【乐正绫原创】<br />
+						2016-03-19&nbsp;《光流终焉》【乐正绫原创】<br />
+						2016-12-03&nbsp;《为战而生》【乐正绫原创】<br />
+						2016-02-27&nbsp;《虚拟神明》【言和&乐正绫原创】<br />
+						2016-01-30&nbsp;&emsp;《悬空》&emsp;【洛天依&乐正绫原创】<br />
+						2016-01-10&nbsp;&emsp;《归一》&emsp;【洛天依&乐正绫&心华原创】<br /></p>
+						<h3>『心跳沉沉试图召唤着哀伤&emsp;而你用双手拨开我所有匆忙』</h3>
 					</el-timeline-item>
-					<el-timeline-item icon="" placement="top" timestamp="2015/07/17" type="primary">
-						todo，可根据需要增删长度
+					<el-timeline-item icon="" placement="top" timestamp="2017 年" type="primary">
+						2017 年，妄想症系列依旧在谱写其传说
+						【原创曲】乐正绫「寄明月」、(国风舞曲 Proj 1/4)	2017-10-03 21:31
+						【乐正绫原创】荆轲【原创PV付】	2017-09-30 19:25
+						【乐正绫原创】【亡国祸水】四·国殇（feat.洛天依）【世界协奏之歌制作组】【PV付】	2017-04-30 16:58
+						【Vsinger乐正绫】未来的我【官方PV版】	2017-04-28 17:53
+						【乐正绫原创】一千绫一夜【2017乐正绫诞生祭】	2017-04-12 01:08	泓mizuhiro
+						【乐正绫原创】撒马尔罕之恋【PV付】	2017-11-28 15:43	账号已注销
+						【Vsinger乐正绫】官方专辑《绫》-试听PV	2017-12-02 12:44	vsinger团队
+						【乐正绫原创】烈火灼冰【雾霭拾光系列】【双本家PV付】【踏云社】	2017-12-17 15:24	账号已注销
+						【乐正绫】闲云志（+VSQX）	2017-01-06 12:10	Dec顾令
+						【洛天依乐正绫】阳山绝2.0【原创曲PV付】	2017-02-05 12:01
+						【洛天依乐正绫原创】迂回步【星辉、雨狸】【Vsinger创作赛】【华尔兹/花嫁】【霾AXIS】	2017-03-18 08:49
+							时之歌
+						【乐正绫原创】洛维娜【时之歌Project】	2017-05-07 18:30	时之歌Project
+						【洛天依&乐正绫原创】月儿谣【时之歌Project】	2017-08-12 21:03	时之歌Project	62767
 					</el-timeline-item>
-					<el-timeline-item icon="" placement="top" timestamp="2015/07/17" type="primary">
-						todo，可根据需要增删长度
+					<el-timeline-item icon="" placement="top" timestamp="2018 年" type="primary">
+						乐正绫 原创《傲娇系男孩的告白日》（专辑《绫》收录）	2018-10-12 01:52	ilem	1307032
+						【乐正绫/洛天依原创】易水诀【忘川风华录】	2018-07-28 18:00	忘川风华录	1147382
+						【乐正绫&乐正龙牙】孩子气的战争【VOCALOID COVER】	2018-05-18 00:22	Creuzer	835479
+						【原创国风电音】千里邀月×乐正绫（超电出品）	2018-11-30 17:00	純白	790179
+						【心华 言和 乐正绫原创曲】99°C溺亡【专辑人·間收录曲】【踏云社】	2018-02-12 03:39	影随龙风
+						【乐正绫原创】儒风诉骨【诸子百家/PV付】	2018-05-05 09:17	安陵影钦
+						【洛天依乐正绫原创】眼泪【南北寻光收录曲】	2018-02-23 22:54	TUNO桐音
+						【洛天依乐正绫原创】要有光【南北寻光收录曲】	2018-03-16 20:20	TUNO桐音	155387
+						【洛天依乐正绫原创】ADVENTURE【南北寻光收录曲】	2018-03-03 10:56	TUNO桐音	151010
+						【洛天依·乐正绫原创】梦遇【无名社五周年02】【《无名》专辑收录曲】	2018-01-01 20:33	无名社
+						【乐正绫原创】拥我【PV付】【踏云社】	2018-04-04 12:00	从来没有中过奖的Sheep	57528
+						【乐正绫原创】没有声音的勇者【2018乐正绫诞生祭】	2018-04-12 00:00	泓mizuhiro
 					</el-timeline-item>
+					<el-timeline-item icon="" placement="top" timestamp="2019 年" type="primary">
+						【赤羽x乐正绫】《赤伶》【炸裂戏腔】【原创剧情向pv附】	2019-12-07 18:05	鲜洋芋	2270733
+						【Vsinger全员原创曲】Attack！【洛天依/言和/乐正绫/乐正龙牙/徵羽摩柯/墨清弦】	2019-06-06 18:06	洛天依	866414
+						【乐正绫原创】北京第三区交通委提醒您(feat.洛天依)——流浪地球印象曲【片尾彩蛋】	2019-02-10 14:51	清风疾行没有q	780920
+						【五色战队】Hear me！【洛天依/乐正绫/徵羽摩柯/墨清弦/乐正龙牙】【人形兎】	2019-02-03 12:00	苏逸_Suyi	755622
+						【乐正绫】我在	2019-04-12 21:34	乐正绫
+						【乐正绫&300大作战】蝶恋花·何处谣	2019-04-12 14:57	乐正绫
+						【乐正绫原创】道寄江雪【诸子百家/PV付】	2019-06-30 18:06	安陵影钦
+						【乐正绫x龙牙x洛天依原创】玲珑络【南亭阙 第二卷】VSINGER电音国风企划/米库喵	2019-05-01 16:00	恩雅NYA
+						杜甫 | 洛天依、乐正绫合唱《剑器行》  一舞剑器动四方	2019-12-15 18:00	汐音社
+						【言和&乐正绫原创曲】心电感应	2019-06-21 18:00	乐正绫
+						【洛天依/乐正绫/言和】VC七周年纪念同人专辑《柒》宣发试听PV~预售中~	2019-10-03 22:47	COPY
+					</el-timeline-item>
+					<el-timeline-item icon="" placement="top" timestamp="2020 年" type="primary">
+						【乐正绫原创】《哈利波特·学院印象曲系列》格兰芬多	2020-04-25 12:00	提糯Tino	1696430
+						【乐正绫原创曲】花	2020-04-12 16:12	乐正绫
+						生贺专
+						【乐正绫原创】山遥路远	2020-05-22 16:41	YuH_ChiliChill
+						【乐正绫原创】法令青史【诸子百家/PV付】	2020-01-28 18:00	安陵影钦
+						<el-timeline-item placement="top" timestamp="2020/04/12">
+							<h2>乐正绫五周年，官方发布了生日贺曲《花》，本曲使用了尚未发售的乐正绫 V5 音源 </h2>
+							<h3 style="color: #ee0000">「请你知晓　—— <i>好不好</i>」</h3>
+						</el-timeline-item>
+						<el-timeline-item placement="top" timestamp="2020/05/22">
+							ChiliChill 发布了《山遥路远》，本曲使用了尚未发售的乐正绫 V5 音源
+							<h3>「快走吧，山遥路远」</h3>
+						</el-timeline-item>
+						【乐正绫原创曲】花	2020-04-12 16:12	乐正绫	568686
+						【乐正绫角色歌】鸾绫【乐正绫五周年生日】南亭阙	2020-04-12 17:00	恩雅NYA	237957
+						【乐正绫原创曲】赞美太阳！炸裂前的凤凰挽歌《日心陨落》【科幻电音/星电感应系列】	2020-04-12 20:02	周小蚕	210746
+						【乐正绫原创】春日纪行 ✉ 0412乐正绫诞生祭	2020-04-12 07:28	星葵	169222
+						乐正绫2020官方EP《告白诗》试听PV	2020-04-12 12:00	乐正绫	163378
+						【乐正绫原创】偏执罪 feat.gumi English【2020乐正绫五周年生日】	2020-04-12 17:00	枭目☆moku	147903
+
+						【乐正绫原创】满天星（沙雕教/HB to 溱绫西陌）	2020-12-13 00:00	星葵	131736
+					</el-timeline-item>
+
 				</el-timeline>
 			</div>
 		</div>
 	</div>
-	<!--2015 -> 2020-->
+	<!--2021 -> 2023-->
 	<div id="v5" class="page">
 		<div class="story">
 			<div class="bg"></div>
@@ -334,14 +467,16 @@ const items = ref([
 		<div class="content">
 			<div class="inside">
 				<el-timeline>
-					<el-timeline-item placement="top" timestamp="2020/04/12">
-						<h2>乐正绫五周年，官方发布了生日贺曲《花》，本曲使用了尚未发售的乐正绫 V5 音源 </h2>
-						<h3 style="color: #ee0000">「请你知晓　—— <i>好不好</i>」</h3>
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2020/05/22">
-						ChiliChill 发布了《山遥路远》，本曲使用了尚未发售的乐正绫 V5 音源
-						<h3>「快走吧，山遥路远」</h3>
-					</el-timeline-item>
+					洛天依 乐正绫 原创《我没有歌能给你听》	2021-11-27 12:21	ilem	1627074
+					从前有个衔玉教
+					【乐正绫六周年生贺曲】我仍唱着-倾诉欲【闹闹丶】	2021-04-12 17:20	丨闹闹丶丨
+					【乐正绫V5原创】纵横此间【诸子百家/武侠风PV付】	2021-12-31 18:00	安陵影钦
+					【乐正绫V5原创曲】藏蓝【VC-GENS罗盘社】【原创PV付】	2021-11-15 17:00	残杨如血
+					【乐正绫V5原创】花海【《水·花》专辑收录曲】【Xylose木糖醇】	2021-07-30 11:00	从来没有中过奖的Sheep
+
+
+
+
 					<el-timeline-item placement="top" timestamp="2021/04/12">
 						<h3>乐正绫六周年，官方发布了生日贺曲《丑马》，本曲也使用了尚未发售的乐正绫 V5 音源 </h3>
 					</el-timeline-item>
@@ -351,21 +486,29 @@ const items = ref([
 							<del>值得一提的是，声库盒子上并未使用争议过大的 V5 立绘</del>
 						</el-card>
 					</el-timeline-item>
+					2021年6月18日，Vsinger官方微博发文，正式宣布乐正绫V5声库进入测试阶段，同时公开V5初版形象。
+					2022年5月11日，正式公开乐正绫V5新形象。
+					2022年10月14日，V5声库正式发售。
+					<el-timeline-item placement="top" timestamp="2022">
+						唢呐一响，好戏开场！洛天依×乐正绫原创《扬旗鸣鼓》【2022虚拟歌手贺岁纪单品/bilibili音乐】	2022-02-01 21:09	丨闹闹丶丨	1153126
+						【乐正绫原创曲】未知旅行FM【2022官方生贺曲】	2022-04-12 18:00	乐正绫	573490
+						南北大战为火锅！？洛天依X乐正绫《绝涮双娇》【贺岁原创曲/漫画PV付】	2022-01-29 18:00	iKz_茶壶	528311
+						【乐正绫原创】雪来临时	2022-02-01 17:00	COPY	186262
 
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
+						生日接龙
+
+						【乐正绫V5原创】自愈【乐正绫七周年生日】	2022-04-12 10:00	星葵	170984
+						【乐正绫七周年生日】春天的芭蕾【原创PV】【VOCALOID COVER】	2022-04-12 00:00	InkFea墨墨羽	116296
+						【乐正绫原创】艳兽【2022乐正绫七周年生贺】	2022-04-12 14:00	枭目☆moku	88709
+						【乐正绫】恋愛裁判 Love Trial【中填手书完整版】	2022-04-12 23:00	R_boorain	74184
+						【乐正绫V5原创】白羊座α星，地球时区4月12日【乐正绫七周年生日快乐】	2022-04-12 21:00	是陆柒柒	51151
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
+
 				</el-timeline>
 			</div>
 		</div>
 	</div>
-	<!--2020 -> 2023-->
+	<!--2023 ->  -->
 	<div id="ai" class="page">
 		<div class="story">
 			<div class="bg"></div>

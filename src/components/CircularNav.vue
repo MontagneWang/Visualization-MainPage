@@ -124,13 +124,22 @@ onMounted(() => {
 
 	// 节流滚动事件，下滚时为 1，上滚为 -1
 	let throttledHandleWheel = throttle(handleWheel, 700);
+	let waiter
 	nav.addEventListener('wheel', function (e) {
 		e.preventDefault();
 		e.wheelDelta < 0 ? wheelDirection = 1 : wheelDirection = -1
 		// fixme Lock
 		// 1. 在第一次全部元素排列好前禁止滚动（700ms）
 		// 2. 第一次滑入不滚动，第二次滑入快速滚动仍会触发错误
-		throttledHandleWheel(e)
+		// 3. 推出后需要禁止滚动并清除定时器，不然也会错位
+		// throttledHandleWheel(e)
+		if (firstWheelFlag) {
+			waiter = setTimeout(() => {
+				throttledHandleWheel(e)
+			}, 700)
+		} else {
+			throttledHandleWheel(e)
+		}
 	}, {passive: false});
 
 	// 导航栏，上滑隐藏下滑显示
@@ -141,6 +150,7 @@ onMounted(() => {
 
 	// 延时添加 id 属性，让路由变宽（不使用添加类名，因为会在路由切换时被覆盖类名）
 	nav.addEventListener('mouseenter', function () {
+		clearTimeout(waiter)
 		firstWheelFlag ? delayTime = 500 : delayTime = 150
 		setTimeout(function () {
 			routerLink.forEach((item) => {
@@ -149,6 +159,7 @@ onMounted(() => {
 		}, delayTime)
 	});
 	nav.addEventListener('mouseleave', function () {
+		clearTimeout(waiter)
 		routerLink.forEach((item) => {
 			item.removeAttribute('id');
 		})
