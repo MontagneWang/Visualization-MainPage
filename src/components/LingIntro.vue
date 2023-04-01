@@ -8,15 +8,19 @@ let nowPage = ref(0)
 let finalPageShowFlag = ref(false)
 let bubbleBoxShowFlag = ref(false)
 onMounted(() => {
+	// 获取每项时间轴
 	let timeLineItems = document.querySelectorAll('.el-timeline-item')
 	timeLineItems.forEach((item, index) => {
 		item.classList.add('wow', 'animate__animated', 'animate__fadeInUp')
 	})
-
+	// 获取所有时间轴图标节点
+	document.querySelectorAll('.el-timeline-item__node--normal').forEach((item) => {
+		item.classList.add('el-timeline-item__node--large')
+	})
 	let wow = new WOW({
 		boxClass: "wow", // 盒子类： 当用户滚动时显示隐藏框的类名。
 		animateClass: "animated",// 动画类： 触发 CSS 动画的类名（默认情况下，animate.css 库为“动画”）
-		offset: 100,// 抵消： 定义浏览器视口底部与隐藏框顶部之间的距离。当用户滚动并达到此距离时，将显示隐藏的框。
+		offset: 50,// 抵消： 定义浏览器视口底部与隐藏框顶部之间的距离。当用户滚动并达到此距离时，将显示隐藏的框。
 		mobile: true,//移动： 在移动设备上打开/关闭哇.js。
 		live: true,//实时：持续检查页面上的新WOW元素。
 		callback: function (box) {
@@ -27,6 +31,23 @@ onMounted(() => {
 		resetAnimation: true, // reset animation on end (default is true)
 	});
 	wow.init();
+
+	// todo 3 撑大缩小盒子时也添加动效
+	// https://www.zhangxinxu.com/wordpress/2015/01/content-loading-height-change-css3-transition-better-experience/
+	// let funTransitionHeight = function (element, time) { // time, 数值，可缺省
+	// 	if (typeof window.getComputedStyle == "undefined") return;
+	//
+	// 	let height = window.getComputedStyle(element).height;
+	// 	// 本行2015-05-20新增，mac Safari下，貌似auto也会触发transition, 故要none下~
+	// 	element.style.transition = "none";
+	//
+	// 	element.style.height = "auto";
+	// 	let targetHeight = window.getComputedStyle(element).height;
+	// 	element.style.height = height;
+	// 	if (time) element.style.transition = "height " + time + "ms";
+	// 	element.style.height = targetHeight;
+	// };
+
 	// 滚动监听
 	window.addEventListener('scroll', function () {
 		finalPageShowFlag.value = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100
@@ -41,6 +62,7 @@ onMounted(() => {
 				break;
 			}
 		}
+		// funTransitionHeight(bubbleBox.value, 1000)
 		// console.log("当前在第" + (nowPage+1) + "页");
 	})
 
@@ -112,31 +134,27 @@ function scrollPage() {
 }
 
 const items = ref([
-			{},
 			{
-				'姓名': '绫彩音',
-				pinyin: 'Ling Caiyin',
+				'': '绫彩音「Ling Caiyin」',
 				'人设': 'rikuhao（ハオ）',
 				'发色': '黑发',
 				'瞳色': '黑瞳',
-				'年龄': '16',
-				'身高': '155',
-				'体重': '41',
-				'特点': '麻花辫、美人痣、耳机、长短袜、腰鼓'
+				'年龄': '16 岁',
+				'身高': '155cm',
+				'体重': '41kg',
+				'特点': '麻花辫、呆毛、美人痣、耳机、长短袜、腰鼓'
 			},
 			{
-				'姓名': '乐正绫',
-				pinyin: 'YueZheng Ling',
+				'': '乐正绫「YueZheng Ling」',
 				'人设': 'rikuhao、ideolo',
 				'发色': '棕发',
 				'瞳色': '红瞳',
-				'年龄': '16',
-				'身高': '160',
-				'体重': '41',
+				'年龄': '16 岁',
+				'身高': '160cm',
+				'体重': '41kg',
 				'代表色': '#EE0000',
-				'生日': '4.12',
-				'星座': '白羊座',
-				'特点': '麻花辫、美人痣、耳机、长短袜、腰鼓、左撇子',
+				'生日': '4 月 12 日',
+				'特点': '麻花辫、呆毛、美人痣、耳机、长短袜、腰鼓、左撇子',
 				'音之精灵': '释天',
 				'声源': '祈Inory',
 				'声库制作人': '人形兎',
@@ -148,21 +166,21 @@ const items = ref([
 
 			},
 			{
-				'姓名': '乐正绫',
-				pinyin: 'YueZheng Ling',
+				'': '乐正绫「YueZheng Ling」',
 				'人设': 'TID',
 				'发色': '棕发',
 				'瞳色': '红瞳',
 				'代表色': '#EE0000',
+				'声源': '祈Inory',
+				'声库制作人': '人形兎',
 				'声库版本': 'Vocaloid™5',
 				'发布日期': '2022.10.14',
-				'声库音色': '炽（Normal）、幽（Dark）',
-				'擅长节奏': '60-220BPM',
+				'音色': '炽(Normal)&幽(Dark)',
+				'擅长节奏': '60-220 BPM',
 				'擅长音域': 'F2-F4',
 			},
 			{
-				'姓名': '乐正绫',
-				pinyin: 'YueZheng Ling',
+				'': '乐正绫「YueZheng Ling」',
 				'人设': '____',
 				'发色': '棕发',
 				'瞳色': '红瞳',
@@ -170,26 +188,29 @@ const items = ref([
 				'声源': '祈Inory',
 				'声库制作人': '阿元',
 				'声库版本': 'ACE-Studio',
+				'发布日期': '2023.__.__',
+				'音色': '______',
+				'擅长节奏': '____ BPM',
+				'擅长音域': 'F2-F4',
 			},
-			{page: '6'}
 		]
 )
 </script>
 
 <template>
-	<!--todo 通过 <Transition> 来增加 v-show 消失与进入的效果-->
-	<div v-show="nowPage!==0&&nowPage!==5"
+	<!--fixme 3 通过 <Transition> 来增加过渡失败-->
+	<!--<Transition>-->
+	<div v-show="nowPage!==0 && nowPage!==5"
 	     ref="bubbleBox"
 	     :class="{show:bubbleBoxShowFlag}"
 	     class="bubbleBox">
 		<ul>
-			<!--todo 撑大缩小盒子时也添加动效-->
-			<li v-for="(value, key) in items[nowPage]" :key="key">
-				<!--第{{ nowPage + 1 }}页 - -->
-				{{ key }} - {{ value }}
+			<li v-for="(value, key) in items[nowPage-1]" :key="key">
+				{{ key }} {{ key === '' ? '' : '-' }} {{ value }}
 			</li>
 		</ul>
 	</div>
+	<!--</Transition>-->
 	<!--首页-->
 	<div class="page head" @click="scrollPage">
 		<div class="history show ">
@@ -202,11 +223,9 @@ const items = ref([
 			</div>
 		</div>
 	</div>
-	<!--todo 背景图上添加文字+持续年份（VOCALOID™ China Project、Vocaloid™3、Vocaloid™5、ACE-Studio）-->
-	<!--     可以尝试设置两张背景图？或者直接把文字 P 到一张图上-->
-	<!--     文字内容 + 时间选取需要体现时代变化（跨时代意义）-->
-	<!--     图片切换到 B 站图床-->
-	<!--     TimeLine 美化，查看文档切换其他样式-->
+	<!--todo 1 背景图添加持续年份（竖着写在右边）-->
+	<!--       TimeLine 新加内容，事件选取需要体现时代变化（跨时代意义）【每年生贺也放进来】-->
+	<!--       TimeLine 美化-->
 	<div id="lingcaiyin" class="page">
 		<div class="story">
 			<div class="bg"></div>
@@ -214,32 +233,55 @@ const items = ref([
 		<div class="content">
 			<div class="inside">
 				<el-timeline>
-					<el-timeline-item placement="top" timestamp="2011/11/20">
+					<el-timeline-item icon="Aim" placement="top" timestamp="2011/11/20" type="primary">
 						VOCALOID China Project 项目启动
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2011/12/01">
+					<el-timeline-item icon="Management" placement="top" timestamp="2011/12/01" type="warning">
 						开始征集 VOCALOID China Project 企划人物形象设计
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2012/01/03">
+					<el-timeline-item icon="Checked" placement="top" timestamp="2012/01/03" type="danger">
 						VOCALOID China Project 形象征集结束
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2012/01/17">
+					<el-timeline-item icon="FolderChecked" placement="top" timestamp="2012/01/17" type="success">
 						<el-card>
-							<h3>「雅音宫羽、绫彩音、MOKO、牙音、蝶音」五位人设入选</h3>
+							<h2>「雅音宫羽、绫彩音、MOKO、牙音、蝶音」五位人设入选</h2>
 							<p>VOCALOID China Project 形象评选结果公布，分别是「雅音宫羽、绫彩音、MOKO、牙音、蝶音」</p>
+							<h3>『元气十足的可爱外表和带有浓郁中国风的新颖设计，赢得了大批粉丝的青睐。』</h3>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item center placement="top" timestamp="2012/03/21">
+					<el-timeline-item center icon="Place" placement="top" timestamp="2012/03/21"
+					                  type="success">
 						<el-card>
 							<h3>VOCALOID China Project 最终形象定稿公布</h3>
 							<p>确定最终形象为「洛天依、乐正绫、徵羽摩柯、乐正龙牙、墨清弦」</p>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
+					<el-timeline-item class="is-loading" icon="Loading" placement="top"
+					                  timestamp="2012 年 7 月 12 日，VOCALOID™3「洛天依」中文声库首发，只是在之后三年时间里，「乐正绫」却依旧找不到属于她的声音"
+					                  type="primary">
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
+					<el-timeline-item icon="Promotion" placement="top" timestamp="2014/04/05" type="primary">
+						<p>《云端》发布 —— 「三年孤寂愿与你相伴」</p>
+						<p> P 主与 STAFF 们以这一首无声歌曲，献给当时仍未发售声库的乐正绫</p>
+						<p>某种意义上算是阿绫的<strong>第一首</strong>歌曲</p>
+						<p>「作曲：卫星（音绕阁） | 填词：萌兔（音绕阁） | 绘师：碎影无痕、锦冲田 | 编曲：bz86nick | PV：墨兰花语 | 演唱：乐正绫」</p>
+						<p>『乐正绫作为同洛天依一起第一批被VC选中的人设，一直没有音源，</p>
+						<p> UP 主和众多喜欢她的小伙伴一直都很想听她唱歌，</p>
+						<p>但是，两年了，UP 主终于等不起了，和一些喜欢绫的人一起创作了这首属于这个没有音源的歌姬的曲子，</p>
+						<p>希望喜欢绫的大家不要忘记她，也希望有更多的人能喜欢上这个中国红元气娘 —— 乐正绫』 —— 萌兔兔兔子</p>
 					</el-timeline-item>
 				</el-timeline>
 			</div>
@@ -253,35 +295,31 @@ const items = ref([
 		<div class="content">
 			<div class="inside">
 				<el-timeline>
-					<el-timeline-item placement="top" timestamp="2014/04/05">
-						《云端》发布 —— 「三年孤寂愿与你相伴」
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2014/10/15">
+					<el-timeline-item icon="microphone" placement="top" timestamp="2014/10/15" type="primary">
 						「乐正绫」声源公布，「祈Inory」为其 VOCALOID™3 中文声库声源
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/06/12">
+					<el-timeline-item color="rgb(238,0,0)" icon="StarFilled" placement="top" timestamp="2015/06/12">
 						<el-card>
 							<h2 style="color: #ee0000">「记住我，鲜艳的红色」</h2>
 							<p>官方发布了「乐正绫」第一首试听曲 —— 《Scarlet Drop》</p>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/04">
+					<el-timeline-item icon="headset" placement="top" timestamp="2015/07/04" type="primary">
 						<h3>「将这份无用思念，与你再讲一遍」，乐正绫第二首官方试听曲《梦语》发布</h3>
 					</el-timeline-item>
-					<el-timeline-item center placement="top" timestamp="2015/07/17">
+					<el-timeline-item center icon="mic" placement="top" timestamp="2015/07/17" type="success">
 						<el-card>
 							<h2>「乐正绫」VOCALOID™3 中文声库发售</h2>
 							<p>VOCALOID™3 中文声库「乐正绫」正式发售，从此声库走向民间创作者，一个新的时代开启了</p>
 						</el-card>
 					</el-timeline-item>
-
-					<el-timeline-item placement="top" timestamp="2015/07/17">
+					<el-timeline-item icon="" placement="top" timestamp="2015/07/17" type="primary">
 						todo，可根据需要增删长度
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
+					<el-timeline-item icon="" placement="top" timestamp="2015/07/17" type="primary">
 						todo，可根据需要增删长度
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
+					<el-timeline-item icon="" placement="top" timestamp="2015/07/17" type="primary">
 						todo，可根据需要增删长度
 					</el-timeline-item>
 				</el-timeline>
@@ -380,7 +418,15 @@ const items = ref([
 	</div>
 </template>
 
+<!--todo 2 移动端适配-->
+<!--todo 1 scss 变量引入-->
+<!--todo 2 每一页高度修改（上方数组存储也要改），每一页高度设置为变量然后调用-->
 <style lang="scss" scoped>
+.el-timeline {
+	--el-timeline-node-size-large: 18px !important;
+}
+
+$pageHeight: 220;
 .head {
 	.inside {
 		font-size: 5em;
@@ -388,32 +434,17 @@ const items = ref([
 		div {
 			text-align: center;
 			line-height: 70vh;
+			//color: rgba(238, 0, 0,0.7);
+			white-space: nowrap;
+			overflow: hidden;
 		}
 	}
 }
 
-// todo 这里可以使用 animate.css 替代
 span.titleMid {
 	animation: blink 1.5s infinite;
-	//position: relative;
-	//left: 24vw;
 }
 
-//
-//span.titleLeft {
-//	float: right;
-//	text-align: center;
-//	animation: leftEaseInAnimate 2s ease 1;
-//	animation-fill-mode: forwards; /*定义动画结束的状态*/
-//}
-//
-//span.titleRight {
-//	float: right;
-//	text-align: center;
-//	animation: rightEaseInAnimate 2s ease 1;
-//	animation-fill-mode: forwards; /*定义动画结束的状态*/
-//}
-//
 @keyframes blink {
 	0% {
 		opacity: 1;
@@ -426,29 +457,6 @@ span.titleMid {
 	}
 }
 
-//@keyframes leftEaseInAnimate { /*定义从右边滑入文字的动画*/
-//	0% {
-//		transform: translateX(0vw);
-//		opacity: 0;
-//	}
-//	100% {
-//		transform: translateX(-47vw);
-//		opacity: 1;
-//	}
-//}
-//
-//// 一瞬永远
-//@keyframes rightEaseInAnimate { /*定义从左边滑入文字的动画*/
-//	0% {
-//		transform: translateX(-35vw);
-//		opacity: 0;
-//	}
-//	100% {
-//		transform: translateX(12vw);
-//		opacity: 1;
-//	}
-//}
-
 body,
 html {
 	height: 100vh;
@@ -457,6 +465,7 @@ html {
 .bubbleBox {
 	opacity: 0;
 	width: 20vw;
+	max-height: 1000px;
 	position: fixed;
 	left: calc(80vw - 32vw);
 	top: 20vh;
@@ -469,6 +478,10 @@ html {
 	ul {
 		margin: 0;
 		padding: 10%;
+
+		li {
+			line-height: 1.3em;
+		}
 	}
 }
 
@@ -504,7 +517,8 @@ html {
 	//height: 120vh;
 	height: 220vh;
 	background-size: cover !important;
-	background-position: top !important;
+	background-position: center, top;
+	background-attachment: fixed !important;
 
 	// 注意：这里不可以通过 margin 值设置，background-image 需要与背景同高为 120vh，上下 10vh 设置为透明
 	.content {
@@ -539,48 +553,58 @@ html {
 	}
 }
 
+// 图片切换到 B 站图床
 .head {
 	background: url(../assets/首页.png) fixed;
+	//background: url(https://article.biliimg.com/bfs/article/3907d9824988b14a38f69cc18a5960b11ad214a7.png) fixed;
 	background-position: center !important;
 }
 
 #lingcaiyin {
-	background: url(../assets/云端.png) fixed;
-	background-position: center !important;
+	background-image: url(../assets/VCP.png), url(../assets/云端.png);
+	//background-image: url(../assets/VCP.png), url(https://article.biliimg.com/bfs/article/f73d67839c71eb90352b6945ffd807ab2d5f369a.png);
 
 	.bg {
 		background: url(../assets/0.png) 80% bottom no-repeat fixed;
+		//background: url(../assets/0.png) 80% bottom no-repeat fixed;
 		background-size: auto 72.5vh !important;
 	}
 }
 
 #v3 {
-	background: url(../assets/梦语.png) fixed;
+	background-image: url(../assets/v3word.png), url(../assets/梦语.png);
+	//background-image: url(../assets/v3word.png), url(https://article.biliimg.com/bfs/article/e1143590da779c44243f54a685a9a7f410d169ae.png);
 
 	.bg {
 		background: url(../assets/v3.png) 80% bottom no-repeat fixed;
+		//background: url(../assets/v3.png) 80% bottom no-repeat fixed;
 	}
 }
 
 #v5 {
-	background: url(../assets/山遥路远.png) fixed;
+	background-image: url(../assets/v5word.png), url(../assets/山遥路远.png);
+	//background-image: url(../assets/v5word.png), url(https://article.biliimg.com/bfs/article/54f15a16f5554c03056011570f8ff1c4557b749b.png);
 
 	.bg {
 		background: url(../assets/v5.png) 83.5% bottom no-repeat fixed;
+		//background: url(../assets/v5.png) 83.5% bottom no-repeat fixed;
 		background-size: auto 71vh !important;
 	}
 }
 
 #ai {
-	background: url(../assets/无限接近幻想.jpg) fixed;
+	background-image: url(../assets/ace.png), url(../assets/无限接近幻想.jpg);
+	//background-image: url(../assets/ace.png), url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg);
 
 	.bg {
 		background: url(../assets/ai.png) 81% bottom no-repeat fixed;
+		//background: url(../assets/ai.png) 81% bottom no-repeat fixed;
 		background-size: auto 71vh !important;
 	}
 }
 
 .final {
 	background: url(../assets/繁华唱遍.png) fixed;
+	//background: url(https://article.biliimg.com/bfs/article/6b55f667d718fda42ffef7550188df246473e2f7.png) fixed;
 }
 </style>

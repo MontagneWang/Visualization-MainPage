@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted, watch, watchEffect} from "vue";
+import {onMounted, onUnmounted, watch, watchEffect} from "vue";
 import {useRoute} from "vue-router";
 
 function throttle(func, delay) {
@@ -161,7 +161,10 @@ let routerMap = {
 	'/vocaloid': 'Vocaloid'
 }
 const route = useRoute()
+// todo 切换路由时需要把所有的监听器销毁
+onUnmounted(()=>{
 
+});
 </script>
 
 <template>
@@ -190,6 +193,7 @@ const route = useRoute()
 	</div>
 </template>
 
+<!--todo 移动端适配-->
 <style lang="scss" scoped>
 // todo 修改背景图、中心图
 // .insideNav {
