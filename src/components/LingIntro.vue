@@ -90,7 +90,7 @@ onMounted(() => {
 
 	setTimeout(() => {
 		if (document.documentElement.scrollTop === 0) {
-			smoothScroll(document.documentElement.clientHeight, 700);
+			smoothScroll(document.getElementById('lingcaiyin').offsetTop, 700);
 			// headPage.value.click()
 		}
 	}, 5000)
@@ -157,12 +157,7 @@ function smoothScroll(targetPosition, duration) {
 
 
 function scrollPage() {
-	const sectionHeight = document.documentElement.clientHeight;
-	const currentScroll = document.documentElement.scrollTop;
-
-	// 计算滚动距离
-	const scrollTo = currentScroll + sectionHeight;
-
+	const scrollTo = document.getElementById('lingcaiyin').offsetTop;
 	// 使用scrollTo方法实现平滑滚动
 	window.scrollTo({
 		top: scrollTo,

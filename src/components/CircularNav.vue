@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted, onUnmounted, watch, watchEffect} from "vue";
+import {onMounted, onUnmounted} from "vue";
 import {useRoute} from "vue-router";
 
 function throttle(func, delay) {
@@ -14,13 +14,13 @@ function throttle(func, delay) {
 }
 
 onMounted(() => {
-// document.addEventListener('DOMContentLoaded', function () {
 	// 可以使用 ref 获取元素
 	let nav = document.querySelector('.mainCircularNav');
 	let routerLink = document.querySelectorAll('.mainCircularNav > div > ul > li a');
 	let menuItems = document.querySelectorAll('.menu li');
 	let [lastScrollPosition, transform, angle, waitSecond, delayTime, count, fullRound] = [0, 0, 0, 0, 0, 0, 0, 0]
 	let firstWheelFlag = true
+	// 这个改为局部变量会更好一点，通过参数的形式传入函数
 	let wheelDirection = 1, lastWheelDirection = 0
 
 	// 鼠标滑轮下滚返回 true，否则返回 false
@@ -32,72 +32,91 @@ onMounted(() => {
 		return flag
 	}
 
-	// todo ⚠ 直接设置一个全局数组变量，用于保存每一个路由的旋转角度，然后做加减运算，这样就不用每次重新获取 css 角度然后计算了
+	// todo ⚠ 直接设置一个全局数组变量，用于保存每一个路由的旋转角度，然后做加减运算【此方法可同时解决上锁问题】
+	let angleArray = [0, 45, 90, 135, 180, 225, 270, 315]
+
 	function handleWheel(e) {
+		// 修改角度数组
+		angleArray.forEach((eachAngle, index) => {
+			angleArray[index] = eachAngle + (45) * wheelDirection
+		})
+		// 遍历每一个路由
 		menuItems.forEach((item, index) => {
-			// 获取当前角度，由于 transform 输出的是矩阵，获取角度需要进行如下变化 | 例：matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)
-			transform = window.getComputedStyle(item).getPropertyValue("transform")
-			let values = transform.split('(')[1].split(')')[0].split(',');
-			angle = Math.round(Math.atan2(values[1], values[0]) * (180 / Math.PI));
-
-			if (wheelDirection === -1) {
-				if (angle < 0) {
-					angle = 360 + angle
-				}
-				angle += 45 + fullRound * 360
-				// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题（第 1 次滚动无问题，第 2 次需要给第 7 号添加，第 3 次给第 6 号与第 7 号添加）
-				if (8 - count <= index) {
-					angle += 360
-				}
-			} else if (wheelDirection === 1) {
-				if (angle > 0) {
-					angle = angle - 360
-				}
-				angle += -45 + fullRound * -360
-				angle += 360
-
-				if (index + count <= 0) {
-					angle -= 360
-				}
-			}
-			// todo ⚠ 直接设置一个全局数组变量，用于保存每一个路由的旋转角度，然后做加减运算，这样就不用每次重新获取 css 角度然后计算了
-			// fixme 正向逆向滚动交错时会产生错位
-			// 正向滚动逆向滚动分开独立计算，每次滚动方向发生改变的时候 count 和 full 重置
-			// 或者直接重置所有位置，然后再对应滚动一次
-			// if (wheelDirection === lastWheelDirection || firstWheelFlag) {
-			// 	// console.log(' 方向一致 ')
-			// } else {
-			// 	// console.log(' 方向发生改变 ')
-			// 	count = 0
-			// 	fullRound = 0
-			// }
-			console.log(angle, index, item.childNodes[0].text, count)
-			item.style.transform = `rotate(${angle}deg)`;
-			item.childNodes[0].style.transform = `rotate(${-angle}deg)`;
-		});
-		// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题
-		if (wheelDirection === -1) {
-			if (count < 7) {
-				count += 1
-			} else {
-				// 已转动一整圈，将转动次数置零，整圈数 +1
-				count = 0;
-				fullRound = fullRound + 1
-			}
-		} else {
-			if (count > -7) {
-				count -= 1
-			} else {
-				count = 0;
-				fullRound = fullRound + 1
-			}
-		}
-		lastWheelDirection = wheelDirection
+			// 把角度数组的值赋给每一项
+			menuItems[index].style.transform = `rotate(${angleArray[index]}deg)`;
+			menuItems[index].childNodes[0].style.transform = `rotate(${-angleArray[index]}deg)`
+		})
 		firstWheelFlag = false
 	}
 
-	// todo 当前路由动态展示在最右侧
+	// 获取当前角度，由于 transform 输出的是矩阵，获取角度需要进行如下变化 | 例：matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)
+	// transform = window.getComputedStyle(item).getPropertyValue("transform")
+	// let values = transform.split('(')[1].split(')')[0].split(',');
+	// angle = Math.round(Math.atan2(values[1], values[0]) * (180 / Math.PI));
+
 	// region
+	// function handleWheel(e) {
+	// 	menuItems.forEach((item, index) => {
+	// 		// 获取当前角度，由于 transform 输出的是矩阵，获取角度需要进行如下变化 | 例：matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)
+	// 		transform = window.getComputedStyle(item).getPropertyValue("transform")
+	// 		let values = transform.split('(')[1].split(')')[0].split(',');
+	// 		angle = Math.round(Math.atan2(values[1], values[0]) * (180 / Math.PI));
+	//
+	// 		if (wheelDirection === -1) {
+	// 			if (angle < 0) {
+	// 				angle = 360 + angle
+	// 			}
+	// 			angle += 45 + fullRound * 360
+	// 			// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题（第 1 次滚动无问题，第 2 次需要给第 7 号添加，第 3 次给第 6 号与第 7 号添加）
+	// 			if (8 - count <= index) {
+	// 				angle += 360
+	// 			}
+	// 		} else if (wheelDirection === 1) {
+	// 			if (angle > 0) {
+	// 				angle = angle - 360
+	// 			}
+	// 			angle += -45 + fullRound * -360
+	// 			angle += 360
+	//
+	// 			if (index + count <= 0) {
+	// 				angle -= 360
+	// 			}
+	// 		}
+	// 		// 正向滚动逆向滚动分开独立计算，每次滚动方向发生改变的时候 count 和 full 重置
+	// 		// 或者直接重置所有位置，然后再对应滚动一次
+	// 		// if (wheelDirection === lastWheelDirection || firstWheelFlag) {
+	// 		// 	// console.log(' 方向一致 ')
+	// 		// } else {
+	// 		// 	// console.log(' 方向发生改变 ')
+	// 		// 	count = 0
+	// 		// 	fullRound = 0
+	// 		// }
+	// 		console.log(angle, index, item.childNodes[0].text, count)
+	// 		item.style.transform = `rotate(${angle}deg)`;
+	// 		item.childNodes[0].style.transform = `rotate(${-angle}deg)`;
+	// 	});
+	// 	// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题
+	// 	if (wheelDirection === -1) {
+	// 		if (count < 7) {
+	// 			count += 1
+	// 		} else {
+	// 			// 已转动一整圈，将转动次数置零，整圈数 +1
+	// 			count = 0;
+	// 			fullRound = fullRound + 1
+	// 		}
+	// 	} else {
+	// 		if (count > -7) {
+	// 			count -= 1
+	// 		} else {
+	// 			count = 0;
+	// 			fullRound = fullRound + 1
+	// 		}
+	// 	}
+	// 	lastWheelDirection = wheelDirection
+	// 	firstWheelFlag = false
+	// }
+
+	// todo 当前路由动态展示在最右侧
 	// watchEffect(() => {
 	// 	let menuItems = document.querySelectorAll('.menu li');
 	// 	menuItems.forEach((item, index) => {
@@ -123,23 +142,11 @@ onMounted(() => {
 	// endregion
 
 	// 节流滚动事件，下滚时为 1，上滚为 -1
-	let throttledHandleWheel = throttle(handleWheel, 700);
-	let waiter
+	let throttledHandleWheel = throttle(handleWheel, 500);
 	nav.addEventListener('wheel', function (e) {
 		e.preventDefault();
 		e.wheelDelta < 0 ? wheelDirection = 1 : wheelDirection = -1
-		// fixme Lock
-		// 1. 在第一次全部元素排列好前禁止滚动（700ms）
-		// 2. 第一次滑入不滚动，第二次滑入快速滚动仍会触发错误
-		// 3. 推出后需要禁止滚动并清除定时器，不然也会错位
-		// throttledHandleWheel(e)
-		if (firstWheelFlag) {
-			waiter = setTimeout(() => {
-				throttledHandleWheel(e)
-			}, 700)
-		} else {
-			throttledHandleWheel(e)
-		}
+		throttledHandleWheel(e)
 	}, {passive: false});
 
 	// 导航栏，上滑隐藏下滑显示
@@ -150,7 +157,6 @@ onMounted(() => {
 
 	// 延时添加 id 属性，让路由变宽（不使用添加类名，因为会在路由切换时被覆盖类名）
 	nav.addEventListener('mouseenter', function () {
-		clearTimeout(waiter)
 		firstWheelFlag ? delayTime = 500 : delayTime = 150
 		setTimeout(function () {
 			routerLink.forEach((item) => {
@@ -159,7 +165,6 @@ onMounted(() => {
 		}, delayTime)
 	});
 	nav.addEventListener('mouseleave', function () {
-		clearTimeout(waiter)
 		routerLink.forEach((item) => {
 			item.removeAttribute('id');
 		})
@@ -173,13 +178,13 @@ let routerMap = {
 }
 const route = useRoute()
 // todo 切换路由时需要把所有的监听器销毁
-onUnmounted(()=>{
+onUnmounted(() => {
 
 });
 </script>
 
 <template>
-	<div class="mainCircularNav">
+	<div ref="nav" class="mainCircularNav">
 		<div class="insideNav">
 			<span class="words">导航</span>
 			<ul class="menu">
