@@ -139,9 +139,7 @@ function showNav(){
 		</div>
 	</div>
 </template>
-
 <style lang="scss" scoped>
-// todo 修改样式（大小 + 颜色）
 .rightMenu {
 	margin: 0;
 	padding: 0;

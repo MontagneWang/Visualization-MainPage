@@ -145,7 +145,6 @@ onMounted(() => {
 	</div>
 </template>
 
-<!--todo 移动端适配-->
 <style lang="scss" scoped>
 
 .hide {

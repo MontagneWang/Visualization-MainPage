@@ -1,10 +1,12 @@
 <script setup>
 import {onBeforeUnmount, onMounted, ref} from "vue"
+import {smoothScroll} from '../utils/scrollToPosition';
 import WOW from "wow.js";
 
 let timer
 let history = ref(null)
 let headPage = ref(null)
+let lingcaiyin = ref(null)
 let nowPage = ref(0)
 let finalPageShowFlag = ref(false)
 let bubbleBoxShowFlag = ref(false)
@@ -113,6 +115,10 @@ window.addEventListener('scroll', function () {
 			break;
 		}
 	}
+
+	if (document.documentElement.scrollTop !== 0) {
+		clearTimeout(timer)
+	}
 })
 
 // 通过 scrollTop 判断卷去的高度，从而算出是在第几页，需要传入第几代的数据
@@ -139,44 +145,6 @@ function judgeMousePosition(event) {
 
 document.addEventListener('mousemove', judgeMousePosition);
 
-// todo 可以把这段函数抽取为工具,放入 utils
-// 滚动函数（不同于默认平滑滚动，这个通过这个函数设置滚动时长）
-function smoothScroll(targetPosition, duration) {
-	const startPosition = window.pageYOffset;
-	const distance = targetPosition - startPosition;
-	let startTime = null;
-
-	function animation(currentTime) {
-		if (startTime === null) {
-			startTime = currentTime;
-		}
-		const timeElapsed = currentTime - startTime;
-		const run = ease(timeElapsed, startPosition, distance, duration);
-		window.scrollTo(0, run);
-		if (timeElapsed < duration) {
-			requestAnimationFrame(animation);
-		}
-	}
-
-	function ease(t, b, c, d) {
-		t /= d / 2;
-		if (t < 1) return c / 2 * t * t + b;
-		t--;
-		return -c / 2 * (t * (t - 2) - 1) + b;
-	}
-
-	requestAnimationFrame(animation);
-}
-
-function scrollPage() {
-	const scrollTo = document.getElementById('lingcaiyin').offsetTop;
-	// 使用scrollTo方法实现平滑滚动
-	window.scrollTo({
-		top: scrollTo,
-		behavior: 'smooth'
-	});
-}
-
 
 onMounted(() => {
 	// 获取每项时间轴
@@ -190,7 +158,7 @@ onMounted(() => {
 	// 5 秒后整屏滚动
 	timer = setTimeout(() => {
 		if (document.documentElement.scrollTop === 0) {
-			smoothScroll(document.getElementById('lingcaiyin').offsetTop, 700);
+			smoothScroll(lingcaiyin.value.offsetTop, 600, 1);
 		}
 	}, 5000)
 })
@@ -217,7 +185,7 @@ onBeforeUnmount(() => {
 	</div>
 	<!--</Transition>-->
 	<!--首页-->
-	<div ref="headPage" class="page head" @click="scrollPage">
+	<div ref="headPage" class="page head" @click="smoothScroll(lingcaiyin.offsetTop)">
 		<div class="history show ">
 			<div class="inside">
 				<div class="words ">
@@ -231,7 +199,7 @@ onBeforeUnmount(() => {
 	<!--todo 1 背景图添加持续年份（竖着写在右边）-->
 	<!--       TimeLine 新加内容，事件选取需要体现时代变化（跨时代意义）【每年生贺也放进来】-->
 	<!--       TimeLine 美化-->
-	<div id="lingcaiyin" class="page">
+	<div id="lingcaiyin" ref="lingcaiyin" class="page">
 		<div class="story">
 			<div class="bg"></div>
 		</div>
@@ -527,7 +495,6 @@ onBeforeUnmount(() => {
 	</div>
 </template>
 
-<!--todo 2 移动端适配-->
 <!--todo 1 scss 变量引入-->
 <!--todo 2 每一页高度修改（上方数组存储也要改），每一页高度设置为变量然后调用-->
 <style lang="scss" scoped>
