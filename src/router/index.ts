@@ -1,5 +1,5 @@
 import * as VueRouter from 'vue-router'
-import Home from '../views/HelloWorld.vue'
+import Home from '../views/DataVisualization.vue'
 
 const routes = [
     {
@@ -20,7 +20,27 @@ const routes = [
     {
         path: '/ling',
         name: 'ling',
-        component: () => import('../components/LingIntro.vue')
+        component: () => import('../views/IntroLing.vue')
+    },
+    {
+        path: '/producer',
+        name: 'producer',
+        component: () => import('../views/IntroProducer.vue')
+    },
+    {
+        path: '/club',
+        name: 'club',
+        component: () => import('../views/ProducerClub.vue')
+    },
+    {
+        path: '/song',
+        name: 'song',
+        component: () => import('../views/BirthOfSong.vue')
+    },
+    {
+        path: '/message',
+        name: 'message',
+        component: () => import('../views/MessageBoard.vue')
     },
 
 ]

@@ -1,11 +1,11 @@
 <script setup>
-import {onMounted, onUnmounted} from "vue";
+import {onBeforeUnmount, onMounted, onUnmounted, ref, watchEffect} from "vue";
 import {useRoute} from "vue-router";
 
 function throttle(func, delay) {
 	let start = 0
 	return function (...args) {
-		let now = +new Date() // 通过 + 号可以转化成时间戳
+		let now = +new Date() // 通过 + 号转化为时间戳
 		if (now - start > delay) {
 			func.apply(this, args)
 			start = now
@@ -13,158 +13,82 @@ function throttle(func, delay) {
 	}
 }
 
+let isScrollingDown = ref(false)
+let [lastScrollPosition, wheelDirection] = [0, 1]
+
+// 鼠标滑轮下滚为 true
+function judgeScrollDirection() {
+	let scrollPosition = window.scrollY || window.pageYOffset;
+	(scrollPosition > lastScrollPosition) ?
+			isScrollingDown.value = true : isScrollingDown.value = false
+	lastScrollPosition = scrollPosition
+}
+
+// 导航栏，上滑隐藏下滑显示
+window.addEventListener('scroll', judgeScrollDirection);
+
 onMounted(() => {
-	// 可以使用 ref 获取元素
-	let nav = document.querySelector('.mainCircularNav');
+	//  ref.value 获取元素添加 addEventListener 报错
+	let navCircle = document.querySelector('.mainCircularNav');
 	let routerLink = document.querySelectorAll('.mainCircularNav > div > ul > li a');
 	let menuItems = document.querySelectorAll('.menu li');
-	let [lastScrollPosition, transform, angle, waitSecond, delayTime, count, fullRound] = [0, 0, 0, 0, 0, 0, 0, 0]
-	let firstWheelFlag = true
-	// 这个改为局部变量会更好一点，通过参数的形式传入函数
-	let wheelDirection = 1, lastWheelDirection = 0
 
-	// 鼠标滑轮下滚返回 true，否则返回 false
-	function judgeScrollDirection() {
-		let flag
-		let scrollPosition = window.scrollY || window.pageYOffset;
-		(scrollPosition > lastScrollPosition) ? flag = true : flag = false
-		lastScrollPosition = scrollPosition
-		return flag
-	}
-
-	// todo ⚠ 直接设置一个全局数组变量，用于保存每一个路由的旋转角度，然后做加减运算【此方法可同时解决上锁问题】
+	// 初始化一个角度数组变量，用于保存每一个路由的旋转角度，然后做加减运算【此方法可同时解决上锁问题】
 	let angleArray = [0, 45, 90, 135, 180, 225, 270, 315]
 
-	function handleWheel(e) {
-		// 修改角度数组
+	// 滚动时修改角度数组，然后将角度赋给每一项路由，最后将是否为第一次滚动的 flag 设置为 false
+	function handleWheel() {
 		angleArray.forEach((eachAngle, index) => {
 			angleArray[index] = eachAngle + (45) * wheelDirection
 		})
-		// 遍历每一个路由
 		menuItems.forEach((item, index) => {
-			// 把角度数组的值赋给每一项
 			menuItems[index].style.transform = `rotate(${angleArray[index]}deg)`;
 			menuItems[index].childNodes[0].style.transform = `rotate(${-angleArray[index]}deg)`
 		})
-		firstWheelFlag = false
 	}
 
-	// 获取当前角度，由于 transform 输出的是矩阵，获取角度需要进行如下变化 | 例：matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)
-	// transform = window.getComputedStyle(item).getPropertyValue("transform")
-	// let values = transform.split('(')[1].split(')')[0].split(',');
-	// angle = Math.round(Math.atan2(values[1], values[0]) * (180 / Math.PI));
+	// todo 当前路由动态展示在右上方
+	let menuLi = document.querySelectorAll('.menu li');
+	watchEffect(() => {
+		menuLi.forEach((item, index) => {
+			// 找到当前 active 路由
+			if (routerMap[route.path] === item.innerText && (angleArray[index] % 360) !== 45) {
+				let num, delta
+				delta = (angleArray[index] % 360) - 45
+				// 差值小于一半 上滚
+				if (delta < 180) {
+					wheelDirection = -1
+					num = delta / 45
+				} else {
+					wheelDirection = 1
+					num = (360 - delta) / 45
+				}
+				for (let i = 0; i < num; i++) {
+					handleWheel()
+				}
+			}
+		})
+	})
 
-	// region
-	// function handleWheel(e) {
-	// 	menuItems.forEach((item, index) => {
-	// 		// 获取当前角度，由于 transform 输出的是矩阵，获取角度需要进行如下变化 | 例：matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)
-	// 		transform = window.getComputedStyle(item).getPropertyValue("transform")
-	// 		let values = transform.split('(')[1].split(')')[0].split(',');
-	// 		angle = Math.round(Math.atan2(values[1], values[0]) * (180 / Math.PI));
-	//
-	// 		if (wheelDirection === -1) {
-	// 			if (angle < 0) {
-	// 				angle = 360 + angle
-	// 			}
-	// 			angle += 45 + fullRound * 360
-	// 			// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题（第 1 次滚动无问题，第 2 次需要给第 7 号添加，第 3 次给第 6 号与第 7 号添加）
-	// 			if (8 - count <= index) {
-	// 				angle += 360
-	// 			}
-	// 		} else if (wheelDirection === 1) {
-	// 			if (angle > 0) {
-	// 				angle = angle - 360
-	// 			}
-	// 			angle += -45 + fullRound * -360
-	// 			angle += 360
-	//
-	// 			if (index + count <= 0) {
-	// 				angle -= 360
-	// 			}
-	// 		}
-	// 		// 正向滚动逆向滚动分开独立计算，每次滚动方向发生改变的时候 count 和 full 重置
-	// 		// 或者直接重置所有位置，然后再对应滚动一次
-	// 		// if (wheelDirection === lastWheelDirection || firstWheelFlag) {
-	// 		// 	// console.log(' 方向一致 ')
-	// 		// } else {
-	// 		// 	// console.log(' 方向发生改变 ')
-	// 		// 	count = 0
-	// 		// 	fullRound = 0
-	// 		// }
-	// 		console.log(angle, index, item.childNodes[0].text, count)
-	// 		item.style.transform = `rotate(${angle}deg)`;
-	// 		item.childNodes[0].style.transform = `rotate(${-angle}deg)`;
-	// 	});
-	// 	// 通过 count 计算转动圈数，然后添加在角度上，解决角度清零导致的元素转一圈问题
-	// 	if (wheelDirection === -1) {
-	// 		if (count < 7) {
-	// 			count += 1
-	// 		} else {
-	// 			// 已转动一整圈，将转动次数置零，整圈数 +1
-	// 			count = 0;
-	// 			fullRound = fullRound + 1
-	// 		}
-	// 	} else {
-	// 		if (count > -7) {
-	// 			count -= 1
-	// 		} else {
-	// 			count = 0;
-	// 			fullRound = fullRound + 1
-	// 		}
-	// 	}
-	// 	lastWheelDirection = wheelDirection
-	// 	firstWheelFlag = false
-	// }
-
-	// todo 当前路由动态展示在最右侧
-	// watchEffect(() => {
-	// 	let menuItems = document.querySelectorAll('.menu li');
-	// 	menuItems.forEach((item, index) => {
-	// 		// if (item.innerText === routerMap[route.path]) {
-	// 		// 选中当前路由 item
-	// 		if (routerMap[route.path].includes(item.innerText)) {
-	// 			let angle = 90
-	// 			item.style.transform = `rotate(${angle}deg)`;
-	// 			item.childNodes[0].style.transform = `rotate(${-angle}deg)`;
-	// 			menuItems = Array.from(menuItems)
-	// 			for (let i = menuItems.length; i--;) {
-	// 				index<7?index++:index=0
-	// 				angle += 45
-	// 				console.log(angle, index, menuItems[index].childNodes[0].text, count)
-	// 				menuItems[index].style.transform = `rotate(${angle}deg)`;
-	// 				menuItems[index].childNodes[0].style.transform = `rotate(${-angle}deg)`;
-	// 			}
-	// 			count = 0
-	// 			fullRound = 0
-	// 		}
-	// 	});
-	// })
-	// endregion
-
-	// 节流滚动事件，下滚时为 1，上滚为 -1
+	// 节流滚动事件，throttle() 函数会返回一个新的函数，该函数会在指定时间间隔内执行一次原始函数。
+	// 必须将它返回的新函数保存到一个变量，然后使用该变量作为事件监听器
 	let throttledHandleWheel = throttle(handleWheel, 500);
-	nav.addEventListener('wheel', function (e) {
+	navCircle.addEventListener('wheel', function (e) {
 		e.preventDefault();
+		// 下滚时为 1，上滚为 -1
 		e.wheelDelta < 0 ? wheelDirection = 1 : wheelDirection = -1
-		throttledHandleWheel(e)
+		throttledHandleWheel()
 	}, {passive: false});
 
-	// 导航栏，上滑隐藏下滑显示
-	window.addEventListener('scroll', function () {
-		judgeScrollDirection() ?
-				nav.classList.add('hide') : nav.classList.remove('hide')
-	});
-
 	// 延时添加 id 属性，让路由变宽（不使用添加类名，因为会在路由切换时被覆盖类名）
-	nav.addEventListener('mouseenter', function () {
-		firstWheelFlag ? delayTime = 500 : delayTime = 150
+	navCircle.addEventListener('mouseenter', function () {
 		setTimeout(function () {
 			routerLink.forEach((item) => {
 				item.setAttribute('id', 'expand');
 			})
-		}, delayTime)
+		}, 500)
 	});
-	nav.addEventListener('mouseleave', function () {
+	navCircle.addEventListener('mouseleave', function () {
 		routerLink.forEach((item) => {
 			item.removeAttribute('id');
 		})
@@ -172,19 +96,24 @@ onMounted(() => {
 });
 
 let routerMap = {
-	'/': ' 首页 ',
-	'/about': 'About',
-	'/vocaloid': 'Vocaloid'
+	'/': '歌曲数据',
+	'/vocaloid': 'Vocaloid',
+	'/ling': '乐正绫',
+	'/producer': '创作者',
+	'/club': '创作社团',
+	'/song': '歌曲的诞生',
+	'/message': '留言板',
+	'/about': '关于本站',
 }
 const route = useRoute()
 // todo 切换路由时需要把所有的监听器销毁
-onUnmounted(() => {
+onBeforeUnmount(() => {
 
 });
 </script>
 
 <template>
-	<div ref="nav" class="mainCircularNav">
+	<div :class="{ hide: isScrollingDown }" class="mainCircularNav">
 		<div class="insideNav">
 			<span class="words">导航</span>
 			<ul class="menu">
@@ -197,10 +126,18 @@ onUnmounted(() => {
 				<li>
 					<router-link to="/vocaloid">Vocaloid</router-link>
 				</li>
-				<li><a class="fa fa-icon" href="#">创作者</a></li>
-				<li><a class="fa fa-icon" href="#">创作社团</a></li>
-				<li><a class="fa fa-icon" href="#">歌曲的诞生</a></li>
-				<li><a class="fa fa-icon" href="#">留言板</a></li>
+				<li>
+					<router-link to="/producer">创作者</router-link>
+				</li>
+				<li>
+					<router-link to="/club">创作社团</router-link>
+				</li>
+				<li>
+					<router-link to="/song">歌曲的诞生</router-link>
+				</li>
+				<li>
+					<router-link to="/message">留言板</router-link>
+				</li>
 				<li>
 					<router-link to="/about">关于本站</router-link>
 				</li>
@@ -211,15 +148,6 @@ onUnmounted(() => {
 
 <!--todo 移动端适配-->
 <style lang="scss" scoped>
-// todo 修改背景图、中心图
-// .insideNav {
-//	background: url("../assets/0.jpg");
-//	background-size: cover;
-//
-//	span {
-//		display: none;
-//	}
-// }
 
 .hide {
 	// transform: translateY(-30vh);
@@ -337,6 +265,7 @@ onUnmounted(() => {
 				width: 6vh;
 				height: 6vh;
 				line-height: 6vh;
+				overflow: hidden;
 
 				border-radius: 50%;
 				background: #fff;

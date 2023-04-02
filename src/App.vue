@@ -2,7 +2,7 @@
 import NavBar from "./components/NavBar.vue";
 import RightMenu from "./components/RightMenu.vue";
 import CircularNav from "./components/CircularNav.vue";
-import TestTemp from "./components/LingIntro.vue";
+import TestTemp from "./views/IntroLing.vue";
 import { useRouter } from 'vue-router'
 // 跳转到 ling 路由
 const router = useRouter()
