@@ -2,8 +2,8 @@
 import {onBeforeUnmount, onMounted, ref} from "vue"
 import WOW from "wow.js";
 
+let timer
 let history = ref(null)
-// let bubbleBox = ref(null) 通过 ref 获取元素后,切换路由时会报错
 let headPage = ref(null)
 let nowPage = ref(0)
 let finalPageShowFlag = ref(false)
@@ -77,8 +77,7 @@ let wow = new WOW({
 	mobile: true,//移动： 在移动设备上打开/关闭哇.js。
 	live: true,//实时：持续检查页面上的新WOW元素。
 	callback: function (box) {
-		// the callback is fired every time an animation is started
-		// the argument that is passed in is the DOM node being animated
+		// 每次启动动画时都会触发回调，传入的参数是正在动画的 DOM 节点
 	},
 	scrollContainer: null, // optional scroll container selector, otherwise use window,
 	resetAnimation: true, // reset animation on end (default is true)
@@ -140,6 +139,7 @@ function judgeMousePosition(event) {
 
 document.addEventListener('mousemove', judgeMousePosition);
 
+// todo 可以把这段函数抽取为工具,放入 utils
 // 滚动函数（不同于默认平滑滚动，这个通过这个函数设置滚动时长）
 function smoothScroll(targetPosition, duration) {
 	const startPosition = window.pageYOffset;
@@ -168,7 +168,6 @@ function smoothScroll(targetPosition, duration) {
 	requestAnimationFrame(animation);
 }
 
-
 function scrollPage() {
 	const scrollTo = document.getElementById('lingcaiyin').offsetTop;
 	// 使用scrollTo方法实现平滑滚动
@@ -178,7 +177,6 @@ function scrollPage() {
 	});
 }
 
-let timer
 
 onMounted(() => {
 	// 获取每项时间轴
