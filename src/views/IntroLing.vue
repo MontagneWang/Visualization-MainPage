@@ -8,164 +8,6 @@ let headPage = ref(null)
 let nowPage = ref(0)
 let finalPageShowFlag = ref(false)
 let bubbleBoxShowFlag = ref(false)
-onMounted(() => {
-	// 获取每项时间轴
-	let bubbleBox = document.querySelector('.bubbleBox')
-	let timeLineItems = document.querySelectorAll('.el-timeline-item')
-	timeLineItems.forEach((item, index) => {
-		item.classList.add('wow', 'animate__animated', 'animate__fadeInUp')
-	})
-	// 获取所有时间轴图标节点
-	document.querySelectorAll('.el-timeline-item__node--normal').forEach((item) => {
-		item.classList.add('el-timeline-item__node--large')
-	})
-	let wow = new WOW({
-		boxClass: "wow", // 盒子类： 当用户滚动时显示隐藏框的类名。
-		animateClass: "animated",// 动画类： 触发 CSS 动画的类名（默认情况下，animate.css 库为“动画”）
-		offset: 50,// 抵消： 定义浏览器视口底部与隐藏框顶部之间的距离。当用户滚动并达到此距离时，将显示隐藏的框。
-		mobile: true,//移动： 在移动设备上打开/关闭哇.js。
-		live: true,//实时：持续检查页面上的新WOW元素。
-		callback: function (box) {
-			// the callback is fired every time an animation is started
-			// the argument that is passed in is the DOM node being animated
-		},
-		scrollContainer: null, // optional scroll container selector, otherwise use window,
-		resetAnimation: true, // reset animation on end (default is true)
-	});
-	wow.init();
-
-	// todo 3 撑大缩小盒子时也添加动效
-	// https://www.zhangxinxu.com/wordpress/2015/01/content-loading-height-change-css3-transition-better-experience/
-	// let funTransitionHeight = function (element, time) { // time, 数值，可缺省
-	// 	if (typeof window.getComputedStyle == "undefined") return;
-	//
-	// 	let height = window.getComputedStyle(element).height;
-	// 	// 本行2015-05-20新增，mac Safari下，貌似auto也会触发transition, 故要none下~
-	// 	element.style.transition = "none";
-	//
-	// 	element.style.height = "auto";
-	// 	let targetHeight = window.getComputedStyle(element).height;
-	// 	element.style.height = height;
-	// 	if (time) element.style.transition = "height " + time + "ms";
-	// 	element.style.height = targetHeight;
-	// };
-
-	// 滚动监听
-	window.addEventListener('scroll', function () {
-		finalPageShowFlag.value = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100
-		// 存储每页高度，单位为 vh
-		let pageHeight = [100, 220, 220, 220, 220, 100];
-		let totalHeight = 0;
-		for (let i = 0; i < pageHeight.length; i++) {
-			totalHeight += pageHeight[i];
-			// 需要添加屏幕的一半高度，提早判断下一页的到来
-			if (window.scrollY + window.innerHeight / 2 < totalHeight * window.innerHeight / 100) {
-				nowPage.value = i;
-				break;
-			}
-		}
-	})
-
-	let screenWidth = window.innerWidth;
-	let screenHeight = window.innerHeight;
-	let startX = screenWidth * 0.625;
-	let endX = screenWidth * 0.85;
-	let startY = screenHeight * 0.3;
-	let endY = screenHeight;
-	// 通过 scrollTop 判断卷去的高度，从而算出是在第几页，需要传入第几代的数据
-	// 也需要根据不同的页数微调样式，比如把气泡框左移一点
-	function judgeMousePosition(event){
-		let mouseX = event.clientX;
-		let mouseY = event.clientY;
-		const rect = bubbleBox.getBoundingClientRect();
-		if (mouseX >= startX && mouseX <= endX && mouseY >= startY && mouseY <= endY) {
-			bubbleBoxShowFlag.value = true
-		} else if (event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom) {
-			// 鼠标在气泡框内，保持不变
-		} else {
-			bubbleBoxShowFlag.value = false;
-		}
-	}
-	document.addEventListener('mousemove',judgeMousePosition);
-	// todo 销毁事件
-	setTimeout(() => {
-		if (document.documentElement.scrollTop === 0) {
-			smoothScroll(document.getElementById('lingcaiyin').offsetTop, 700);
-			// headPage.value.click()
-		}
-	}, 5000)
-
-
-	// region
-	// 整页滚动
-	// function wholePageScroll(e) {
-	// 	if (e.deltaY > 0 && window.scrollY === 0) {
-	// 		scrollPage()
-	// 	}
-	// }
-	//
-	// function topScrollJudge() {
-	// 	document.documentElement.style.overflowY = (window.scrollY === 0) ? '' : '';
-	// }
-	//
-	// ;(function PageUpDown() {
-	// 	// 先解禁滚动 + 移除事件绑定
-	// 	// 注意：这里不能写 = 'scroll' 否则会导致 侧边栏的 sticky 无法正常进行 fix
-	// 	document.documentElement.style.overflowY = '';
-	// 	window.removeEventListener('wheel', wholePageScroll)
-	// 	window.removeEventListener('scroll', topScrollJudge)
-	// 	if (window.innerWidth >= 720) {
-	// 		topScrollJudge()
-	// 		window.addEventListener('wheel', wholePageScroll)
-	// 		window.addEventListener('scroll', topScrollJudge)
-	// 	}
-	// })()
-	//
-	// // 解决平板无法滚动的问题
-	// document.addEventListener('touchstart', function () {
-	// 	document.documentElement.style.overflowY = ''
-	// })
-	// endregion
-})
-
-// 滚动函数（不同于默认平滑滚动，这个通过这个函数设置滚动时长）
-function smoothScroll(targetPosition, duration) {
-	const startPosition = window.pageYOffset;
-	const distance = targetPosition - startPosition;
-	let startTime = null;
-
-	function animation(currentTime) {
-		if (startTime === null) {
-			startTime = currentTime;
-		}
-		const timeElapsed = currentTime - startTime;
-		const run = ease(timeElapsed, startPosition, distance, duration);
-		window.scrollTo(0, run);
-		if (timeElapsed < duration) {
-			requestAnimationFrame(animation);
-		}
-	}
-
-	function ease(t, b, c, d) {
-		t /= d / 2;
-		if (t < 1) return c / 2 * t * t + b;
-		t--;
-		return -c / 2 * (t * (t - 2) - 1) + b;
-	}
-
-	requestAnimationFrame(animation);
-}
-
-
-function scrollPage() {
-	const scrollTo = document.getElementById('lingcaiyin').offsetTop;
-	// 使用scrollTo方法实现平滑滚动
-	window.scrollTo({
-		top: scrollTo,
-		behavior: 'smooth'
-	});
-}
-
 const items = ref([
 			{
 				'': '绫彩音「Ling Caiyin」',
@@ -228,8 +70,136 @@ const items = ref([
 			},
 		]
 )
-onBeforeUnmount(()=>{
+let wow = new WOW({
+	boxClass: "wow", // 盒子类： 当用户滚动时显示隐藏框的类名。
+	animateClass: "animated",// 动画类： 触发 CSS 动画的类名（默认情况下，animate.css 库为“动画”）
+	offset: 50,// 抵消： 定义浏览器视口底部与隐藏框顶部之间的距离。当用户滚动并达到此距离时，将显示隐藏的框。
+	mobile: true,//移动： 在移动设备上打开/关闭哇.js。
+	live: true,//实时：持续检查页面上的新WOW元素。
+	callback: function (box) {
+		// the callback is fired every time an animation is started
+		// the argument that is passed in is the DOM node being animated
+	},
+	scrollContainer: null, // optional scroll container selector, otherwise use window,
+	resetAnimation: true, // reset animation on end (default is true)
+});
+wow.init();
 
+// todo 3 撑大缩小盒子时也添加动效
+// https://www.zhangxinxu.com/wordpress/2015/01/content-loading-height-change-css3-transition-better-experience/
+// let funTransitionHeight = function (element, time) { // time, 数值，可缺省
+// 	if (typeof window.getComputedStyle == "undefined") return;
+//
+// 	let height = window.getComputedStyle(element).height;
+// 	// 本行2015-05-20新增，mac Safari下，貌似auto也会触发transition, 故要none下~
+// 	element.style.transition = "none";
+//
+// 	element.style.height = "auto";
+// 	let targetHeight = window.getComputedStyle(element).height;
+// 	element.style.height = height;
+// 	if (time) element.style.transition = "height " + time + "ms";
+// 	element.style.height = targetHeight;
+// };
+
+window.addEventListener('scroll', function () {
+	finalPageShowFlag.value = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100
+	// 存储每页高度，单位为 vh
+	let pageHeight = [100, 220, 220, 220, 220, 100];
+	let totalHeight = 0;
+	for (let i = 0; i < pageHeight.length; i++) {
+		totalHeight += pageHeight[i];
+		// 需要添加屏幕的一半高度，提早判断下一页的到来
+		if (window.scrollY + window.innerHeight / 2 < totalHeight * window.innerHeight / 100) {
+			nowPage.value = i;
+			break;
+		}
+	}
+})
+
+// 通过 scrollTop 判断卷去的高度，从而算出是在第几页，需要传入第几代的数据
+// 也需要根据不同的页数微调样式，比如把气泡框左移一点
+let screenWidth = window.innerWidth;
+let screenHeight = window.innerHeight;
+let startX = screenWidth * 0.625;
+let endX = screenWidth * 0.85;
+let startY = screenHeight * 0.3;
+let endY = screenHeight;
+
+function judgeMousePosition(event) {
+	let mouseX = event.clientX;
+	let mouseY = event.clientY;
+	const rect = document.querySelector('.bubbleBox').getBoundingClientRect();
+	if (mouseX >= startX && mouseX <= endX && mouseY >= startY && mouseY <= endY) {
+		bubbleBoxShowFlag.value = true
+	} else if (event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom) {
+		// 鼠标在气泡框内，保持不变
+	} else {
+		bubbleBoxShowFlag.value = false;
+	}
+}
+
+document.addEventListener('mousemove', judgeMousePosition);
+
+// 滚动函数（不同于默认平滑滚动，这个通过这个函数设置滚动时长）
+function smoothScroll(targetPosition, duration) {
+	const startPosition = window.pageYOffset;
+	const distance = targetPosition - startPosition;
+	let startTime = null;
+
+	function animation(currentTime) {
+		if (startTime === null) {
+			startTime = currentTime;
+		}
+		const timeElapsed = currentTime - startTime;
+		const run = ease(timeElapsed, startPosition, distance, duration);
+		window.scrollTo(0, run);
+		if (timeElapsed < duration) {
+			requestAnimationFrame(animation);
+		}
+	}
+
+	function ease(t, b, c, d) {
+		t /= d / 2;
+		if (t < 1) return c / 2 * t * t + b;
+		t--;
+		return -c / 2 * (t * (t - 2) - 1) + b;
+	}
+
+	requestAnimationFrame(animation);
+}
+
+
+function scrollPage() {
+	const scrollTo = document.getElementById('lingcaiyin').offsetTop;
+	// 使用scrollTo方法实现平滑滚动
+	window.scrollTo({
+		top: scrollTo,
+		behavior: 'smooth'
+	});
+}
+
+let timer
+
+onMounted(() => {
+	// 获取每项时间轴
+	document.querySelectorAll('.el-timeline-item').forEach((item, index) => {
+		item.classList.add('wow', 'animate__animated', 'animate__fadeInUp')
+	})
+	// 获取所有时间轴图标节点
+	document.querySelectorAll('.el-timeline-item__node--normal').forEach((item) => {
+		item.classList.add('el-timeline-item__node--large')
+	})
+	// 5 秒后整屏滚动
+	timer = setTimeout(() => {
+		if (document.documentElement.scrollTop === 0) {
+			smoothScroll(document.getElementById('lingcaiyin').offsetTop, 700);
+		}
+	}, 5000)
+})
+
+onBeforeUnmount(() => {
+	document.removeEventListener('mousemove', judgeMousePosition);
+	clearTimeout(timer)
 })
 
 </script>

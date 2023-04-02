@@ -1,6 +1,18 @@
 <script setup>
-import {onBeforeUnmount, onMounted, onUnmounted, ref, watchEffect} from "vue";
+import {onMounted, ref, watchEffect} from "vue";
 import {useRoute} from "vue-router";
+
+let routerMap = {
+	'/': '歌曲数据',
+	'/vocaloid': 'Vocaloid',
+	'/ling': '乐正绫',
+	'/producer': '创作者',
+	'/club': '创作社团',
+	'/song': '歌曲的诞生',
+	'/message': '留言板',
+	'/about': '关于本站',
+}
+const route = useRoute()
 
 function throttle(func, delay) {
 	let start = 0
@@ -47,14 +59,16 @@ onMounted(() => {
 		})
 	}
 
-	// todo 当前路由动态展示在右上方
+	// 将当前路由动态展示在右上方
 	let menuLi = document.querySelectorAll('.menu li');
 	watchEffect(() => {
 		menuLi.forEach((item, index) => {
 			// 找到当前 active 路由
 			if (routerMap[route.path] === item.innerText && (angleArray[index] % 360) !== 45) {
 				let num, delta
+				// 计算 active 路由距离右上方的角度差，推算出需要调用滚动函数的次数
 				delta = (angleArray[index] % 360) - 45
+				delta < 0 ? delta += 360 : delta
 				// 差值小于一半 上滚
 				if (delta < 180) {
 					wheelDirection = -1
@@ -95,21 +109,6 @@ onMounted(() => {
 	});
 });
 
-let routerMap = {
-	'/': '歌曲数据',
-	'/vocaloid': 'Vocaloid',
-	'/ling': '乐正绫',
-	'/producer': '创作者',
-	'/club': '创作社团',
-	'/song': '歌曲的诞生',
-	'/message': '留言板',
-	'/about': '关于本站',
-}
-const route = useRoute()
-// todo 切换路由时需要把所有的监听器销毁
-onBeforeUnmount(() => {
-
-});
 </script>
 
 <template>
