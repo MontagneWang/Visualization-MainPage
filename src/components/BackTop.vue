@@ -5,7 +5,7 @@ import {smoothScroll} from '../utils/scrollToPosition';
 let backToTopTotal = ref(null)
 let backToTopButton = ref(null)
 
-// todo 点击按钮时应该立马上去，而不是等到===0再上去
+// todo 点击按钮时应该立马上去，而不是等到 ===0 再上去
 let scrollTop = ref(document.documentElement.scrollTop);
 onMounted(() => {
 	window.addEventListener('scroll', () => {
