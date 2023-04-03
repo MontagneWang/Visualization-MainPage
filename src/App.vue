@@ -26,4 +26,20 @@ html *
 {
 	font-family: LXGW WenKai Lite, serif !important;
 }
+body,
+html {
+	cursor: url(./assets/lingCursor/乐正绫-正常选择.cur),
+	auto !important;
+}
+
+a:hover,
+button:hover {
+	cursor: url(./assets/lingCursor/乐正绫-链接选择1.cur),
+	auto !important;
+}
+
+input:hover {
+	cursor: url(./assets/lingCursor/乐正绫-手写.cur),
+	auto !important;
+}
 </style>

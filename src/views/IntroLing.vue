@@ -619,56 +619,56 @@ html {
 
 // 图片切换到 B 站图床
 .head {
-	background: url(../assets/首页.png) fixed;
+	background: url(../assets/bgPic/首页.png) fixed;
 	//background: url(https://article.biliimg.com/bfs/article/3907d9824988b14a38f69cc18a5960b11ad214a7.png) fixed;
 	background-position: center !important;
 }
 
 #lingcaiyin {
-	background-image: url(../assets/VCP.png), url(../assets/云端.png);
+	background-image: url(../assets/bgWord/VCP.png), url(../assets/bgPic/云端.png);
 	//background-image: url(../assets/VCP.png), url(https://article.biliimg.com/bfs/article/f73d67839c71eb90352b6945ffd807ab2d5f369a.png);
 
 	.bg {
-		background: url(../assets/0.png) 80% bottom no-repeat fixed;
+		background: url(../assets/bgLing/0.png) 80% bottom no-repeat fixed;
 		//background: url(../assets/0.png) 80% bottom no-repeat fixed;
 		background-size: auto 72.5vh !important;
 	}
 }
 
 #v3 {
-	background-image: url(../assets/v3word.png), url(../assets/梦语.png);
+	background-image: url(../assets/bgWord/v3word.png), url(../assets/bgPic/梦语.png);
 	//background-image: url(../assets/v3word.png), url(https://article.biliimg.com/bfs/article/e1143590da779c44243f54a685a9a7f410d169ae.png);
 
 	.bg {
-		background: url(../assets/v3.png) 80% bottom no-repeat fixed;
+		background: url(../assets/bgLing/v3.png) 80% bottom no-repeat fixed;
 		//background: url(../assets/v3.png) 80% bottom no-repeat fixed;
 	}
 }
 
 #v5 {
-	background-image: url(../assets/v5word.png), url(../assets/山遥路远.png);
+	background-image: url(../assets/bgWord/v5word.png), url(../assets/bgPic/山遥路远.png);
 	//background-image: url(../assets/v5word.png), url(https://article.biliimg.com/bfs/article/54f15a16f5554c03056011570f8ff1c4557b749b.png);
 
 	.bg {
-		background: url(../assets/V5.png) 83.5% bottom no-repeat fixed;
+		background: url(../assets/bgLing/V5.png) 83.5% bottom no-repeat fixed;
 		//background: url(../assets/v5.png) 83.5% bottom no-repeat fixed;
 		background-size: auto 71vh !important;
 	}
 }
 
 #ai {
-	background-image: url(../assets/ace.png), url(../assets/无限接近幻想.jpg);
+	background-image: url(../assets/bgWord/ace.png), url(../assets/bgPic/无限接近幻想.jpg);
 	//background-image: url(../assets/ace.png), url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg);
 
 	.bg {
-		background: url(../assets/ai.png) 81% bottom no-repeat fixed;
+		background: url(../assets/bgLing/ai.png) 81% bottom no-repeat fixed;
 		//background: url(../assets/ai.png) 81% bottom no-repeat fixed;
 		background-size: auto 71vh !important;
 	}
 }
 
 .final {
-	background: url(../assets/繁华唱遍.png) fixed;
+	background: url(../assets/bgPic/繁华唱遍.png) fixed;
 	//background: url(https://article.biliimg.com/bfs/article/6b55f667d718fda42ffef7550188df246473e2f7.png) fixed;
 }
 </style>

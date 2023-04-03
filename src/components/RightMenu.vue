@@ -216,32 +216,32 @@ function showNav() {
 }
 
 .item a:nth-of-type(1) {
-	background-image: url("../assets/1.ico");
+	background-image: url("../assets/Icon/1.ico");
 	//background-image: url("https://article.biliimg.com/bfs/article/850121f432591413f7427cf54a1e5727f1356aec.jpg");
 }
 
 .item a:nth-of-type(2) {
-	background-image: url("../assets/2.ico");
+	background-image: url("../assets/Icon/2.ico");
 	//background-image: url("https://bu.dusays.com/2022/11/28/638499c63fbdd.jpeg");
 }
 
 .item a:nth-of-type(3) {
-	background-image: url("../assets/3.ico");
+	background-image: url("../assets/Icon/3.ico");
 	//background-image: url("https://bu.dusays.com/2022/11/28/6384960b9654b.jpg");
 }
 
 .item a:nth-of-type(4) {
-	background-image: url("../assets/4.ico");
+	background-image: url("../assets/Icon/4.ico");
 	//background-image: url("https://i0.hdslb.com/bfs/album/9a53af023d8fcb52790a6b607f23210e966b75cd.jpg");
 }
 
 .item a:nth-of-type(5) {
-	background-image: url("../assets/5.ico");
+	background-image: url("../assets/Icon/5.ico");
 	//background-image: url("https://i0.hdslb.com/bfs/album/95651bccd2d0921dad6d097048260854a4ea9660.png");
 }
 
 .item a:nth-of-type(6) {
-	background-image: url("../assets/6.ico");
+	background-image: url("../assets/Icon/6.ico");
 	//background-image: url("https://i0.hdslb.com/bfs/album/2e7548b8dd355cc69d49bdaa08ff435983f1ae83.png");
 }
 </style>
