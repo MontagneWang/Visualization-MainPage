@@ -1,8 +1,14 @@
-<script setup>
+<script lang="ts" setup>
 import {onMounted, ref, watchEffect} from "vue";
 import {useRoute} from "vue-router";
+import {throttle} from '../utils/throttle'
+import {judgeScrollDirection} from "../utils/judgeScrollDirection";
 
-let routerMap = {
+interface RouteMap {
+	[key: string]: string;
+}
+
+let routerMap: RouteMap = {
 	'/': '歌曲数据',
 	'/vocaloid': 'Vocaloid',
 	'/ling': '乐正绫',
@@ -13,37 +19,19 @@ let routerMap = {
 	'/about': '关于本站',
 }
 const route = useRoute()
-
-function throttle(func, delay) {
-	let start = 0
-	return function (...args) {
-		let now = +new Date() // 通过 + 号转化为时间戳
-		if (now - start > delay) {
-			func.apply(this, args)
-			start = now
-		}
-	}
-}
-
 let isScrollingDown = ref(false)
-let [lastScrollPosition, wheelDirection] = [0, 1]
-
-// 鼠标滑轮下滚为 true
-function judgeScrollDirection() {
-	let scrollPosition = window.scrollY || window.pageYOffset;
-	(scrollPosition > lastScrollPosition) ?
-			isScrollingDown.value = true : isScrollingDown.value = false
-	lastScrollPosition = scrollPosition
-}
+let wheelDirection = 1
 
 // 导航栏，上滑隐藏下滑显示
-window.addEventListener('scroll', judgeScrollDirection);
+window.addEventListener('scroll', () => {
+	isScrollingDown.value = judgeScrollDirection()
+});
 
 onMounted(() => {
 	//  ref.value 获取元素添加 addEventListener 报错
-	let navCircle = document.querySelector('.mainCircularNav');
-	let routerLink = document.querySelectorAll('.mainCircularNav > div > ul > li a');
-	let menuItems = document.querySelectorAll('.menu li');
+	let navCircle: HTMLElement = document.querySelector('.mainCircularNav') as HTMLElement;
+	let routerLink: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('.mainCircularNav > div > ul > li a');
+	let menuItems: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('.menu li');
 
 	// 初始化一个角度数组变量，用于保存每一个路由的旋转角度，然后做加减运算【此方法可同时解决上锁问题】
 	let angleArray = [0, 45, 90, 135, 180, 225, 270, 315]
@@ -55,7 +43,7 @@ onMounted(() => {
 		})
 		menuItems.forEach((item, index) => {
 			menuItems[index].style.transform = `rotate(${angleArray[index]}deg)`;
-			menuItems[index].childNodes[0].style.transform = `rotate(${-angleArray[index]}deg)`
+			(menuItems[index].childNodes[0] as HTMLElement).style.transform = `rotate(${-angleArray[index]}deg)`
 		})
 	}
 
@@ -64,7 +52,7 @@ onMounted(() => {
 	watchEffect(() => {
 		menuLi.forEach((item, index) => {
 			// 找到当前 active 路由
-			if (routerMap[route.path] === item.innerText && (angleArray[index] % 360) !== 45) {
+			if (routerMap[route.path] === (item as HTMLElement).innerText && (angleArray[index] % 360) !== 45) {
 				let num, delta
 				// 计算 active 路由距离右上方的角度差，推算出需要调用滚动函数的次数
 				delta = (angleArray[index] % 360) - 45
@@ -90,7 +78,7 @@ onMounted(() => {
 	navCircle.addEventListener('wheel', function (e) {
 		e.preventDefault();
 		// 下滚时为 1，上滚为 -1
-		e.wheelDelta < 0 ? wheelDirection = 1 : wheelDirection = -1
+		e.deltaY > 0 ? wheelDirection = 1 : wheelDirection = -1
 		throttledHandleWheel()
 	}, {passive: false});
 
@@ -108,7 +96,6 @@ onMounted(() => {
 		})
 	});
 });
-
 </script>
 
 <template>
@@ -148,7 +135,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 
 .hide {
-	// transform: translateY(-30vh);
 	transform: translateX(-30vh);
 	transition: all 0.5s;
 }
@@ -168,13 +154,9 @@ onMounted(() => {
 	top: 10vh;
 	left: -50vh;
 
-	// top: -50vh;
-	// left: 63vh;
-
 	height: 80vh;
 	width: 80vh;
 
-	// border: solid 7px #ee0000;
 	border-radius: 50%;
 
 	opacity: 0.6;
@@ -192,7 +174,6 @@ onMounted(() => {
 	&:hover {
 		left: -35vh;
 
-		// top: -35vh;
 		opacity: 1;
 		// background:radial-gradient(black, white);
 		background: rgba(0, 0, 0, 0.4);
