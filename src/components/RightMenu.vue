@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import {onMounted} from "vue";
 
-// @ts-ignore
-$(document).ready(function () {
-	// DOM 加载完毕后，绑定 rightMenu 插件到 html
-	// @ts-ignore
-	$('html').rightMenu({'menu': 'circleMenu'})
-});
-
 onMounted(() => {
+	// @ts-ignore
+	$(document).ready(function () {
+		// DOM 加载完毕后，绑定 rightMenu 插件到 html
+		// @ts-ignore
+		$('html').rightMenu({'menu': 'circleMenu'})
+	});
+
 	let Coords: { clientY: number; clickX: number; clientX: number; clickY?: number; screenX?: number; screenY?: number; }
 	let items = document.querySelectorAll('.eachItem');
 	for (let i = 0, l = items.length; i < l; i++) {

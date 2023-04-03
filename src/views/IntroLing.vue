@@ -1,12 +1,13 @@
-<script setup>
+<script lang="ts" setup>
 import {onBeforeUnmount, onMounted, ref} from "vue"
 import {smoothScroll} from '../utils/scrollToPosition';
+// @ts-ignore
 import WOW from "wow.js";
 
-let timer
+let timer: number | undefined
 let history = ref(null)
 let headPage = ref(null)
-let lingcaiyin = ref(null)
+let lingcaiyin = ref<HTMLInputElement | null>(null)
 let nowPage = ref(0)
 let finalPageShowFlag = ref(false)
 let bubbleBoxShowFlag = ref(false)
@@ -78,7 +79,7 @@ let wow = new WOW({
 	offset: 50,// 抵消： 定义浏览器视口底部与隐藏框顶部之间的距离。当用户滚动并达到此距离时，将显示隐藏的框。
 	mobile: true,//移动： 在移动设备上打开/关闭哇.js。
 	live: true,//实时：持续检查页面上的新WOW元素。
-	callback: function (box) {
+	callback: function (box: any) {
 		// 每次启动动画时都会触发回调，传入的参数是正在动画的 DOM 节点
 	},
 	scrollContainer: null, // optional scroll container selector, otherwise use window,
@@ -86,21 +87,7 @@ let wow = new WOW({
 });
 wow.init();
 
-// todo 3 撑大缩小盒子时也添加动效
-// https://www.zhangxinxu.com/wordpress/2015/01/content-loading-height-change-css3-transition-better-experience/
-// let funTransitionHeight = function (element, time) { // time, 数值，可缺省
-// 	if (typeof window.getComputedStyle == "undefined") return;
-//
-// 	let height = window.getComputedStyle(element).height;
-// 	// 本行2015-05-20新增，mac Safari下，貌似auto也会触发transition, 故要none下~
-// 	element.style.transition = "none";
-//
-// 	element.style.height = "auto";
-// 	let targetHeight = window.getComputedStyle(element).height;
-// 	element.style.height = height;
-// 	if (time) element.style.transition = "height " + time + "ms";
-// 	element.style.height = targetHeight;
-// };
+// idea 撑大缩小盒子时也添加动效
 
 window.addEventListener('scroll', function () {
 	finalPageShowFlag.value = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100
@@ -130,10 +117,10 @@ let endX = screenWidth * 0.85;
 let startY = screenHeight * 0.3;
 let endY = screenHeight;
 
-function judgeMousePosition(event) {
+function judgeMousePosition(event: { clientX: number; clientY: number; }) {
 	let mouseX = event.clientX;
 	let mouseY = event.clientY;
-	const rect = document.querySelector('.bubbleBox').getBoundingClientRect();
+	const rect = (document.querySelector('.bubbleBox') as HTMLElement).getBoundingClientRect();
 	if (mouseX >= startX && mouseX <= endX && mouseY >= startY && mouseY <= endY) {
 		bubbleBoxShowFlag.value = true
 	} else if (event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom) {
@@ -145,8 +132,9 @@ function judgeMousePosition(event) {
 
 document.addEventListener('mousemove', judgeMousePosition);
 
-
+let pageHeight: number
 onMounted(() => {
+	pageHeight = (lingcaiyin.value as HTMLElement).offsetTop
 	// 获取每项时间轴
 	document.querySelectorAll('.el-timeline-item').forEach((item, index) => {
 		item.classList.add('wow', 'animate__animated', 'animate__fadeInUp')
@@ -158,7 +146,7 @@ onMounted(() => {
 	// 5 秒后整屏滚动
 	timer = setTimeout(() => {
 		if (document.documentElement.scrollTop === 0) {
-			smoothScroll(lingcaiyin.value.offsetTop, 600, 1);
+			smoothScroll(pageHeight, 600, 1);
 		}
 	}, 5000)
 })
@@ -185,7 +173,7 @@ onBeforeUnmount(() => {
 	</div>
 	<!--</Transition>-->
 	<!--首页-->
-	<div ref="headPage" class="page head" @click="smoothScroll(lingcaiyin.offsetTop)">
+	<div ref="headPage" class="page head" @click="smoothScroll(pageHeight)">
 		<div class="history show ">
 			<div class="inside">
 				<div class="words ">

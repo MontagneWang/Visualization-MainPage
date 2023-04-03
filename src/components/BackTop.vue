@@ -2,43 +2,40 @@
 import {computed, onMounted, ref} from "vue";
 import {smoothScroll} from '../utils/scrollToPosition';
 
-let backToTopTotal = ref(null)
-let backToTopButton = ref(null)
-
-// todo 点击按钮时应该立马上去，而不是等到 ===0 再上去
+// fixme 按钮会跳一下
+// idea 按钮的位置和当前页面的位置有关，页面在上滑时按钮也上环（触发函数时）
 let scrollTop = ref(document.documentElement.scrollTop);
 onMounted(() => {
 	window.addEventListener('scroll', () => {
 		scrollTop.value = document.documentElement.scrollTop;
 	});
 });
+
+// 顶部时拉环隐藏，其余位置显示
+// idea 可能原因：滚动时仍在判断高度，不满足隐藏条件所以还是设置底端20vh，直到完全收起才上升
 let totalStyle = computed(() => {
-	// 顶部时拉环隐藏，其余位置显示
-	return scrollTop.value === 0 ?
+	return scrollTop.value <= 50 ?
 			{bottom: '120vh!important'} : {bottom: '20vh'}
 })
+
+function scroll() {
+	scrollTop.value = 0;
+	smoothScroll(0)
+}
 </script>
 
 <template>
-	<div id="backToTop" ref="backToTopTotal" :style="totalStyle">
+	<div id="backToTop" :style="totalStyle">
 		<div class="tie"></div>
-		<button ref="backToTopButton" title="返回顶部" @click="smoothScroll(0)"></button>
+		<button title="返回顶部" @click="scroll"></button>
 	</div>
 </template>
 
-<!--修改为 vh-->
 <style lang="scss" scoped>
-/* 整体按键 */
-button {
-	border: none;
-}
-
 #backToTop {
 	width: 80px;
-	//height: calc(1200px + 126px);
 	position: fixed;
 	right: 1.4vw;
-	//bottom: 115vh;
 	z-index: 10000;
 	transition: all 1s;
 
@@ -58,6 +55,7 @@ button {
 		width: 80px;
 		height: 144px;
 		margin-top: -20px;
+		border: none;
 		transition: all 0.75s;
 		background: url(../assets/拉环按钮.gif) no-repeat bottom !important;
 		//background: url("https://i0.hdslb.com/bfs/album/72db6a29c5de085d09a1fd50e3f9b38c58469f89.gif") no-repeat bottom !important;

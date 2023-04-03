@@ -7,7 +7,7 @@ import { useRouter } from 'vue-router'
 import BackTop from "./components/BackTop.vue";
 // 跳转到 ling 路由
 const router = useRouter()
-router.push('/ling')
+router.push('/about')
 </script>
 
 <template>
