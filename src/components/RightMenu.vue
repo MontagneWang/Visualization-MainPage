@@ -1,30 +1,33 @@
-<script setup>
+<script lang="ts" setup>
 import {onMounted} from "vue";
 
+// @ts-ignore
 $(document).ready(function () {
 	// DOM 加载完毕后，绑定 rightMenu 插件到 html
+	// @ts-ignore
 	$('html').rightMenu({'menu': 'circleMenu'})
 });
 
 onMounted(() => {
-	let Coords
+	let Coords: { clientY: number; clickX: number; clientX: number; clickY?: number; screenX?: number; screenY?: number; }
 	let items = document.querySelectorAll('.eachItem');
 	for (let i = 0, l = items.length; i < l; i++) {
 		// 计算eachItem元素的位置
-		items[i].style.left = (50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
-		items[i].style.top = (50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+		(items[i] as HTMLElement).style.left = (50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+		(items[i] as HTMLElement).style.top = (50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
 	}
 
 	// 定义 rightMenu 插件
 	(function ($) {
 		let rightMenu = {
 			// 插件默认设置
-			defaults: {click_to_close: true, stay_open: false}, init: function (options) {
+			defaults: {click_to_close: true, stay_open: false}, init: function (options: any) {
 				let o = options, $this = $(this);
-				$this.each(function (i) {
+				$this.each(function (i: any) {
+					// @ts-ignore
 					let $this = $(this), settings = $.extend({}, rightMenu.defaults, o), $menu = $('.' + settings.menu);
 					// 鼠标按下事件
-					$this.on('mousedown', function (e) {
+					$this.on('mousedown', function (e: { which: number; target: any; }) {
 						// 如果 不是右键点击 或者 点击的元素不是 rightMenu 的子元素 ，且设置了 click_to_close，则关闭 rightMenu（左键点击其他区域关闭菜单）
 						if (e.which !== 3 && $(e.target).parents('.rightMenu').length < 1 && settings.click_to_close) {
 							$this.find('.rightMenu').stop(true, false).animate({opacity: 0}, {
@@ -40,7 +43,7 @@ onMounted(() => {
 						}
 					});
 					// 鼠标右键点击事件
-					$this.on('contextmenu', function (e) {
+					$this.on('contextmenu', function (e: { preventDefault: () => void; stopPropagation: () => void; target: any; }) {
 						e.preventDefault();
 						e.stopPropagation();
 						rightMenu.getCoords(e);
@@ -83,7 +86,7 @@ onMounted(() => {
 				})
 			},
 			// 获取鼠标点击的坐标
-			getCoords: function (e) {
+			getCoords: function (e: any) {
 				let evt = e ? e : window.event;
 				let clickX = 0, clickY = 0;
 				if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft != null) {
@@ -109,18 +112,23 @@ onMounted(() => {
 			}
 		};
 		// 绑定rightMenu插件到jQuery
-		$.fn.rightMenu = function (method, options) {
+		$.fn.rightMenu = function (method: string, options: any) {
+			// @ts-ignore
 			if (rightMenu[method]) {
+				// @ts-ignore
 				return rightMenu[method].apply(this, Array.prototype.slice.call(arguments, 1))
 			} else if (typeof method === 'object' || !method) {
+				// @ts-ignore
 				return rightMenu.init.apply(this, arguments)
 			} else {
 				$.error('Method ' + method + ' does not exist')
 			}
 		}
+		// @ts-ignore
 	})(jQuery);
 });
-function showNav(){
+
+function showNav() {
 
 }
 </script>
