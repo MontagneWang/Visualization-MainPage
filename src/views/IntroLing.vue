@@ -88,11 +88,11 @@ let wow = new WOW({
 wow.init();
 
 // idea 撑大缩小盒子时也添加动效
-
+// 当前页数计算，传入对应数据
 window.addEventListener('scroll', function () {
 	finalPageShowFlag.value = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100
 	// 存储每页高度，单位为 vh
-	let pageHeight = [100, 220, 220, 220, 220, 100];
+	let pageHeight = [100, 190, 340, 260, 160, 100];
 	let totalHeight = 0;
 	for (let i = 0; i < pageHeight.length; i++) {
 		totalHeight += pageHeight[i];
@@ -102,14 +102,13 @@ window.addEventListener('scroll', function () {
 			break;
 		}
 	}
-
 	if (document.documentElement.scrollTop !== 0) {
 		clearTimeout(timer)
 	}
 })
 
-// 通过 scrollTop 判断卷去的高度，从而算出是在第几页，需要传入第几代的数据
-// 也需要根据不同的页数微调样式，比如把气泡框左移一点
+// 判断鼠标位置，显隐气泡框
+// fixme 这个通过位置判断似乎并不太好，在不同分辨率的屏幕下容易错位
 let screenWidth = window.innerWidth;
 let screenHeight = window.innerHeight;
 let startX = screenWidth * 0.625;
@@ -139,7 +138,7 @@ onMounted(() => {
 	document.querySelectorAll('.el-timeline-item').forEach((item, index) => {
 		item.classList.add('wow', 'animate__animated', 'animate__fadeInUp')
 	})
-	// 获取所有时间轴图标节点
+	// 获取并变大所有时间轴图标节点
 	document.querySelectorAll('.el-timeline-item__node--normal').forEach((item) => {
 		item.classList.add('el-timeline-item__node--large')
 	})
@@ -159,7 +158,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-	<!--fixme 3 通过 <Transition> 来增加过渡失败-->
+	<!-- idea 通过 <Transition> 来增加过渡 -->
 	<!--<Transition>-->
 	<div v-show="nowPage!==0 && nowPage!==5"
 	     ref="bubbleBox"
@@ -184,9 +183,9 @@ onBeforeUnmount(() => {
 			</div>
 		</div>
 	</div>
-	<!--todo 1 背景图添加持续年份（竖着写在右边）-->
-	<!--       TimeLine 新加内容，事件选取需要体现时代变化（跨时代意义）【每年生贺也放进来】-->
-	<!--       TimeLine 美化-->
+	<!--todo 背景图添加持续年份（竖着写在右边）-->
+	<!--     TimeLine 新加内容，事件选取需要体现时代变化（跨时代意义）【每年生贺也放进来】-->
+	<!--     TimeLine 美化-->
 	<div id="lingcaiyin" ref="lingcaiyin" class="page">
 		<div class="story">
 			<div class="bg"></div>
@@ -194,23 +193,23 @@ onBeforeUnmount(() => {
 		<div class="content">
 			<div class="inside">
 				<el-timeline>
-					<el-timeline-item icon="Aim" placement="top" timestamp="2011/11/20" type="primary">
+					<el-timeline-item icon="Aim" placement="top" timestamp="2011.11.20" type="primary">
 						VOCALOID China Project 项目启动
 					</el-timeline-item>
-					<el-timeline-item icon="Management" placement="top" timestamp="2011/12/01" type="warning">
+					<el-timeline-item icon="Management" placement="top" timestamp="2011.12.01" type="warning">
 						开始征集 VOCALOID China Project 企划人物形象设计
 					</el-timeline-item>
-					<el-timeline-item icon="Checked" placement="top" timestamp="2012/01/03" type="danger">
+					<el-timeline-item icon="Checked" placement="top" timestamp="2012.01.03" type="danger">
 						VOCALOID China Project 形象征集结束
 					</el-timeline-item>
-					<el-timeline-item icon="FolderChecked" placement="top" timestamp="2012/01/17" type="success">
+					<el-timeline-item icon="FolderChecked" placement="top" timestamp="2012.01.17" type="success">
 						<el-card>
 							<h2>「雅音宫羽、绫彩音、MOKO、牙音、蝶音」五位人设入选</h2>
 							<p>VOCALOID China Project 形象评选结果公布，分别是「雅音宫羽、绫彩音、MOKO、牙音、蝶音」</p>
 							<h3>『元气十足的可爱外表和带有浓郁中国风的新颖设计，赢得了大批粉丝的青睐。』</h3>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item center icon="Place" placement="top" timestamp="2012/03/21"
+					<el-timeline-item center icon="Place" placement="top" timestamp="2012.03.21"
 					                  type="success">
 						<el-card>
 							<h3>VOCALOID China Project 最终形象定稿公布</h3>
@@ -225,16 +224,8 @@ onBeforeUnmount(() => {
 						<br/>
 						<br/>
 						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
 					</el-timeline-item>
-					<el-timeline-item icon="Promotion" placement="top" timestamp="2014/04/05" type="primary">
+					<el-timeline-item icon="Promotion" placement="top" timestamp="2014.04.05" type="primary">
 						<p>《云端》发布 —— 「三年孤寂愿与你相伴」</p>
 						<p> P 主与 STAFF 们以这一首无声歌曲，献给当时仍未发售声库的乐正绫</p>
 						<p>某种意义上算是阿绫的<strong> 第一首 </strong>歌曲</p>
@@ -256,10 +247,10 @@ onBeforeUnmount(() => {
 		<div class="content">
 			<div class="inside">
 				<el-timeline>
-					<el-timeline-item icon="microphone" placement="top" timestamp="2014/10/15" type="primary">
+					<el-timeline-item icon="microphone" placement="top" timestamp="2014.10.15" type="primary">
 						「乐正绫」声源公布，「祈Inory」为其 VOCALOID™3 中文声库声源
 					</el-timeline-item>
-					<el-timeline-item color="rgb(238,0,0)" icon="StarFilled" placement="top" timestamp="2015/06/12">
+					<el-timeline-item color="rgb(238,0,0)" icon="StarFilled" placement="top" timestamp="2015.06.12">
 						<el-card>
 							<h2 style="color: #ee0000">「记住我&emsp;鲜艳的红色」</h2>
 							<h3>&nbsp;官方发布了「乐正绫」第一首试听曲 —— 《Scarlet Drop》</h3>
@@ -272,7 +263,7 @@ onBeforeUnmount(() => {
 							<p>&emsp;已不再是过客　<span style="color: #ee0000">因为彼此约定着</span>』</p>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item icon="headset" placement="top" timestamp="2015/07/04" type="primary">
+					<el-timeline-item icon="headset" placement="top" timestamp="2015.07.04" type="primary">
 						<el-card>
 							<h2 style="color: rgb(64, 88, 164)">「将这份无用思念&emsp;与你再讲一遍」</h2>
 							<h3>&nbsp;乐正绫第二首官方试听曲《梦语》发布</h3>
@@ -289,11 +280,16 @@ onBeforeUnmount(() => {
 							<p><span style="color: #ee0000;font-size:1.5em;">&emsp;一瞬永远&nbsp;</span>』</p>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item center icon="mic" placement="top" timestamp="2015/07/17" type="success">
+					<el-timeline-item center icon="mic" placement="top" timestamp="2015.07.17" type="success">
 						<el-card>
 							<h2>「乐正绫」VOCALOID™3 中文声库发售</h2>
 							<p>VOCALOID™3 中文声库「乐正绫」正式发售，从此声库走向民间创作者，一个新的时代开启了</p>
 						</el-card>
+					</el-timeline-item>
+					<el-timeline-item icon="" placement="top" timestamp="2015 年" type="primary">
+						2015 年，乐正绫参与的专辑有：
+						《平行四界Quadimension 3》《Saligia系列》《双向·轮回与幸福》《平行四界Quadimension 4》
+						<p>TUNO桐音 老师发布了《南北寻光》专辑，该专辑以「旅行」为创作主题，共有十二首（再版时增加到十八首）单曲，于 2015 年 8 月 15 日开售</p>
 					</el-timeline-item>
 					<el-timeline-item icon="List" placement="top" timestamp="2016 年" type="primary">
 						<p>2016 是一个神奇的年份，在这一年，乐正绫登上了拜年祭的舞台，留下了一曲传唱千古的《九九八十一》</p>
@@ -311,72 +307,31 @@ onBeforeUnmount(() => {
 							2016-01-10&nbsp;&emsp;《归一》&emsp;【洛天依&乐正绫&心华原创】<br/></p>
 						<h3>『心跳沉沉试图召唤着哀伤&emsp;而你用双手拨开我所有匆忙』</h3>
 					</el-timeline-item>
-					<el-timeline-item icon="" placement="top" timestamp="2017 年" type="primary">
-						2017 年，妄想症系列依旧在谱写其传说
-						【原创曲】乐正绫「寄明月」、(国风舞曲 Proj 1/4) 2017-10-03 21:31
-						【乐正绫原创】荆轲【原创PV付】 2017-09-30 19:25
-						【乐正绫原创】【亡国祸水】四·国殇（feat.洛天依）【世界协奏之歌制作组】【PV付】 2017-04-30 16:58
-						【Vsinger乐正绫】未来的我【官方PV版】 2017-04-28 17:53
-						【乐正绫原创】一千绫一夜【2017乐正绫诞生祭】 2017-04-12 01:08 泓mizuhiro
-						【乐正绫原创】撒马尔罕之恋【PV付】 2017-11-28 15:43 账号已注销
-						【Vsinger乐正绫】官方专辑《绫》-试听PV 2017-12-02 12:44 vsinger团队
-						【乐正绫原创】烈火灼冰【雾霭拾光系列】【双本家PV付】【踏云社】 2017-12-17 15:24 账号已注销
-						【乐正绫】闲云志（+VSQX） 2017-01-06 12:10 Dec顾令
-						【洛天依乐正绫】阳山绝2.0【原创曲PV付】 2017-02-05 12:01
-						【洛天依乐正绫原创】迂回步【星辉、雨狸】【Vsinger创作赛】【华尔兹/花嫁】【霾AXIS】 2017-03-18 08:49
-						时之歌
-						【乐正绫原创】洛维娜【时之歌Project】 2017-05-07 18:30 时之歌Project
-						【洛天依&乐正绫原创】月儿谣【时之歌Project】 2017-08-12 21:03 时之歌Project 62767
+					<el-timeline-item icon="" placement="top" timestamp="2017.04.28" type="primary">
+						<p>Vsinger 官方投稿了乐正绫独唱曲《未来的我》 —— 「励志歌词与旋律，搭配明亮坚定的歌声和史诗般恢弘的编曲，充满了希望与力量。」</p>
 					</el-timeline-item>
-					<el-timeline-item icon="" placement="top" timestamp="2018 年" type="primary">
-						乐正绫 原创《傲娇系男孩的告白日》（专辑《绫》收录） 2018-10-12 01:52 ilem 1307032
-						【乐正绫/洛天依原创】易水诀【忘川风华录】 2018-07-28 18:00 忘川风华录 1147382
-						【乐正绫&乐正龙牙】孩子气的战争【VOCALOID COVER】 2018-05-18 00:22 Creuzer 835479
-						【原创国风电音】千里邀月×乐正绫（超电出品） 2018-11-30 17:00 純白 790179
-						【心华 言和 乐正绫原创曲】99°C溺亡【专辑人·間收录曲】【踏云社】 2018-02-12 03:39 影随龙风
-						【乐正绫原创】儒风诉骨【诸子百家/PV付】 2018-05-05 09:17 安陵影钦
-						【洛天依乐正绫原创】眼泪【南北寻光收录曲】 2018-02-23 22:54 TUNO桐音
-						【洛天依乐正绫原创】要有光【南北寻光收录曲】 2018-03-16 20:20 TUNO桐音 155387
-						【洛天依乐正绫原创】ADVENTURE【南北寻光收录曲】 2018-03-03 10:56 TUNO桐音 151010
-						【洛天依·乐正绫原创】梦遇【无名社五周年02】【《无名》专辑收录曲】 2018-01-01 20:33 无名社
-						【乐正绫原创】拥我【PV付】【踏云社】 2018-04-04 12:00 从来没有中过奖的Sheep 57528
-						【乐正绫原创】没有声音的勇者【2018乐正绫诞生祭】 2018-04-12 00:00 泓mizuhiro
+					<el-timeline-item icon="" placement="top" timestamp="2017.12.02" type="primary">
+						<el-card>
+							<h2>「乐正绫」首张官方专辑<span style="color: #ee0000;">《绫》</span>正式发售</h2>
+							<p>2017 年 12 月 2 日，Vsinger 发布了乐正绫的首张官方单人专辑《绫》，该专辑内共有7首单曲。</p>
+						</el-card>
 					</el-timeline-item>
-					<el-timeline-item icon="" placement="top" timestamp="2019 年" type="primary">
-						【赤羽x乐正绫】《赤伶》【炸裂戏腔】【原创剧情向pv附】 2019-12-07 18:05 鲜洋芋 2270733
-						【Vsinger全员原创曲】Attack！【洛天依/言和/乐正绫/乐正龙牙/徵羽摩柯/墨清弦】 2019-06-06 18:06 洛天依 866414
-						【乐正绫原创】北京第三区交通委提醒您(feat.洛天依)——流浪地球印象曲【片尾彩蛋】 2019-02-10 14:51 清风疾行没有q 780920
-						【五色战队】Hear me！【洛天依/乐正绫/徵羽摩柯/墨清弦/乐正龙牙】【人形兎】 2019-02-03 12:00 苏逸_Suyi 755622
-						【乐正绫】我在 2019-04-12 21:34 乐正绫
-						【乐正绫&300大作战】蝶恋花·何处谣 2019-04-12 14:57 乐正绫
-						【乐正绫原创】道寄江雪【诸子百家/PV付】 2019-06-30 18:06 安陵影钦
-						【乐正绫x龙牙x洛天依原创】玲珑络【南亭阙 第二卷】VSINGER电音国风企划/米库喵 2019-05-01 16:00 恩雅NYA
-						杜甫 | 洛天依、乐正绫合唱《剑器行》 一舞剑器动四方 2019-12-15 18:00 汐音社
-						【言和&乐正绫原创曲】心电感应 2019-06-21 18:00 乐正绫
-						【洛天依/乐正绫/言和】VC七周年纪念同人专辑《柒》宣发试听PV~预售中~ 2019-10-03 22:47 COPY
-					</el-timeline-item>
-					<el-timeline-item icon="" placement="top" timestamp="2020 年" type="primary">
-						【乐正绫原创】《哈利波特·学院印象曲系列》格兰芬多 2020-04-25 12:00 提糯Tino 1696430
-						【乐正绫原创曲】花 2020-04-12 16:12 乐正绫
-						生贺专
-						【乐正绫原创】山遥路远 2020-05-22 16:41 YuH_ChiliChill
-						【乐正绫原创】法令青史【诸子百家/PV付】 2020-01-28 18:00 安陵影钦
-						<el-timeline-item placement="top" timestamp="2020/04/12">
-							<h2>乐正绫五周年，官方发布了生日贺曲《花》，本曲使用了尚未发售的乐正绫 V5 音源 </h2>
-							<h3 style="color: #ee0000">「请你知晓　—— <i>好不好</i>」</h3>
-						</el-timeline-item>
-						<el-timeline-item placement="top" timestamp="2020/05/22">
-							ChiliChill 发布了《山遥路远》，本曲使用了尚未发售的乐正绫 V5 音源
-							<h3>「快走吧，山遥路远」</h3>
-						</el-timeline-item>
-						【乐正绫原创曲】花 2020-04-12 16:12 乐正绫 568686
-						【乐正绫角色歌】鸾绫【乐正绫五周年生日】南亭阙 2020-04-12 17:00 恩雅NYA 237957
-						【乐正绫原创曲】赞美太阳！炸裂前的凤凰挽歌《日心陨落》【科幻电音/星电感应系列】 2020-04-12 20:02 周小蚕 210746
-						【乐正绫原创】春日纪行 ✉ 0412乐正绫诞生祭 2020-04-12 07:28 星葵 169222
-						乐正绫2020官方EP《告白诗》试听PV 2020-04-12 12:00 乐正绫 163378
-						【乐正绫原创】偏执罪 feat.gumi English【2020乐正绫五周年生日】 2020-04-12 17:00 枭目☆moku 147903
+					<!--<el-timeline-item icon="" placement="top" timestamp="2018.07.28" type="primary">-->
+					<!--	<p>忘川风华录投稿了南北合唱的《易水诀》，这是忘川第一次选取乐正绫作为歌手来演唱歌曲-->
+					<!--		<del> 可惜也是最后一次</del>-->
+					<!--	</p>-->
+					<!--</el-timeline-item>-->
 
-						【乐正绫原创】满天星（沙雕教/HB to 溱绫西陌） 2020-12-13 00:00 星葵 131736
+					<el-timeline-item icon="" placement="top" timestamp="2019.04.12" type="primary">
+						<p>乐正绫四周年，官方投稿了生贺曲《我在》，以绫的视角描写自诞生以来的心境，以及对听众们的感谢。</p>
+						<p>同日，官方宣布与游戏联动，投稿了游戏联动曲《蝶恋花·何处谣》</p>
+					</el-timeline-item>
+					<el-timeline-item icon="" placement="top" timestamp="2019.12.07" type="primary">
+						<p>沙雕教投稿了【赤羽x乐正绫】《赤伶》【原创剧情向pv附】</p>
+						<p>『原曲为李建衡作曲、何天程编曲、清彦作词、HITA演唱的同名歌曲，收录于同名专辑中。</p>
+						<p>&emsp;以中国抗日战争时期为背景，讲述名伶裴晏之受日军要求唱戏，设计纵火焚毁戏楼的故事，展现「位卑未敢忘忧国」的爱国情怀。</p>
+						<p>&emsp;本作在原曲背景故事的基础上进行延伸，将乐正绫设定为裴晏之（赤羽饰）的后辈；两位歌手合称的「赤绫」与标题谐音，为人所津津乐道。</p>
+						<p>&emsp;纯熟调教下的戏腔高亢优美、极具震撼力，令人身临其境，回溯那场热烈而悲壮的绝唱。』</p>
 					</el-timeline-item>
 
 				</el-timeline>
@@ -391,41 +346,58 @@ onBeforeUnmount(() => {
 		<div class="content">
 			<div class="inside">
 				<el-timeline>
-					洛天依 乐正绫 原创《我没有歌能给你听》 2021-11-27 12:21 ilem 1627074
-					从前有个衔玉教
-					【乐正绫六周年生贺曲】我仍唱着-倾诉欲【闹闹丶】 2021-04-12 17:20 丨闹闹丶丨
-					【乐正绫V5原创】纵横此间【诸子百家/武侠风PV付】 2021-12-31 18:00 安陵影钦
-					【乐正绫V5原创曲】藏蓝【VC-GENS罗盘社】【原创PV付】 2021-11-15 17:00 残杨如血
-					【乐正绫V5原创】花海【《水·花》专辑收录曲】【Xylose木糖醇】 2021-07-30 11:00 从来没有中过奖的Sheep
-
-
-					<el-timeline-item placement="top" timestamp="2021/04/12">
-						<h3>乐正绫六周年，官方发布了生日贺曲《丑马》，本曲也使用了尚未发售的乐正绫 V5 音源 </h3>
-					</el-timeline-item>
-					<el-timeline-item center placement="top" timestamp="2022/10/14">
+					<el-timeline-item placement="top" timestamp="2020.04.12">
 						<el-card>
-							<h3>乐正绫 Vocaloid5 声库正式发售（预售）</h3>
-							<del>值得一提的是，声库盒子上并未使用争议过大的 V5 立绘</del>
+							<h2>乐正绫五周年，官方发布了生日贺曲《花》，本曲使用了尚未发售的乐正绫 V5 音源 </h2>
+							<h3 style="color: #ee0000">「请你知晓　—— <i>好不好</i>」</h3>
+						</el-card>
+						<p>【乐正绫原创曲】花 2020-04-12 16:12 乐正绫 568686</p>
+						<p>【乐正绫原创】春日纪行 ✉ 0412乐正绫诞生祭 2020-04-12 07:28 星葵 169222</p>
+						<p>乐正绫2020官方EP《告白诗》试听PV 2020-04-12 12:00 乐正绫 163378</p>
+						<p>《告白诗》是Vsinger（上海禾念信息科技有限公司）旗下VOCALOID 3虚拟女性歌手乐正绫的第二张官方专辑</p>
+						<p>乐正绫的第一张官方单人EP，同时是2020年乐正绫诞生祭企划作品。</p>
+						<p>该专辑内共有4首单曲，其中包含1首当时尚未发售的乐正绫VOCALOID 5声库演唱之曲目，于2020年4月12日正式发售。</p>
+					</el-timeline-item>
+					<el-timeline-item placement="top" timestamp="2020.05.22">
+						ChiliChill 发布了《山遥路远》，本曲使用了尚未发售的乐正绫 V5 音源
+						<h3>「快走吧，山遥路远」</h3>
+					</el-timeline-item>
+					<el-timeline-item placement="top" timestamp="2021.04.12">
+						<h3>乐正绫六周年，官方发布了生日贺曲《丑马》，本曲也使用了尚未发售的乐正绫 V5 音源 </h3>
+						<p>官方还投稿了一份互动视频</p>
+					</el-timeline-item>
+					<el-timeline-item placement="top" timestamp="2021.06.18">
+						<p>Vsinger官方微博发文，正式宣布乐正绫 V5 声库进入测试阶段，
+							<del>同时公开 V5 初版形象。</del>
+						</p>
+					</el-timeline-item>
+					<el-timeline-item placement="top" timestamp="2021 年">
+						<p>这一年，乐正绫参与的专辑有：</p>
+					</el-timeline-item>
+
+					<el-timeline-item placement="top" timestamp="2022.02.01">
+						<el-card>
+							<h2 style="color: #ee0000">唢呐一响，好戏开场！</h2>
+							<p>2022 的春节，我们已经有了自己举办的「虚拟歌手贺岁纪」</p>
+							<p>在这次贺岁纪中，涌现出了许多优秀的歌曲，绫参与演唱的原创歌曲有：《扬旗鸣鼓》《布虎记》</p>
 						</el-card>
 					</el-timeline-item>
-					2021年6月18日，Vsinger官方微博发文，正式宣布乐正绫V5声库进入测试阶段，同时公开V5初版形象。
-					2022年5月11日，正式公开乐正绫V5新形象。
-					2022年10月14日，V5声库正式发售。
-					<el-timeline-item placement="top" timestamp="2022">
-						唢呐一响，好戏开场！洛天依×乐正绫原创《扬旗鸣鼓》【2022虚拟歌手贺岁纪单品/bilibili音乐】 2022-02-01 21:09 丨闹闹丶丨 1153126
-						【乐正绫原创曲】未知旅行FM【2022官方生贺曲】 2022-04-12 18:00 乐正绫 573490
-						南北大战为火锅！？洛天依X乐正绫《绝涮双娇》【贺岁原创曲/漫画PV付】 2022-01-29 18:00 iKz_茶壶 528311
-						【乐正绫原创】雪来临时 2022-02-01 17:00 COPY 186262
-
-						生日接龙
-
-						【乐正绫V5原创】自愈【乐正绫七周年生日】 2022-04-12 10:00 星葵 170984
-						【乐正绫七周年生日】春天的芭蕾【原创PV】【VOCALOID COVER】 2022-04-12 00:00 InkFea墨墨羽 116296
-						【乐正绫原创】艳兽【2022乐正绫七周年生贺】 2022-04-12 14:00 枭目☆moku 88709
-						【乐正绫】恋愛裁判 Love Trial【中填手书完整版】 2022-04-12 23:00 R_boorain 74184
-						【乐正绫V5原创】白羊座α星，地球时区4月12日【乐正绫七周年生日快乐】 2022-04-12 21:00 是陆柒柒 51151
+					<el-timeline-item placement="top" timestamp="2022.04.12">
+						<h3>乐正绫七周年，官方发布了生日贺曲《未知旅行FM》</h3>
+						<p>同时，同人也举办了七周年生日接龙活动，创作了许多歌曲</p>
 					</el-timeline-item>
-
+					<el-timeline-item placement="top" timestamp="2022.05.11">
+						<p>2022年5月11日，正式公开乐正绫 V5 新形象</p>
+					</el-timeline-item>
+					<el-timeline-item center placement="top" timestamp="2022.10.14">
+						<el-card>
+							<h3>乐正绫 Vocaloid5 声库正式发售</h3>
+							<del>值得一提的是，声库盒子上并未使用争议依旧较大的 V5 立绘</del>
+						</el-card>
+					</el-timeline-item>
+					<el-timeline-item placement="top" timestamp="2022 年">
+						<p>这一年，乐正绫参与的专辑有：</p>
+					</el-timeline-item>
 				</el-timeline>
 			</div>
 		</div>
@@ -438,34 +410,35 @@ onBeforeUnmount(() => {
 		<div class="content">
 			<div class="inside">
 				<el-timeline>
-					<el-timeline-item placement="top" timestamp="2022/12/25">
-						<p>卫星哥官方发文，正式宣布 ACE-Studio 「乐正绫」Ai 声库开启内测</p>
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2023/01/13">
+					<el-timeline-item placement="top" timestamp="2022.12.25">
 						<el-card>
-							<h2>乐正绫第一首 Ai 曲投稿</h2>
-							<p>【乐正绫AI】云端 —— 愿我们都能在云端歌唱</p>
+							<h2>卫星哥官方发文，正式宣布 ACE-Studio「乐正绫」Ai 声库开启内测</h2>
+							<del>但出了点意外，官方又一直没有消息，调教老师们等了十八天才收到内测码</del>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2023/01/14">
-						乐正绫官方宣布，开启形象创作征集活动
+					<el-timeline-item placement="top" timestamp="2023.01.13">
+						<h3>乐正绫第一首 Ai 曲投稿</h3>
+						<p>【乐正绫AI】云端 —— 愿我们都能在云端歌唱</p>
 					</el-timeline-item>
-					<el-timeline-item center placement="top" timestamp="2023/04/10">
+					<el-timeline-item placement="top" timestamp="2023.01.14">
+						<h3>Vsinger 官方发布，开启形象创作征集活动</h3>
+					</el-timeline-item>
+					<el-timeline-item placement="top" timestamp="2023.04.10">
 						<el-card>
 							<h2>乐正绫 Ai 形象敲定！</h2>
 							<p>在数十个优秀作品中，_______老师的设计脱颖而出，成功当选绫 Ai 形象🎉🎉🎉</p>
 						</el-card>
 					</el-timeline-item>
+					<el-timeline-item placement="top" timestamp="2023.04.12">
+						<el-card>
+							<h2>乐正绫八周年生日快乐🎂</h2>
+							<p>生日接龙</p>
+						</el-card>
+					</el-timeline-item>
+					<el-timeline-item placement="top" timestamp="2023 年">
+						<p>这一年，乐正绫参与的专辑有：</p>
+					</el-timeline-item>
 
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2015/07/17">
-						todo，可根据需要增删长度
-					</el-timeline-item>
 				</el-timeline>
 			</div>
 		</div>
@@ -483,14 +456,16 @@ onBeforeUnmount(() => {
 	</div>
 </template>
 
-<!--todo 1 scss 变量引入-->
-<!--todo 2 每一页高度修改（上方数组存储也要改），每一页高度设置为变量然后调用-->
+<!--todo 每一页高度修改（上方数组存储也要改），每一页高度设置为变量然后调用-->
 <style lang="scss" scoped>
 .el-timeline {
 	--el-timeline-node-size-large: 18px !important;
 }
 
-$pageHeight: 220;
+.el-timeline-item {
+	width: 75vw;
+}
+
 .head {
 	.inside {
 		font-size: 5em;
@@ -501,12 +476,12 @@ $pageHeight: 220;
 			//color: rgba(238, 0, 0,0.7);
 			white-space: nowrap;
 			overflow: hidden;
+
+			span.titleMid {
+				animation: blink 1.5s infinite;
+			}
 		}
 	}
-}
-
-span.titleMid {
-	animation: blink 1.5s infinite;
 }
 
 @keyframes blink {
@@ -525,6 +500,7 @@ body,
 html {
 	height: 100vh;
 }
+
 
 .bubbleBox {
 	opacity: 0;
@@ -549,10 +525,6 @@ html {
 	}
 }
 
-.el-timeline-item {
-	width: 75vw;
-}
-
 .show {
 	opacity: 1 !important;
 	transition: all 0.5s;
@@ -565,7 +537,10 @@ html {
 	.history {
 		height: 90vh;
 		width: 90vw;
-		background-image: linear-gradient(to bottom, transparent 0, transparent 10vh, rgba(255, 255, 255, 0.3) 10vh, rgba(255, 255, 255, 0.5) 90vh, transparent 90vh, transparent 100vh);
+		background-image: linear-gradient(
+						to bottom, transparent 0, transparent 10vh,
+						rgba(255, 255, 255, 0.5) 10vh, rgba(255, 255, 255, 0.5) 90vh,
+						transparent 90vh, transparent 100vh);
 		margin: 0 auto;
 		opacity: 0;
 		transition: all 0.5s;
@@ -577,9 +552,9 @@ html {
 	}
 }
 
+$pageHeight: 320vh;
 .page {
-	//height: 120vh;
-	height: 220vh;
+	height: $pageHeight;
 	background-size: cover !important;
 	background-position: center, top;
 	background-attachment: fixed !important;
@@ -587,10 +562,12 @@ html {
 	// 注意：这里不可以通过 margin 值设置，background-image 需要与背景同高为 120vh，上下 10vh 设置为透明
 	.content {
 		width: 90vw;
-		//height: 100vh;
-		height: 200vh;
-		//background-image: linear-gradient(to bottom, transparent 0, transparent 10vh, rgba(255, 255, 255, 0.8) 10vh, rgba(255, 255, 255, 0.8) 110vh, transparent 110vh, transparent 120vh);
-		background-image: linear-gradient(to bottom, transparent 0, transparent 10vh, rgba(255, 255, 255, 0.8) 10vh, rgba(255, 255, 255, 0.8) 210vh, transparent 210vh, transparent 220vh);
+		height: $pageHeight - 20vh;
+		background-image: linear-gradient(
+						to bottom, transparent 0, transparent 10vh,
+						rgba(255, 255, 255, 0.8) 10vh, rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
+						transparent $pageHeight - 10vh, transparent $pageHeight);
+
 		text-align: left;
 		margin: 0 auto;
 		padding: 15vh 0 0 0;
@@ -598,8 +575,7 @@ html {
 		.inside {
 			overflow: hidden;
 			margin: 3vh 1vw;
-			//height: 90vh;
-			height: 190vh;
+			height: $pageHeight - 30vh;
 		}
 	}
 
@@ -607,8 +583,7 @@ html {
 		width: 100vw;
 
 		.bg {
-			//height: 120vh;
-			height: 220vh;
+			height: $pageHeight;
 			position: absolute;
 			width: 98vw;
 			z-index: 10;
@@ -617,58 +592,138 @@ html {
 	}
 }
 
-// 图片切换到 B 站图床
 .head {
-	background: url(../assets/bgPic/首页.png) fixed;
-	//background: url(https://article.biliimg.com/bfs/article/3907d9824988b14a38f69cc18a5960b11ad214a7.png) fixed;
+	//background: url(../assets/bgPic/首页.png) fixed;
+	background: url(https://article.biliimg.com/bfs/article/3907d9824988b14a38f69cc18a5960b11ad214a7.png) fixed;
 	background-position: center !important;
 }
 
 #lingcaiyin {
-	background-image: url(../assets/bgWord/VCP.png), url(../assets/bgPic/云端.png);
-	//background-image: url(../assets/VCP.png), url(https://article.biliimg.com/bfs/article/f73d67839c71eb90352b6945ffd807ab2d5f369a.png);
+	// 每一页的独特高度
+	$pageHeight: 190vh;
+
+	height: $pageHeight;
 
 	.bg {
-		background: url(../assets/bgLing/0.png) 80% bottom no-repeat fixed;
-		//background: url(../assets/0.png) 80% bottom no-repeat fixed;
+		height: $pageHeight;
+	}
+
+	.content {
+		height: $pageHeight - 20vh;
+		background-image: linear-gradient(
+						to bottom, transparent 0, transparent 10vh,
+						rgba(255, 255, 255, 0.8) 10vh, rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
+						transparent $pageHeight - 10vh, transparent $pageHeight);
+
+		.inside {
+			height: $pageHeight - 30vh;
+		}
+	}
+
+	//background-image: url(../assets/bgWord/VCP.png), url(../assets/bgPic/云端.png);
+	background-image: url(https://article.biliimg.com/bfs/article/77f11eee1f298e29095747608cb090c62eadb81c.png), url(https://article.biliimg.com/bfs/article/f73d67839c71eb90352b6945ffd807ab2d5f369a.png);
+
+	.bg {
+		//background: url(../assets/bgLing/0.png) 80% bottom no-repeat fixed;
+		background: url(https://article.biliimg.com/bfs/article/3a6184943556ceb4c6216a0099770274d7b9ffa2.png) 80% bottom no-repeat fixed;
 		background-size: auto 72.5vh !important;
 	}
 }
 
 #v3 {
-	background-image: url(../assets/bgWord/v3word.png), url(../assets/bgPic/梦语.png);
-	//background-image: url(../assets/v3word.png), url(https://article.biliimg.com/bfs/article/e1143590da779c44243f54a685a9a7f410d169ae.png);
+	$pageHeight: 340vh;
+
+	height: $pageHeight;
 
 	.bg {
-		background: url(../assets/bgLing/v3.png) 80% bottom no-repeat fixed;
-		//background: url(../assets/v3.png) 80% bottom no-repeat fixed;
+		height: $pageHeight;
+	}
+
+	.content {
+		height: $pageHeight - 20vh;
+		background-image: linear-gradient(
+						to bottom, transparent 0, transparent 10vh,
+						rgba(255, 255, 255, 0.8) 10vh, rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
+						transparent $pageHeight - 10vh, transparent $pageHeight);
+
+		.inside {
+			height: $pageHeight - 30vh;
+		}
+	}
+
+	//background-image: url(../assets/bgWord/v3word.png), url(../assets/bgPic/梦语.png);
+	background-image: url(https://article.biliimg.com/bfs/article/9d857ae5dc05626cc44cecd4b18ff88a3d096b48.png), url(https://article.biliimg.com/bfs/article/e1143590da779c44243f54a685a9a7f410d169ae.png);
+
+	.bg {
+		//background: url(../assets/bgLing/v3.png) 80% bottom no-repeat fixed;
+		background: url(https://article.biliimg.com/bfs/article/1c4505061ad44ae244932752d3d794f29c2684ad.png) 80% bottom no-repeat fixed;
 	}
 }
 
 #v5 {
-	background-image: url(../assets/bgWord/v5word.png), url(../assets/bgPic/山遥路远.png);
-	//background-image: url(../assets/v5word.png), url(https://article.biliimg.com/bfs/article/54f15a16f5554c03056011570f8ff1c4557b749b.png);
+	$pageHeight: 260vh;
+
+	height: $pageHeight;
 
 	.bg {
-		background: url(../assets/bgLing/V5.png) 83.5% bottom no-repeat fixed;
-		//background: url(../assets/v5.png) 83.5% bottom no-repeat fixed;
+		height: $pageHeight;
+	}
+
+	.content {
+		height: $pageHeight - 20vh;
+		background-image: linear-gradient(
+						to bottom, transparent 0, transparent 10vh,
+						rgba(255, 255, 255, 0.8) 10vh, rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
+						transparent $pageHeight - 10vh, transparent $pageHeight);
+
+		.inside {
+			height: $pageHeight - 30vh;
+		}
+	}
+
+	//background-image: url(../assets/bgWord/v5word.png), url(../assets/bgPic/山遥路远.png);
+	background-image: url(https://article.biliimg.com/bfs/article/3b373ba97060d3b0f43da260e6d44cdf85633533.png), url(https://article.biliimg.com/bfs/article/54f15a16f5554c03056011570f8ff1c4557b749b.png);
+
+	.bg {
+		//background: url(../assets/bgLing/V5.png) 83.5% bottom no-repeat fixed;
+		background: url(https://article.biliimg.com/bfs/article/9b14ff130dbdd0c8c32661806864f4760ae21ac1.png) 83.5% bottom no-repeat fixed;
 		background-size: auto 71vh !important;
 	}
 }
 
 #ai {
-	background-image: url(../assets/bgWord/ace.png), url(../assets/bgPic/无限接近幻想.jpg);
-	//background-image: url(../assets/ace.png), url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg);
+	$pageHeight: 160vh;
+
+	height: $pageHeight;
 
 	.bg {
-		background: url(../assets/bgLing/ai.png) 81% bottom no-repeat fixed;
+		height: $pageHeight;
+	}
+
+	.content {
+		height: $pageHeight - 20vh;
+		background-image: linear-gradient(
+						to bottom, transparent 0, transparent 10vh,
+						rgba(255, 255, 255, 0.8) 10vh, rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
+						transparent $pageHeight - 10vh, transparent $pageHeight);
+
+		.inside {
+			height: $pageHeight - 30vh;
+		}
+	}
+
+	//background-image: url(../assets/bgWord/ace.png), url(../assets/bgPic/无限接近幻想.jpg);
+	background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png), url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg);
+
+	.bg {
 		//background: url(../assets/ai.png) 81% bottom no-repeat fixed;
+		background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png) 81% bottom no-repeat fixed;
 		background-size: auto 71vh !important;
 	}
 }
 
 .final {
-	background: url(../assets/bgPic/繁华唱遍.png) fixed;
-	//background: url(https://article.biliimg.com/bfs/article/6b55f667d718fda42ffef7550188df246473e2f7.png) fixed;
+	//background: url(../assets/bgPic/繁华唱遍.png) fixed;
+	background: url(https://article.biliimg.com/bfs/article/6b55f667d718fda42ffef7550188df246473e2f7.png) fixed;
 }
 </style>

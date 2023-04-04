@@ -32,6 +32,7 @@ function scroll() {
 </script>
 
 <template>
+	<!--注意：此次逗号表达式故意为之，若写{totalStyle,scrollHide}反而失效-->
 	<div id="backToTop" :style="totalStyle,scrollHide">
 		<div class="tie"></div>
 		<button title="返回顶部" @click="scroll"></button>
