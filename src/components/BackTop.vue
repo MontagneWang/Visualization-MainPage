@@ -2,8 +2,6 @@
 import {computed, onMounted, ref} from "vue";
 import {smoothScroll} from '../utils/scrollToPosition';
 
-// fixme 按钮会跳一下
-// idea 按钮的位置和当前页面的位置有关，页面在上滑时按钮也上环（触发函数时）
 let scrollTop = ref(document.documentElement.scrollTop);
 onMounted(() => {
 	window.addEventListener('scroll', () => {
@@ -12,20 +10,29 @@ onMounted(() => {
 });
 
 // 顶部时拉环隐藏，其余位置显示
-// idea 可能原因：滚动时仍在判断高度，不满足隐藏条件所以还是设置底端20vh，直到完全收起才上升
+// 可能原因：滚动时仍在判断高度，不满足隐藏条件所以还是设置底端 20vh，直到完全收起才上升
+let scrollFlag = ref(false)
 let totalStyle = computed(() => {
 	return scrollTop.value <= 50 ?
 			{bottom: '120vh!important'} : {bottom: '20vh'}
 })
 
+let scrollHide = computed(() => {
+	return scrollFlag ?
+			{bottom: '120vh!important'} : {}
+})
+
 function scroll() {
-	scrollTop.value = 0;
+	scrollFlag.value = true;
 	smoothScroll(0)
+	setTimeout(() => {
+		scrollFlag.value = false;
+	}, 0);
 }
 </script>
 
 <template>
-	<div id="backToTop" :style="totalStyle">
+	<div id="backToTop" :style="totalStyle,scrollHide">
 		<div class="tie"></div>
 		<button title="返回顶部" @click="scroll"></button>
 	</div>

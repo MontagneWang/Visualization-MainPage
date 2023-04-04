@@ -30,15 +30,60 @@ watchEffect(() => {
 		<div class="section section5">
 			<h1>第5屏</h1>
 		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+		<div class="section section5">
+			<h1>第5屏</h1>
+		</div>
+
 	</div>
 
-	<ul class="controls">
-		<li class="active">1</li>
-		<li>2</li>
-		<li>3</li>
-		<li>4</li>
-		<li>5</li>
-	</ul>
 
 </template>
 
