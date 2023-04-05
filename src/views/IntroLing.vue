@@ -154,31 +154,44 @@ onMounted(() => {
 	}, 4000)
 
 
-// 通过增加控制点使得贝塞尔曲线贴近控制点
+	// 通过增加控制点使得贝塞尔曲线贴近控制点
 	let points = [
-		[window.innerWidth*0.1, window.innerHeight * 0.055],
-		[window.innerWidth*0.1, window.innerHeight * 0.055],
-		[window.innerWidth*0.1, window.innerHeight * 0.055],
-		[window.innerWidth*0.1, window.innerHeight * 0.055],
-		[window.innerWidth*0.1, window.innerHeight * 0.055],
-		[window.innerWidth*0.1, window.innerHeight * 0.055],
-		[window.innerWidth*0.1, window.innerHeight * 0.055],
+		[window.innerWidth * 0.25, window.innerHeight * 0.25],
+		[window.innerWidth * 0.25, window.innerHeight * 0.25],
+		[window.innerWidth * 0.25, window.innerHeight * 0.25],
+		[window.innerWidth * 0.25, window.innerHeight * 0.25],
+		[window.innerWidth * 0.25, window.innerHeight * 0.25],
+		[window.innerWidth * 0.25, window.innerHeight * 0.25],
+		[window.innerWidth * 0.25, window.innerHeight * 0.25],
 
-		[window.innerWidth * 0.7,window.innerHeight * 0.05],
-		[window.innerWidth * 0.7,window.innerHeight * 0.05],
-		[window.innerWidth * 0.7,window.innerHeight * 0.05],
-		[window.innerWidth * 0.7,window.innerHeight * 0.05],
-		[window.innerWidth * 0.7,window.innerHeight * 0.05],
-		[window.innerWidth * 0.7,window.innerHeight * 0.05],
-		[window.innerWidth * 0.7,window.innerHeight * 0.05],
+		[window.innerWidth * 0.4, window.innerHeight * 0.06],
+		[window.innerWidth * 0.4, window.innerHeight * 0.06],
+		[window.innerWidth * 0.4, window.innerHeight * 0.06],
+		[window.innerWidth * 0.4, window.innerHeight * 0.06],
+		[window.innerWidth * 0.4, window.innerHeight * 0.06],
+		[window.innerWidth * 0.4, window.innerHeight * 0.06],
+		[window.innerWidth * 0.4, window.innerHeight * 0.06],
 
-		[window.innerWidth * 0.7, window.innerHeight * 0.35],
-		[window.innerWidth * 0.7, window.innerHeight * 0.35],
-		[window.innerWidth * 0.7, window.innerHeight * 0.35],
-		[window.innerWidth * 0.7, window.innerHeight * 0.35],
-		[window.innerWidth * 0.7, window.innerHeight * 0.35],
-		[window.innerWidth * 0.7, window.innerHeight * 0.35],
-		[window.innerWidth * 0.7, window.innerHeight * 0.35],
+		[window.innerWidth * 0.75, window.innerHeight * 0.05],
+		[window.innerWidth * 0.75, window.innerHeight * 0.05],
+		[window.innerWidth * 0.75, window.innerHeight * 0.05],
+		[window.innerWidth * 0.75, window.innerHeight * 0.05],
+		[window.innerWidth * 0.75, window.innerHeight * 0.05],
+		[window.innerWidth * 0.75, window.innerHeight * 0.05],
+		[window.innerWidth * 0.75, window.innerHeight * 0.05],
+		[window.innerWidth * 0.75, window.innerHeight * 0.05],
+		[window.innerWidth * 0.75, window.innerHeight * 0.05],
+
+		[window.innerWidth * 0.75, window.innerHeight * 0.35],
+		[window.innerWidth * 0.75, window.innerHeight * 0.35],
+		[window.innerWidth * 0.75, window.innerHeight * 0.35],
+		[window.innerWidth * 0.75, window.innerHeight * 0.35],
+		[window.innerWidth * 0.75, window.innerHeight * 0.35],
+		[window.innerWidth * 0.75, window.innerHeight * 0.35],
+		[window.innerWidth * 0.75, window.innerHeight * 0.35],
+		[window.innerWidth * 0.75, window.innerHeight * 0.35],
+		[window.innerWidth * 0.75, window.innerHeight * 0.35],
+		[window.innerWidth * 0.75, window.innerHeight * 0.35],
 
 		[window.innerWidth * 0.1, window.innerHeight * 0.35],
 		[window.innerWidth * 0.1, window.innerHeight * 0.35],
@@ -187,14 +200,18 @@ onMounted(() => {
 		[window.innerWidth * 0.1, window.innerHeight * 0.35],
 		[window.innerWidth * 0.1, window.innerHeight * 0.35],
 		[window.innerWidth * 0.1, window.innerHeight * 0.35],
+		[window.innerWidth * 0.1, window.innerHeight * 0.35],
+		[window.innerWidth * 0.1, window.innerHeight * 0.35],
 
-		[window.innerWidth * 0.1, window.innerHeight * 0.65],
-		[window.innerWidth * 0.1, window.innerHeight * 0.65],
-		[window.innerWidth * 0.1, window.innerHeight * 0.65],
-		[window.innerWidth * 0.1, window.innerHeight * 0.65],
-		[window.innerWidth * 0.1, window.innerHeight * 0.65],
-		[window.innerWidth * 0.1, window.innerHeight * 0.65],
-		[window.innerWidth * 0.1, window.innerHeight * 0.65],
+		[window.innerWidth * 0.1, window.innerHeight * 0.7],
+		[window.innerWidth * 0.1, window.innerHeight * 0.7],
+		[window.innerWidth * 0.1, window.innerHeight * 0.7],
+		[window.innerWidth * 0.1, window.innerHeight * 0.7],
+		[window.innerWidth * 0.1, window.innerHeight * 0.7],
+		[window.innerWidth * 0.1, window.innerHeight * 0.7],
+		[window.innerWidth * 0.1, window.innerHeight * 0.7],
+		[window.innerWidth * 0.1, window.innerHeight * 0.7],
+		[window.innerWidth * 0.1, window.innerHeight * 0.7],
 
 		[window.innerWidth, window.innerHeight * 0.65],
 		[window.innerWidth, window.innerHeight * 0.65],
@@ -206,9 +223,9 @@ onMounted(() => {
 	];
 	let canvas = myCanvas.value as unknown as HTMLCanvasElement;
 
-	watchEffect(()=>{
-		if (finalPageShowFlag.value===true){
-			drawCurve(canvas, points,"rgb(238, 0, 0)",0.85,5)
+	watchEffect(() => {
+		if (finalPageShowFlag.value === true) {
+			drawCurve(canvas, points, "rgb(238, 0, 0)", 0.65, 5)
 		}
 	})
 })
@@ -555,6 +572,18 @@ onBeforeUnmount(() => {
 				<!--<p>在此歌唱 从零开始万千景象延伸远方</p>-->
 				<canvas id="myCanvas" ref="myCanvas"
 				        :height="screenHeight*0.7" :width="screenWidth*0.85"></canvas>
+				<div class="finalTachie final0">
+					<img alt="" src="https://article.biliimg.com/bfs/article/3a6184943556ceb4c6216a0099770274d7b9ffa2.png">
+				</div>
+				<div class="finalTachie finalV3">
+					<img alt="" src="https://article.biliimg.com/bfs/article/1c4505061ad44ae244932752d3d794f29c2684ad.png">
+				</div>
+				<div class="finalTachie finalV5">
+					<img alt="" src="https://article.biliimg.com/bfs/article/9b14ff130dbdd0c8c32661806864f4760ae21ac1.png">
+				</div>
+				<div class="finalTachie finalAi">
+					<img alt="" src="https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -638,6 +667,7 @@ html {
 .head,
 .final {
 	height: 100vh !important;
+	overflow: hidden;
 
 	.history {
 		height: 90vh;
@@ -661,6 +691,44 @@ html {
 		}
 	}
 }
+
+.final {
+	.inside {
+		position: relative;
+
+		img {
+			width: inherit;
+		}
+
+		.finalTachie {
+			position: absolute;
+			float: left;
+			width: 7vw;
+			user-select: none;
+		}
+
+		.final0 {
+			top: 0vh;
+			left: 20vw;
+		}
+
+		.finalV3 {
+			top: 0vh;
+			right: 6vw;
+		}
+
+		.finalV5 {
+			bottom: 3vh;
+			left: 7vw;
+		}
+
+		.finalAi {
+			bottom: 3vh;
+			right: 30vw;
+		}
+	}
+}
+
 
 $pageHeight: 320vh;
 .page {
@@ -836,4 +904,6 @@ $pageHeight: 320vh;
 	//background: url(../assets/bgPic/繁华唱遍.png) fixed;
 	background: url(https://article.biliimg.com/bfs/article/6b55f667d718fda42ffef7550188df246473e2f7.png) fixed;
 }
+
+
 </style>
