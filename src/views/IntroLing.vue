@@ -1,12 +1,14 @@
 <script lang="ts" setup>
-import {onBeforeUnmount, onMounted, ref} from "vue"
+import {onBeforeUnmount, onMounted, ref, watchEffect} from "vue"
 import {smoothScroll} from '../utils/scrollToPosition';
 // @ts-ignore
 import WOW from "wow.js";
+import {drawCurve} from "../utils/drawCurve";
 
 let timer: number | undefined
 let history = ref(null)
 let headPage = ref(null)
+let myCanvas = ref(null)
 let lingcaiyin = ref<HTMLInputElement | null>(null)
 let nowPage = ref(0)
 let finalPageShowFlag = ref(false)
@@ -76,7 +78,7 @@ const items = ref([
 let wow = new WOW({
 	boxClass: "wow", // 盒子类： 当用户滚动时显示隐藏框的类名。
 	animateClass: "animated",// 动画类： 触发 CSS 动画的类名（默认情况下，animate.css 库为“动画”）
-	offset: 50,// 抵消： 定义浏览器视口底部与隐藏框顶部之间的距离。当用户滚动并达到此距离时，将显示隐藏的框。
+	offset: 20,// 抵消： 定义浏览器视口底部与隐藏框顶部之间的距离。当用户滚动并达到此距离时，将显示隐藏的框。
 	mobile: true,//移动： 在移动设备上打开/关闭哇.js。
 	live: true,//实时：持续检查页面上的新WOW元素。
 	callback: function (box: any) {
@@ -87,12 +89,13 @@ let wow = new WOW({
 });
 wow.init();
 
+// idea 可能需要考虑通过动态获取屏幕高度来设置每页高度，当前在不同屏幕下效果不好
 // idea 撑大缩小盒子时也添加动效
 // 当前页数计算，传入对应数据
 window.addEventListener('scroll', function () {
 	finalPageShowFlag.value = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100
 	// 存储每页高度，单位为 vh
-	let pageHeight = [100, 190, 340, 260, 160, 100];
+	let pageHeight = [100, 190, 420, 310, 180, 100];
 	let totalHeight = 0;
 	for (let i = 0; i < pageHeight.length; i++) {
 		totalHeight += pageHeight[i];
@@ -131,6 +134,7 @@ function judgeMousePosition(event: { clientX: number; clientY: number; }) {
 
 document.addEventListener('mousemove', judgeMousePosition);
 
+
 let pageHeight: number
 onMounted(() => {
 	pageHeight = (lingcaiyin.value as HTMLElement).offsetTop
@@ -147,7 +151,66 @@ onMounted(() => {
 		if (document.documentElement.scrollTop === 0) {
 			smoothScroll(pageHeight, 600, 1);
 		}
-	}, 5000)
+	}, 4000)
+
+
+// 通过增加控制点使得贝塞尔曲线贴近控制点
+	let points = [
+		[window.innerWidth*0.1, window.innerHeight * 0.055],
+		[window.innerWidth*0.1, window.innerHeight * 0.055],
+		[window.innerWidth*0.1, window.innerHeight * 0.055],
+		[window.innerWidth*0.1, window.innerHeight * 0.055],
+		[window.innerWidth*0.1, window.innerHeight * 0.055],
+		[window.innerWidth*0.1, window.innerHeight * 0.055],
+		[window.innerWidth*0.1, window.innerHeight * 0.055],
+
+		[window.innerWidth * 0.7,window.innerHeight * 0.05],
+		[window.innerWidth * 0.7,window.innerHeight * 0.05],
+		[window.innerWidth * 0.7,window.innerHeight * 0.05],
+		[window.innerWidth * 0.7,window.innerHeight * 0.05],
+		[window.innerWidth * 0.7,window.innerHeight * 0.05],
+		[window.innerWidth * 0.7,window.innerHeight * 0.05],
+		[window.innerWidth * 0.7,window.innerHeight * 0.05],
+
+		[window.innerWidth * 0.7, window.innerHeight * 0.35],
+		[window.innerWidth * 0.7, window.innerHeight * 0.35],
+		[window.innerWidth * 0.7, window.innerHeight * 0.35],
+		[window.innerWidth * 0.7, window.innerHeight * 0.35],
+		[window.innerWidth * 0.7, window.innerHeight * 0.35],
+		[window.innerWidth * 0.7, window.innerHeight * 0.35],
+		[window.innerWidth * 0.7, window.innerHeight * 0.35],
+
+		[window.innerWidth * 0.1, window.innerHeight * 0.35],
+		[window.innerWidth * 0.1, window.innerHeight * 0.35],
+		[window.innerWidth * 0.1, window.innerHeight * 0.35],
+		[window.innerWidth * 0.1, window.innerHeight * 0.35],
+		[window.innerWidth * 0.1, window.innerHeight * 0.35],
+		[window.innerWidth * 0.1, window.innerHeight * 0.35],
+		[window.innerWidth * 0.1, window.innerHeight * 0.35],
+
+		[window.innerWidth * 0.1, window.innerHeight * 0.65],
+		[window.innerWidth * 0.1, window.innerHeight * 0.65],
+		[window.innerWidth * 0.1, window.innerHeight * 0.65],
+		[window.innerWidth * 0.1, window.innerHeight * 0.65],
+		[window.innerWidth * 0.1, window.innerHeight * 0.65],
+		[window.innerWidth * 0.1, window.innerHeight * 0.65],
+		[window.innerWidth * 0.1, window.innerHeight * 0.65],
+
+		[window.innerWidth, window.innerHeight * 0.65],
+		[window.innerWidth, window.innerHeight * 0.65],
+		[window.innerWidth, window.innerHeight * 0.65],
+		[window.innerWidth, window.innerHeight * 0.65],
+		[window.innerWidth, window.innerHeight * 0.65],
+		[window.innerWidth, window.innerHeight * 0.65],
+		[window.innerWidth, window.innerHeight * 0.65],
+	];
+	let canvas = myCanvas.value as unknown as HTMLCanvasElement;
+
+	watchEffect(()=>{
+		if (finalPageShowFlag.value===true){
+			drawCurve(canvas, points,"rgb(238, 0, 0)",0.85,5)
+		}
+	})
 })
 
 onBeforeUnmount(() => {
@@ -209,7 +272,7 @@ onBeforeUnmount(() => {
 							<h3>『元气十足的可爱外表和带有浓郁中国风的新颖设计，赢得了大批粉丝的青睐。』</h3>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item center icon="Place" placement="top" timestamp="2012.03.21"
+					<el-timeline-item icon="Place" placement="top" timestamp="2012.03.21"
 					                  type="success">
 						<el-card>
 							<h3>VOCALOID China Project 最终形象定稿公布</h3>
@@ -234,6 +297,7 @@ onBeforeUnmount(() => {
 						<p>&emsp;UP 主和众多喜欢她的小伙伴一直都很想听她唱歌，</p>
 						<p>&emsp;但是，两年了，UP 主终于等不起了，和一些喜欢绫的人一起创作了这首属于这个没有音源的歌姬的曲子，</p>
 						<p>&emsp;希望喜欢绫的大家不要忘记她，也希望有更多的人能喜欢上这个中国红元气娘 —— 乐正绫』 —— 萌兔兔兔子</p>
+						<hr>
 					</el-timeline-item>
 				</el-timeline>
 			</div>
@@ -280,16 +344,16 @@ onBeforeUnmount(() => {
 							<p><span style="color: #ee0000;font-size:1.5em;">&emsp;一瞬永远&nbsp;</span>』</p>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item center icon="mic" placement="top" timestamp="2015.07.17" type="success">
+					<el-timeline-item color="rgb(238,0,0)" icon="mic" placement="top" timestamp="2015.07.17">
 						<el-card>
-							<h2>「乐正绫」VOCALOID™3 中文声库发售</h2>
+							<h1>「乐正绫」VOCALOID™3 中文声库发售</h1>
 							<p>VOCALOID™3 中文声库「乐正绫」正式发售，从此声库走向民间创作者，一个新的时代开启了</p>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item icon="" placement="top" timestamp="2015 年" type="primary">
-						2015 年，乐正绫参与的专辑有：
-						《平行四界Quadimension 3》《Saligia系列》《双向·轮回与幸福》《平行四界Quadimension 4》
-						<p>TUNO桐音 老师发布了《南北寻光》专辑，该专辑以「旅行」为创作主题，共有十二首（再版时增加到十八首）单曲，于 2015 年 8 月 15 日开售</p>
+					<el-timeline-item icon="" placement="top" timestamp="" type="primary">
+						<hr>
+						<p>2015 年，乐正绫参与演唱的专辑有：《南北寻光》《Saligia系列》《双向·轮回与幸福》《Travel Days》《平行四界Quadimension 3 & 4》</p>
+						<hr>
 					</el-timeline-item>
 					<el-timeline-item icon="List" placement="top" timestamp="2016 年" type="primary">
 						<p>2016 是一个神奇的年份，在这一年，乐正绫登上了拜年祭的舞台，留下了一曲传唱千古的《九九八十一》</p>
@@ -307,6 +371,11 @@ onBeforeUnmount(() => {
 							2016-01-10&nbsp;&emsp;《归一》&emsp;【洛天依&乐正绫&心华原创】<br/></p>
 						<h3>『心跳沉沉试图召唤着哀伤&emsp;而你用双手拨开我所有匆忙』</h3>
 					</el-timeline-item>
+					<el-timeline-item icon="" placement="top" timestamp="" type="primary">
+						<hr>
+						<p>2016 年，乐正绫参与演唱的专辑有：《中华少女Project》《恋爱理论》《Dear:》《节气物语》《南北极星 Vol.1》《平行四界Quadimension 5 》</p>
+						<hr>
+					</el-timeline-item>
 					<el-timeline-item icon="" placement="top" timestamp="2017.04.28" type="primary">
 						<p>Vsinger 官方投稿了乐正绫独唱曲《未来的我》 —— 「励志歌词与旋律，搭配明亮坚定的歌声和史诗般恢弘的编曲，充满了希望与力量。」</p>
 					</el-timeline-item>
@@ -316,15 +385,30 @@ onBeforeUnmount(() => {
 							<p>2017 年 12 月 2 日，Vsinger 发布了乐正绫的首张官方单人专辑《绫》，该专辑内共有7首单曲。</p>
 						</el-card>
 					</el-timeline-item>
+					<el-timeline-item icon="" placement="top" timestamp="" type="primary">
+						<hr>
+						<p>2017 年，乐正绫参与演唱的专辑有：《绫》《Ling聽》《妄想症Paranoia》《无名》《四季四世》《人·間》《平行四界Quadimension 5》</p>
+						<hr>
+					</el-timeline-item>
+
 					<!--<el-timeline-item icon="" placement="top" timestamp="2018.07.28" type="primary">-->
 					<!--	<p>忘川风华录投稿了南北合唱的《易水诀》，这是忘川第一次选取乐正绫作为歌手来演唱歌曲-->
 					<!--		<del> 可惜也是最后一次</del>-->
 					<!--	</p>-->
 					<!--</el-timeline-item>-->
+					<el-timeline-item icon="" placement="top" timestamp="" type="primary">
+						<hr>
+						<p>2018 年，乐正绫参与演唱的专辑有：《华哉有夏》《如是我闻》《八月的幽灵》</p>
+						<p>《秘密邮件》《Godrose》《卡纳塔幻想曲》《平行四界Quadimension 6》《No.13852》</p>
+						<hr>
+					</el-timeline-item>
 
 					<el-timeline-item icon="" placement="top" timestamp="2019.04.12" type="primary">
-						<p>乐正绫四周年，官方投稿了生贺曲《我在》，以绫的视角描写自诞生以来的心境，以及对听众们的感谢。</p>
-						<p>同日，官方宣布与游戏联动，投稿了游戏联动曲《蝶恋花·何处谣》</p>
+						<el-card>
+							<h3>乐正绫四周年，官方投稿了生贺曲《我在》</h3>
+							<p>《我在》以绫的视角描写自诞生以来的心境，以及对听众们的感谢。</p>
+							<p>同日，官方宣布与游戏联动，投稿了游戏联动曲《蝶恋花·何处谣》</p>
+						</el-card>
 					</el-timeline-item>
 					<el-timeline-item icon="" placement="top" timestamp="2019.12.07" type="primary">
 						<p>沙雕教投稿了【赤羽x乐正绫】《赤伶》【原创剧情向pv附】</p>
@@ -333,7 +417,11 @@ onBeforeUnmount(() => {
 						<p>&emsp;本作在原曲背景故事的基础上进行延伸，将乐正绫设定为裴晏之（赤羽饰）的后辈；两位歌手合称的「赤绫」与标题谐音，为人所津津乐道。</p>
 						<p>&emsp;纯熟调教下的戏腔高亢优美、极具震撼力，令人身临其境，回溯那场热烈而悲壮的绝唱。』</p>
 					</el-timeline-item>
-
+					<el-timeline-item icon="" placement="top" timestamp="" type="primary">
+						<hr>
+						<p>2019 年，乐正绫参与演唱的专辑有：《从众效应》《Les Fleurs Du Mal 恶之花》《名字》《柒》</p>
+						<hr>
+					</el-timeline-item>
 				</el-timeline>
 			</div>
 		</div>
@@ -348,55 +436,74 @@ onBeforeUnmount(() => {
 				<el-timeline>
 					<el-timeline-item placement="top" timestamp="2020.04.12">
 						<el-card>
-							<h2>乐正绫五周年，官方发布了生日贺曲《花》，本曲使用了尚未发售的乐正绫 V5 音源 </h2>
+							<h3>乐正绫五周年，官方发布了生日贺曲《花》，本曲使用了乐正绫 V5 音源</h3>
 							<h3 style="color: #ee0000">「请你知晓　—— <i>好不好</i>」</h3>
 						</el-card>
-						<p>【乐正绫原创曲】花 2020-04-12 16:12 乐正绫 568686</p>
-						<p>【乐正绫原创】春日纪行 ✉ 0412乐正绫诞生祭 2020-04-12 07:28 星葵 169222</p>
-						<p>乐正绫2020官方EP《告白诗》试听PV 2020-04-12 12:00 乐正绫 163378</p>
-						<p>《告白诗》是Vsinger（上海禾念信息科技有限公司）旗下VOCALOID 3虚拟女性歌手乐正绫的第二张官方专辑</p>
-						<p>乐正绫的第一张官方单人EP，同时是2020年乐正绫诞生祭企划作品。</p>
-						<p>该专辑内共有4首单曲，其中包含1首当时尚未发售的乐正绫VOCALOID 5声库演唱之曲目，于2020年4月12日正式发售。</p>
+						<p>&emsp;官方也在今天发布了乐正绫官方 EP《告白诗》专辑试听 PV</p>
+						<p>&emsp;《告白诗》是 2020 年乐正绫诞生祭企划作品，也是乐正绫的第二张官方专辑</p>
+						<p>&emsp;该专辑内共有4首单曲【《花》《多数人》《酒心吻》《悸动》】</p>
+						<p>&emsp;值得一提的是，《花》使用了从未提及到的 V5 音源，给予无数听众以希望。</p>
 					</el-timeline-item>
 					<el-timeline-item placement="top" timestamp="2020.05.22">
-						ChiliChill 发布了《山遥路远》，本曲使用了尚未发售的乐正绫 V5 音源
 						<h3>「快走吧，山遥路远」</h3>
+						<p>ChiliChill 投稿了《山遥路远》，本曲使用了尚未发售的 V5 音源</p>
+						<p>『然后非常感谢人老师和动老师。前些日子听了《花》，眼前一亮，真的一亮，</p>
+						<p>非常快就决定想让阿绫来唱这首，于是我们联系到了人老师，这才有了接下来的故事。』—— Yu H.</p>
+					</el-timeline-item>
+					<el-timeline-item icon="" placement="top" timestamp="" type="primary">
+						<hr>
+						<p>2020 年，乐正绫参与演唱的专辑有：《告白诗》《Cotton_Candy》</p>
+						<hr>
 					</el-timeline-item>
 					<el-timeline-item placement="top" timestamp="2021.04.12">
-						<h3>乐正绫六周年，官方发布了生日贺曲《丑马》，本曲也使用了尚未发售的乐正绫 V5 音源 </h3>
-						<p>官方还投稿了一份互动视频</p>
+						<el-card>
+							<h3>乐正绫六周年，官方发布了生日贺曲《丑马》，本曲也是使用了尚未发售的 V5 音源 </h3>
+							<p>官方还投稿了一份互动视频</p>
+						</el-card>
 					</el-timeline-item>
 					<el-timeline-item placement="top" timestamp="2021.06.18">
-						<p>Vsinger官方微博发文，正式宣布乐正绫 V5 声库进入测试阶段，
-							<del>同时公开 V5 初版形象。</del>
+						<p>Vsinger官方微博发文，正式宣布乐正绫 V5 声库进入测试阶段，同时公开了 V5 初版形象。
 						</p>
+						<p>但该初版形象引起了非常大的争议，官方表示会考虑大家的意见进行修改。</p>
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2021 年">
-						<p>这一年，乐正绫参与的专辑有：</p>
+					<el-timeline-item icon="" placement="top" timestamp="" type="primary">
+						<hr>
+						<p>2021 年，乐正绫参与演唱的专辑有：《华哉有夏·贰》《百变绫绫》《Color Flow》《桃花雪》</p>
+						<p>《现实逃避Project》《甘泽谣》《Dear:2 异类与群羊》《αrtist5系列》《Special Wishes 2021》</p>
+						<hr>
 					</el-timeline-item>
 
 					<el-timeline-item placement="top" timestamp="2022.02.01">
-						<el-card>
-							<h2 style="color: #ee0000">唢呐一响，好戏开场！</h2>
-							<p>2022 的春节，我们已经有了自己举办的「虚拟歌手贺岁纪」</p>
-							<p>在这次贺岁纪中，涌现出了许多优秀的歌曲，绫参与演唱的原创歌曲有：《扬旗鸣鼓》《布虎记》</p>
-						</el-card>
+						<h3 style="color: #ee0000">唢呐一响，好戏开场！</h3>
+						<p>2022 的春节，我们已经有了自己举办的「虚拟歌手贺岁纪」</p>
+						<p>在这次贺岁纪中，涌现出了许多优秀的歌曲，绫参与演唱的原创歌曲有：《扬旗鸣鼓》《布虎记》</p>
 					</el-timeline-item>
 					<el-timeline-item placement="top" timestamp="2022.04.12">
-						<h3>乐正绫七周年，官方发布了生日贺曲《未知旅行FM》</h3>
-						<p>同时，同人也举办了七周年生日接龙活动，创作了许多歌曲</p>
-					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2022.05.11">
-						<p>2022年5月11日，正式公开乐正绫 V5 新形象</p>
-					</el-timeline-item>
-					<el-timeline-item center placement="top" timestamp="2022.10.14">
 						<el-card>
-							<h3>乐正绫 Vocaloid5 声库正式发售</h3>
-							<del>值得一提的是，声库盒子上并未使用争议依旧较大的 V5 立绘</del>
+							<h3>乐正绫七周年，官方发布了生日贺曲《未知旅行FM》</h3>
+							<p>同时，同人也举办了七周年生日接龙活动，创作了许多歌曲</p>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2022 年">
-						<p>这一年，乐正绫参与的专辑有：</p>
+					<el-timeline-item placement="top" timestamp="2022.05.11">
+						<p>2022年5月11日，官方敲定并公开了乐正绫 V5 最终形象</p>
+						<p>但该形象依旧没能得到大家的认可，由于改版形象已提交给雅马哈官方，因此无法再进行修改</p>
+						<p>
+							<del>（笔者对审美方面一窍不通故不做评价，但戴着手套是不方便弹吉他的吧）</del>
+						</p>
+					</el-timeline-item>
+					<el-timeline-item placement="top" timestamp="2022.10.14">
+						<el-card>
+							<h2>乐正绫 Vocaloid5 声库正式发售</h2>
+							<p>值得一提的是，声库的形式不再是以碟片，而是使用 U 盘来启动。</p>
+							<p>
+								<del>并且盒子上并未使用争议较大的 V5 立绘</del>
+							</p>
+						</el-card>
+					</el-timeline-item>
+					<el-timeline-item icon="" placement="top" timestamp="" type="primary">
+						<hr>
+						<p>2022 年，乐正绫参与演唱的专辑有：《拾》《南北》《喧闹世界》《Special Wishes 2022》</p>
+						<hr>
 					</el-timeline-item>
 				</el-timeline>
 			</div>
@@ -435,10 +542,6 @@ onBeforeUnmount(() => {
 							<p>生日接龙</p>
 						</el-card>
 					</el-timeline-item>
-					<el-timeline-item placement="top" timestamp="2023 年">
-						<p>这一年，乐正绫参与的专辑有：</p>
-					</el-timeline-item>
-
 				</el-timeline>
 			</div>
 		</div>
@@ -449,8 +552,9 @@ onBeforeUnmount(() => {
 		     :class="{show:finalPageShowFlag}"
 		     class="history">
 			<div class="inside">
-				<p>在此歌唱 从零开始万千景象延伸远方</p>
-				<p>（注：这里动态展示时间线）</p>
+				<!--<p>在此歌唱 从零开始万千景象延伸远方</p>-->
+				<canvas id="myCanvas" ref="myCanvas"
+				        :height="screenHeight*0.7" :width="screenWidth*0.85"></canvas>
 			</div>
 		</div>
 	</div>
@@ -514,6 +618,7 @@ html {
 	border: 1px solid #66ccff;
 	transition: all 0.5s;
 	z-index: 100000;
+	user-select: none;
 
 	ul {
 		margin: 0;
@@ -547,7 +652,12 @@ html {
 		padding: 10vh 0 0 0;
 
 		.inside {
+			overflow: hidden;
 			margin: 5vh 3vw;
+			//canvas{
+			//	height: 500px;
+			//	width: 1200px;
+			//}
 		}
 	}
 }
@@ -631,7 +741,7 @@ $pageHeight: 320vh;
 }
 
 #v3 {
-	$pageHeight: 340vh;
+	$pageHeight: 420vh;
 
 	height: $pageHeight;
 
@@ -661,7 +771,7 @@ $pageHeight: 320vh;
 }
 
 #v5 {
-	$pageHeight: 260vh;
+	$pageHeight: 310vh;
 
 	height: $pageHeight;
 
@@ -692,7 +802,7 @@ $pageHeight: 320vh;
 }
 
 #ai {
-	$pageHeight: 160vh;
+	$pageHeight: 180vh;
 
 	height: $pageHeight;
 
