@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import NavBar from "./components/NavBar.vue";
-import RightMenu from "./components/RightMenu.vue";
-import CircularNav from "./components/CircularNav.vue";
+import NavBar from "./temp/NavBar.vue";
+import RightMenu from "./components/TheRightMenu.vue";
+import CircularNav from "./components/TheCircularNav.vue";
 import TestTemp from "./views/IntroLing.vue";
 import { useRouter } from 'vue-router'
-import BackTop from "./components/BackTop.vue";
+import BackTop from "./components/TheBackTop.vue";
+import TheBackTop from "./components/TheBackTop.vue";
+import TheCircularNav from "./components/TheCircularNav.vue";
+import TheRightMenu from "./components/TheRightMenu.vue";
 // 跳转到 ling 路由
 const router = useRouter()
 router.push('/ling')
@@ -47,11 +50,9 @@ document.addEventListener('keydown', e => {
 </script>
 
 <template>
-	<!--<nav-bar/>-->
-	<!--<test-temp/>-->
-	<circular-nav/>
-	<back-top/>
-	<right-menu/>
+	<the-circular-nav/>
+	<the-back-top/>
+	<the-right-menu/>
 	<router-view/>
 </template>
 <!--todo 修改 CSS 样式（大小 + 颜色）-->

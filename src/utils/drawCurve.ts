@@ -5,15 +5,15 @@
  * @param color 线条颜色
  * @param alpha 不透明度
  */
-export function drawCurve(canvas:HTMLCanvasElement,points:number[][],color:string="black",alpha:number=1,lineWidth:number=4) {
+export function drawCurve(canvas: HTMLCanvasElement, points: number[][], color: string = "black", alpha: number = 1, lineWidth: number = 4) {
     let ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
     let t = 0;
     let n = points.length - 1;
-    let curvePoints:number[][] = [];
+    let curvePoints: number[][] = [];
 
     function animate() {
-        t += 0.004;
+        t += 0.0032;
 
         let x = 0;
         let y = 0;
@@ -62,7 +62,7 @@ export function drawCurve(canvas:HTMLCanvasElement,points:number[][],color:strin
 
     animate();
 
-    function binomialCoefficient(n:number, k:number) {
+    function binomialCoefficient(n: number, k: number) {
         let coefficient = 1;
         for (let i = n - k + 1; i <= n; i++) {
             coefficient *= i;

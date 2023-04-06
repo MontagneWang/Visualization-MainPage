@@ -23,7 +23,8 @@
     "src/**/*.vue"
   ],
   "exclude": [
-    "src/components/NavBar.vue" // 排除文件
+    "src/temp/NavBar.vue"
+    // 排除文件
   ],
   "references": [
     {
