@@ -463,7 +463,7 @@ onBeforeUnmount(() => {
 					<el-timeline-item color="rgb(238,0,0)" icon="Mic" placement="top"
 					                  timestamp="2019.04.12" type="primary">
 						<el-card>
-							<h3>乐正绫四周年，官方投稿了生贺曲《我在》</h3>
+							<h3>乐正绫四周年，『在此歌唱 从零开始万千景象延伸远方』——《我在》</h3>
 							<p>《我在》以绫的视角描写自诞生以来的心境，以及对听众们的感谢。</p>
 							<p>同日，官方宣布与游戏联动，投稿了游戏联动曲《蝶恋花·何处谣》</p>
 						</el-card>
@@ -495,13 +495,13 @@ onBeforeUnmount(() => {
 					<el-timeline-item color="rgb(238,0,0)" icon="Mic" placement="top"
 					                  timestamp="2020.04.12">
 						<el-card>
-							<h3>乐正绫五周年，官方发布了生日贺曲《花》，第一次使用了绫的 Vocaloid5 音源</h3>
+							<h3>乐正绫五周年，『为你而来 而存在』——《花》</h3>
+							<p>官方也在今天发布了乐正绫官方 EP《告白诗》专辑试听 PV</p>
+							<p>《告白诗》是 2020 年乐正绫诞生祭企划作品，也是乐正绫的第二张官方专辑</p>
+							<p>该专辑内共有4首单曲【《花》《多数人》《酒心吻》《悸动》】</p>
+							<p>值得一提的是，《花》第一次使用了绫的 Vocaloid5 音源，给予无数听众以希望。</p>
 							<h3 style="color: #ee0000">「请你知晓　—— <i>好不好</i>」</h3>
 						</el-card>
-						<p>&emsp;官方也在今天发布了乐正绫官方 EP《告白诗》专辑试听 PV</p>
-						<p>&emsp;《告白诗》是 2020 年乐正绫诞生祭企划作品，也是乐正绫的第二张官方专辑</p>
-						<p>&emsp;该专辑内共有4首单曲【《花》《多数人》《酒心吻》《悸动》】</p>
-						<p>&emsp;值得一提的是，《花》使用了从未提及到的 V5 音源，给予无数听众以希望。</p>
 					</el-timeline-item>
 					<el-timeline-item icon="guide" placement="top" timestamp="2020.05.22" type="primary">
 						<h3>「快走吧，山遥路远」</h3>
@@ -516,7 +516,7 @@ onBeforeUnmount(() => {
 					</el-timeline-item>
 					<el-timeline-item color="rgb(238,0,0)" icon="Mic" placement="top" timestamp="2021.04.12">
 						<el-card>
-							<h3>乐正绫六周年，官方发布了生日贺曲《丑马》，本曲也是使用了尚未发售的 V5 音源 </h3>
+							<h3>乐正绫六周年，『我看见一匹丑马有了双翼 飞进了七彩的云里』《丑马》</h3>
 							<p>官方还投稿了一份互动视频</p>
 						</el-card>
 					</el-timeline-item>
@@ -539,7 +539,7 @@ onBeforeUnmount(() => {
 					</el-timeline-item>
 					<el-timeline-item color="rgb(238,0,0)" icon="Mic" placement="top" timestamp="2022.04.12">
 						<el-card>
-							<h3>乐正绫七周年，官方发布了生日贺曲《未知旅行FM》</h3>
+							<h3>乐正绫七周年，『结伴冲向未知的彼岸』——《未知旅行FM》</h3>
 							<p>同时，同人也举办了七周年生日接龙活动，创作了许多歌曲</p>
 						</el-card>
 					</el-timeline-item>
@@ -621,22 +621,22 @@ onBeforeUnmount(() => {
 					<p style="color:#ee0000">从零开始万千景象延伸远方</p>
 				</div>
 				<!--todo 完成标记点展示-->
-				<div class="tips tips0">绫彩音人设入选</div>
-				<div class="tips tips1">乐正绫形象公布</div>
-				<div class="tips tips2">乐正绫第一首试听曲公布</div>
-				<div class="tips tips3">乐正绫声库发售</div>
-				<div class="tips tips4">乐正绫首张官方专辑《绫》发布</div>
-				<div class="tips tips5">乐正绫四周年，官方生贺曲《我在》</div>
-				<div class="tips tips6">乐正绫五周年，官方生贺曲《花》</div>
-				<div class="tips tips7">乐正绫第二张官方专辑《告白诗》发布</div>
-				<div class="tips tips8">乐正绫六周年，官方生贺曲《丑马》</div>
-				<div class="tips tips9">乐正绫 Vocaloid5 声库开始内测</div>
-				<div class="tips tips10">乐正绫七周年，官方生贺曲《未知旅行FM》</div>
-				<div class="tips tips11">乐正绫 Vocaloid5 声库发售</div>
-				<div class="tips tips12">乐正绫 Ai 声库开始内测</div>
-				<div class="tips tips13">乐正绫 Ai 形象公布</div>
-				<div class="tips tips14">乐正绫八周年，官方生贺曲《——————》</div>
-				<div class="tips tips15">『为你而来 而存在』</div>
+				<div class="tips tips0">2012 - 01 - 17<br/>绫彩音人设入选</div>
+				<div class="tips tips1">2012 - 03 - 21<br/>乐正绫形象公布</div>
+				<div class="tips tips2">2015 - 06 - 12<br/>乐正绫第一首试听曲公布</div>
+				<div class="tips tips3">2015 - 07 - 17<br/>乐正绫声库发售</div>
+				<div class="tips tips4">2017 - 12 - 02<br/>乐正绫首张官方专辑《绫》发布</div>
+				<div class="tips tips5">2019 - 04 - 12<br/>乐正绫四周年，生贺曲《我在》</div>
+				<div class="tips tips6">2020 - 04 - 12<br/>乐正绫五周年，生贺曲《花》</div>
+				<div class="tips tips7">2020 - 04 - 12<br/>乐正绫第二张官方专辑《告白诗》发布</div>
+				<div class="tips tips8">2021 - 04 - 12<br/>乐正绫六周年，生贺曲《丑马》</div>
+				<div class="tips tips9">2021 - 06 - 18<br/>乐正绫 Vocaloid5 声库开始内测</div>
+				<div class="tips tips10">2022 - 04 - 12<br/>乐正绫七周年，生贺曲《未知旅行FM》</div>
+				<div class="tips tips11">2022 - 10 - 14<br/>乐正绫 Vocaloid5 声库发售</div>
+				<div class="tips tips12">2022 - 12 - 25<br/>乐正绫 Ai 声库开始内测</div>
+				<div class="tips tips13">2023 - 04 - 10<br/>乐正绫 Ai 形象公布</div>
+				<div class="tips tips14">2023 - 04 - 12<br/>乐正绫八周年，官方生贺曲《——————》</div>
+				<div class="tips tips15">2021 - 06 - 18<br/>『为你而来 而存在』</div>
 				<div class="finalTachie final0">
 					<img alt="" src="https://article.biliimg.com/bfs/article/3a6184943556ceb4c6216a0099770274d7b9ffa2.png">
 				</div>
