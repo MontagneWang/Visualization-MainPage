@@ -623,7 +623,7 @@ onBeforeUnmount(() => {
 					<p>再次歌唱</p>
 					<p style="color:#ee0000">从零开始万千景象延伸远方</p>
 				</div>
-				<!--fixme 动画在不同屏幕上显示时间不同，位置也会不同-->
+				<!--fixme 标记点位置可能在不同的屏幕分辨率下会错位，需要根据以下修复-->
 				<!--idea 画线算法返回所有点位置的数组，然后每个自设标记点的位置从数组中获取-->
 				<div class="tips tips0">2012 - 01 - 17<br/>绫彩音人设入选</div>
 				<div class="tips tips1">2012 - 03 - 21<br/>乐正绫形象公布</div>
@@ -952,13 +952,13 @@ html {
 
 			&.finalV5 {
 				width: 7vw;
-				bottom: 20vh;
+				bottom: 24vh;
 				left: 9vw;
 			}
 
 			&.finalAi {
 				width: 8.5vw;
-				bottom: 21vh;
+				bottom: 23vh;
 				right: 30vw;
 			}
 		}
