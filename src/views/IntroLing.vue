@@ -142,6 +142,9 @@ onMounted(() => {
 	document.querySelectorAll('.el-timeline-item').forEach((item, index) => {
 		item.classList.add('wow', 'animate__animated', 'animate__fadeInUp')
 	})
+	document.querySelectorAll('.tips').forEach((item, index) => {
+		item.classList.add('wow', 'animate__animated', 'animate__fadeIn')
+	})
 	document.querySelectorAll('.finalWord p').forEach((item, index) => {
 		item.classList.add('wow', 'animate__animated', 'animate__fadeIn', `animate__delay-${index + 1}s`)
 	})
@@ -251,7 +254,7 @@ onMounted(() => {
 	// 滚动到最后页面时开始绘制曲线
 	watchEffect(() => {
 		if (finalPageShowFlag.value === true) {
-			drawCurve(canvas, points, "rgb(238, 0, 0)", 0.65, 5)
+			drawCurve(canvas, points, "rgb(238, 0, 0)", 0.65, 5,4500)
 		}
 	})
 })
@@ -620,23 +623,17 @@ onBeforeUnmount(() => {
 					<p>再次歌唱</p>
 					<p style="color:#ee0000">从零开始万千景象延伸远方</p>
 				</div>
-				<!--todo 完成标记点展示-->
+				<!--fixme 动画在不同屏幕上显示时间不同，位置也会不同-->
+				<!--idea 画线算法返回所有点位置的数组，然后每个自设标记点的位置从数组中获取-->
 				<div class="tips tips0">2012 - 01 - 17<br/>绫彩音人设入选</div>
 				<div class="tips tips1">2012 - 03 - 21<br/>乐正绫形象公布</div>
-				<div class="tips tips2">2015 - 06 - 12<br/>乐正绫第一首试听曲公布</div>
-				<div class="tips tips3">2015 - 07 - 17<br/>乐正绫声库发售</div>
-				<div class="tips tips4">2017 - 12 - 02<br/>乐正绫首张官方专辑《绫》发布</div>
-				<div class="tips tips5">2019 - 04 - 12<br/>乐正绫四周年，生贺曲《我在》</div>
-				<div class="tips tips6">2020 - 04 - 12<br/>乐正绫五周年，生贺曲《花》</div>
-				<div class="tips tips7">2020 - 04 - 12<br/>乐正绫第二张官方专辑《告白诗》发布</div>
-				<div class="tips tips8">2021 - 04 - 12<br/>乐正绫六周年，生贺曲《丑马》</div>
-				<div class="tips tips9">2021 - 06 - 18<br/>乐正绫 Vocaloid5 声库开始内测</div>
-				<div class="tips tips10">2022 - 04 - 12<br/>乐正绫七周年，生贺曲《未知旅行FM》</div>
-				<div class="tips tips11">2022 - 10 - 14<br/>乐正绫 Vocaloid5 声库发售</div>
-				<div class="tips tips12">2022 - 12 - 25<br/>乐正绫 Ai 声库开始内测</div>
-				<div class="tips tips13">2023 - 04 - 10<br/>乐正绫 Ai 形象公布</div>
-				<div class="tips tips14">2023 - 04 - 12<br/>乐正绫八周年，官方生贺曲《——————》</div>
-				<div class="tips tips15">2021 - 06 - 18<br/>『为你而来 而存在』</div>
+				<div class="tips tips2">2015 - 07 - 17<br/>乐正绫声库发售</div>
+				<div class="tips tips3">2017 - 12 - 02<br/>首张官方专辑《绫》发布</div>
+				<div class="tips tips4">2020 - 04 - 12<br/>官专《告白诗》发布</div>
+				<div class="tips tips5">2022 - 10 - 14<br/>Vocaloid5 声库发售</div>
+				<div class="tips tips6">2022 - 12 - 25<br/>Ai 声库开始内测</div>
+				<div class="tips tips7">2023 - 04 - 10<br/>Ai 形象公布</div>
+				<div class="tips tips8">悠悠十年，一瞬永远<br/>『为你而来 而存在』</div>
 				<div class="finalTachie final0">
 					<img alt="" src="https://article.biliimg.com/bfs/article/3a6184943556ceb4c6216a0099770274d7b9ffa2.png">
 				</div>
@@ -767,7 +764,7 @@ html {
 		}
 
 		.tips {
-			display: none;
+			display: inline-block;
 			float: left;
 			color: white;
 			padding: 1em;
@@ -789,71 +786,132 @@ html {
 			&::after {
 				content: "";
 				position: absolute;
-				bottom: -22px;
+				bottom: -20px;
 				left: 50%;
-				margin-left: -5px; /* 圆形直径的一半 */
-				width: 7px;
-				height: 7px;
+				margin-left: -4px; /* 圆形直径的一半 */
+				width: 5px;
+				height: 5px;
 				border: 1.5px solid rgba(255, 255, 255, 1);
+				background-color: rgba(255, 255, 255, 0.7);
 				border-radius: 50%;
 			}
 
+			$animationDelay: 1s;
 
 			&.tips0 {
-				display: inline-block;
-				top: -70vh;
-				left: 60vw;
+				top: -70.5vh;
+				left: 30vw;
+				-webkit-animation-delay: $animationDelay;
+				animation-delay: $animationDelay;
 			}
 
 			&.tips1 {
+				top: -61.3vh;
+				left: 40vw;
+				-webkit-animation-delay: $animationDelay+0.5s;
+				animation-delay: $animationDelay+0.5s;
+				// 向上三角
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: 4.3em;
+					left: 50%;
+					margin-left: -10px; /* 三角形宽度的一半 */
+					border: 10px solid transparent;
+					border-bottom-color: rgba(0, 0, 0, 0.5);
+				}
+
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: 5em;
+					left: 50%;
+					margin-left: -4px; /* 圆形直径的一半 */
+					width: 5px;
+					height: 5px;
+					border: 1.5px solid rgba(255, 255, 255, 1);
+					background-color: rgba(255, 255, 255, 0.7);
+					border-radius: 50%;
+				}
 			}
 
 			&.tips2 {
+				top: -49.8vh;
+				left: 35vw;
+				padding: 0.9vw;
+				-webkit-animation-delay: $animationDelay+1s;
+				animation-delay: $animationDelay+1s;
 			}
 
 			&.tips3 {
+				top: -49.5vh;
+				left: 3vw;
+				-webkit-animation-delay: $animationDelay+1.5s;
+				animation-delay: $animationDelay+1.5s;
 			}
 
 			&.tips4 {
+				top: -32vh;
+				left: -25vw;
+				-webkit-animation-delay: $animationDelay+2s;
+				animation-delay: $animationDelay+2s;
+				// 向上三角
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: 4.3em;
+					left: 50%;
+					margin-left: -10px; /* 三角形宽度的一半 */
+					border: 10px solid transparent;
+					border-bottom-color: rgba(0, 0, 0, 0.5);
+				}
+
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: 5em;
+					left: 50%;
+					margin-left: -4px; /* 圆形直径的一半 */
+					width: 5px;
+					height: 5px;
+					border: 1.5px solid rgba(255, 255, 255, 1);
+					background-color: rgba(255, 255, 255, 0.7);
+					border-radius: 50%;
+				}
 			}
 
 			&.tips5 {
+				top: -16vh;
+				left: -48vw;
+				-webkit-animation-delay: $animationDelay+2.5s;
+				animation-delay: $animationDelay+2.5s;
 			}
 
 			&.tips6 {
+				top: -27.3vh;
+				left: 33vw;
+				-webkit-animation-delay: $animationDelay+3s;
+				animation-delay: $animationDelay+3s;
 			}
 
 			&.tips7 {
+				top: -28.3vh;
+				left: 43vw;
+				-webkit-animation-delay: $animationDelay+3.5s;
+				animation-delay: $animationDelay+3.5s;
 			}
 
 			&.tips8 {
-			}
-
-			&.tips9 {
-			}
-
-			&.tips10 {
-			}
-
-			&.tips11 {
-			}
-
-			&.tips12 {
-			}
-
-			&.tips13 {
-			}
-
-			&.tips14 {
-			}
-
-			&.tips15 {
+				top: -31vh;
+				left: 46vw;
+				line-height: 1.5em;
+				-webkit-animation-delay: $animationDelay+4s;
+				animation-delay: $animationDelay+4s;
 			}
 		}
 
 		.finalTachie {
 			position: absolute;
-			float: left;
 			width: 7vw;
 			user-select: none;
 
@@ -893,15 +951,15 @@ html {
 			}
 
 			&.finalV5 {
-				width: 6vw;
-				bottom: 6vh;
+				width: 7vw;
+				bottom: 20vh;
 				left: 9vw;
 			}
 
 			&.finalAi {
 				width: 8.5vw;
-				bottom: 0vh;
-				right: 32vw;
+				bottom: 21vh;
+				right: 30vw;
 			}
 		}
 
