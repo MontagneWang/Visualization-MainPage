@@ -1,5 +1,6 @@
 import {defineConfig, type PluginOption} from 'vite'
 import vue from '@vitejs/plugin-vue'
+import path from 'path';
 // @ts-ignore
 // import inject from '@rollup/plugin-inject';  // 效果和webpack.ProvidePlugin中相同
 import AutoImport from 'unplugin-auto-import/vite'
@@ -21,4 +22,19 @@ export default defineConfig({
             open: true
         }) as PluginOption,
     ],
+    // resolve: {
+    //     alias: {
+    //         'VUE1-fullpage.js': path.resolve(__dirname, './src/libs/vue-fullpage.js'),
+    //     },
+    // },
+    // build: {
+    //     minify: false,
+    // },
+    // build: {
+    //     outDir: 'dist',
+    //     assetsDir: 'assets',
+    //     rollupOptions: {
+    //         input: './src/views/IntroLing.vue',
+    //     },
+    // },
 })

@@ -1,9 +1,11 @@
 <script lang="ts" setup>
+
+import TheTestTempComponent from "../temp/TheTestTempComponent.vue";
 </script>
 
 <template>
 	<h1>这里是 DataVisualization</h1>
-</template>
+	</template>
 
 <style scoped>
 body {

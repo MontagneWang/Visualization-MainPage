@@ -6,7 +6,7 @@ import {createPinia} from 'pinia'
 import 'vue-fullpage.js/dist/style.css'
 // import './fullpage.scrollHorizontally.min' // Optional. When using fullpage extensions
 // @ts-ignore
-// import VueFullPage from 'vue-fullpage.js'
+import VueFullPage from 'vue-fullpage.js'
 import 'animate.css/animate.min.css' //引入
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
@@ -18,7 +18,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 app.use(pinia)
 app.use(router)
-// app.use(VueFullPage)
+app.use(VueFullPage)
 app.mount('#app')
 
 // createApp(App).use(pinia).use(router).mount('#app')

@@ -14,3 +14,4 @@ export function throttle(func: () => void, delay: number): (...args: any[]) => v
         }
     }
 }
+//	let throttledHandleWheel = throttle(handleWheel, 500);

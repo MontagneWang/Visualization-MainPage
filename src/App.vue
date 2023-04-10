@@ -10,7 +10,7 @@ import TheCircularNav from "./components/TheCircularNav.vue";
 import TheRightMenu from "./components/TheRightMenu.vue";
 // 跳转到 ling 路由
 const router = useRouter()
-router.push('/ling')
+router.push('/vocaloid')
 
 // 标题切换
 // let timer: number | undefined

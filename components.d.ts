@@ -9,12 +9,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    CircularNav: typeof import('./src/components/TheCircularNav.vue')['default']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
-    NavBar: typeof import('./src/temp/NavBar.vue')['default']
-    RightMenu: typeof import('./src/components/TheRightMenu.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheBackTop: typeof import('./src/components/TheBackTop.vue')['default']

@@ -267,8 +267,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-	<!--idea 抽取每一个页面为组件 -->
-	<!-- idea 通过 <Transition> 来增加过渡 -->
+	<!--idea ⚠ 抽取每一个页面为组件（使用插槽 slot 来添加内容） -->
+	<!--idea 通过 <Transition> 来增加过渡 -->
 	<div v-show="nowPage!==0 && nowPage!==5"
 	     ref="bubbleBox"
 	     :class="{show:bubbleBoxShowFlag}"
