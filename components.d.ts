@@ -17,5 +17,6 @@ declare module '@vue/runtime-core' {
     TheBackTop: typeof import('./src/components/TheBackTop.vue')['default']
     TheCircularNav: typeof import('./src/components/TheCircularNav.vue')['default']
     TheRightMenu: typeof import('./src/components/TheRightMenu.vue')['default']
+    TheRightMenu2: typeof import('./src/temp/TheRightMenu2.vue')['default']
   }
 }

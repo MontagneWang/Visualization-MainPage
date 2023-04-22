@@ -7,7 +7,7 @@ const routes = [
         name: 'home',
         component: Home,
         meta:{
-            title:'home',
+            title:'首页',
             keepAlive:false,
             requireAuth:false
         }
@@ -17,7 +17,7 @@ const routes = [
         name: 'about',
         component: () => import('../views/AboutThis.vue'),
         meta:{
-            title:'about',
+            title:'关于',
             keepAlive:false,
             requireAuth:false
         }
@@ -27,7 +27,7 @@ const routes = [
         name: 'vocaloid',
         component: () => import('../views/IntroVocaloid.vue'),
         meta:{
-            title:'vocaloid',
+            title:'Vocaloid',
             keepAlive:false,
             requireAuth:false
         }
@@ -37,7 +37,7 @@ const routes = [
         name: 'ling',
         component: () => import('../views/IntroLing.vue'),
         meta:{
-            title:'ling',
+            title:'About_Ling',
             keepAlive:false,
             requireAuth:false
         }
@@ -47,7 +47,7 @@ const routes = [
         name: 'producer',
         component: () => import('../views/IntroProducer.vue'),
         meta:{
-            title:'producer',
+            title:'创作者',
             keepAlive:false,
             requireAuth:false
         }
@@ -57,7 +57,7 @@ const routes = [
         name: 'club',
         component: () => import('../views/ProducerClub.vue'),
         meta:{
-            title:'club',
+            title:'创作社团',
             keepAlive:false,
             requireAuth:false
         }
@@ -67,7 +67,7 @@ const routes = [
         name: 'song',
         component: () => import('../views/BirthOfSong.vue'),
         meta:{
-            title:'song',
+            title:'歌曲的诞生',
             keepAlive:false,
             requireAuth:false
         }
@@ -77,7 +77,7 @@ const routes = [
         name: 'message',
         component: () => import('../views/MessageBoard.vue'),
         meta:{
-            title:'message',
+            title:'留言板',
             keepAlive:false,
             requireAuth:false
         }

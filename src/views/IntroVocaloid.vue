@@ -1,10 +1,17 @@
 <script lang="ts" setup>
+import {onMounted} from "vue";
+
 let options = {}
+
+onMounted(() => {
+	// 隐藏签名 + 报错
+	(document.querySelector('.fp-watermark') as HTMLElement).style.display = 'none'
+	console.clear()
+})
 </script>
 
 <template>
-	<!--todo 这里需要修改为 整页滚动 内容-->
-	<!--todo 插槽-->
+	<!--todo 完成整页滚动内容-->
 	<!--<the-test-temp-component>-->
 	<!--	插槽内容，用于替换默认内容-->
 	<!--</the-test-temp-component>-->
