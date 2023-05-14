@@ -1,16 +1,12 @@
 <script setup lang="ts">
-import NavBar from "./temp/NavBar.vue";
-import RightMenu from "./components/TheRightMenu.vue";
-import CircularNav from "./components/TheCircularNav.vue";
-import TestTemp from "./views/IntroLing.vue";
 import { useRouter } from 'vue-router'
-import BackTop from "./components/TheBackTop.vue";
 import TheBackTop from "./components/TheBackTop.vue";
 import TheCircularNav from "./components/TheCircularNav.vue";
 import TheRightMenu from "./components/TheRightMenu.vue";
+import IntroLing from "./views/IntroLing.vue"
 // 跳转到 ling 路由
-const router = useRouter()
-router.push('/vocaloid')
+// const router = useRouter()
+// router.push('/vocaloid')
 
 // 标题切换
 // let timer: number | undefined
@@ -54,9 +50,11 @@ document.addEventListener('keydown', e => {
 	<the-back-top/>
 	<the-right-menu/>
 	<router-view/>
+	<!--<intro-ling/>-->
 </template>
 <!--todo 修改 CSS 样式（大小 + 颜色）-->
 <!--todo 修改 HTML 类名-->
+<!--todo 不同屏幕尺寸适配-->
 <!--todo 移动端适配-->
 <style>
 html *

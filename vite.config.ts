@@ -10,31 +10,27 @@ import {visualizer} from 'rollup-plugin-visualizer'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [
-        vue(),
-        AutoImport({
-            resolvers: [ElementPlusResolver()],
-        }),
-        Components({
-            resolvers: [ElementPlusResolver()],
-        }),
-        visualizer({
-            open: true
-        }) as PluginOption,
-    ],
-    // resolve: {
-    //     alias: {
-    //         'VUE1-fullpage.js': path.resolve(__dirname, './src/libs/vue-fullpage.js'),
-    //     },
-    // },
-    // build: {
-    //     minify: false,
-    // },
-    // build: {
-    //     outDir: 'dist',
-    //     assetsDir: 'assets',
-    //     rollupOptions: {
-    //         input: './src/views/IntroLing.vue',
-    //     },
-    // },
+	plugins: [
+		vue(),
+		AutoImport({
+			resolvers: [ElementPlusResolver()],
+		}),
+		Components({
+			resolvers: [ElementPlusResolver()],
+		}),
+		visualizer({
+			open: true
+		}) as PluginOption,
+	],
+	server: {
+		port: 5173,
+		proxy: {
+			'/api': {
+				// target: 'https://api.bilibili.com',
+				target: 'http://127.0.0.1',
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api/, '') // 不可以省略rewrite
+			}
+		}
+	}
 })

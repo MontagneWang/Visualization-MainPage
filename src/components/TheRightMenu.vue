@@ -74,12 +74,12 @@ onMounted(() => {
 	<div ref="rightMenu" class="rightMenu circleMenu">
 		<div id="rightCircle" class="circle">
 			<div :style="{height:radius*2+'px',width:radius*2+'px'}" class="item">
-				<a class="eachItem" href="" target="_blank"></a>
-				<a class="eachItem" href="" target="_blank"></a>
-				<a class="eachItem" href="" target="_blank"></a>
-				<a class="eachItem" href="/" target="_blank" @click.prevent="showModal = true"></a>
-				<a class="eachItem" href="" target="_blank"></a>
-				<a class="eachItem" href="mailto:ling.vc@foxmail.com" target="_blank"></a>
+				<a class="eachItem"></a>
+				<a class="eachItem"></a>
+				<a class="eachItem"></a>
+				<a class="eachItem" @click.prevent="showModal = true"></a>
+				<a class="eachItem"></a>
+				<a class="eachItem" href="mailto:ling.vc@foxmail.com"></a>
 			</div>
 		</div>
 	</div>

@@ -6,6 +6,7 @@
  * @param alpha 不透明度
  * @param lineWidth 线条宽度
  * @param duration 绘制曲线的总时间（单位：毫秒）
+ * todo 可优化该画线算法
  */
 export function drawCurve(canvas: HTMLCanvasElement,
                           points: number[][],

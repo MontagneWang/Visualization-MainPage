@@ -1,18 +1,13 @@
-# Vue 3 + TypeScript + Vite
+* 人
+  1. 听众：性别、地理位置、兴趣、喜欢曲风，听 Vocaloid 时长[1-12年]（投票）等
+  2. 创作者（一种是通过投稿视频的p主来获取，补充萌百的p主）
+  3. 创作社团（取自萌百[社团成立时间、人数、作品量、作品播放数]）
+  4. staff 合作关系（需要通过单条视频api接口获取staff）
+  5. 歌手与其他歌手的合唱次数
+* 歌曲视频
+  1. 视频（神话曲、传说曲、殿堂曲、排行榜、原创新曲+优秀翻调推送等）
+  2. ⚠ 部分视频在投稿时并未投在vocaloid曲，需要寻找其他Api并扩充更多遗漏歌曲（比如云端+years流年）[可能需要从音乐分区中获取筛选 tid28，大概也是三十五万条数据][可以通过标题+tag来筛选v曲]
+  3. 视频（播放量、点赞数、硬币、分享数、评论等等）
+  4. 歌曲在各个社交平台上的排行榜
+  5. 年度数据
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support For `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.

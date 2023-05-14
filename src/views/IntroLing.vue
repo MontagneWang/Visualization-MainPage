@@ -61,7 +61,7 @@ const items = ref([
 			},
 			{
 				'': '乐正绫「YueZheng Ling」',
-				'人设': '____',
+				'人设': 'Miz 团一',
 				'发色': '棕发',
 				'瞳色': '红瞳',
 				'代表色': '#EE0000',
@@ -90,6 +90,7 @@ let wow = new WOW({
 wow.init();
 
 // idea 可能需要考虑通过动态获取屏幕高度来设置每页高度（比如获取文本总高度后，与用户当前界面大小进行计算转换，判断需要多少个 vh），当前在不同屏幕下效果不好
+// idea 修改 font-size
 // idea 撑大缩小盒子时也添加动效
 // 当前页数计算，传入对应数据
 window.addEventListener('scroll', function () {
@@ -461,7 +462,7 @@ onBeforeUnmount(() => {
 						<p>《秘密邮件》《Godrose》《卡纳塔幻想曲》《平行四界Quadimension 6》《No.13852》</p>
 						<hr>
 					</el-timeline-item>
-
+					<!--todo 繁华唱遍-->
 					<el-timeline-item color="rgb(238,0,0)" icon="Mic" placement="top"
 					                  timestamp="2019.04.12" type="primary">
 						<el-card>
@@ -590,22 +591,32 @@ onBeforeUnmount(() => {
 					<el-timeline-item icon="User" placement="top" timestamp="2023.01.14" type="primary">
 						<h3>Vsinger 官方发布，开启形象创作征集活动</h3>
 					</el-timeline-item>
-					<el-timeline-item icon="Avatar" placement="top" timestamp="2023.04.10" type="success">
-						<el-card>
-							<h2>乐正绫 Ai 形象敲定！</h2>
-							<p>在数十个优秀作品中，_______老师的设计脱颖而出，成功当选绫 Ai 形象🎉🎉🎉</p>
-						</el-card>
-					</el-timeline-item>
 					<el-timeline-item color="rgb(238,0,0)" icon="Mic" placement="top" timestamp="2023.04.12">
 						<el-card>
 							<h2>乐正绫八周年生日快乐🎂</h2>
-							<p>生日接龙</p>
+							<p>『要我的骄傲随生命 — 喧嚣』——《Break Out》</p>
+							<p>特别值得一提的是，今年的主题很有意思，也很能让人共鸣</p>
+							<p>如果说去年官方给出的“旅行”主题偏向于题材创作，那么今年“成为自己”的主题则更具有人文关怀</p>
+							<p>时隔三年，官方也推出了绫的第二套主题装扮，同时将选取三首民间原创曲与生贺曲一起作为生贺纪念 EP 发行</p>
 						</el-card>
+					</el-timeline-item>
+					<el-timeline-item icon="Avatar" placement="top" timestamp="2023.04.12" type="success">
+						<el-card>
+							<h2>乐正绫 Ai 形象敲定🎉</h2>
+							<!-- todo 更新-->
+							<p>在数十个优秀作品中，[Miz 团一] 老师的设计脱颖而出，成功当选乐正绫 Ai 形象</p>
+							<del>终稿还在调整中，右侧立绘暂缺</del>
+						</el-card>
+					</el-timeline-item>
+					<el-timeline-item icon="User" placement="top" timestamp="2023.04.30" type="primary">
+						<h3>乐正绫八周年生贺纪念 EP 发行</h3>
+						<hr />
 					</el-timeline-item>
 				</el-timeline>
 			</div>
 		</div>
 	</div>
+	<!--todo 最后一页fadeInUp出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid-->
 	<div class="page final">
 		<div ref="history"
 		     :class="{show:finalPageShowFlag}"
@@ -631,7 +642,7 @@ onBeforeUnmount(() => {
 				<div class="tips tips4">2020 - 04 - 12<br/>官专《告白诗》发布</div>
 				<div class="tips tips5">2022 - 10 - 14<br/>Vocaloid5 声库发售</div>
 				<div class="tips tips6">2022 - 12 - 25<br/>Ai 声库开始内测</div>
-				<div class="tips tips7">2023 - 04 - 10<br/>Ai 形象公布</div>
+				<div class="tips tips7">2023 - 04 - 12<br/>Ai 形象公布</div>
 				<div class="tips tips8">悠悠十年，一瞬永远<br/>『为你而来 而存在』</div>
 				<div class="finalTachie final0">
 					<img alt="" src="https://article.biliimg.com/bfs/article/3a6184943556ceb4c6216a0099770274d7b9ffa2.png">
@@ -643,7 +654,8 @@ onBeforeUnmount(() => {
 					<img alt="" src="https://article.biliimg.com/bfs/article/9b14ff130dbdd0c8c32661806864f4760ae21ac1.png">
 				</div>
 				<div class="finalTachie finalAi">
-					<img alt="" src="https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png">
+					<!--todo-->
+					<!--<img alt="" src="https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png">-->
 				</div>
 			</div>
 		</div>
@@ -1130,8 +1142,9 @@ $pageHeight: 320vh;
 	background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png), url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg);
 
 	.bg {
+		// todo fixme
 		//background: url(../assets/ai.png) 81% bottom no-repeat fixed;
-		background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png) 81% bottom no-repeat fixed;
+		//background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png) 81% bottom no-repeat fixed;
 		background-size: auto 71vh !important;
 	}
 }

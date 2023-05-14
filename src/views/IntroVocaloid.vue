@@ -1,8 +1,12 @@
 <script lang="ts" setup>
 import {onMounted} from "vue";
+// todo 减少滚动的等待时间间隔
+let options = {
+	scrollBar: true,
+	// scrollingSpeed: 700
 
-let options = {}
-
+}
+// fixme 展开导航时，无法阻止滚动的默认事件 idea 闭包/锁（但应该有更简单的方法）
 onMounted(() => {
 	// 隐藏签名 + 报错
 	(document.querySelector('.fp-watermark') as HTMLElement).style.display = 'none'
@@ -12,31 +16,20 @@ onMounted(() => {
 
 <template>
 	<!--todo 完成整页滚动内容-->
-	<!--<the-test-temp-component>-->
-	<!--	插槽内容，用于替换默认内容-->
-	<!--</the-test-temp-component>-->
+	<!--todo 这里可以加一个 固钉 affix （可以使用 naive UI）-->
 	<div>
 		<full-page ref="fullpage" :options="options">
 			<div class="section">
-				<button class="next" @click="$refs.fullpage.api.moveSectionDown()">
-					Next
-				</button>
-				Section 1
+				<!--@click="$refs.fullpage.api.moveSectionDown()"-->
+				<!--@click="$refs.fullpage.api.moveSectionUp()"-->
+				<p>大体介绍 Vocaloid (Logo)</p>
+				<p>vocaloid 是什么</p>
 			</div>
 			<div class="section">
-				<button class="prev" @click="$refs.fullpage.api.moveSectionUp()">
-					Prev
-				</button>
-				Section 2
-				<button class="next" @click="$refs.fullpage.api.moveSectionDown()">
-					Next
-				</button>
+				<p>洛天依（边框为该角色的背景色）[把设定集的内容移植过来（ai 抠图、添加动画）+ 音之精灵]</p>
 			</div>
 			<div class="section">
-				<button class="prev" @click="$refs.fullpage.api.moveSectionUp()">
-					Prev
-				</button>
-				Section 3
+				<p>乐正绫（如果您想知道更多有关绫的内容，可以移步 <a href="/#/ling" target="_blank">[此处]</a> ）</p>
 			</div>
 		</full-page>
 	</div>
@@ -46,4 +39,5 @@ onMounted(() => {
 div {
 	text-align: center;
 }
+
 </style>

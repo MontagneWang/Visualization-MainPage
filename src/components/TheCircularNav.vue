@@ -77,6 +77,7 @@ onMounted(() => {
 	let throttledHandleWheel = throttle(handleWheel, 500);
 	navCircle.addEventListener('wheel', function (e) {
 		e.preventDefault();
+		e.stopPropagation(); //
 		// 下滚时为 1，上滚为 -1
 		e.deltaY > 0 ? wheelDirection = 1 : wheelDirection = -1
 		throttledHandleWheel()
@@ -131,9 +132,8 @@ onMounted(() => {
 		</div>
 	</div>
 </template>
-
+<!--todo 可以添加背景（刻度与指针等等），让其变成一个更帅的轮盘-->
 <style lang="scss" scoped>
-
 .hide {
 	transform: translateX(-30vh);
 	transition: all 0.5s;

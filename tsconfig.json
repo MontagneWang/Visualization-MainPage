@@ -21,8 +21,8 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue"
-//    "src/views/IntroLing.vue",
-//    "src/App.vue"
+    //    "src/views/IntroLing.vue",
+    //    "src/App.vue"
   ],
   "exclude": [
     "src/temp/NavBar.vue"
