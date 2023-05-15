@@ -44,6 +44,7 @@ async function getData() {
 		console.error('Error fetching songs:', error);
 	}
 }
+// todo
 watchEffect(()=>{
 	updateData()
 })
