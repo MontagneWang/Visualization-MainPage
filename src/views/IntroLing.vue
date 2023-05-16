@@ -13,6 +13,7 @@ let lingcaiyin = ref<HTMLInputElement | null>(null)
 let nowPage = ref(0)
 let finalPageShowFlag = ref(false)
 let bubbleBoxShowFlag = ref(false)
+// fixme change ref to reactive
 const items = ref([
 			{
 				'': '绫彩音「Ling Caiyin」',
@@ -720,7 +721,7 @@ html {
 	border-radius: 5px;
 	border: 1px solid #66ccff;
 	transition: all 0.5s;
-	z-index: 100000;
+	z-index: 100;
 	user-select: none;
 
 	ul {

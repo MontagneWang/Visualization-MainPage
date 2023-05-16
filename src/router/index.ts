@@ -18,7 +18,7 @@ const routes = [
 		component: () => import('../views/AboutThis.vue'),
 		meta: {
 			title: '关于',
-			keepAlive: false,
+			keepAlive: true,
 			requireAuth: false
 		}
 	},
@@ -38,7 +38,7 @@ const routes = [
 		component: () => import('../views/IntroLing.vue'),
 		meta: {
 			title: 'About_Ling',
-			keepAlive: false,
+			keepAlive: true,
 			requireAuth: false
 		}
 	},
