@@ -49,7 +49,13 @@ document.addEventListener('keydown', e => {
 	<the-circular-nav/>
 	<the-back-top/>
 	<the-right-menu/>
-	<router-view/>
+	<router-view v-slot="{ Component }">
+		<keep-alive>
+			<component :is="Component" :key="$route.name" v-if="$route.meta.keepAlive" />
+		</keep-alive>
+		<component :is="Component" :key="$route.name" v-if="!$route.meta.keepAlive" />
+	</router-view>
+
 	<!--<intro-ling/>-->
 </template>
 <!--todo 修改 CSS 样式（大小 + 颜色）-->
