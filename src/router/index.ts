@@ -18,7 +18,7 @@ const routes = [
 		component: () => import('../views/AboutThis.vue'),
 		meta: {
 			title: '关于',
-			keepAlive: true,
+			keepAlive: false,
 			requireAuth: false
 		}
 	},

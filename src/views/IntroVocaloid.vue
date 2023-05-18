@@ -4,13 +4,18 @@ import {onMounted} from "vue";
 let options = {
 	scrollBar: true,
 	// scrollingSpeed: 700
-
 }
-// fixme 展开导航时，无法阻止滚动的默认事件 idea 闭包/锁（但应该有更简单的方法）
+// fixme vue-fullpage 只能被初始化一次，在两个页面使用时由于前一个路由缓存了所以不会被销毁，导致二次初始化
 onMounted(() => {
 	// 隐藏签名 + 报错
-	(document.querySelector('.fp-watermark') as HTMLElement).style.display = 'none'
-	console.clear()
+	document.querySelector('.fp-enabled')
+	;(()=>{
+		let fpWatermark = document.querySelector('.fp-watermark') as HTMLElement | null;
+		if (fpWatermark) {
+			fpWatermark.style.display = 'none';
+			console.clear()
+		}
+	})()
 })
 </script>
 

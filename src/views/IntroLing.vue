@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {onBeforeUnmount, onMounted, ref, watchEffect} from "vue"
+import {onActivated, onBeforeUnmount, onDeactivated, onMounted, ref, watchEffect} from "vue"
 import {smoothScroll} from '../utils/scrollToPosition';
 // @ts-ignore
 import WOW from "wow.js";
@@ -261,6 +261,13 @@ onMounted(() => {
 	})
 })
 
+onActivated(()=>{
+	document.addEventListener('mousemove', judgeMousePosition);
+})
+onDeactivated(()=>{
+	document.removeEventListener('mousemove', judgeMousePosition);
+	clearTimeout(timer)
+})
 onBeforeUnmount(() => {
 	document.removeEventListener('mousemove', judgeMousePosition);
 	clearTimeout(timer)

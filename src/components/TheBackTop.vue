@@ -72,7 +72,7 @@ function scroll() {
 	}
 
 	&:hover {
-		bottom: 13vh !important;
+		bottom: 17vh !important;
 		transition: all 0.75s;
 	}
 }

@@ -9,6 +9,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ChartBubble: typeof import('./src/components/charts/ChartBubble.vue')['default']
+    ChartCircle: typeof import('./src/components/charts/ChartCircle.vue')['default']
+    ChartRank: typeof import('./src/components/charts/ChartRank.vue')['default']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
