@@ -12,7 +12,8 @@ const radius = 110;
 onMounted(() => {
 	const items = document.querySelectorAll('.eachItem') as unknown as HTMLElement[];
 	const zIndex = window.getComputedStyle(rightMenu.value!).getPropertyValue('z-index');
-// 设置每个元素位置
+	let zIndexTimer: string | number | NodeJS.Timeout | undefined
+	// 设置每个元素位置
 	items.forEach((item, index) => {
 		item.style.left = `${(50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / items.length) * index * Math.PI)).toFixed(4)}%`;
 		item.style.top = `${(50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / items.length) * index * Math.PI)).toFixed(4)}%`;
@@ -39,11 +40,15 @@ onMounted(() => {
 	// 关闭右键菜单，z-index 取反 防止无法点击页面
 	function closeRightMenu() {
 		rightMenu.value!.classList.remove("active");
-		rightMenu.value!.style.zIndex = `-${zIndex}`
+		clearTimeout(zIndexTimer)
+		zIndexTimer = setTimeout(()=>{
+			rightMenu.value!.style.zIndex = `-${zIndex}`
+		},400)
 	}
 
 	// 显示右键菜单
 	function showRightMenu(e: MouseEvent) {
+		clearTimeout(zIndexTimer)
 		let top = e.clientY - radius;
 		let left = e.clientX - radius;
 		// 设置 rightMenu 的位置并显示，z-index 取反为正
