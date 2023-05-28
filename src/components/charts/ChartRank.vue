@@ -98,7 +98,8 @@ onMounted(() => {
 						});
 						chart.annotation().text({
 							position: ['95%', '90%'],
-							content: Object.keys(data)[count],
+							// content: Object.keys(data)[count],
+							content: '',
 							style: {
 								fontSize: 40,
 								fontWeight: 'bold',
@@ -146,7 +147,8 @@ onMounted(() => {
 						chart.annotation().clear(true);
 						chart.annotation().text({
 							position: ['95%', '90%'],
-							content: Object.keys(data)[count],
+							content: '',
+							// content: Object.keys(data)[count],
 							style: {
 								fontSize: 40,
 								fontWeight: 'bold',

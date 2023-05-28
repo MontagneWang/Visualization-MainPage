@@ -11,28 +11,43 @@ let rightMenu = ref<HTMLDivElement | null>(null)
 const radius = 110;
 onMounted(() => {
 	const items = document.querySelectorAll('.eachItem') as unknown as HTMLElement[];
-	// 设置每个元素位置
+	const zIndex = window.getComputedStyle(rightMenu.value!).getPropertyValue('z-index');
+// 设置每个元素位置
 	items.forEach((item, index) => {
 		item.style.left = `${(50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / items.length) * index * Math.PI)).toFixed(4)}%`;
 		item.style.top = `${(50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / items.length) * index * Math.PI)).toFixed(4)}%`;
 	});
 	// （左键其他区域关闭菜单）如果[不是右键点击]或者[点击的元素不是右键菜单的子元素]，则关闭菜单
-	window.addEventListener('mousedown', e =>
-			e.which !== 3
-			&& !isDescendant(rightMenu.value as HTMLElement, e.target as HTMLElement)
-			&& rightMenu.value!.classList.remove("active"));
+	window.addEventListener('mousedown', e => {
+		if (e.which !== 3
+				&& rightMenu.value!.classList.contains("active")
+				&& !isDescendant(rightMenu.value as HTMLElement, e.target as HTMLElement)) {
+			closeRightMenu()
+		}
+	});
 	// 右键点击，若已有 active 类，则关闭 rightMenu，否则打开 rightMenu
 	window.addEventListener('contextmenu', e => {
+		// ctrl + 右键，呼出原版菜单
+		if (e.ctrlKey) {
+			return
+		}
 		e.preventDefault();
 		rightMenu.value!.classList.contains("active") ?
-				rightMenu.value!.classList.remove("active") : showRightMenu(e);
+				closeRightMenu() : showRightMenu(e);
 	})
+
+	// 关闭右键菜单，z-index 取反 防止无法点击页面
+	function closeRightMenu() {
+		rightMenu.value!.classList.remove("active");
+		rightMenu.value!.style.zIndex = `-${zIndex}`
+	}
 
 	// 显示右键菜单
 	function showRightMenu(e: MouseEvent) {
 		let top = e.clientY - radius;
 		let left = e.clientX - radius;
-		// 设置rightMenu的位置并显示
+		// 设置 rightMenu 的位置并显示，z-index 取反为正
+		rightMenu.value!.style.zIndex = zIndex
 		rightMenu.value!.style.top = top + 'px';
 		rightMenu.value!.style.left = left + 'px';
 		rightMenu.value!.style.display = 'block';

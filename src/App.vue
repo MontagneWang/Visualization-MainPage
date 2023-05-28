@@ -55,7 +55,6 @@ document.addEventListener('keydown', e => {
 		</keep-alive>
 		<component :is="Component" :key="$route.name" v-if="!$route.meta.keepAlive" />
 	</router-view>
-	<!--<intro-ling/>-->
 </template>
 <!--todo 修改 CSS 样式（大小 + 颜色）-->
 <!--todo 修改 HTML 类名-->
