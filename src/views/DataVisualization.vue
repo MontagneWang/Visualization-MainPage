@@ -27,18 +27,18 @@ setInterval(() => {
 	time.value = new Date();
 }, 1000);
 
-const updateData = async (id = 314772, title = time.value.toLocaleString()) => {
-	try {
-		const response = await axios.post('/Visualization/tempTest/getdata.php', {
-			id: id,
-			title: title
-		});
-		console.log(response.data);
-		await getData()
-	} catch (error) {
-		console.error(error);
-	}
-};
+// const updateData = async (id = 314772, title = time.value.toLocaleString()) => {
+// 	try {
+// 		const response = await axios.post('/Visualization/tempTest/getdata.php', {
+// 			id: id,
+// 			title: title
+// 		});
+// 		console.log(response.data);
+// 		await getData()
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// };
 
 let res = reactive([
 	{id: 0, title: '', play: 0}

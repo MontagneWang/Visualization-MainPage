@@ -5,7 +5,7 @@ import {onMounted} from "vue";
 const props = defineProps<{
 	containerName: string
 }>()
-const { containerName } = props
+const {containerName} = props
 
 onMounted(() => {
 	// fetch('https://raw.githubusercontent.com/antvis/G2/master/examples/data/life.json')
@@ -180,4 +180,8 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+div {
+	width: 100%;
+	height: 100%;
+}
 </style>
