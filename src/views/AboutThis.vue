@@ -2,8 +2,13 @@
 import {useCounterStore} from '../stores'
 import {onMounted, watchEffect} from "vue";
 import ChartRank from "../components/charts/ChartRank.vue";
-import ChartCircle from "../components/charts/ChartCircle.vue";
-import ChartBubble from "../components/charts/ChartBubble.vue";
+import ChartPie from "../components/charts/ChartPie.vue";
+import ChartLine from "../components/charts/ChartLine.vue";
+import ChartHistogram from "../components/charts/ChartHistogram.vue"
+import ChartWordCloud from "../components/charts/ChartWordCloud.vue"
+import ChartBubbleStatic from "../components/charts/ChartBubbleStatic.vue";
+import ChartCalendar from "../components/charts/ChartCalendar.vue";
+import ChartRadar from "../components/charts/ChartRadar.vue";
 
 let counter = 1
 
@@ -14,14 +19,20 @@ let counter = 1
 	<div class="main">
 		<div class="container">
 			<div class="c1 border">
-				<chart-bubble :container-name="'container'+counter++"
-				              style="overflow-x: hidden"/>
+				<chart-radar :container-name="'container'+counter++"
+				             class="chart"
+				             style="overflow-x: hidden"/>
 			</div>
 			<div class="c2 border">
-				<chart-circle :container-name="'container'+counter++"
-				              style="overflow-x: hidden"/>
+				<chart-histogram :container-name="'container'+counter++"
+				                 class="chart"
+				                 style="overflow-x: hidden"/>
 			</div>
-			<div class="c3 border">c3</div>
+			<div class="c3 border">
+				<chart-bubble-static :container-name="'container'+counter++"
+				                     class="chart"
+				                     style="overflow-x: hidden"/>
+			</div>
 			<div class="c4 border">
 				<h1>这里放中国地图</h1>
 				<h2>显示各区域投稿总数</h2>
@@ -29,25 +40,45 @@ let counter = 1
 			</div>
 			<div class="c5 border">
 				<chart-rank :container-name="'container'+counter++"
+				            class="chart"
 				            style="overflow-x: hidden"/>
 			</div>
-			<div class="c6 border">c6</div>
-			<div class="c7 border">c7</div>
-			<div class="c8 border">c8</div>
+			<div class="c6 border">
+				<chart-calendar :container-name="'container'+counter++"
+				                class="chart"
+				                style="overflow-x: hidden"/>
+			</div>
+			<div class="c7 border">
+				<chart-line :container-name="'container'+counter++"
+				            class="chart"
+				            style="overflow-x: hidden"/>
+			</div>
+			<div class="c8 border">
+				<chart-pie :container-name="'container'+counter++"
+				           class="chart"
+				           style="overflow-x: hidden"/>
+			</div>
 		</div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
+.chart {
+	width: 100%;
+	height: 100%;
+	overflow-y: hidden;
+}
+
 .border {
 	border: 1px solid #000;
 }
 
-.main{
+.main {
 	width: 95vw;
 	height: 90vh;
 	margin: 5vh auto;
 }
+
 .container {
 	height: 100%;
 	display: grid;

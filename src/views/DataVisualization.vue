@@ -4,6 +4,7 @@ import {onMounted, reactive, ref, toRaw, watchEffect} from "vue";
 import ChartRank from "../components/charts/ChartRank.vue";
 import ChartCircle from "../components/charts/ChartCircle.vue";
 import ChartBubble from "../components/charts/ChartBubble.vue";
+import ChartWordCloud from "../components/charts/ChartWordCloud.vue";
 
 // import {Songs} from "../api/getSongData"; // 根据您的项目路径进行调整
 // import { ref, onMounted } from 'vue';
@@ -82,8 +83,11 @@ onMounted(() => {
 		<full-page ref="fullpage" :options="options">
 			<div class="section">
 				<h1>这里是 DataVisualization</h1>
-				<chart-bubble :container-name="'container'+counter++"
-				              style="overflow-x: hidden"/>
+				<!--<chart-bubble :container-name="'container'+counter++"-->
+				<!--              style="overflow-x: hidden"/>-->
+				<chart-word-cloud :container-name="'container'+counter++"
+				                  class="chart"
+				                  style="overflow-x: hidden"/>
 			</div>
 			<div class="section">
 				<chart-circle :container-name="'container'+counter++"
