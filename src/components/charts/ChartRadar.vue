@@ -15,10 +15,10 @@ onMounted(() => {
 		{ item: '点赞', '原创曲': 60, '翻唱曲': 70 },
 		{ item: '投币', '原创曲': 50, '翻唱曲': 60 },
 		{ item: '收藏', '原创曲': 40, '翻唱曲': 50 },
-		{ item: '转发', '原创曲': 60, '翻唱曲': 70 },
-		{ item: '评论', '原创曲': 70, '翻唱曲': 50 },
+		{ item: '时长', '原创曲': 60, '翻唱曲': 70 },
+		{ item: '转发', '原创曲': 70, '翻唱曲': 50 },
 		{ item: '弹幕', '原创曲': 50, '翻唱曲': 40 },
-		{ item: '时长', '原创曲': 30, '翻唱曲': 40 },
+		{ item: '评论', '原创曲': 30, '翻唱曲': 40 },
 	];
 	const dv = new DataView().source(data);
 	dv.transform({
@@ -79,6 +79,10 @@ onMounted(() => {
 			.position('item*score')
 			.color('user')
 			.shape('circle');
+
+	chart.legend( {
+		position: 'right',
+	});
 	chart.render();
 })
 

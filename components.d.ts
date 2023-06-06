@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     ChartPie: typeof import('./src/components/charts/ChartPie.vue')['default']
     ChartRadar: typeof import('./src/components/charts/ChartRadar.vue')['default']
     ChartRank: typeof import('./src/components/charts/ChartRank.vue')['default']
+    ChartTranspose: typeof import('./src/components/charts/ChartTranspose.vue')['default']
     ChartWordCloud: typeof import('./src/components/charts/ChartWordCloud.vue')['default']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']

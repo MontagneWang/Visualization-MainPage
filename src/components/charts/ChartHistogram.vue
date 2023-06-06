@@ -90,7 +90,7 @@ onMounted(() => {
 			})
 			.tooltip(false);
 	view2.annotation().text({
-		content: '趋势线',
+		content: '',
 		position: ['min', 'min'],
 		style: {
 			fill: '#8c8c8c',

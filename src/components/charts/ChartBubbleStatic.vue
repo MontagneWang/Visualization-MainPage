@@ -15,7 +15,7 @@ onMounted(() => {
 		Oceania: '#223273',
 	};
 
-	fetch('https://gw.alipayobjects.com/os/antvdemo/assets/data/bubble.json')
+	fetch('/src/assets/testDataForBubbleStatic.json')
 			.then(res => res.json())
 			.then(data => {
 				const chart = new Chart({

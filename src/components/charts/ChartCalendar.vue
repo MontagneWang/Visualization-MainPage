@@ -71,7 +71,7 @@ onMounted(() => {
 				const chart = new Chart({
 					container: containerName,
 					autoFit: true,
-					padding: [ 10, 10, 10, 55]
+					padding: [ 30, 10, 10, 55]
 				});
 				chart.data(data);
 				chart.scale({

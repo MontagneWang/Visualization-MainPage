@@ -20,13 +20,13 @@ onMounted(() => {
 		container: containerName,
 		autoFit: true,
 		height: 500,
-		padding: [40, 0],
+		padding: [35, 15],
 	});
 
 	chart.data(data);
 	chart.coordinate('polar', {
 		startAngle: Math.PI, // 起始角度
-		endAngle: Math.PI * 2, // 结束角度
+			endAngle: Math.PI * 2, // 结束角度
 	});
 
 	chart.scale('value', {
@@ -75,7 +75,7 @@ onMounted(() => {
 				lineWidth: 1,
 				stroke: '#fff',
 			});
-
+	chart.legend(false);
 	chart.render();
 
 })
