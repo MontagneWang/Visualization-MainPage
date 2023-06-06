@@ -10,23 +10,18 @@ const {containerName} = props
 onMounted(() => {
 
 	const data = [
-		{ year: '2002', value: 10 },
-		{ year: '2003', value: 20 },
-		{ year: '2004', value: 50 },
-		{ year: '2005', value: 40 },
-		{ year: '2006', value: 50 },
-		{ year: '2007', value: 20 },
-		{ year: '2008', value: 25 },
-		{ year: '2009', value: 70 },
-		{ year: '2010', value: 120 },
-		{ year: '2011', value: 140 },
-		{ year: '2012', value: 80 },
-		{ year: '2013', value: 250 },
-		{ year: '2014', value: 280 },
-		{ year: '2015', value: 400 },
-		{ year: '2016', value: 400 },
-		{ year: '2017', value: 800 },
-		{ year: '2018', value: 1000 }
+		{year:'2012',value:  1850.4058},
+		{year:'2013',value: 12181.7936},
+		{year:'2014',value: 10591.2867},
+		{year:'2015',value:  9452.1948},
+		{year:'2016',value: 20042.9020},
+		{year:'2017',value: 25584.7066},
+		{year:'2018',value: 26827.3762},
+		{year:'2019',value: 39425.6016},
+		{year:'2020',value: 41348.2924},
+		{year:'2021',value: 21645.3468},
+		{year:'2022',value: 62626.5197},
+		{year:'2023',value: 22863.0042}
 	];
 	const ds = new DataSet();
 	const dv = ds.createView().source(data);
@@ -48,7 +43,7 @@ onMounted(() => {
 		container: containerName,
 		autoFit: true,
 		height: 500,
-		padding: [10, 5,10,20],
+		padding: [10, 5, 10, 23],
 	});
 
 	chart.scale({
@@ -56,7 +51,7 @@ onMounted(() => {
 			range: [0, 1],
 		},
 		value: {
-			alias: '市值 (亿美元)',
+			alias: '总播放量(单位:万)',
 			sync: true,
 			nice: true
 		},

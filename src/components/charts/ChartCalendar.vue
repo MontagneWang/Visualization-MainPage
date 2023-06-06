@@ -65,19 +65,19 @@ onMounted(() => {
 		}
 	});
 
-	fetch('https://gw.alipayobjects.com/os/antvdemo/assets/data/github-commit.json')
+	fetch('/src/assets/dataForCommit.json')
 			.then(res => res.json())
 			.then(data => {
 				const chart = new Chart({
 					container: containerName,
 					autoFit: true,
-					padding: [ 30, 10, 10, 55]
+					padding: [ 10]
 				});
 				chart.data(data);
 				chart.scale({
 					day: {
 						type: 'cat',
-						values: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+						values: ['', '', '', '', '', '', '','']
 					},
 					week: {
 						type: 'cat'
@@ -103,17 +103,17 @@ onMounted(() => {
 						},
 						formatter: val => {
 							if (val === '2') {
-								return 'MAY';
+								return '';
 							} else if (val === '6') {
-								return 'JUN';
+								return '';
 							} else if (val === '10') {
-								return 'JUL';
+								return '';
 							} else if (val === '15') {
-								return 'AUG';
+								return '';
 							} else if (val === '19') {
-								return 'SEP';
+								return '';
 							} else if (val === '24') {
-								return 'OCT';
+								return '';
 							}
 							return '';
 						}
@@ -129,7 +129,7 @@ onMounted(() => {
 				});
 				chart.coordinate().reflect('y');
 				chart.polygon().position('week*day*date')
-						.color('commits', '#BAE7FF-#1890FF-#0050B3')
+						.color('投稿总数', '#BAE7FF-#1890FF-#0050B3')
 						.shape('boundary-polygon');
 
 				chart.interaction('element-active');
