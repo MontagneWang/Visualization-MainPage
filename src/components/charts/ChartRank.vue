@@ -80,7 +80,7 @@ onMounted(() => {
 							container: containerName,
 							autoFit: true,
 							height: 500,
-							padding: [20, 60]
+							padding: [10,50,25, 65]
 						});
 						// @ts-ignore
 						chart.data(handleData(Object.values(data)[count]));
@@ -98,8 +98,8 @@ onMounted(() => {
 						});
 						chart.annotation().text({
 							position: ['95%', '90%'],
-							// content: Object.keys(data)[count],
-							content: '',
+							content: Object.keys(data)[count],
+							// content: '',
 							style: {
 								fontSize: 40,
 								fontWeight: 'bold',
@@ -147,8 +147,8 @@ onMounted(() => {
 						chart.annotation().clear(true);
 						chart.annotation().text({
 							position: ['95%', '90%'],
-							content: '',
-							// content: Object.keys(data)[count],
+							// content: '',
+							content: Object.keys(data)[count],
 							style: {
 								fontSize: 40,
 								fontWeight: 'bold',
@@ -169,7 +169,7 @@ onMounted(() => {
 				}
 
 				countUp();
-				interval = setInterval(countUp, 980);
+				interval = setInterval(countUp, 380);
 			});
 })
 

@@ -9,24 +9,24 @@ const props = defineProps<{
 const {containerName} = props
 
 onMounted(() => {
-	function getData(data: { male: { values: any[]; }; female: { values: any[]; }; }) {
+	function getData(data: { total: { values: any[]; }; ling: { values: any[]; }; }) {
 		const tmp: any[] = [];
 		const dates: any[] = [];
 
-		data.male.values.forEach(function (obj) {
+		data.total.values.forEach(function (obj) {
 			if (dates.indexOf(obj.date) === -1) {
 				dates.push(obj.date);
 			}
 			obj.age_groups.forEach(function (subObject: { gender: string; date: any; }) {
-				subObject.gender = 'male';
+				subObject.gender = '全部歌曲';
 				subObject.date = obj.date;
 				tmp.push(subObject);
 			});
 		});
 
-		data.female.values.forEach(function (obj) {
+		data.ling.values.forEach(function (obj) {
 			obj.age_groups.forEach(function (subObject: { gender: string; date: any; }) {
-				subObject.gender = 'female';
+				subObject.gender = '绫曲';
 				subObject.date = obj.date;
 				tmp.push(subObject);
 			});
@@ -62,7 +62,7 @@ onMounted(() => {
 				chart.scale({
 					age: {
 						sync: true,
-						tickCount: 11
+						tickCount: 30
 					},
 					total_percentage: {
 						sync: true,

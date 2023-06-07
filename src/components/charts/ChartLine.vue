@@ -1,16 +1,19 @@
 <script lang="ts" setup>
-import { Chart } from '@antv/g2';
+import {Chart} from '@antv/g2';
 
 
 import {onMounted} from "vue";
+
 const props = defineProps<{
 	containerName: string
 }>()
-const { containerName } = props
+const {containerName} = props
 
-onMounted(()=>{
+onMounted(() => {
+	// '2012': 2539451, '2013': 25060111, '2014': 32379457, '2015': 67806592,'2016': 84557692, '2017': 92569532, '2018': 88408231, '2019': 115891425,'2020': 93290605, '2021': 30958432, '2022': 83601663, '2023': 23910348}
 
-	fetch('https://gw.alipayobjects.com/os/antvdemo/assets/data/blockchain.json')
+	// '2012': 987064, '2013': 2898067, '2014': 3041363, '2015': 501459,'2016': 5668669, '2017': 9115298, '2018': 9656207, '2019': 12393047,'2020': 7945299, '2021': 1679625, '2022': 14185305, '2023': 13303462}
+	fetch('/src/assets/dataForLine.json')
 			.then(res => res.json())
 			.then(data => {
 				const chart = new Chart({
@@ -21,45 +24,70 @@ onMounted(()=>{
 
 				chart.data(data);
 				chart.scale({
-					nlp: {
+					原创曲: {
 						min: 0,
-						max: 100
+						max: 12000
 					},
-					blockchain: {
-						min: 0,
-						max: 100
+					翻唱曲: {
+						min: 0.0000,
+						max: 12000
 					}
 				});
 
-				chart.axis('nlp', false);
+				chart.axis('原创曲', false);
 
-
-				chart.line().position('date*blockchain').color('#1890ff');
-				chart.line().position('date*nlp').color('#2fc25b');
+				chart.line().position('date*翻唱曲').color('#2fc25b');
+				chart.line().position('date*原创曲').color('#1890ff');
 
 				chart.annotation().dataMarker({
 					top: true,
-					position: ['2016-02-28', 9],
+					position: ['2015',6780],
 					text: {
-						content: '区块链首超 NLP',
+						content: '增速最快的一年，约增加了 3500 万次',
+						style: {
+							textAlign: 'center',
+						},
+					},
+					line: {
+						length: 10,
+					},
+				});
+				chart.annotation().dataMarker({
+					top: true,
+					position: ['2019', 11589.1425],
+					text: {
+						content: '最大差距，接近一亿播放量',
 						style: {
 							textAlign: 'left',
 						},
 					},
 					line: {
-						length: 30,
+						length: -20,
 					},
 				});
 				chart.annotation().dataMarker({
 					top: true,
-					position: ['2017-12-17', 100],
+					position: ['2021', 3096],
 					line: {
-						length: 30,
+						length: 10,
 					},
 					text: {
-						content: '峰值：100',
+						content: '21 年低谷',
 						style: {
-							textAlign: 'right',
+							textAlign: 'center',
+						}
+					},
+				});
+				chart.annotation().dataMarker({
+					top: false,
+					position: ['2019', 1240],
+					line: {
+						length: 0,
+					},
+					text: {
+						content: '翻唱曲播放量约为 1240 万',
+						style: {
+							textAlign: 'left',
 						}
 					},
 				});

@@ -1,2279 +1,4456 @@
 {
-  "1949": [
-    { "value": 0, "city": "言和" },
-    { "value": 0, "city": "乐正绫" },
-    { "value": 102, "city": "徵羽摩柯" },
-    { "value": 0, "city": "墨清弦" },
-    { "value": 0, "city": "乐正龙牙" },
-    { "value": 0, "city": "心华" },
-    { "value": 0, "city": "星尘" },
-    { "value": 0, "city": "原创曲" },
-    { "value": 274, "city": "初音未来" },
-    { "value": 0, "city": "翻调曲" },
-    { "value": 0, "city": "洛天依" },
-    { "value": 0, "city": "填词曲" },
-    { "value": 0, "city": "1000+" },
-    { "value": 69, "city": "10000+" },
-    { "value": 0, "city": "100000+" },
-    { "value": 0, "city": "1000000+" },
-    { "value": 0, "city": "" },
-    { "value": 0, "city": " " },
-    { "value": 73, "city": "  " },
-    { "value": 0, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 87, "city": "     " },
-    { "value": 0, "city": "      " },
-    { "value": 44, "city": "       " },
-    { "value": 56, "city": "        " },
-    { "value": 0, "city": "         " },
-    { "value": 0, "city": "          " },
-    { "value": 0, "city": "           " },
-    { "value": 83, "city": "            " },
-    { "value": 0, "city": "             " },
-    { "value": 0, "city": "              " }
-  ],
-  "1950": [
-    { "value": 0, "city": "言和" },
-    { "value": 0, "city": "乐正绫" },
-    { "value": 188, "city": "徵羽摩柯" },
-    { "value": 0, "city": "墨清弦" },
-    { "value": 0, "city": "乐正龙牙" },
-    { "value": 0, "city": "心华" },
-    { "value": 0, "city": "星尘" },
-    { "value": 0, "city": "原创曲" },
-    { "value": 309, "city": "初音未来" },
-    { "value": 0, "city": "翻调曲" },
-    { "value": 83, "city": "洛天依" },
-    { "value": 0, "city": "填词曲" },
-    { "value": 79, "city": "1000+" },
-    { "value": 98, "city": "10000+" },
-    { "value": 0, "city": "100000+" },
-    { "value": 0, "city": "1000000+" },
-    { "value": 0, "city": "" },
-    { "value": 0, "city": " " },
-    { "value": 78, "city": "  " },
-    { "value": 0, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 91, "city": "     " },
-    { "value": 0, "city": "      " },
-    { "value": 45, "city": "       " },
-    { "value": 59, "city": "        " },
-    { "value": 0, "city": "         " },
-    { "value": 0, "city": "          " },
-    { "value": 0, "city": "           " },
-    { "value": 88, "city": "            " },
-    { "value": 0, "city": "             " },
-    { "value": 0, "city": "              " }
-  ],
-  "1951": [
-    { "value": 0, "city": "言和" },
-    { "value": 0, "city": "乐正绫" },
-    { "value": 278, "city": "徵羽摩柯" },
-    { "value": 0, "city": "墨清弦" },
-    { "value": 0, "city": "乐正龙牙" },
-    { "value": 0, "city": "心华" },
-    { "value": 0, "city": "星尘" },
-    { "value": 0, "city": "原创曲" },
-    { "value": 388, "city": "初音未来" },
-    { "value": 0, "city": "翻调曲" },
-    { "value": 98, "city": "洛天依" },
-    { "value": 0, "city": "填词曲" },
-    { "value": 0, "city": "1000+" },
-    { "value": 94, "city": "10000+" },
-    { "value": 0, "city": "100000+" },
-    { "value": 0, "city": "1000000+" },
-    { "value": 0, "city": "" },
-    { "value": 0, "city": " " },
-    { "value": 89, "city": "  " },
-    { "value": 0, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 94, "city": "     " },
-    { "value": 0, "city": "      " },
-    { "value": 54, "city": "       " },
-    { "value": 64, "city": "        " },
-    { "value": 114, "city": "         " },
-    { "value": 0, "city": "          " },
-    { "value": 0, "city": "           " },
-    { "value": 94, "city": "            " },
-    { "value": 0, "city": "             " },
-    { "value": 0, "city": "              " }
-  ],
-  "1952": [
-    { "value": 125, "city": "言和" },
-    { "value": 165, "city": "乐正绫" },
-    { "value": 298, "city": "徵羽摩柯" },
-    { "value": 116, "city": "墨清弦" },
-    { "value": 173, "city": "乐正龙牙" },
-    { "value": 218, "city": "心华" },
-    { "value": 153, "city": "星尘" },
-    { "value": 238, "city": "原创曲" },
-    { "value": 430, "city": "初音未来" },
-    { "value": 131, "city": "翻调曲" },
-    { "value": 112, "city": "洛天依" },
-    { "value": 78, "city": "填词曲" },
-    { "value": 102, "city": "1000+" },
-    { "value": 114, "city": "10000+" },
-    { "value": 91, "city": "100000+" },
-    { "value": 82.8, "city": "1000000+" },
-    { "value": 90.1, "city": "" },
-    { "value": 86, "city": " " },
-    { "value": 101, "city": "  " },
-    { "value": 67, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 102, "city": "     " },
-    { "value": 53, "city": "      " },
-    { "value": 58, "city": "       " },
-    { "value": 70, "city": "        " },
-    { "value": 115, "city": "         " },
-    { "value": 85, "city": "          " },
-    { "value": 125, "city": "           " },
-    { "value": 101, "city": "            " },
-    { "value": 126, "city": "             " },
-    { "value": 166, "city": "              " }
-  ],
-  "1953": [
-    { "value": 128, "city": "言和" },
-    { "value": 385, "city": "乐正绫" },
-    { "value": 393, "city": "徵羽摩柯" },
-    { "value": 141, "city": "墨清弦" },
-    { "value": 211, "city": "乐正龙牙" },
-    { "value": 266, "city": "心华" },
-    { "value": 166, "city": "星尘" },
-    { "value": 278, "city": "原创曲" },
-    { "value": 590, "city": "初音未来" },
-    { "value": 141, "city": "翻调曲" },
-    { "value": 122, "city": "洛天依" },
-    { "value": 89, "city": "填词曲" },
-    { "value": 112, "city": "1000+" },
-    { "value": 118, "city": "10000+" },
-    { "value": 94, "city": "100000+" },
-    { "value": 93.9, "city": "1000000+" },
-    { "value": 109, "city": "" },
-    { "value": 91, "city": " " },
-    { "value": 139, "city": "  " },
-    { "value": 73, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 119, "city": "     " },
-    { "value": 59, "city": "      " },
-    { "value": 66, "city": "       " },
-    { "value": 87, "city": "        " },
-    { "value": 118, "city": "         " },
-    { "value": 111, "city": "          " },
-    { "value": 126, "city": "           " },
-    { "value": 106, "city": "            " },
-    { "value": 115, "city": "             " },
-    { "value": 179, "city": "              " }
-  ],
-  "1954": [
-    { "value": 134, "city": "言和" },
-    { "value": 395, "city": "乐正绫" },
-    { "value": 362, "city": "徵羽摩柯" },
-    { "value": 151, "city": "墨清弦" },
-    { "value": 249, "city": "乐正龙牙" },
-    { "value": 272, "city": "心华" },
-    { "value": 176, "city": "星尘" },
-    { "value": 300, "city": "原创曲" },
-    { "value": 589, "city": "初音未来" },
-    { "value": 140, "city": "翻调曲" },
-    { "value": 125, "city": "洛天依" },
-    { "value": 89, "city": "填词曲" },
-    { "value": 113, "city": "1000+" },
-    { "value": 121, "city": "10000+" },
-    { "value": 106, "city": "100000+" },
-    { "value": 98, "city": "1000000+" },
-    { "value": 90, "city": "" },
-    { "value": 90, "city": " " },
-    { "value": 153, "city": "  " },
-    { "value": 81, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 123, "city": "     " },
-    { "value": 66, "city": "      " },
-    { "value": 72, "city": "       " },
-    { "value": 97, "city": "        " },
-    { "value": 119, "city": "         " },
-    { "value": 123, "city": "          " },
-    { "value": 146, "city": "           " },
-    { "value": 138, "city": "            " },
-    { "value": 138, "city": "             " },
-    { "value": 211, "city": "              " }
-  ],
-  "1955": [
-    { "value": 141, "city": "言和" },
-    { "value": 427, "city": "乐正绫" },
-    { "value": 356, "city": "徵羽摩柯" },
-    { "value": 160, "city": "墨清弦" },
-    { "value": 213, "city": "乐正龙牙" },
-    { "value": 272, "city": "心华" },
-    { "value": 177, "city": "星尘" },
-    { "value": 297, "city": "原创曲" },
-    { "value": 569, "city": "初音未来" },
-    { "value": 150, "city": "翻调曲" },
-    { "value": 130, "city": "洛天依" },
-    { "value": 117, "city": "填词曲" },
-    { "value": 122, "city": "1000+" },
-    { "value": 125, "city": "10000+" },
-    { "value": 113, "city": "100000+" },
-    { "value": 101, "city": "1000000+" },
-    { "value": 117.9, "city": "" },
-    { "value": 104, "city": " " },
-    { "value": 152, "city": "  " },
-    { "value": 86, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 123, "city": "     " },
-    { "value": 74, "city": "      " },
-    { "value": 74, "city": "       " },
-    { "value": 103, "city": "        " },
-    { "value": 122, "city": "         " },
-    { "value": 122, "city": "          " },
-    { "value": 154, "city": "           " },
-    { "value": 164, "city": "            " },
-    { "value": 138, "city": "             " },
-    { "value": 241, "city": "              " }
-  ],
-  "1956": [
-    { "value": 140, "city": "言和" },
-    { "value": 454, "city": "乐正绫" },
-    { "value": 417, "city": "徵羽摩柯" },
-    { "value": 186, "city": "墨清弦" },
-    { "value": 283, "city": "乐正龙牙" },
-    { "value": 319, "city": "心华" },
-    { "value": 200, "city": "星尘" },
-    { "value": 308, "city": "原创曲" },
-    { "value": 681, "city": "初音未来" },
-    { "value": 153, "city": "翻调曲" },
-    { "value": 139, "city": "洛天依" },
-    { "value": 109, "city": "填词曲" },
-    { "value": 150, "city": "1000+" },
-    { "value": 124, "city": "10000+" },
-    { "value": 121, "city": "100000+" },
-    { "value": 102.5, "city": "1000000+" },
-    { "value": 152, "city": "" },
-    { "value": 109, "city": " " },
-    { "value": 166, "city": "  " },
-    { "value": 94, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 133, "city": "     " },
-    { "value": 88, "city": "      " },
-    { "value": 91, "city": "       " },
-    { "value": 117, "city": "        " },
-    { "value": 137, "city": "         " },
-    { "value": 156, "city": "          " },
-    { "value": 174, "city": "           " },
-    { "value": 199, "city": "            " },
-    { "value": 152, "city": "             " },
-    { "value": 268, "city": "              " }
-  ],
-  "1957": [
-    { "value": 144, "city": "言和" },
-    { "value": 525, "city": "乐正绫" },
-    { "value": 465, "city": "徵羽摩柯" },
-    { "value": 186, "city": "墨清弦" },
-    { "value": 232, "city": "乐正龙牙" },
-    { "value": 335, "city": "心华" },
-    { "value": 202, "city": "星尘" },
-    { "value": 307, "city": "原创曲" },
-    { "value": 713, "city": "初音未来" },
-    { "value": 157, "city": "翻调曲" },
-    { "value": 151, "city": "洛天依" },
-    { "value": 126, "city": "填词曲" },
-    { "value": 154, "city": "1000+" },
-    { "value": 152, "city": "10000+" },
-    { "value": 116, "city": "100000+" },
-    { "value": 109.8, "city": "1000000+" },
-    { "value": 162.2, "city": "" },
-    { "value": 127, "city": " " },
-    { "value": 179, "city": "  " },
-    { "value": 102, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 129, "city": "     " },
-    { "value": 103, "city": "      " },
-    { "value": 99, "city": "       " },
-    { "value": 121, "city": "        " },
-    { "value": 131, "city": "         " },
-    { "value": 144, "city": "          " },
-    { "value": 160, "city": "           " },
-    { "value": 193, "city": "            " },
-    { "value": 147, "city": "             " },
-    { "value": 267, "city": "              " }
-  ],
-  "1958": [
-    { "value": 172, "city": "言和" },
-    { "value": 534, "city": "乐正绫" },
-    { "value": 600, "city": "徵羽摩柯" },
-    { "value": 246, "city": "墨清弦" },
-    { "value": 292, "city": "乐正龙牙" },
-    { "value": 437, "city": "心华" },
-    { "value": 243, "city": "星尘" },
-    { "value": 405, "city": "原创曲" },
-    { "value": 952, "city": "初音未来" },
-    { "value": 178, "city": "翻调曲" },
-    { "value": 173, "city": "洛天依" },
-    { "value": 152, "city": "填词曲" },
-    { "value": 166, "city": "1000+" },
-    { "value": 166, "city": "10000+" },
-    { "value": 135, "city": "100000+" },
-    { "value": 124.2, "city": "1000000+" },
-    { "value": 198, "city": "" },
-    { "value": 154, "city": " " },
-    { "value": 200, "city": "  " },
-    { "value": 113, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 167, "city": "     " },
-    { "value": 124, "city": "      " },
-    { "value": 120, "city": "       " },
-    { "value": 122, "city": "        " },
-    { "value": 143, "city": "         " },
-    { "value": 171, "city": "          " },
-    { "value": 178, "city": "           " },
-    { "value": 225, "city": "            " },
-    { "value": 176, "city": "             " },
-    { "value": 294, "city": "              " }
-  ],
-  "1959": [
-    { "value": 197, "city": "言和" },
-    { "value": 678, "city": "乐正绫" },
-    { "value": 735, "city": "徵羽摩柯" },
-    { "value": 294, "city": "墨清弦" },
-    { "value": 349, "city": "乐正龙牙" },
-    { "value": 553, "city": "心华" },
-    { "value": 280, "city": "星尘" },
-    { "value": 453, "city": "原创曲" },
-    { "value": 1268, "city": "初音未来" },
-    { "value": 186, "city": "翻调曲" },
-    { "value": 183, "city": "洛天依" },
-    { "value": 170, "city": "填词曲" },
-    { "value": 192, "city": "1000+" },
-    { "value": 178, "city": "10000+" },
-    { "value": 141, "city": "100000+" },
-    { "value": 129.1, "city": "1000000+" },
-    { "value": 203, "city": "" },
-    { "value": 168, "city": " " },
-    { "value": 215, "city": "  " },
-    { "value": 122, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 181, "city": "     " },
-    { "value": 115, "city": "      " },
-    { "value": 136, "city": "       " },
-    { "value": 133, "city": "        " },
-    { "value": 142, "city": "         " },
-    { "value": 192, "city": "          " },
-    { "value": 183, "city": "           " },
-    { "value": 284, "city": "            " },
-    { "value": 217, "city": "             " },
-    { "value": 344, "city": "              " }
-  ],
-  "1960": [
-    { "value": 194, "city": "言和" },
-    { "value": 795, "city": "乐正绫" },
-    { "value": 736, "city": "徵羽摩柯" },
-    { "value": 298, "city": "墨清弦" },
-    { "value": 325, "city": "乐正龙牙" },
-    { "value": 625, "city": "心华" },
-    { "value": 289, "city": "星尘" },
-    { "value": 461, "city": "原创曲" },
-    { "value": 1521, "city": "初音未来" },
-    { "value": 203, "city": "翻调曲" },
-    { "value": 181, "city": "洛天依" },
-    { "value": 185, "city": "填词曲" },
-    { "value": 190, "city": "1000+" },
-    { "value": 185, "city": "10000+" },
-    { "value": 135, "city": "100000+" },
-    { "value": 135.1, "city": "1000000+" },
-    { "value": 201, "city": "" },
-    { "value": 176, "city": " " },
-    { "value": 210, "city": "  " },
-    { "value": 119, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 188, "city": "     " },
-    { "value": 86, "city": "      " },
-    { "value": 135, "city": "       " },
-    { "value": 134, "city": "        " },
-    { "value": 204, "city": "         " },
-    { "value": 200, "city": "          " },
-    { "value": 143, "city": "           " },
-    { "value": 300, "city": "            " },
-    { "value": 227, "city": "             " },
-    { "value": 374, "city": "              " }
-  ],
-  "1961": [
-    { "value": 145, "city": "言和" },
-    { "value": 498, "city": "乐正绫" },
-    { "value": 482, "city": "徵羽摩柯" },
-    { "value": 200, "city": "墨清弦" },
-    { "value": 215, "city": "乐正龙牙" },
-    { "value": 299, "city": "心华" },
-    { "value": 213, "city": "星尘" },
-    { "value": 292, "city": "原创曲" },
-    { "value": 966, "city": "初音未来" },
-    { "value": 170, "city": "翻调曲" },
-    { "value": 154, "city": "洛天依" },
-    { "value": 145, "city": "填词曲" },
-    { "value": 147, "city": "1000+" },
-    { "value": 176, "city": "10000+" },
-    { "value": 121, "city": "100000+" },
-    { "value": 96.2, "city": "1000000+" },
-    { "value": 154, "city": "" },
-    { "value": 132, "city": " " },
-    { "value": 178, "city": "  " },
-    { "value": 110, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 150, "city": "     " },
-    { "value": 97, "city": "      " },
-    { "value": 110, "city": "       " },
-    { "value": 121, "city": "        " },
-    { "value": 189, "city": "         " },
-    { "value": 162, "city": "          " },
-    { "value": 97, "city": "           " },
-    { "value": 233, "city": "            " },
-    { "value": 199, "city": "             " },
-    { "value": 305, "city": "              " }
-  ],
-  "1962": [
-    { "value": 127, "city": "言和" },
-    { "value": 405, "city": "乐正绫" },
-    { "value": 406, "city": "徵羽摩柯" },
-    { "value": 188, "city": "墨清弦" },
-    { "value": 215, "city": "乐正龙牙" },
-    { "value": 292, "city": "心华" },
-    { "value": 210, "city": "星尘" },
-    { "value": 288, "city": "原创曲" },
-    { "value": 803, "city": "初音未来" },
-    { "value": 161, "city": "翻调曲" },
-    { "value": 163, "city": "洛天依" },
-    { "value": 129, "city": "填词曲" },
-    { "value": 137, "city": "1000+" },
-    { "value": 163, "city": "10000+" },
-    { "value": 120, "city": "100000+" },
-    { "value": 88.3, "city": "1000000+" },
-    { "value": 161.5, "city": "" },
-    { "value": 144, "city": " " },
-    { "value": 204, "city": "  " },
-    { "value": 109, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 135, "city": "     " },
-    { "value": 106, "city": "      " },
-    { "value": 100, "city": "       " },
-    { "value": 127, "city": "        " },
-    { "value": 188, "city": "         " },
-    { "value": 135, "city": "          " },
-    { "value": 101, "city": "           " },
-    { "value": 218, "city": "            " },
-    { "value": 200, "city": "             " },
-    { "value": 249, "city": "              " }
-  ],
-  "1963": [
-    { "value": 114, "city": "言和" },
-    { "value": 426, "city": "乐正绫" },
-    { "value": 433, "city": "徵羽摩柯" },
-    { "value": 191, "city": "墨清弦" },
-    { "value": 243, "city": "乐正龙牙" },
-    { "value": 293, "city": "心华" },
-    { "value": 235, "city": "星尘" },
-    { "value": 320, "city": "原创曲" },
-    { "value": 851, "city": "初音未来" },
-    { "value": 172, "city": "翻调曲" },
-    { "value": 169, "city": "洛天依" },
-    { "value": 128, "city": "填词曲" },
-    { "value": 142, "city": "1000+" },
-    { "value": 158, "city": "10000+" },
-    { "value": 123, "city": "100000+" },
-    { "value": 85.4, "city": "1000000+" },
-    { "value": 170, "city": "" },
-    { "value": 131, "city": " " },
-    { "value": 225, "city": "  " },
-    { "value": 108, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 146, "city": "     " },
-    { "value": 110, "city": "      " },
-    { "value": 100, "city": "       " },
-    { "value": 129, "city": "        " },
-    { "value": 196, "city": "         " },
-    { "value": 135, "city": "          " },
-    { "value": 130, "city": "           " },
-    { "value": 232, "city": "            " },
-    { "value": 195, "city": "             " },
-    { "value": 267, "city": "              " }
-  ],
-  "1964": [
-    { "value": 143, "city": "言和" },
-    { "value": 469, "city": "乐正绫" },
-    { "value": 483, "city": "徵羽摩柯" },
-    { "value": 213, "city": "墨清弦" },
-    { "value": 262, "city": "乐正龙牙" },
-    { "value": 324, "city": "心华" },
-    { "value": 246, "city": "星尘" },
-    { "value": 339, "city": "原创曲" },
-    { "value": 933, "city": "初音未来" },
-    { "value": 200, "city": "翻调曲" },
-    { "value": 182, "city": "洛天依" },
-    { "value": 140, "city": "填词曲" },
-    { "value": 153, "city": "1000+" },
-    { "value": 166, "city": "10000+" },
-    { "value": 128, "city": "100000+" },
-    { "value": 101.4, "city": "1000000+" },
-    { "value": 182, "city": "" },
-    { "value": 153, "city": " " },
-    { "value": 219, "city": "  " },
-    { "value": 117, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 164, "city": "     " },
-    { "value": 117, "city": "      " },
-    { "value": 114, "city": "       " },
-    { "value": 142, "city": "        " },
-    { "value": 212, "city": "         " },
-    { "value": 141, "city": "          " },
-    { "value": 152, "city": "           " },
-    { "value": 257, "city": "            " },
-    { "value": 194, "city": "             " },
-    { "value": 292, "city": "              " }
-  ],
-  "1965": [
-    { "value": 180, "city": "言和" },
-    { "value": 509, "city": "乐正绫" },
-    { "value": 560, "city": "徵羽摩柯" },
-    { "value": 238, "city": "墨清弦" },
-    { "value": 275, "city": "乐正龙牙" },
-    { "value": 372, "city": "心华" },
-    { "value": 262, "city": "星尘" },
-    { "value": 377, "city": "原创曲" },
-    { "value": 1042, "city": "初音未来" },
-    { "value": 208, "city": "翻调曲" },
-    { "value": 191, "city": "洛天依" },
-    { "value": 163, "city": "填词曲" },
-    { "value": 166, "city": "1000+" },
-    { "value": 197, "city": "10000+" },
-    { "value": 152, "city": "100000+" },
-    { "value": 121.8, "city": "1000000+" },
-    { "value": 209, "city": "" },
-    { "value": 170, "city": " " },
-    { "value": 227, "city": "  " },
-    { "value": 131, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 184, "city": "     " },
-    { "value": 130, "city": "      " },
-    { "value": 136, "city": "       " },
-    { "value": 158, "city": "        " },
-    { "value": 241, "city": "         " },
-    { "value": 169, "city": "          " },
-    { "value": 186, "city": "           " },
-    { "value": 271, "city": "            " },
-    { "value": 211, "city": "             " },
-    { "value": 312, "city": "              " }
-  ],
-  "1966": [
-    { "value": 194, "city": "言和" },
-    { "value": 566, "city": "乐正绫" },
-    { "value": 605, "city": "徵羽摩柯" },
-    { "value": 263, "city": "墨清弦" },
-    { "value": 289, "city": "乐正龙牙" },
-    { "value": 397, "city": "心华" },
-    { "value": 277, "city": "星尘" },
-    { "value": 426, "city": "原创曲" },
-    { "value": 1140, "city": "初音未来" },
-    { "value": 235, "city": "翻调曲" },
-    { "value": 195, "city": "洛天依" },
-    { "value": 179, "city": "填词曲" },
-    { "value": 180, "city": "1000+" },
-    { "value": 215, "city": "10000+" },
-    { "value": 169, "city": "100000+" },
-    { "value": 143.8, "city": "1000000+" },
-    { "value": 236, "city": "" },
-    { "value": 184, "city": " " },
-    { "value": 245, "city": "  " },
-    { "value": 127, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 184, "city": "     " },
-    { "value": 137, "city": "      " },
-    { "value": 134, "city": "       " },
-    { "value": 166, "city": "        " },
-    { "value": 255, "city": "         " },
-    { "value": 187, "city": "          " },
-    { "value": 174, "city": "           " },
-    { "value": 270, "city": "            " },
-    { "value": 234, "city": "             " },
-    { "value": 325, "city": "              " }
-  ],
-  "1967": [
-    { "value": 185, "city": "言和" },
-    { "value": 480, "city": "乐正绫" },
-    { "value": 514, "city": "徵羽摩柯" },
-    { "value": 233, "city": "墨清弦" },
-    { "value": 233, "city": "乐正龙牙" },
-    { "value": 323, "city": "心华" },
-    { "value": 257, "city": "星尘" },
-    { "value": 409, "city": "原创曲" },
-    { "value": 999, "city": "初音未来" },
-    { "value": 206, "city": "翻调曲" },
-    { "value": 184, "city": "洛天依" },
-    { "value": 164, "city": "填词曲" },
-    { "value": 159, "city": "1000+" },
-    { "value": 192, "city": "10000+" },
-    { "value": 168, "city": "100000+" },
-    { "value": 144.2, "city": "1000000+" },
-    { "value": 216, "city": "" },
-    { "value": 181, "city": " " },
-    { "value": 238, "city": "  " },
-    { "value": 122, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 158, "city": "     " },
-    { "value": 137, "city": "      " },
-    { "value": 125, "city": "       " },
-    { "value": 151, "city": "        " },
-    { "value": 268, "city": "         " },
-    { "value": 166, "city": "          " },
-    { "value": 160, "city": "           " },
-    { "value": 281, "city": "            " },
-    { "value": 228, "city": "             " },
-    { "value": 259, "city": "              " }
-  ],
-  "1968": [
-    { "value": 185, "city": "言和" },
-    { "value": 475, "city": "乐正绫" },
-    { "value": 523, "city": "徵羽摩柯" },
-    { "value": 187, "city": "墨清弦" },
-    { "value": 235, "city": "乐正龙牙" },
-    { "value": 295, "city": "心华" },
-    { "value": 240, "city": "星尘" },
-    { "value": 386, "city": "原创曲" },
-    { "value": 1113, "city": "初音未来" },
-    { "value": 209, "city": "翻调曲" },
-    { "value": 175, "city": "洛天依" },
-    { "value": 157, "city": "填词曲" },
-    { "value": 138, "city": "1000+" },
-    { "value": 193, "city": "10000+" },
-    { "value": 165, "city": "100000+" },
-    { "value": 129.2, "city": "1000000+" },
-    { "value": 195, "city": "" },
-    { "value": 181, "city": " " },
-    { "value": 211, "city": "  " },
-    { "value": 109, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 126, "city": "     " },
-    { "value": 130, "city": "      " },
-    { "value": 108, "city": "       " },
-    { "value": 114, "city": "        " },
-    { "value": 246, "city": "         " },
-    { "value": 124, "city": "          " },
-    { "value": 157, "city": "           " },
-    { "value": 246, "city": "            " },
-    { "value": 202, "city": "             " },
-    { "value": 219, "city": "              " }
-  ],
-  "1969": [
-    { "value": 210, "city": "言和" },
-    { "value": 643, "city": "乐正绫" },
-    { "value": 649, "city": "徵羽摩柯" },
-    { "value": 224, "city": "墨清弦" },
-    { "value": 227, "city": "乐正龙牙" },
-    { "value": 378, "city": "心华" },
-    { "value": 250, "city": "星尘" },
-    { "value": 422, "city": "原创曲" },
-    { "value": 1292, "city": "初音未来" },
-    { "value": 221, "city": "翻调曲" },
-    { "value": 195, "city": "洛天依" },
-    { "value": 157, "city": "填词曲" },
-    { "value": 160, "city": "1000+" },
-    { "value": 211, "city": "10000+" },
-    { "value": 175, "city": "100000+" },
-    { "value": 140.4, "city": "1000000+" },
-    { "value": 197, "city": "" },
-    { "value": 189, "city": " " },
-    { "value": 232, "city": "  " },
-    { "value": 131, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 141, "city": "     " },
-    { "value": 138, "city": "      " },
-    { "value": 102, "city": "       " },
-    { "value": 144, "city": "        " },
-    { "value": 237, "city": "         " },
-    { "value": 175, "city": "          " },
-    { "value": 178, "city": "           " },
-    { "value": 262, "city": "            " },
-    { "value": 225, "city": "             " },
-    { "value": 211, "city": "              " }
-  ],
-  "1970": [
-    { "value": 232, "city": "言和" },
-    { "value": 810, "city": "乐正绫" },
-    { "value": 781, "city": "徵羽摩柯" },
-    { "value": 277, "city": "墨清弦" },
-    { "value": 263, "city": "乐正龙牙" },
-    { "value": 447, "city": "心华" },
-    { "value": 303, "city": "星尘" },
-    { "value": 448, "city": "原创曲" },
-    { "value": 1446, "city": "初音未来" },
-    { "value": 249, "city": "翻调曲" },
-    { "value": 211, "city": "洛天依" },
-    { "value": 186, "city": "填词曲" },
-    { "value": 173, "city": "1000+" },
-    { "value": 229, "city": "10000+" },
-    { "value": 199, "city": "100000+" },
-    { "value": 163.5, "city": "1000000+" },
-    { "value": 245, "city": "" },
-    { "value": 211, "city": " " },
-    { "value": 258, "city": "  " },
-    { "value": 142, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 164, "city": "     " },
-    { "value": 146, "city": "      " },
-    { "value": 132, "city": "       " },
-    { "value": 156, "city": "        " },
-    { "value": 247, "city": "         " },
-    { "value": 196, "city": "          " },
-    { "value": 218, "city": "           " },
-    { "value": 303, "city": "            " },
-    { "value": 241, "city": "             " },
-    { "value": 236, "city": "              " }
-  ],
-  "1971": [
-    { "value": 234, "city": "言和" },
-    { "value": 773, "city": "乐正绫" },
-    { "value": 832, "city": "徵羽摩柯" },
-    { "value": 290, "city": "墨清弦" },
-    { "value": 271, "city": "乐正龙牙" },
-    { "value": 478, "city": "心华" },
-    { "value": 319, "city": "星尘" },
-    { "value": 449, "city": "原创曲" },
-    { "value": 1541, "city": "初音未来" },
-    { "value": 279, "city": "翻调曲" },
-    { "value": 210, "city": "洛天依" },
-    { "value": 200, "city": "填词曲" },
-    { "value": 198, "city": "1000+" },
-    { "value": 238, "city": "10000+" },
-    { "value": 215, "city": "100000+" },
-    { "value": 171.5, "city": "1000000+" },
-    { "value": 246, "city": "" },
-    { "value": 218, "city": " " },
-    { "value": 254, "city": "  " },
-    { "value": 160, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 183, "city": "     " },
-    { "value": 152, "city": "      " },
-    { "value": 145, "city": "       " },
-    { "value": 171, "city": "        " },
-    { "value": 262, "city": "         " },
-    { "value": 234, "city": "          " },
-    { "value": 231, "city": "           " },
-    { "value": 320, "city": "            " },
-    { "value": 288, "city": "             " },
-    { "value": 258, "city": "              " }
-  ],
-  "1972": [
-    { "value": 220, "city": "言和" },
-    { "value": 836, "city": "乐正绫" },
-    { "value": 832, "city": "徵羽摩柯" },
-    { "value": 282, "city": "墨清弦" },
-    { "value": 247, "city": "乐正龙牙" },
-    { "value": 489, "city": "心华" },
-    { "value": 286, "city": "星尘" },
-    { "value": 433, "city": "原创曲" },
-    { "value": 1605, "city": "初音未来" },
-    { "value": 291, "city": "翻调曲" },
-    { "value": 247, "city": "洛天依" },
-    { "value": 208, "city": "填词曲" },
-    { "value": 208, "city": "1000+" },
-    { "value": 248, "city": "10000+" },
-    { "value": 221, "city": "100000+" },
-    { "value": 177.7, "city": "1000000+" },
-    { "value": 266, "city": "" },
-    { "value": 230, "city": " " },
-    { "value": 260, "city": "  " },
-    { "value": 182, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 176, "city": "     " },
-    { "value": 152, "city": "      " },
-    { "value": 129, "city": "       " },
-    { "value": 188, "city": "        " },
-    { "value": 270, "city": "         " },
-    { "value": 229, "city": "          " },
-    { "value": 243, "city": "           " },
-    { "value": 341, "city": "            " },
-    { "value": 302, "city": "             " },
-    { "value": 232, "city": "              " }
-  ],
-  "1973": [
-    { "value": 236, "city": "言和" },
-    { "value": 893, "city": "乐正绫" },
-    { "value": 875, "city": "徵羽摩柯" },
-    { "value": 296, "city": "墨清弦" },
-    { "value": 269, "city": "乐正龙牙" },
-    { "value": 538, "city": "心华" },
-    { "value": 316, "city": "星尘" },
-    { "value": 446, "city": "原创曲" },
-    { "value": 1737, "city": "初音未来" },
-    { "value": 312, "city": "翻调曲" },
-    { "value": 250, "city": "洛天依" },
-    { "value": 216, "city": "填词曲" },
-    { "value": 200, "city": "1000+" },
-    { "value": 242, "city": "10000+" },
-    { "value": 229, "city": "100000+" },
-    { "value": 182, "city": "1000000+" },
-    { "value": 248, "city": "" },
-    { "value": 244, "city": " " },
-    { "value": 277, "city": "  " },
-    { "value": 194, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 174, "city": "     " },
-    { "value": 156, "city": "      " },
-    { "value": 119, "city": "       " },
-    { "value": 202, "city": "        " },
-    { "value": 286, "city": "         " },
-    { "value": 231, "city": "          " },
-    { "value": 252, "city": "           " },
-    { "value": 352, "city": "            " },
-    { "value": 296, "city": "             " },
-    { "value": 226, "city": "              " }
-  ],
-  "1974": [
-    { "value": 251, "city": "言和" },
-    { "value": 965, "city": "乐正绫" },
-    { "value": 960, "city": "徵羽摩柯" },
-    { "value": 283, "city": "墨清弦" },
-    { "value": 256, "city": "乐正龙牙" },
-    { "value": 572, "city": "心华" },
-    { "value": 319, "city": "星尘" },
-    { "value": 460, "city": "原创曲" },
-    { "value": 1805, "city": "初音未来" },
-    { "value": 311, "city": "翻调曲" },
-    { "value": 245, "city": "洛天依" },
-    { "value": 210, "city": "填词曲" },
-    { "value": 202, "city": "1000+" },
-    { "value": 227, "city": "10000+" },
-    { "value": 191, "city": "100000+" },
-    { "value": 182.2, "city": "1000000+" },
-    { "value": 274, "city": "" },
-    { "value": 223, "city": " " },
-    { "value": 291, "city": "  " },
-    { "value": 201, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 168, "city": "     " },
-    { "value": 160, "city": "      " },
-    { "value": 101, "city": "       " },
-    { "value": 186, "city": "        " },
-    { "value": 297, "city": "         " },
-    { "value": 236, "city": "          " },
-    { "value": 279, "city": "           " },
-    { "value": 361, "city": "            " },
-    { "value": 365, "city": "             " },
-    { "value": 222, "city": "              " }
-  ],
-  "1975": [
-    { "value": 272, "city": "言和" },
-    { "value": 1086, "city": "乐正绫" },
-    { "value": 991, "city": "徵羽摩柯" },
-    { "value": 301, "city": "墨清弦" },
-    { "value": 280, "city": "乐正龙牙" },
-    { "value": 607, "city": "心华" },
-    { "value": 350, "city": "星尘" },
-    { "value": 484, "city": "原创曲" },
-    { "value": 1898, "city": "初音未来" },
-    { "value": 329, "city": "翻调曲" },
-    { "value": 235, "city": "洛天依" },
-    { "value": 218, "city": "填词曲" },
-    { "value": 203, "city": "1000+" },
-    { "value": 233, "city": "10000+" },
-    { "value": 240, "city": "100000+" },
-    { "value": 190.6, "city": "1000000+" },
-    { "value": 274.3, "city": "" },
-    { "value": 239, "city": " " },
-    { "value": 326, "city": "  " },
-    { "value": 212, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 190, "city": "     " },
-    { "value": 169, "city": "      " },
-    { "value": 124, "city": "       " },
-    { "value": 190, "city": "        " },
-    { "value": 307, "city": "         " },
-    { "value": 243, "city": "          " },
-    { "value": 318, "city": "           " },
-    { "value": 371, "city": "            " },
-    { "value": 374, "city": "             " },
-    { "value": 240, "city": "              " }
-  ],
-  "1976": [
-    { "value": 272, "city": "言和" },
-    { "value": 1111, "city": "乐正绫" },
-    { "value": 908, "city": "徵羽摩柯" },
-    { "value": 274, "city": "墨清弦" },
-    { "value": 272, "city": "乐正龙牙" },
-    { "value": 619, "city": "心华" },
-    { "value": 321, "city": "星尘" },
-    { "value": 482, "city": "原创曲" },
-    { "value": 1929, "city": "初音未来" },
-    { "value": 332, "city": "翻调曲" },
-    { "value": 240, "city": "洛天依" },
-    { "value": 234, "city": "填词曲" },
-    { "value": 201, "city": "1000+" },
-    { "value": 214, "city": "10000+" },
-    { "value": 242, "city": "100000+" },
-    { "value": 184.5, "city": "1000000+" },
-    { "value": 258.3, "city": "" },
-    { "value": 236, "city": " " },
-    { "value": 319, "city": "  " },
-    { "value": 208, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 188, "city": "     " },
-    { "value": 190, "city": "      " },
-    { "value": 110, "city": "       " },
-    { "value": 169, "city": "        " },
-    { "value": 317, "city": "         " },
-    { "value": 233, "city": "          " },
-    { "value": 309, "city": "           " },
-    { "value": 356, "city": "            " },
-    { "value": 333, "city": "             " },
-    { "value": 266, "city": "              " }
-  ],
-  "1977": [
-    { "value": 318, "city": "言和" },
-    { "value": 1162, "city": "乐正绫" },
-    { "value": 938, "city": "徵羽摩柯" },
-    { "value": 315, "city": "墨清弦" },
-    { "value": 287, "city": "乐正龙牙" },
-    { "value": 612, "city": "心华" },
-    { "value": 343, "city": "星尘" },
-    { "value": 511, "city": "原创曲" },
-    { "value": 2125, "city": "初音未来" },
-    { "value": 353, "city": "翻调曲" },
-    { "value": 271, "city": "洛天依" },
-    { "value": 235, "city": "填词曲" },
-    { "value": 220, "city": "1000+" },
-    { "value": 243, "city": "10000+" },
-    { "value": 293, "city": "100000+" },
-    { "value": 208.7, "city": "1000000+" },
-    { "value": 291.8, "city": "" },
-    { "value": 254, "city": " " },
-    { "value": 340, "city": "  " },
-    { "value": 208, "city": "   " },
-    { "value": 0, "city": "    " },
-    { "value": 208, "city": "     " },
-    { "value": 222, "city": "      " },
-    { "value": 144, "city": "       " },
-    { "value": 187, "city": "        " },
-    { "value": 334, "city": "         " },
-    { "value": 256, "city": "          " },
-    { "value": 318, "city": "           " },
-    { "value": 311, "city": "            " },
-    { "value": 354, "city": "             " },
-    { "value": 293, "city": "              " }
-  ],
-  "1978": [
-    { "value": 364, "city": "言和" },
-    { "value": 1257, "city": "乐正绫" },
-    { "value": 1133, "city": "徵羽摩柯" },
-    { "value": 365, "city": "墨清弦" },
-    { "value": 317, "city": "乐正龙牙" },
-    { "value": 680, "city": "心华" },
-    { "value": 381, "city": "星尘" },
-    { "value": 564, "city": "原创曲" },
-    { "value": 2485, "city": "初音未来" },
-    { "value": 430, "city": "翻调曲" },
-    { "value": 331, "city": "洛天依" },
-    { "value": 244, "city": "填词曲" },
-    { "value": 273, "city": "1000+" },
-    { "value": 276, "city": "10000+" },
-    { "value": 316, "city": "100000+" },
-    { "value": 232.3, "city": "1000000+" },
-    { "value": 332, "city": "" },
-    { "value": 286, "city": " " },
-    { "value": 370, "city": "  " },
-    { "value": 225, "city": "   " },
-    { "value": 314, "city": "    " },
-    { "value": 269, "city": "     " },
-    { "value": 261, "city": "      " },
-    { "value": 175, "city": "       " },
-    { "value": 226, "city": "        " },
-    { "value": 375, "city": "         " },
-    { "value": 291, "city": "          " },
-    { "value": 348, "city": "           " },
-    { "value": 428, "city": "            " },
-    { "value": 370, "city": "             " },
-    { "value": 313, "city": "              " }
-  ],
-  "1979": [
-    { "value": 400, "city": "言和" },
-    { "value": 1358, "city": "乐正绫" },
-    { "value": 1241, "city": "徵羽摩柯" },
-    { "value": 437, "city": "墨清弦" },
-    { "value": 343, "city": "乐正龙牙" },
-    { "value": 717, "city": "心华" },
-    { "value": 417, "city": "星尘" },
-    { "value": 594, "city": "原创曲" },
-    { "value": 2556, "city": "初音未来" },
-    { "value": 509, "city": "翻调曲" },
-    { "value": 417, "city": "洛天依" },
-    { "value": 268, "city": "填词曲" },
-    { "value": 300, "city": "1000+" },
-    { "value": 325, "city": "10000+" },
-    { "value": 350, "city": "100000+" },
-    { "value": 266.7, "city": "1000000+" },
-    { "value": 409.4, "city": "" },
-    { "value": 343, "city": " " },
-    { "value": 410, "city": "  " },
-    { "value": 246, "city": "   " },
-    { "value": 327, "city": "    " },
-    { "value": 301, "city": "     " },
-    { "value": 289, "city": "      " },
-    { "value": 204, "city": "       " },
-    { "value": 247, "city": "        " },
-    { "value": 404, "city": "         " },
-    { "value": 336, "city": "          " },
-    { "value": 359, "city": "           " },
-    { "value": 410, "city": "            " },
-    { "value": 399, "city": "             " },
-    { "value": 359, "city": "              " }
-  ],
-  "1980": [
-    { "value": 427, "city": "言和" },
-    { "value": 1544, "city": "乐正绫" },
-    { "value": 1357, "city": "徵羽摩柯" },
-    { "value": 442, "city": "墨清弦" },
-    { "value": 361, "city": "乐正龙牙" },
-    { "value": 811, "city": "心华" },
-    { "value": 445, "city": "星尘" },
-    { "value": 694, "city": "原创曲" },
-    { "value": 2725, "city": "初音未来" },
-    { "value": 541, "city": "翻调曲" },
-    { "value": 471, "city": "洛天依" },
-    { "value": 291, "city": "填词曲" },
-    { "value": 348, "city": "1000+" },
-    { "value": 342, "city": "10000+" },
-    { "value": 402, "city": "100000+" },
-    { "value": 316.7, "city": "1000000+" },
-    { "value": 428, "city": "" },
-    { "value": 365, "city": " " },
-    { "value": 481, "city": "  " },
-    { "value": 278, "city": "   " },
-    { "value": 354, "city": "    " },
-    { "value": 334, "city": "     " },
-    { "value": 320, "city": "      " },
-    { "value": 219, "city": "       " },
-    { "value": 267, "city": "        " },
-    { "value": 471, "city": "         " },
-    { "value": 334, "city": "          " },
-    { "value": 388, "city": "           " },
-    { "value": 473, "city": "            " },
-    { "value": 433, "city": "             " },
-    { "value": 410, "city": "              " }
-  ],
-  "1981": [
-    { "value": 427, "city": "言和" },
-    { "value": 1526, "city": "乐正绫" },
-    { "value": 1458, "city": "徵羽摩柯" },
-    { "value": 488, "city": "墨清弦" },
-    { "value": 407, "city": "乐正龙牙" },
-    { "value": 823, "city": "心华" },
-    { "value": 496, "city": "星尘" },
-    { "value": 709, "city": "原创曲" },
-    { "value": 2800, "city": "初音未来" },
-    { "value": 586, "city": "翻调曲" },
-    { "value": 531, "city": "洛天依" },
-    { "value": 346, "city": "填词曲" },
-    { "value": 416, "city": "1000+" },
-    { "value": 369, "city": "10000+" },
-    { "value": 472, "city": "100000+" },
-    { "value": 340.1, "city": "1000000+" },
-    { "value": 466.3, "city": "" },
-    { "value": 394, "city": " " },
-    { "value": 550, "city": "  " },
-    { "value": 317, "city": "   " },
-    { "value": 399, "city": "    " },
-    { "value": 354, "city": "     " },
-    { "value": 337, "city": "      " },
-    { "value": 242, "city": "       " },
-    { "value": 294, "city": "        " },
-    { "value": 560, "city": "         " },
-    { "value": 356, "city": "          " },
-    { "value": 367, "city": "           " },
-    { "value": 459, "city": "            " },
-    { "value": 460, "city": "             " },
-    { "value": 450, "city": "              " }
-  ],
-  "1982": [
-    { "value": 474, "city": "言和" },
-    { "value": 1671, "city": "乐正绫" },
-    { "value": 1469, "city": "徵羽摩柯" },
-    { "value": 551, "city": "墨清弦" },
-    { "value": 480, "city": "乐正龙牙" },
-    { "value": 884, "city": "心华" },
-    { "value": 538, "city": "星尘" },
-    { "value": 762, "city": "原创曲" },
-    { "value": 2864, "city": "初音未来" },
-    { "value": 645, "city": "翻调曲" },
-    { "value": 599, "city": "洛天依" },
-    { "value": 375, "city": "填词曲" },
-    { "value": 457, "city": "1000+" },
-    { "value": 403, "city": "10000+" },
-    { "value": 531, "city": "100000+" },
-    { "value": 353, "city": "1000000+" },
-    { "value": 506.3, "city": "" },
-    { "value": 430, "city": " " },
-    { "value": 633, "city": "  " },
-    { "value": 354, "city": "   " },
-    { "value": 510, "city": "    " },
-    { "value": 390, "city": "     " },
-    { "value": 379, "city": "      " },
-    { "value": 278, "city": "       " },
-    { "value": 339, "city": "        " },
-    { "value": 544, "city": "         " },
-    { "value": 385, "city": "          " },
-    { "value": 393, "city": "           " },
-    { "value": 513, "city": "            " },
-    { "value": 469, "city": "             " },
-    { "value": 488, "city": "              " }
-  ],
-  "1983": [
-    { "value": 526, "city": "言和" },
-    { "value": 1943, "city": "乐正绫" },
-    { "value": 1555, "city": "徵羽摩柯" },
-    { "value": 604, "city": "墨清弦" },
-    { "value": 535, "city": "乐正龙牙" },
-    { "value": 1012, "city": "心华" },
-    { "value": 658, "city": "星尘" },
-    { "value": 841, "city": "原创曲" },
-    { "value": 2947, "city": "初音未来" },
-    { "value": 716, "city": "翻调曲" },
-    { "value": 650, "city": "洛天依" },
-    { "value": 428, "city": "填词曲" },
-    { "value": 487, "city": "1000+" },
-    { "value": 428, "city": "10000+" },
-    { "value": 611, "city": "100000+" },
-    { "value": 432.9, "city": "1000000+" },
-    { "value": 543.3, "city": "" },
-    { "value": 470, "city": " " },
-    { "value": 675, "city": "  " },
-    { "value": 363, "city": "   " },
-    { "value": 540, "city": "    " },
-    { "value": 428, "city": "     " },
-    { "value": 425, "city": "      " },
-    { "value": 302, "city": "       " },
-    { "value": 363, "city": "        " },
-    { "value": 538, "city": "         " },
-    { "value": 420, "city": "          " },
-    { "value": 462, "city": "           " },
-    { "value": 569, "city": "            " },
-    { "value": 525, "city": "             " },
-    { "value": 583, "city": "              " }
-  ],
-  "1984": [
-    { "value": 609, "city": "言和" },
-    { "value": 2262, "city": "乐正绫" },
-    { "value": 1853, "city": "徵羽摩柯" },
-    { "value": 756, "city": "墨清弦" },
-    { "value": 640, "city": "乐正龙牙" },
-    { "value": 1203, "city": "心华" },
-    { "value": 760, "city": "星尘" },
-    { "value": 959, "city": "原创曲" },
-    { "value": 3232, "city": "初音未来" },
-    { "value": 843, "city": "翻调曲" },
-    { "value": 810, "city": "洛天依" },
-    { "value": 523, "city": "填词曲" },
-    { "value": 591, "city": "1000+" },
-    { "value": 497, "city": "10000+" },
-    { "value": 765, "city": "100000+" },
-    { "value": 481.6, "city": "1000000+" },
-    { "value": 671, "city": "" },
-    { "value": 519, "city": " " },
-    { "value": 827, "city": "  " },
-    { "value": 399, "city": "   " },
-    { "value": 636, "city": "    " },
-    { "value": 502, "city": "     " },
-    { "value": 487, "city": "      " },
-    { "value": 371, "city": "       " },
-    { "value": 416, "city": "        " },
-    { "value": 702, "city": "         " },
-    { "value": 504, "city": "          " },
-    { "value": 515, "city": "           " },
-    { "value": 662, "city": "            " },
-    { "value": 615, "city": "             " },
-    { "value": 661, "city": "              " }
-  ],
-  "1985": [
-    { "value": 719, "city": "言和" },
-    { "value": 2643, "city": "乐正绫" },
-    { "value": 2169, "city": "徵羽摩柯" },
-    { "value": 838, "city": "墨清弦" },
-    { "value": 809, "city": "乐正龙牙" },
-    { "value": 1413, "city": "心华" },
-    { "value": 868, "city": "星尘" },
-    { "value": 1062, "city": "原创曲" },
-    { "value": 3811, "city": "初音未来" },
-    { "value": 1053, "city": "翻调曲" },
-    { "value": 1067, "city": "洛天依" },
-    { "value": 646, "city": "填词曲" },
-    { "value": 737, "city": "1000+" },
-    { "value": 597, "city": "10000+" },
-    { "value": 887, "city": "100000+" },
-    { "value": 579.7, "city": "1000000+" },
-    { "value": 800.7, "city": "" },
-    { "value": 626, "city": " " },
-    { "value": 1026, "city": "  " },
-    { "value": 471, "city": "   " },
-    { "value": 729, "city": "    " },
-    { "value": 577, "city": "     " },
-    { "value": 570, "city": "      " },
-    { "value": 420, "city": "       " },
-    { "value": 486, "city": "        " },
-    { "value": 894, "city": "         " },
-    { "value": 604, "city": "          " },
-    { "value": 608, "city": "           " },
-    { "value": 808, "city": "            " },
-    { "value": 737, "city": "             " },
-    { "value": 820, "city": "              " }
-  ],
-  "1986": [
-    { "value": 782, "city": "言和" },
-    { "value": 2836, "city": "乐正绫" },
-    { "value": 2352, "city": "徵羽摩柯" },
-    { "value": 890, "city": "墨清弦" },
-    { "value": 888, "city": "乐正龙牙" },
-    { "value": 1633, "city": "心华" },
-    { "value": 977, "city": "星尘" },
-    { "value": 1189, "city": "原创曲" },
-    { "value": 3956, "city": "初音未来" },
-    { "value": 1193, "city": "翻调曲" },
-    { "value": 1237, "city": "洛天依" },
-    { "value": 738, "city": "填词曲" },
-    { "value": 809, "city": "1000+" },
-    { "value": 652, "city": "10000+" },
-    { "value": 956, "city": "100000+" },
-    { "value": 635.3, "city": "1000000+" },
-    { "value": 881.6, "city": "" },
-    { "value": 703, "city": " " },
-    { "value": 1164, "city": "  " },
-    { "value": 525, "city": "   " },
-    { "value": 798, "city": "    " },
-    { "value": 640, "city": "     " },
-    { "value": 614, "city": "      " },
-    { "value": 467, "city": "       " },
-    { "value": 528, "city": "        " },
-    { "value": 842, "city": "         " },
-    { "value": 688, "city": "          " },
-    { "value": 684, "city": "           " },
-    { "value": 916, "city": "            " },
-    { "value": 823, "city": "             " },
-    { "value": 924, "city": "              " }
-  ],
-  "1987": [
-    { "value": 921, "city": "言和" },
-    { "value": 3150, "city": "乐正绫" },
-    { "value": 2621, "city": "徵羽摩柯" },
-    { "value": 962, "city": "墨清弦" },
-    { "value": 1025, "city": "乐正龙牙" },
-    { "value": 1917, "city": "心华" },
-    { "value": 1269, "city": "星尘" },
-    { "value": 1335, "city": "原创曲" },
-    { "value": 4340, "city": "初音未来" },
-    { "value": 1462, "city": "翻调曲" },
-    { "value": 1478, "city": "洛天依" },
-    { "value": 842, "city": "填词曲" },
-    { "value": 999, "city": "1000+" },
-    { "value": 729, "city": "10000+" },
-    { "value": 1131, "city": "100000+" },
-    { "value": 755.8, "city": "1000000+" },
-    { "value": 1018.4, "city": "" },
-    { "value": 818, "city": " " },
-    { "value": 1443, "city": "  " },
-    { "value": 607, "city": "   " },
-    { "value": 925.3, "city": "    " },
-    { "value": 705, "city": "     " },
-    { "value": 702, "city": "      " },
-    { "value": 546, "city": "       " },
-    { "value": 653, "city": "        " },
-    { "value": 863, "city": "         " },
-    { "value": 794, "city": "          " },
-    { "value": 764, "city": "           " },
-    { "value": 1018, "city": "            " },
-    { "value": 922, "city": "             " },
-    { "value": 1053, "city": "              " }
-  ],
-  "1988": [
-    { "value": 1219, "city": "言和" },
-    { "value": 3892, "city": "乐正绫" },
-    { "value": 3035, "city": "徵羽摩柯" },
-    { "value": 1168, "city": "墨清弦" },
-    { "value": 1291, "city": "乐正龙牙" },
-    { "value": 2285, "city": "心华" },
-    { "value": 1559, "city": "星尘" },
-    { "value": 1602, "city": "原创曲" },
-    { "value": 5080, "city": "初音未来" },
-    { "value": 1891, "city": "翻调曲" },
-    { "value": 1853, "city": "洛天依" },
-    { "value": 1026, "city": "填词曲" },
-    { "value": 1349, "city": "1000+" },
-    { "value": 891, "city": "10000+" },
-    { "value": 1395, "city": "100000+" },
-    { "value": 909.9, "city": "1000000+" },
-    { "value": 1215.9, "city": "" },
-    { "value": 999, "city": " " },
-    { "value": 1926, "city": "  " },
-    { "value": 770, "city": "   " },
-    { "value": 1220.3, "city": "    " },
-    { "value": 880, "city": "     " },
-    { "value": 861, "city": "      " },
-    { "value": 683, "city": "       " },
-    { "value": 845, "city": "        " },
-    { "value": 964, "city": "         " },
-    { "value": 1004, "city": "          " },
-    { "value": 905, "city": "           " },
-    { "value": 1260, "city": "            " },
-    { "value": 1143, "city": "             " },
-    { "value": 1347, "city": "              " }
-  ],
-  "1989": [
-    { "value": 1409, "city": "言和" },
-    { "value": 4269, "city": "乐正绫" },
-    { "value": 3261, "city": "徵羽摩柯" },
-    { "value": 1367, "city": "墨清弦" },
-    { "value": 1377, "city": "乐正龙牙" },
-    { "value": 2574, "city": "心华" },
-    { "value": 1636, "city": "星尘" },
-    { "value": 1808, "city": "原创曲" },
-    { "value": 5362, "city": "初音未来" },
-    { "value": 2038, "city": "翻调曲" },
-    { "value": 2023, "city": "洛天依" },
-    { "value": 1136, "city": "填词曲" },
-    { "value": 1589, "city": "1000+" },
-    { "value": 1013, "city": "10000+" },
-    { "value": 1595, "city": "100000+" },
-    { "value": 1012.3, "city": "1000000+" },
-    { "value": 1373.2, "city": "" },
-    { "value": 1074, "city": " " },
-    { "value": 2251, "city": "  " },
-    { "value": 927, "city": "   " },
-    { "value": 1420.2, "city": "    " },
-    { "value": 1011, "city": "     " },
-    { "value": 960, "city": "      " },
-    { "value": 750, "city": "       " },
-    { "value": 1003, "city": "        " },
-    { "value": 1021, "city": "         " },
-    { "value": 1124, "city": "          " },
-    { "value": 1007, "city": "           " },
-    { "value": 1365, "city": "            " },
-    { "value": 1317, "city": "             " },
-    { "value": 1493, "city": "              " }
-  ],
-  "1990": [
-    { "value": 1465, "city": "言和" },
-    { "value": 4635, "city": "乐正绫" },
-    { "value": 3487, "city": "徵羽摩柯" },
-    { "value": 1528, "city": "墨清弦" },
-    { "value": 1478, "city": "乐正龙牙" },
-    { "value": 2698, "city": "心华" },
-    { "value": 1746, "city": "星尘" },
-    { "value": 2028, "city": "原创曲" },
-    { "value": 5911, "city": "初音未来" },
-    { "value": 2109, "city": "翻调曲" },
-    { "value": 2138, "city": "洛天依" },
-    { "value": 1182, "city": "填词曲" },
-    { "value": 1763, "city": "1000+" },
-    { "value": 1134, "city": "10000+" },
-    { "value": 1815, "city": "100000+" },
-    { "value": 1090.6, "city": "1000000+" },
-    { "value": 1541.2, "city": "" },
-    { "value": 1228, "city": " " },
-    { "value": 2484, "city": "  " },
-    { "value": 1066, "city": "   " },
-    { "value": 1562.5, "city": "    " },
-    { "value": 1080, "city": "     " },
-    { "value": 1136, "city": "      " },
-    { "value": 810, "city": "       " },
-    { "value": 1224, "city": "        " },
-    { "value": 1276, "city": "         " },
-    { "value": 1241, "city": "          " },
-    { "value": 1099, "city": "           " },
-    { "value": 1558, "city": "            " },
-    { "value": 1393, "city": "             " },
-    { "value": 1713, "city": "              " }
-  ],
-  "1991": [
-    { "value": 1727, "city": "言和" },
-    { "value": 5494, "city": "乐正绫" },
-    { "value": 3777, "city": "徵羽摩柯" },
-    { "value": 1592, "city": "墨清弦" },
-    { "value": 1642, "city": "乐正龙牙" },
-    { "value": 3027, "city": "心华" },
-    { "value": 1878, "city": "星尘" },
-    { "value": 2310, "city": "原创曲" },
-    { "value": 6661, "city": "初音未来" },
-    { "value": 2353, "city": "翻调曲" },
-    { "value": 2558, "city": "洛天依" },
-    { "value": 1164, "city": "填词曲" },
-    { "value": 2041, "city": "1000+" },
-    { "value": 1249, "city": "10000+" },
-    { "value": 2122, "city": "100000+" },
-    { "value": 1201.2, "city": "1000000+" },
-    { "value": 1668, "city": "" },
-    { "value": 1357, "city": " " },
-    { "value": 2941, "city": "  " },
-    { "value": 1211, "city": "   " },
-    { "value": 1804.2, "city": "    " },
-    { "value": 1221, "city": "     " },
-    { "value": 1283, "city": "      " },
-    { "value": 896, "city": "       " },
-    { "value": 1377, "city": "        " },
-    { "value": 1358, "city": "         " },
-    { "value": 1402, "city": "          " },
-    { "value": 1204, "city": "           " },
-    { "value": 1647, "city": "            " },
-    { "value": 1511, "city": "             " },
-    { "value": 2101, "city": "              " }
-  ],
-  "1992": [
-    { "value": 2040, "city": "言和" },
-    { "value": 6458, "city": "乐正绫" },
-    { "value": 4481, "city": "徵羽摩柯" },
-    { "value": 1862, "city": "墨清弦" },
-    { "value": 1906, "city": "乐正龙牙" },
-    { "value": 3693, "city": "心华" },
-    { "value": 2246, "city": "星尘" },
-    { "value": 2672, "city": "原创曲" },
-    { "value": 8208, "city": "初音未来" },
-    { "value": 3106, "city": "翻调曲" },
-    { "value": 3212, "city": "洛天依" },
-    { "value": 1390, "city": "填词曲" },
-    { "value": 2557, "city": "1000+" },
-    { "value": 1472, "city": "10000+" },
-    { "value": 2556, "city": "100000+" },
-    { "value": 1452.3, "city": "1000000+" },
-    { "value": 1962.4, "city": "" },
-    { "value": 1595, "city": " " },
-    { "value": 3699, "city": "  " },
-    { "value": 1490, "city": "   " },
-    { "value": 2719.3, "city": "    " },
-    { "value": 1495, "city": "     " },
-    { "value": 1477, "city": "      " },
-    { "value": 1034, "city": "       " },
-    { "value": 1625, "city": "        " },
-    { "value": 1468, "city": "         " },
-    { "value": 1571, "city": "          " },
-    { "value": 1384, "city": "           " },
-    { "value": 1890, "city": "            " },
-    { "value": 1718, "city": "             " },
-    { "value": 2477, "city": "              " }
-  ],
-  "1993": [
-    { "value": 2682, "city": "言和" },
-    { "value": 8006, "city": "乐正绫" },
-    { "value": 5800, "city": "徵羽摩柯" },
-    { "value": 2271, "city": "墨清弦" },
-    { "value": 2423, "city": "乐正龙牙" },
-    { "value": 5015, "city": "心华" },
-    { "value": 2826, "city": "星尘" },
-    { "value": 3306, "city": "原创曲" },
-    { "value": 11061, "city": "初音未来" },
-    { "value": 4321, "city": "翻调曲" },
-    { "value": 4469, "city": "洛天依" },
-    { "value": 1785, "city": "填词曲" },
-    { "value": 3556, "city": "1000+" },
-    { "value": 1835, "city": "10000+" },
-    { "value": 3222, "city": "100000+" },
-    { "value": 1864.6, "city": "1000000+" },
-    { "value": 2360.5, "city": "" },
-    { "value": 1997, "city": " " },
-    { "value": 5085, "city": "  " },
-    { "value": 1982, "city": "   " },
-    { "value": 3755, "city": "    " },
-    { "value": 1959, "city": "     " },
-    { "value": 1854, "city": "      " },
-    { "value": 1234, "city": "       " },
-    { "value": 2030, "city": "        " },
-    { "value": 1624, "city": "         " },
-    { "value": 1981, "city": "          " },
-    { "value": 1600, "city": "           " },
-    { "value": 2337, "city": "            " },
-    { "value": 2148, "city": "             " },
-    { "value": 2964, "city": "              " }
-  ],
-  "1994": [
-    { "value": 3439, "city": "言和" },
-    { "value": 10240, "city": "乐正绫" },
-    { "value": 7751, "city": "徵羽摩柯" },
-    { "value": 2729, "city": "墨清弦" },
-    { "value": 3094, "city": "乐正龙牙" },
-    { "value": 6103, "city": "心华" },
-    { "value": 3657, "city": "星尘" },
-    { "value": 4390, "city": "原创曲" },
-    { "value": 14328, "city": "初音未来" },
-    { "value": 5801, "city": "翻调曲" },
-    { "value": 6201, "city": "洛天依" },
-    { "value": 2257, "city": "填词曲" },
-    { "value": 5193, "city": "1000+" },
-    { "value": 2376, "city": "10000+" },
-    { "value": 4473, "city": "100000+" },
-    { "value": 2466.8, "city": "1000000+" },
-    { "value": 2991.3, "city": "" },
-    { "value": 2630, "city": " " },
-    { "value": 6530, "city": "  " },
-    { "value": 2675, "city": "   " },
-    { "value": 4702.2, "city": "    " },
-    { "value": 2662, "city": "     " },
-    { "value": 2338, "city": "      " },
-    { "value": 1527, "city": "       " },
-    { "value": 2515, "city": "        " },
-    { "value": 1964, "city": "         " },
-    { "value": 2424, "city": "          " },
-    { "value": 1920.7, "city": "           " },
-    { "value": 2910, "city": "            " },
-    { "value": 2740, "city": "             " },
-    { "value": 3888, "city": "              " }
-  ],
-  "1995": [
-    { "value": 4444, "city": "言和" },
-    { "value": 12690, "city": "乐正绫" },
-    { "value": 9769, "city": "徵羽摩柯" },
-    { "value": 3515, "city": "墨清弦" },
-    { "value": 3772, "city": "乐正龙牙" },
-    { "value": 6880, "city": "心华" },
-    { "value": 4402, "city": "星尘" },
-    { "value": 5402, "city": "原创曲" },
-    { "value": 17779, "city": "初音未来" },
-    { "value": 7319, "city": "翻调曲" },
-    { "value": 8149, "city": "洛天依" },
-    { "value": 3070, "city": "填词曲" },
-    { "value": 6526, "city": "1000+" },
-    { "value": 2896, "city": "10000+" },
-    { "value": 5758, "city": "100000+" },
-    { "value": 3297.1, "city": "1000000+" },
-    { "value": 3671.4, "city": "" },
-    { "value": 3359, "city": " " },
-    { "value": 8129, "city": "  " },
-    { "value": 3304, "city": "   " },
-    { "value": 5063.5, "city": "    " },
-    { "value": 3557, "city": "     " },
-    { "value": 3043, "city": "      " },
-    { "value": 1826, "city": "       " },
-    { "value": 3083, "city": "        " },
-    { "value": 2358, "city": "         " },
-    { "value": 2965, "city": "          " },
-    { "value": 2316.2, "city": "           " },
-    { "value": 3430, "city": "            " },
-    { "value": 3448, "city": "             " },
-    { "value": 4701, "city": "              " }
-  ],
-  "1996": [
-    { "value": 5345, "city": "言和" },
-    { "value": 14254, "city": "乐正绫" },
-    { "value": 11734, "city": "徵羽摩柯" },
-    { "value": 4178, "city": "墨清弦" },
-    { "value": 4457, "city": "乐正龙牙" },
-    { "value": 7730, "city": "心华" },
-    { "value": 5178, "city": "星尘" },
-    { "value": 6382, "city": "原创曲" },
-    { "value": 20647, "city": "初音未来" },
-    { "value": 8471, "city": "翻调曲" },
-    { "value": 9552, "city": "洛天依" },
-    { "value": 3524, "city": "填词曲" },
-    { "value": 7646, "city": "1000+" },
-    { "value": 3452, "city": "10000+" },
-    { "value": 6834, "city": "100000+" },
-    { "value": 3978.4, "city": "1000000+" },
-    { "value": 4311, "city": "" },
-    { "value": 3963, "city": " " },
-    { "value": 9139, "city": "  " },
-    { "value": 3706, "city": "   " },
-    { "value": 5345.7, "city": "    " },
-    { "value": 4130, "city": "     " },
-    { "value": 3550, "city": "      " },
-    { "value": 2048, "city": "       " },
-    { "value": 3779, "city": "        " },
-    { "value": 2688, "city": "         " },
-    { "value": 3446, "city": "          " },
-    { "value": 2946.2, "city": "           " },
-    { "value": 3748, "city": "            " },
-    { "value": 3926, "city": "             " },
-    { "value": 5102, "city": "              " }
-  ],
-  "1997": [
-    { "value": 6079, "city": "言和" },
-    { "value": 16609, "city": "乐正绫" },
-    { "value": 13142, "city": "徵羽摩柯" },
-    { "value": 4724, "city": "墨清弦" },
-    { "value": 4980, "city": "乐正龙牙" },
-    { "value": 8725, "city": "心华" },
-    { "value": 5591, "city": "星尘" },
-    { "value": 7133, "city": "原创曲" },
-    { "value": 23397, "city": "初音未来" },
-    { "value": 9371, "city": "翻调曲" },
-    { "value": 10624, "city": "洛天依" },
-    { "value": 3929, "city": "填词曲" },
-    { "value": 8775, "city": "1000+" },
-    { "value": 3890, "city": "10000+" },
-    { "value": 7590, "city": "100000+" },
-    { "value": 4388.9, "city": "1000000+" },
-    { "value": 4883.8, "city": "" },
-    { "value": 4420, "city": " " },
-    { "value": 10130, "city": "  " },
-    { "value": 3928, "city": "   " },
-    { "value": 5567, "city": "    " },
-    { "value": 4733, "city": "     " },
-    { "value": 4032, "city": "      " },
-    { "value": 2250, "city": "       " },
-    { "value": 4121, "city": "        " },
-    { "value": 3144, "city": "         " },
-    { "value": 3834, "city": "          " },
-    { "value": 3199.2, "city": "           " },
-    { "value": 4066, "city": "            " },
-    { "value": 4277, "city": "             " },
-    { "value": 5848, "city": "              " }
-  ],
-  "1998": [
-    { "value": 6501, "city": "言和" },
-    { "value": 19118, "city": "乐正绫" },
-    { "value": 14243, "city": "徵羽摩柯" },
-    { "value": 5104, "city": "墨清弦" },
-    { "value": 5406, "city": "乐正龙牙" },
-    { "value": 9415, "city": "心华" },
-    { "value": 5983, "city": "星尘" },
-    { "value": 7375, "city": "原创曲" },
-    { "value": 25206, "city": "初音未来" },
-    { "value": 10049, "city": "翻调曲" },
-    { "value": 11394, "city": "洛天依" },
-    { "value": 4235, "city": "填词曲" },
-    { "value": 9603, "city": "1000+" },
-    { "value": 4124, "city": "10000+" },
-    { "value": 8128, "city": "100000+" },
-    { "value": 4643, "city": "1000000+" },
-    { "value": 5287, "city": "" },
-    { "value": 4667, "city": " " },
-    { "value": 10819, "city": "  " },
-    { "value": 4346, "city": "   " },
-    { "value": 5911.5, "city": "    " },
-    { "value": 5016, "city": "     " },
-    { "value": 4294, "city": "      " },
-    { "value": 2364, "city": "       " },
-    { "value": 4446, "city": "        " },
-    { "value": 3666, "city": "         " },
-    { "value": 4070, "city": "          " },
-    { "value": 3541.1, "city": "           " },
-    { "value": 4367, "city": "            " },
-    { "value": 4607, "city": "             " },
-    { "value": 6174, "city": "              " }
-  ],
-  "1999": [
-    { "value": 6849, "city": "言和" },
-    { "value": 21397, "city": "乐正绫" },
-    { "value": 15405, "city": "徵羽摩柯" },
-    { "value": 5230, "city": "墨清弦" },
-    { "value": 5861, "city": "乐正龙牙" },
-    { "value": 10086, "city": "心华" },
-    { "value": 6382, "city": "星尘" },
-    { "value": 7578, "city": "原创曲" },
-    { "value": 27071, "city": "初音未来" },
-    { "value": 10695, "city": "翻调曲" },
-    { "value": 12214, "city": "洛天依" },
-    { "value": 4495, "city": "填词曲" },
-    { "value": 10323, "city": "1000+" },
-    { "value": 4402, "city": "10000+" },
-    { "value": 8673, "city": "100000+" },
-    { "value": 4831.5, "city": "1000000+" },
-    { "value": 5452.5, "city": "" },
-    { "value": 4933, "city": " " },
-    { "value": 11415, "city": "  " },
-    { "value": 4444, "city": "   " },
-    { "value": 6293.7, "city": "    " },
-    { "value": 5207, "city": "     " },
-    { "value": 4540, "city": "      " },
-    { "value": 2545, "city": "       " },
-    { "value": 4558, "city": "        " },
-    { "value": 4180, "city": "         " },
-    { "value": 4415, "city": "          " },
-    { "value": 3778.5, "city": "           " },
-    { "value": 4662, "city": "            " },
-    { "value": 4900, "city": "             " },
-    { "value": 6443, "city": "              " }
-  ],
-  "2000": [
-    { "value": 7592, "city": "言和" },
-    { "value": 24122, "city": "乐正绫" },
-    { "value": 17353, "city": "徵羽摩柯" },
-    { "value": 5722, "city": "墨清弦" },
-    { "value": 6502, "city": "乐正龙牙" },
-    { "value": 11177, "city": "心华" },
-    { "value": 7351, "city": "星尘" },
-    { "value": 8294, "city": "原创曲" },
-    { "value": 30047, "city": "初音未来" },
-    { "value": 11765, "city": "翻调曲" },
-    { "value": 13416, "city": "洛天依" },
-    { "value": 4779, "city": "填词曲" },
-    { "value": 11194, "city": "1000+" },
-    { "value": 4851, "city": "10000+" },
-    { "value": 9555, "city": "100000+" },
-    { "value": 5449.7, "city": "1000000+" },
-    { "value": 6293.4, "city": "" },
-    { "value": 5425, "city": " " },
-    { "value": 12736, "city": "  " },
-    { "value": 4652, "city": "   " },
-    { "value": 6797.8, "city": "    " },
-    { "value": 5616, "city": "     " },
-    { "value": 4956, "city": "      " },
-    { "value": 2759, "city": "       " },
-    { "value": 4770, "city": "        " },
-    { "value": 4572, "city": "         " },
-    { "value": 4968, "city": "          " },
-    { "value": 4129.4, "city": "           " },
-    { "value": 5087, "city": "            " },
-    { "value": 5376, "city": "             " },
-    { "value": 7372, "city": "              " }
-  ],
-  "2001": [
-    { "value": 8251, "city": "言和" },
-    { "value": 26998, "city": "乐正绫" },
-    { "value": 19141, "city": "徵羽摩柯" },
-    { "value": 6226, "city": "墨清弦" },
-    { "value": 7216, "city": "乐正龙牙" },
-    { "value": 12015, "city": "心华" },
-    { "value": 7893, "city": "星尘" },
-    { "value": 8900, "city": "原创曲" },
-    { "value": 32333, "city": "初音未来" },
-    { "value": 12882, "city": "翻调曲" },
-    { "value": 14713, "city": "洛天依" },
-    { "value": 5313, "city": "填词曲" },
-    { "value": 11892, "city": "1000+" },
-    { "value": 5221, "city": "10000+" },
-    { "value": 10465, "city": "100000+" },
-    { "value": 5959.1, "city": "1000000+" },
-    { "value": 6867, "city": "" },
-    { "value": 6120, "city": " " },
-    { "value": 13852, "city": "  " },
-    { "value": 5058, "city": "   " },
-    { "value": 7314.6, "city": "    " },
-    { "value": 6219, "city": "     " },
-    { "value": 5376, "city": "      " },
-    { "value": 3000, "city": "       " },
-    { "value": 5015, "city": "        " },
-    { "value": 5324, "city": "         " },
-    { "value": 5506, "city": "          " },
-    { "value": 4385.6, "city": "           " },
-    { "value": 5735, "city": "            " },
-    { "value": 6039, "city": "             " },
-    { "value": 7945, "city": "              " }
-  ],
-  "2002": [
-    { "value": 8960, "city": "言和" },
-    { "value": 30840, "city": "乐正绫" },
-    { "value": 21387, "city": "徵羽摩柯" },
-    { "value": 7082, "city": "墨清弦" },
-    { "value": 8162, "city": "乐正龙牙" },
-    { "value": 13000, "city": "心华" },
-    { "value": 8714, "city": "星尘" },
-    { "value": 9541, "city": "原创曲" },
-    { "value": 35445, "city": "初音未来" },
-    { "value": 14396, "city": "翻调曲" },
-    { "value": 16978, "city": "洛天依" },
-    { "value": 5736, "city": "填词曲" },
-    { "value": 12938, "city": "1000+" },
-    { "value": 5829, "city": "10000+" },
-    { "value": 11645, "city": "100000+" },
-    { "value": 6487, "city": "1000000+" },
-    { "value": 7436.6, "city": "" },
-    { "value": 6734, "city": " " },
-    { "value": 15365, "city": "  " },
-    { "value": 5558, "city": "   " },
-    { "value": 8040.8, "city": "    " },
-    { "value": 7052, "city": "     " },
-    { "value": 5890, "city": "      " },
-    { "value": 3257, "city": "       " },
-    { "value": 5366, "city": "        " },
-    { "value": 6117, "city": "         " },
-    { "value": 6145, "city": "          " },
-    { "value": 4768.1, "city": "           " },
-    { "value": 6426, "city": "            " },
-    { "value": 6647, "city": "             " },
-    { "value": 8457, "city": "              " }
-  ],
-  "2003": [
-    { "value": 10251, "city": "言和" },
-    { "value": 34892, "city": "乐正绫" },
-    { "value": 25544, "city": "徵羽摩柯" },
-    { "value": 8641, "city": "墨清弦" },
-    { "value": 10039, "city": "乐正龙牙" },
-    { "value": 14270, "city": "心华" },
-    { "value": 9854, "city": "星尘" },
-    { "value": 10638, "city": "原创曲" },
-    { "value": 40130, "city": "初音未来" },
-    { "value": 16830, "city": "翻调曲" },
-    { "value": 20444, "city": "洛天依" },
-    { "value": 6375, "city": "填词曲" },
-    { "value": 14333, "city": "1000+" },
-    { "value": 6624, "city": "10000+" },
-    { "value": 13661, "city": "100000+" },
-    { "value": 7375.9, "city": "1000000+" },
-    { "value": 8378, "city": "" },
-    { "value": 7589, "city": " " },
-    { "value": 17798, "city": "  " },
-    { "value": 6169, "city": "   " },
-    { "value": 8849, "city": "    " },
-    { "value": 8091, "city": "     " },
-    { "value": 6623, "city": "      " },
-    { "value": 3701, "city": "       " },
-    { "value": 5870, "city": "        " },
-    { "value": 6893, "city": "         " },
-    { "value": 7028, "city": "          " },
-    { "value": 5429.4, "city": "           " },
-    { "value": 7277, "city": "            " },
-    { "value": 7734, "city": "             " },
-    { "value": 9828, "city": "              " }
-  ],
-  "2004": [
-    { "value": 12487, "city": "言和" },
-    { "value": 41099, "city": "乐正绫" },
-    { "value": 30575, "city": "徵羽摩柯" },
-    { "value": 10741, "city": "墨清弦" },
-    { "value": 12767, "city": "乐正龙牙" },
-    { "value": 15835, "city": "心华" },
-    { "value": 11537, "city": "星尘" },
-    { "value": 12449, "city": "原创曲" },
-    { "value": 46755, "city": "初音未来" },
-    { "value": 20223, "city": "翻调曲" },
-    { "value": 24352, "city": "洛天依" },
-    { "value": 7681, "city": "填词曲" },
-    { "value": 16469, "city": "1000+" },
-    { "value": 8097, "city": "10000+" },
-    { "value": 16925, "city": "100000+" },
-    { "value": 9200.6, "city": "1000000+" },
-    { "value": 9897.6, "city": "" },
-    { "value": 9165, "city": " " },
-    { "value": 20876, "city": "  " },
-    { "value": 7461, "city": "   " },
-    { "value": 10067.4, "city": "    " },
-    { "value": 9624, "city": "     " },
-    { "value": 7895, "city": "      " },
-    { "value": 4317, "city": "       " },
-    { "value": 7012, "city": "        " },
-    { "value": 8103, "city": "         " },
-    { "value": 8587, "city": "          " },
-    { "value": 6566.1, "city": "           " },
-    { "value": 8606, "city": "            " },
-    { "value": 9199, "city": "             " },
-    { "value": 11337, "city": "              " }
-  ],
-  "2005": [
-    { "value": 14782, "city": "言和" },
-    { "value": 45444, "city": "乐正绫" },
-    { "value": 35783, "city": "徵羽摩柯" },
-    { "value": 12495, "city": "墨清弦" },
-    { "value": 16331, "city": "乐正龙牙" },
-    { "value": 18983, "city": "心华" },
-    { "value": 13348, "city": "星尘" },
-    { "value": 14434, "city": "原创曲" },
-    { "value": 52060, "city": "初音未来" },
-    { "value": 24560, "city": "翻调曲" },
-    { "value": 27703, "city": "洛天依" },
-    { "value": 8670, "city": "填词曲" },
-    { "value": 18646, "city": "1000+" },
-    { "value": 9440, "city": "10000+" },
-    { "value": 20096, "city": "100000+" },
-    { "value": 11346.5, "city": "1000000+" },
-    { "value": 11431, "city": "" },
-    { "value": 10426, "city": " " },
-    { "value": 24438, "city": "  " },
-    { "value": 8788, "city": "   " },
-    { "value": 10997.9, "city": "    " },
-    { "value": 10982, "city": "     " },
-    { "value": 9060, "city": "      " },
-    { "value": 5052, "city": "       " },
-    { "value": 7835, "city": "        " },
-    { "value": 9114, "city": "         " },
-    { "value": 10161, "city": "          " },
-    { "value": 7476.5, "city": "           " },
-    { "value": 10045, "city": "            " },
-    { "value": 10239, "city": "             " },
-    { "value": 13108, "city": "              " }
-  ],
-  "2006": [
-    { "value": 16752, "city": "言和" },
-    { "value": 50407, "city": "乐正绫" },
-    { "value": 41022, "city": "徵羽摩柯" },
-    { "value": 14011, "city": "墨清弦" },
-    { "value": 20264, "city": "乐正龙牙" },
-    { "value": 21788, "city": "心华" },
-    { "value": 15720, "city": "星尘" },
-    { "value": 16228, "city": "原创曲" },
-    { "value": 57695, "city": "初音未来" },
-    { "value": 28814, "city": "翻调曲" },
-    { "value": 31874, "city": "洛天依" },
-    { "value": 10026, "city": "填词曲" },
-    { "value": 21385, "city": "1000+" },
-    { "value": 10798, "city": "10000+" },
-    { "value": 23794, "city": "100000+" },
-    { "value": 13172, "city": "1000000+" },
-    { "value": 13296, "city": "" },
-    { "value": 11950, "city": " " },
-    { "value": 28284, "city": "  " },
-    { "value": 10296, "city": "   " },
-    { "value": 12403, "city": "    " },
-    { "value": 12316, "city": "     " },
-    { "value": 10546, "city": "      " },
-    { "value": 5759, "city": "       " },
-    { "value": 8970, "city": "        " },
-    { "value": 10430, "city": "         " },
-    { "value": 12138, "city": "          " },
-    { "value": 8757, "city": "           " },
-    { "value": 11724, "city": "            " },
-    { "value": 11847, "city": "             " },
-    { "value": 15000, "city": "              " }
-  ],
-  "2007": [
-    { "value": 19877, "city": "言和" },
-    { "value": 58204, "city": "乐正绫" },
-    { "value": 46122, "city": "徵羽摩柯" },
-    { "value": 16945, "city": "墨清弦" },
-    { "value": 25393, "city": "乐正龙牙" },
-    { "value": 25729, "city": "心华" },
-    { "value": 19383, "city": "星尘" },
-    { "value": 18478, "city": "原创曲" },
-    { "value": 66367, "city": "初音未来" },
-    { "value": 33928, "city": "翻调曲" },
-    { "value": 37411, "city": "洛天依" },
-    { "value": 12045, "city": "填词曲" },
-    { "value": 25908, "city": "1000+" },
-    { "value": 12633, "city": "10000+" },
-    { "value": 27807, "city": "100000+" },
-    { "value": 16012, "city": "1000000+" },
-    { "value": 16206, "city": "" },
-    { "value": 14492, "city": " " },
-    { "value": 33151, "city": "  " },
-    { "value": 12555, "city": "   " },
-    { "value": 14555, "city": "    " },
-    { "value": 14660, "city": "     " },
-    { "value": 12893, "city": "      " },
-    { "value": 6915, "city": "       " },
-    { "value": 10540, "city": "        " },
-    { "value": 12109, "city": "         " },
-    { "value": 14607, "city": "          " },
-    { "value": 10346, "city": "           " },
-    { "value": 14257, "city": "            " },
-    { "value": 14649, "city": "             " },
-    { "value": 16950, "city": "              " }
-  ],
-  "2008": [
-    { "value": 22986, "city": "言和" },
-    { "value": 64491, "city": "乐正绫" },
-    { "value": 58656, "city": "徵羽摩柯" },
-    { "value": 21506, "city": "墨清弦" },
-    { "value": 34869, "city": "乐正龙牙" },
-    { "value": 31739, "city": "心华" },
-    { "value": 23521, "city": "星尘" },
-    { "value": 21740, "city": "原创曲" },
-    { "value": 66932, "city": "初音未来" },
-    { "value": 40014, "city": "翻调曲" },
-    { "value": 41405, "city": "洛天依" },
-    { "value": 14448, "city": "填词曲" },
-    { "value": 29755, "city": "1000+" },
-    { "value": 15900, "city": "10000+" },
-    { "value": 32936, "city": "100000+" },
-    { "value": 19181, "city": "1000000+" },
-    { "value": 19858, "city": "" },
-    { "value": 18147, "city": " " },
-    { "value": 37638, "city": "  " },
-    { "value": 14652, "city": "   " },
-    { "value": 17691, "city": "    " },
-    { "value": 20490, "city": "     " },
-    { "value": 15495, "city": "      " },
-    { "value": 9855, "city": "       " },
-    { "value": 12570, "city": "        " },
-    { "value": 13588, "city": "         " },
-    { "value": 19700, "city": "          " },
-    { "value": 12421, "city": "           " },
-    { "value": 18421, "city": "            " },
-    { "value": 19609, "city": "             " },
-    { "value": 19797, "city": "              " }
-  ],
-  "2009": [
-    { "value": 24581, "city": "言和" },
-    { "value": 66940, "city": "乐正绫" },
-    { "value": 62574, "city": "徵羽摩柯" },
-    { "value": 21522, "city": "墨清弦" },
-    { "value": 39735, "city": "乐正龙牙" },
-    { "value": 35149, "city": "心华" },
-    { "value": 26595, "city": "星尘" },
-    { "value": 22447, "city": "原创曲" },
-    { "value": 69165, "city": "初音未来" },
-    { "value": 44253, "city": "翻调曲" },
-    { "value": 43842, "city": "洛天依" },
-    { "value": 16408, "city": "填词曲" },
-    { "value": 33437, "city": "1000+" },
-    { "value": 17335, "city": "10000+" },
-    { "value": 35894, "city": "100000+" },
-    { "value": 20597, "city": "1000000+" },
-    { "value": 22677, "city": "" },
-    { "value": 20428, "city": " " },
-    { "value": 39436, "city": "  " },
-    { "value": 16045, "city": "   " },
-    { "value": 19254, "city": "    " },
-    { "value": 22920, "city": "     " },
-    { "value": 17339, "city": "      " },
-    { "value": 10971, "city": "       " },
-    { "value": 13539, "city": "        " },
-    { "value": 15008, "city": "         " },
-    { "value": 21947, "city": "          " },
-    { "value": 13269, "city": "           " },
-    { "value": 19454, "city": "            " },
-    { "value": 21777, "city": "             " },
-    { "value": 19942, "city": "              " }
-  ],
-  "2010": [
-    { "value": 28668, "city": "言和" },
-    { "value": 73856, "city": "乐正绫" },
-    { "value": 72994, "city": "徵羽摩柯" },
-    { "value": 26283, "city": "墨清弦" },
-    { "value": 47347, "city": "乐正龙牙" },
-    { "value": 42355, "city": "心华" },
-    { "value": 31599, "city": "星尘" },
-    { "value": 27076, "city": "原创曲" },
-    { "value": 76074, "city": "初音未来" },
-    { "value": 52840, "city": "翻调曲" },
-    { "value": 51711, "city": "洛天依" },
-    { "value": 20888, "city": "填词曲" },
-    { "value": 40025, "city": "1000+" },
-    { "value": 21253, "city": "10000+" },
-    { "value": 41106, "city": "100000+" },
-    { "value": 24446, "city": "1000000+" },
-    { "value": 27906, "city": "" },
-    { "value": 24719, "city": " " },
-    { "value": 44736, "city": "  " },
-    { "value": 20219, "city": "   " },
-    { "value": 23831, "city": "    " },
-    { "value": 27596, "city": "     " },
-    { "value": 21182, "city": "      " },
-    { "value": 13119, "city": "       " },
-    { "value": 15752, "city": "        " },
-    { "value": 17027, "city": "         " },
-    { "value": 27133, "city": "          " },
-    { "value": 16113, "city": "           " },
-    { "value": 24115, "city": "            " },
-    { "value": 26860, "city": "             " },
-    { "value": 25034, "city": "              " }
-  ],
-  "2011": [
-    { "value": 33969, "city": "言和" },
-    { "value": 81658, "city": "乐正绫" },
-    { "value": 85213, "city": "徵羽摩柯" },
-    { "value": 31357, "city": "墨清弦" },
-    { "value": 57974, "city": "乐正龙牙" },
-    { "value": 50760, "city": "心华" },
-    { "value": 38460, "city": "星尘" },
-    { "value": 32819, "city": "原创曲" },
-    { "value": 82560, "city": "初音未来" },
-    { "value": 62290, "city": "翻调曲" },
-    { "value": 59249, "city": "洛天依" },
-    { "value": 25659, "city": "填词曲" },
-    { "value": 47377, "city": "1000+" },
-    { "value": 26150, "city": "10000+" },
-    { "value": 47335, "city": "100000+" },
-    { "value": 28661, "city": "1000000+" },
-    { "value": 34197, "city": "" },
-    { "value": 29880, "city": " " },
-    { "value": 50807, "city": "  " },
-    { "value": 25326, "city": "   " },
-    { "value": 28898, "city": "    " },
-    { "value": 34500, "city": "     " },
-    { "value": 26133, "city": "      " },
-    { "value": 16413, "city": "       " },
-    { "value": 19265, "city": "        " },
-    { "value": 20077, "city": "         " },
-    { "value": 33464, "city": "          " },
-    { "value": 19595, "city": "           " },
-    { "value": 29522, "city": "            " },
-    { "value": 33043, "city": "             " },
-    { "value": 30087, "city": "              " }
-  ],
-  "2012": [
-    { "value": 36584, "city": "言和" },
-    { "value": 87475, "city": "乐正绫" },
-    { "value": 93173, "city": "徵羽摩柯" },
-    { "value": 33628, "city": "墨清弦" },
-    { "value": 63886, "city": "乐正龙牙" },
-    { "value": 56649, "city": "心华" },
-    { "value": 43415, "city": "星尘" },
-    { "value": 35711, "city": "原创曲" },
-    { "value": 85373, "city": "初音未来" },
-    { "value": 68347, "city": "翻调曲" },
-    { "value": 63374, "city": "洛天依" },
-    { "value": 28792, "city": "填词曲" },
-    { "value": 52763, "city": "1000+" },
-    { "value": 28800, "city": "10000+" },
-    { "value": 51768, "city": "100000+" },
-    { "value": 31499, "city": "1000000+" },
-    { "value": 38572, "city": "" },
-    { "value": 33480, "city": " " },
-    { "value": 54095, "city": "  " },
-    { "value": 27952, "city": "   " },
-    { "value": 32377, "city": "    " },
-    { "value": 38914, "city": "     " },
-    { "value": 29608, "city": "      " },
-    { "value": 19710, "city": "       " },
-    { "value": 22195, "city": "        " },
-    { "value": 22936, "city": "         " },
-    { "value": 38564, "city": "          " },
-    { "value": 21978, "city": "           " },
-    { "value": 33181, "city": "            " },
-    { "value": 36394, "city": "             " },
-    { "value": 33796, "city": "              " }
-  ],
-  "2013": [
-    { "value": 38909, "city": "言和" },
-    { "value": 94648, "city": "乐正绫" },
-    { "value": 100105, "city": "徵羽摩柯" },
-    { "value": 34984, "city": "墨清弦" },
-    { "value": 67836, "city": "乐正龙牙" },
-    { "value": 61996, "city": "心华" },
-    { "value": 47428, "city": "星尘" },
-    { "value": 37697, "city": "原创曲" },
-    { "value": 90993, "city": "初音未来" },
-    { "value": 75354, "city": "翻调曲" },
-    { "value": 68805, "city": "洛天依" },
-    { "value": 32001, "city": "填词曲" },
-    { "value": 58145, "city": "1000+" },
-    { "value": 31930, "city": "10000+" },
-    { "value": 56885, "city": "100000+" },
-    { "value": 34211, "city": "1000000+" },
-    { "value": 42826, "city": "" },
-    { "value": 36943, "city": " " },
-    { "value": 58833, "city": "  " },
-    { "value": 30741, "city": "   " },
-    { "value": 35663, "city": "    " },
-    { "value": 43223, "city": "     " },
-    { "value": 32617, "city": "      " },
-    { "value": 23151, "city": "       " },
-    { "value": 25322, "city": "        " },
-    { "value": 26326, "city": "         " },
-    { "value": 43117, "city": "          " },
-    { "value": 24539, "city": "           " },
-    { "value": 36875, "city": "            " },
-    { "value": 39613, "city": "             " },
-    { "value": 37553, "city": "              " }
-  ],
-  "2014": [
-    { "value": 39984, "city": "言和" },
-    { "value": 99995, "city": "乐正绫" },
-    { "value": 105231, "city": "徵羽摩柯" },
-    { "value": 35070, "city": "墨清弦" },
-    { "value": 71046, "city": "乐正龙牙" },
-    { "value": 65201, "city": "心华" },
-    { "value": 50160, "city": "星尘" },
-    { "value": 39226, "city": "原创曲" },
-    { "value": 97370, "city": "初音未来" },
-    { "value": 81874, "city": "翻调曲" },
-    { "value": 73002, "city": "洛天依" },
-    { "value": 34425, "city": "填词曲" },
-    { "value": 63472, "city": "1000+" },
-    { "value": 34674, "city": "10000+" },
-    { "value": 60879, "city": "100000+" },
-    { "value": 37072, "city": "1000000+" },
-    { "value": 47145, "city": "" },
-    { "value": 40271, "city": " " },
-    { "value": 63469, "city": "  " },
-    { "value": 33090, "city": "   " },
-    { "value": 38924, "city": "    " },
-    { "value": 47850, "city": "     " },
-    { "value": 35128, "city": "      " },
-    { "value": 26437, "city": "       " },
-    { "value": 27264, "city": "        " },
-    { "value": 29252, "city": "         " },
-    { "value": 46929, "city": "          " },
-    { "value": 26433, "city": "           " },
-    { "value": 39671, "city": "            " },
-    { "value": 41834, "city": "             " },
-    { "value": 40648, "city": "              " }
-  ],
-  "2015": [
-    { "value": 40255, "city": "言和" },
-    { "value": 106497, "city": "乐正绫" },
-    { "value": 107960, "city": "徵羽摩柯" },
-    { "value": 34919, "city": "墨清弦" },
-    { "value": 71101, "city": "乐正龙牙" },
-    { "value": 65354, "city": "心华" },
-    { "value": 51086, "city": "星尘" },
-    { "value": 39462, "city": "原创曲" },
-    { "value": 103796, "city": "初音未来" },
-    { "value": 87995, "city": "翻调曲" },
-    { "value": 77644, "city": "洛天依" },
-    { "value": 35997, "city": "填词曲" },
-    { "value": 67966, "city": "1000+" },
-    { "value": 36724, "city": "10000+" },
-    { "value": 64168, "city": "100000+" },
-    { "value": 39123, "city": "1000000+" },
-    { "value": 50654, "city": "" },
-    { "value": 42754, "city": " " },
-    { "value": 67503, "city": "  " },
-    { "value": 35190, "city": "   " },
-    { "value": 40818, "city": "    " },
-    { "value": 52321, "city": "     " },
-    { "value": 36775, "city": "      " },
-    { "value": 29847, "city": "       " },
-    { "value": 28806, "city": "        " },
-    { "value": 31999, "city": "         " },
-    { "value": 47626, "city": "          " },
-    { "value": 26165, "city": "           " },
-    { "value": 41252, "city": "            " },
-    { "value": 43805, "city": "             " },
-    { "value": 40036, "city": "              " }
-  ],
-  "2016": [
-    { "value": 43062, "city": "言和" },
-    { "value": 118198, "city": "乐正绫" },
-    { "value": 115053, "city": "徵羽摩柯" },
-    { "value": 35532, "city": "墨清弦" },
-    { "value": 72064, "city": "乐正龙牙" },
-    { "value": 50791, "city": "心华" },
-    { "value": 53868, "city": "星尘" },
-    { "value": 40432, "city": "原创曲" },
-    { "value": 116562, "city": "初音未来" },
-    { "value": 96887, "city": "翻调曲" },
-    { "value": 84916, "city": "洛天依" },
-    { "value": 39561, "city": "填词曲" },
-    { "value": 74707, "city": "1000+" },
-    { "value": 40400, "city": "10000+" },
-    { "value": 68733, "city": "100000+" },
-    { "value": 42575, "city": "1000000+" },
-    { "value": 55665, "city": "" },
-    { "value": 46382, "city": " " },
-    { "value": 74016, "city": "  " },
-    { "value": 38027, "city": "   " },
-    { "value": 44347, "city": "    " },
-    { "value": 58502, "city": "     " },
-    { "value": 40003, "city": "      " },
-    { "value": 33246, "city": "       " },
-    { "value": 31093, "city": "        " },
-    { "value": 35184, "city": "         " },
-    { "value": 51015, "city": "          " },
-    { "value": 27643, "city": "           " },
-    { "value": 43531, "city": "            " },
-    { "value": 47194, "city": "             " },
-    { "value": 40564, "city": "              " }
-  ],
-  "2017": [
-    { "value": 45387, "city": "言和" },
-    { "value": 128994, "city": "乐正绫" },
-    { "value": 118944, "city": "徵羽摩柯" },
-    { "value": 42060, "city": "墨清弦" },
-    { "value": 63764, "city": "乐正龙牙" },
-    { "value": 53527, "city": "心华" },
-    { "value": 54838, "city": "星尘" },
-    { "value": 41916, "city": "原创曲" },
-    { "value": 126634, "city": "初音未来" },
-    { "value": 107150, "city": "翻调曲" },
-    { "value": 92057, "city": "洛天依" },
-    { "value": 43401, "city": "填词曲" },
-    { "value": 82677, "city": "1000+" },
-    { "value": 43424, "city": "10000+" },
-    { "value": 72807, "city": "100000+" },
-    { "value": 46674, "city": "1000000+" },
-    { "value": 60199, "city": "" },
-    { "value": 49558, "city": " " },
-    { "value": 80932, "city": "  " },
-    { "value": 38102, "city": "   " },
-    { "value": 48430, "city": "    " },
-    { "value": 63442, "city": "     " },
-    { "value": 44651, "city": "      " },
-    { "value": 37956, "city": "       " },
-    { "value": 34221, "city": "        " },
-    { "value": 39267, "city": "         " },
-    { "value": 57266, "city": "          " },
-    { "value": 28497, "city": "           " },
-    { "value": 44047, "city": "            " },
-    { "value": 50765, "city": "             " },
-    { "value": 44941, "city": "              " }
+  "2012-06": [
+    {
+      "value": 0,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 0,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2012-07": [
+    {
+      "value": 3,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 0,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2012-08": [
+    {
+      "value": 6,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 0,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2012-09": [
+    {
+      "value": 9,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 0,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2012-10": [
+    {
+      "value": 11,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 0,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2012-11": [
+    {
+      "value": 16,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 0,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2012-12": [
+    {
+      "value": 16,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 0,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-01": [
+    {
+      "value": 113,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 0,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-02": [
+    {
+      "value": 258,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-03": [
+    {
+      "value": 370,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-04": [
+    {
+      "value": 480,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-05": [
+    {
+      "value": 572,
+      "city": "洛天依"
+    },
+    {
+      "value": 0,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-06": [
+    {
+      "value": 678,
+      "city": "洛天依"
+    },
+    {
+      "value": 2,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-07": [
+    {
+      "value": 808,
+      "city": "洛天依"
+    },
+    {
+      "value": 39,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-08": [
+    {
+      "value": 977,
+      "city": "洛天依"
+    },
+    {
+      "value": 112,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-09": [
+    {
+      "value": 1076,
+      "city": "洛天依"
+    },
+    {
+      "value": 157,
+      "city": "言和"
+    },
+    {
+      "value": 0,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-10": [
+    {
+      "value": 1153,
+      "city": "洛天依"
+    },
+    {
+      "value": 194,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-11": [
+    {
+      "value": 1260,
+      "city": "洛天依"
+    },
+    {
+      "value": 242,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2013-12": [
+    {
+      "value": 1365,
+      "city": "洛天依"
+    },
+    {
+      "value": 290,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-01": [
+    {
+      "value": 1478,
+      "city": "洛天依"
+    },
+    {
+      "value": 338,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-02": [
+    {
+      "value": 1606,
+      "city": "洛天依"
+    },
+    {
+      "value": 364,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-03": [
+    {
+      "value": 1699,
+      "city": "洛天依"
+    },
+    {
+      "value": 390,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-04": [
+    {
+      "value": 1783,
+      "city": "洛天依"
+    },
+    {
+      "value": 423,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-05": [
+    {
+      "value": 1885,
+      "city": "洛天依"
+    },
+    {
+      "value": 451,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-06": [
+    {
+      "value": 1981,
+      "city": "洛天依"
+    },
+    {
+      "value": 488,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-07": [
+    {
+      "value": 2131,
+      "city": "洛天依"
+    },
+    {
+      "value": 538,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 5,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-08": [
+    {
+      "value": 2284,
+      "city": "洛天依"
+    },
+    {
+      "value": 581,
+      "city": "言和"
+    },
+    {
+      "value": 1,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 5,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-09": [
+    {
+      "value": 2374,
+      "city": "洛天依"
+    },
+    {
+      "value": 612,
+      "city": "言和"
+    },
+    {
+      "value": 2,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 5,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-10": [
+    {
+      "value": 2453,
+      "city": "洛天依"
+    },
+    {
+      "value": 636,
+      "city": "言和"
+    },
+    {
+      "value": 3,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-11": [
+    {
+      "value": 2551,
+      "city": "洛天依"
+    },
+    {
+      "value": 666,
+      "city": "言和"
+    },
+    {
+      "value": 3,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2014-12": [
+    {
+      "value": 2623,
+      "city": "洛天依"
+    },
+    {
+      "value": 683,
+      "city": "言和"
+    },
+    {
+      "value": 3,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2015-01": [
+    {
+      "value": 2626,
+      "city": "洛天依"
+    },
+    {
+      "value": 684,
+      "city": "言和"
+    },
+    {
+      "value": 3,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2015-02": [
+    {
+      "value": 2632,
+      "city": "洛天依"
+    },
+    {
+      "value": 687,
+      "city": "言和"
+    },
+    {
+      "value": 3,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2015-03": [
+    {
+      "value": 2636,
+      "city": "洛天依"
+    },
+    {
+      "value": 688,
+      "city": "言和"
+    },
+    {
+      "value": 3,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2015-04": [
+    {
+      "value": 2641,
+      "city": "洛天依"
+    },
+    {
+      "value": 689,
+      "city": "言和"
+    },
+    {
+      "value": 3,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 0,
+      "city": "心华"
+    }
+  ],
+  "2015-05": [
+    {
+      "value": 2645,
+      "city": "洛天依"
+    },
+    {
+      "value": 691,
+      "city": "言和"
+    },
+    {
+      "value": 3,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 1,
+      "city": "心华"
+    }
+  ],
+  "2015-06": [
+    {
+      "value": 2651,
+      "city": "洛天依"
+    },
+    {
+      "value": 692,
+      "city": "言和"
+    },
+    {
+      "value": 4,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 1,
+      "city": "心华"
+    }
+  ],
+  "2015-07": [
+    {
+      "value": 2651,
+      "city": "洛天依"
+    },
+    {
+      "value": 692,
+      "city": "言和"
+    },
+    {
+      "value": 4,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 1,
+      "city": "心华"
+    }
+  ],
+  "2015-08": [
+    {
+      "value": 2655,
+      "city": "洛天依"
+    },
+    {
+      "value": 696,
+      "city": "言和"
+    },
+    {
+      "value": 8,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 2,
+      "city": "心华"
+    }
+  ],
+  "2015-09": [
+    {
+      "value": 2658,
+      "city": "洛天依"
+    },
+    {
+      "value": 697,
+      "city": "言和"
+    },
+    {
+      "value": 11,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 2,
+      "city": "心华"
+    }
+  ],
+  "2015-10": [
+    {
+      "value": 2663,
+      "city": "洛天依"
+    },
+    {
+      "value": 701,
+      "city": "言和"
+    },
+    {
+      "value": 14,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 2,
+      "city": "心华"
+    }
+  ],
+  "2015-11": [
+    {
+      "value": 2669,
+      "city": "洛天依"
+    },
+    {
+      "value": 703,
+      "city": "言和"
+    },
+    {
+      "value": 19,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 3,
+      "city": "心华"
+    }
+  ],
+  "2015-12": [
+    {
+      "value": 2677,
+      "city": "洛天依"
+    },
+    {
+      "value": 705,
+      "city": "言和"
+    },
+    {
+      "value": 22,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 3,
+      "city": "心华"
+    }
+  ],
+  "2016-01": [
+    {
+      "value": 2843,
+      "city": "洛天依"
+    },
+    {
+      "value": 758,
+      "city": "言和"
+    },
+    {
+      "value": 96,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6,
+      "city": "星尘"
+    },
+    {
+      "value": 42,
+      "city": "心华"
+    }
+  ],
+  "2016-02": [
+    {
+      "value": 3139,
+      "city": "洛天依"
+    },
+    {
+      "value": 852,
+      "city": "言和"
+    },
+    {
+      "value": 234,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 10,
+      "city": "星尘"
+    },
+    {
+      "value": 100,
+      "city": "心华"
+    }
+  ],
+  "2016-03": [
+    {
+      "value": 3328,
+      "city": "洛天依"
+    },
+    {
+      "value": 920,
+      "city": "言和"
+    },
+    {
+      "value": 325,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 0,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 12,
+      "city": "星尘"
+    },
+    {
+      "value": 139,
+      "city": "心华"
+    }
+  ],
+  "2016-04": [
+    {
+      "value": 3516,
+      "city": "洛天依"
+    },
+    {
+      "value": 1000,
+      "city": "言和"
+    },
+    {
+      "value": 411,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 69,
+      "city": "星尘"
+    },
+    {
+      "value": 180,
+      "city": "心华"
+    }
+  ],
+  "2016-05": [
+    {
+      "value": 3669,
+      "city": "洛天依"
+    },
+    {
+      "value": 1067,
+      "city": "言和"
+    },
+    {
+      "value": 503,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 122,
+      "city": "星尘"
+    },
+    {
+      "value": 217,
+      "city": "心华"
+    }
+  ],
+  "2016-06": [
+    {
+      "value": 3890,
+      "city": "洛天依"
+    },
+    {
+      "value": 1145,
+      "city": "言和"
+    },
+    {
+      "value": 590,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 163,
+      "city": "星尘"
+    },
+    {
+      "value": 243,
+      "city": "心华"
+    }
+  ],
+  "2016-07": [
+    {
+      "value": 4126,
+      "city": "洛天依"
+    },
+    {
+      "value": 1236,
+      "city": "言和"
+    },
+    {
+      "value": 709,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 227,
+      "city": "星尘"
+    },
+    {
+      "value": 292,
+      "city": "心华"
+    }
+  ],
+  "2016-08": [
+    {
+      "value": 4424,
+      "city": "洛天依"
+    },
+    {
+      "value": 1351,
+      "city": "言和"
+    },
+    {
+      "value": 880,
+      "city": "乐正绫"
+    },
+    {
+      "value": 0,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 317,
+      "city": "星尘"
+    },
+    {
+      "value": 360,
+      "city": "心华"
+    }
+  ],
+  "2016-09": [
+    {
+      "value": 4589,
+      "city": "洛天依"
+    },
+    {
+      "value": 1419,
+      "city": "言和"
+    },
+    {
+      "value": 962,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 352,
+      "city": "星尘"
+    },
+    {
+      "value": 389,
+      "city": "心华"
+    }
+  ],
+  "2016-10": [
+    {
+      "value": 4773,
+      "city": "洛天依"
+    },
+    {
+      "value": 1485,
+      "city": "言和"
+    },
+    {
+      "value": 1033,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 385,
+      "city": "星尘"
+    },
+    {
+      "value": 422,
+      "city": "心华"
+    }
+  ],
+  "2016-11": [
+    {
+      "value": 4940,
+      "city": "洛天依"
+    },
+    {
+      "value": 1529,
+      "city": "言和"
+    },
+    {
+      "value": 1108,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 420,
+      "city": "星尘"
+    },
+    {
+      "value": 442,
+      "city": "心华"
+    }
+  ],
+  "2016-12": [
+    {
+      "value": 5125,
+      "city": "洛天依"
+    },
+    {
+      "value": 1591,
+      "city": "言和"
+    },
+    {
+      "value": 1183,
+      "city": "乐正绫"
+    },
+    {
+      "value": 7,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 473,
+      "city": "星尘"
+    },
+    {
+      "value": 461,
+      "city": "心华"
+    }
+  ],
+  "2017-01": [
+    {
+      "value": 5344,
+      "city": "洛天依"
+    },
+    {
+      "value": 1668,
+      "city": "言和"
+    },
+    {
+      "value": 1267,
+      "city": "乐正绫"
+    },
+    {
+      "value": 7,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 526,
+      "city": "星尘"
+    },
+    {
+      "value": 504,
+      "city": "心华"
+    }
+  ],
+  "2017-02": [
+    {
+      "value": 5603,
+      "city": "洛天依"
+    },
+    {
+      "value": 1761,
+      "city": "言和"
+    },
+    {
+      "value": 1381,
+      "city": "乐正绫"
+    },
+    {
+      "value": 9,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 602,
+      "city": "星尘"
+    },
+    {
+      "value": 561,
+      "city": "心华"
+    }
+  ],
+  "2017-03": [
+    {
+      "value": 5850,
+      "city": "洛天依"
+    },
+    {
+      "value": 1842,
+      "city": "言和"
+    },
+    {
+      "value": 1488,
+      "city": "乐正绫"
+    },
+    {
+      "value": 10,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 3,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 639,
+      "city": "星尘"
+    },
+    {
+      "value": 589,
+      "city": "心华"
+    }
+  ],
+  "2017-04": [
+    {
+      "value": 6053,
+      "city": "洛天依"
+    },
+    {
+      "value": 1910,
+      "city": "言和"
+    },
+    {
+      "value": 1606,
+      "city": "乐正绫"
+    },
+    {
+      "value": 12,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 3,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 692,
+      "city": "星尘"
+    },
+    {
+      "value": 637,
+      "city": "心华"
+    }
+  ],
+  "2017-05": [
+    {
+      "value": 6291,
+      "city": "洛天依"
+    },
+    {
+      "value": 1992,
+      "city": "言和"
+    },
+    {
+      "value": 1741,
+      "city": "乐正绫"
+    },
+    {
+      "value": 12,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 3,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 752,
+      "city": "星尘"
+    },
+    {
+      "value": 678,
+      "city": "心华"
+    }
+  ],
+  "2017-06": [
+    {
+      "value": 6506,
+      "city": "洛天依"
+    },
+    {
+      "value": 2063,
+      "city": "言和"
+    },
+    {
+      "value": 1852,
+      "city": "乐正绫"
+    },
+    {
+      "value": 72,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 3,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 807,
+      "city": "星尘"
+    },
+    {
+      "value": 708,
+      "city": "心华"
+    }
+  ],
+  "2017-07": [
+    {
+      "value": 6820,
+      "city": "洛天依"
+    },
+    {
+      "value": 2225,
+      "city": "言和"
+    },
+    {
+      "value": 2016,
+      "city": "乐正绫"
+    },
+    {
+      "value": 269,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 3,
+      "city": "墨清弦"
+    },
+    {
+      "value": 0,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 877,
+      "city": "星尘"
+    },
+    {
+      "value": 771,
+      "city": "心华"
+    }
+  ],
+  "2017-08": [
+    {
+      "value": 7195,
+      "city": "洛天依"
+    },
+    {
+      "value": 2376,
+      "city": "言和"
+    },
+    {
+      "value": 2210,
+      "city": "乐正绫"
+    },
+    {
+      "value": 394,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 3,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 998,
+      "city": "星尘"
+    },
+    {
+      "value": 849,
+      "city": "心华"
+    }
+  ],
+  "2017-09": [
+    {
+      "value": 7377,
+      "city": "洛天依"
+    },
+    {
+      "value": 2460,
+      "city": "言和"
+    },
+    {
+      "value": 2311,
+      "city": "乐正绫"
+    },
+    {
+      "value": 449,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 3,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1042,
+      "city": "星尘"
+    },
+    {
+      "value": 915,
+      "city": "心华"
+    }
+  ],
+  "2017-10": [
+    {
+      "value": 7556,
+      "city": "洛天依"
+    },
+    {
+      "value": 2563,
+      "city": "言和"
+    },
+    {
+      "value": 2406,
+      "city": "乐正绫"
+    },
+    {
+      "value": 539,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 3,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1094,
+      "city": "星尘"
+    },
+    {
+      "value": 973,
+      "city": "心华"
+    }
+  ],
+  "2017-11": [
+    {
+      "value": 7684,
+      "city": "洛天依"
+    },
+    {
+      "value": 2635,
+      "city": "言和"
+    },
+    {
+      "value": 2497,
+      "city": "乐正绫"
+    },
+    {
+      "value": 588,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 3,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1144,
+      "city": "星尘"
+    },
+    {
+      "value": 1029,
+      "city": "心华"
+    }
+  ],
+  "2017-12": [
+    {
+      "value": 7841,
+      "city": "洛天依"
+    },
+    {
+      "value": 2704,
+      "city": "言和"
+    },
+    {
+      "value": 2578,
+      "city": "乐正绫"
+    },
+    {
+      "value": 652,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 4,
+      "city": "墨清弦"
+    },
+    {
+      "value": 2,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1199,
+      "city": "星尘"
+    },
+    {
+      "value": 1065,
+      "city": "心华"
+    }
+  ],
+  "2018-01": [
+    {
+      "value": 8133,
+      "city": "洛天依"
+    },
+    {
+      "value": 2767,
+      "city": "言和"
+    },
+    {
+      "value": 2673,
+      "city": "乐正绫"
+    },
+    {
+      "value": 698,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 4,
+      "city": "墨清弦"
+    },
+    {
+      "value": 2,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1256,
+      "city": "星尘"
+    },
+    {
+      "value": 1107,
+      "city": "心华"
+    }
+  ],
+  "2018-02": [
+    {
+      "value": 8462,
+      "city": "洛天依"
+    },
+    {
+      "value": 2874,
+      "city": "言和"
+    },
+    {
+      "value": 2806,
+      "city": "乐正绫"
+    },
+    {
+      "value": 763,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 4,
+      "city": "墨清弦"
+    },
+    {
+      "value": 2,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1352,
+      "city": "星尘"
+    },
+    {
+      "value": 1209,
+      "city": "心华"
+    }
+  ],
+  "2018-03": [
+    {
+      "value": 8711,
+      "city": "洛天依"
+    },
+    {
+      "value": 2972,
+      "city": "言和"
+    },
+    {
+      "value": 2934,
+      "city": "乐正绫"
+    },
+    {
+      "value": 842,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 5,
+      "city": "墨清弦"
+    },
+    {
+      "value": 2,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1420,
+      "city": "星尘"
+    },
+    {
+      "value": 1270,
+      "city": "心华"
+    }
+  ],
+  "2018-04": [
+    {
+      "value": 8949,
+      "city": "洛天依"
+    },
+    {
+      "value": 3068,
+      "city": "言和"
+    },
+    {
+      "value": 3074,
+      "city": "乐正绫"
+    },
+    {
+      "value": 905,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 5,
+      "city": "墨清弦"
+    },
+    {
+      "value": 2,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1488,
+      "city": "星尘"
+    },
+    {
+      "value": 1321,
+      "city": "心华"
+    }
+  ],
+  "2018-05": [
+    {
+      "value": 9251,
+      "city": "洛天依"
+    },
+    {
+      "value": 3157,
+      "city": "言和"
+    },
+    {
+      "value": 3182,
+      "city": "乐正绫"
+    },
+    {
+      "value": 974,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 5,
+      "city": "墨清弦"
+    },
+    {
+      "value": 2,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1549,
+      "city": "星尘"
+    },
+    {
+      "value": 1364,
+      "city": "心华"
+    }
+  ],
+  "2018-06": [
+    {
+      "value": 9599,
+      "city": "洛天依"
+    },
+    {
+      "value": 3248,
+      "city": "言和"
+    },
+    {
+      "value": 3287,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1048,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 6,
+      "city": "墨清弦"
+    },
+    {
+      "value": 2,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1620,
+      "city": "星尘"
+    },
+    {
+      "value": 1419,
+      "city": "心华"
+    }
+  ],
+  "2018-07": [
+    {
+      "value": 10071,
+      "city": "洛天依"
+    },
+    {
+      "value": 3463,
+      "city": "言和"
+    },
+    {
+      "value": 3446,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1144,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 7,
+      "city": "墨清弦"
+    },
+    {
+      "value": 2,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1709,
+      "city": "星尘"
+    },
+    {
+      "value": 1498,
+      "city": "心华"
+    }
+  ],
+  "2018-08": [
+    {
+      "value": 10559,
+      "city": "洛天依"
+    },
+    {
+      "value": 3643,
+      "city": "言和"
+    },
+    {
+      "value": 3620,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1288,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 142,
+      "city": "墨清弦"
+    },
+    {
+      "value": 247,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1836,
+      "city": "星尘"
+    },
+    {
+      "value": 1589,
+      "city": "心华"
+    }
+  ],
+  "2018-09": [
+    {
+      "value": 10760,
+      "city": "洛天依"
+    },
+    {
+      "value": 3712,
+      "city": "言和"
+    },
+    {
+      "value": 3696,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1338,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 174,
+      "city": "墨清弦"
+    },
+    {
+      "value": 295,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1876,
+      "city": "星尘"
+    },
+    {
+      "value": 1639,
+      "city": "心华"
+    }
+  ],
+  "2018-10": [
+    {
+      "value": 11033,
+      "city": "洛天依"
+    },
+    {
+      "value": 3802,
+      "city": "言和"
+    },
+    {
+      "value": 3814,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1430,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 210,
+      "city": "墨清弦"
+    },
+    {
+      "value": 356,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1939,
+      "city": "星尘"
+    },
+    {
+      "value": 1688,
+      "city": "心华"
+    }
+  ],
+  "2018-11": [
+    {
+      "value": 11283,
+      "city": "洛天依"
+    },
+    {
+      "value": 3886,
+      "city": "言和"
+    },
+    {
+      "value": 3916,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1484,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 242,
+      "city": "墨清弦"
+    },
+    {
+      "value": 400,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 1981,
+      "city": "星尘"
+    },
+    {
+      "value": 1730,
+      "city": "心华"
+    }
+  ],
+  "2018-12": [
+    {
+      "value": 11532,
+      "city": "洛天依"
+    },
+    {
+      "value": 3979,
+      "city": "言和"
+    },
+    {
+      "value": 4032,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1530,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 281,
+      "city": "墨清弦"
+    },
+    {
+      "value": 463,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2041,
+      "city": "星尘"
+    },
+    {
+      "value": 1770,
+      "city": "心华"
+    }
+  ],
+  "2019-01": [
+    {
+      "value": 11848,
+      "city": "洛天依"
+    },
+    {
+      "value": 4123,
+      "city": "言和"
+    },
+    {
+      "value": 4162,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1599,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 308,
+      "city": "墨清弦"
+    },
+    {
+      "value": 500,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2098,
+      "city": "星尘"
+    },
+    {
+      "value": 1803,
+      "city": "心华"
+    }
+  ],
+  "2019-02": [
+    {
+      "value": 12380,
+      "city": "洛天依"
+    },
+    {
+      "value": 4300,
+      "city": "言和"
+    },
+    {
+      "value": 4369,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1714,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 354,
+      "city": "墨清弦"
+    },
+    {
+      "value": 560,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2207,
+      "city": "星尘"
+    },
+    {
+      "value": 1913,
+      "city": "心华"
+    }
+  ],
+  "2019-03": [
+    {
+      "value": 12743,
+      "city": "洛天依"
+    },
+    {
+      "value": 4423,
+      "city": "言和"
+    },
+    {
+      "value": 4494,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1792,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 379,
+      "city": "墨清弦"
+    },
+    {
+      "value": 601,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2264,
+      "city": "星尘"
+    },
+    {
+      "value": 1960,
+      "city": "心华"
+    }
+  ],
+  "2019-04": [
+    {
+      "value": 13055,
+      "city": "洛天依"
+    },
+    {
+      "value": 4530,
+      "city": "言和"
+    },
+    {
+      "value": 4664,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1862,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 404,
+      "city": "墨清弦"
+    },
+    {
+      "value": 626,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2327,
+      "city": "星尘"
+    },
+    {
+      "value": 2011,
+      "city": "心华"
+    }
+  ],
+  "2019-05": [
+    {
+      "value": 13363,
+      "city": "洛天依"
+    },
+    {
+      "value": 4619,
+      "city": "言和"
+    },
+    {
+      "value": 4763,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1913,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 449,
+      "city": "墨清弦"
+    },
+    {
+      "value": 652,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2396,
+      "city": "星尘"
+    },
+    {
+      "value": 2050,
+      "city": "心华"
+    }
+  ],
+  "2019-06": [
+    {
+      "value": 13646,
+      "city": "洛天依"
+    },
+    {
+      "value": 4695,
+      "city": "言和"
+    },
+    {
+      "value": 4854,
+      "city": "乐正绫"
+    },
+    {
+      "value": 1975,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 474,
+      "city": "墨清弦"
+    },
+    {
+      "value": 674,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2463,
+      "city": "星尘"
+    },
+    {
+      "value": 2094,
+      "city": "心华"
+    }
+  ],
+  "2019-07": [
+    {
+      "value": 14197,
+      "city": "洛天依"
+    },
+    {
+      "value": 4894,
+      "city": "言和"
+    },
+    {
+      "value": 5000,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2048,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 513,
+      "city": "墨清弦"
+    },
+    {
+      "value": 722,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2592,
+      "city": "星尘"
+    },
+    {
+      "value": 2156,
+      "city": "心华"
+    }
+  ],
+  "2019-08": [
+    {
+      "value": 14674,
+      "city": "洛天依"
+    },
+    {
+      "value": 5031,
+      "city": "言和"
+    },
+    {
+      "value": 5168,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2129,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 549,
+      "city": "墨清弦"
+    },
+    {
+      "value": 756,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2731,
+      "city": "星尘"
+    },
+    {
+      "value": 2231,
+      "city": "心华"
+    }
+  ],
+  "2019-09": [
+    {
+      "value": 14888,
+      "city": "洛天依"
+    },
+    {
+      "value": 5096,
+      "city": "言和"
+    },
+    {
+      "value": 5260,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2163,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 568,
+      "city": "墨清弦"
+    },
+    {
+      "value": 768,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2786,
+      "city": "星尘"
+    },
+    {
+      "value": 2267,
+      "city": "心华"
+    }
+  ],
+  "2019-10": [
+    {
+      "value": 15148,
+      "city": "洛天依"
+    },
+    {
+      "value": 5167,
+      "city": "言和"
+    },
+    {
+      "value": 5370,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2256,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 588,
+      "city": "墨清弦"
+    },
+    {
+      "value": 791,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2856,
+      "city": "星尘"
+    },
+    {
+      "value": 2316,
+      "city": "心华"
+    }
+  ],
+  "2019-11": [
+    {
+      "value": 15368,
+      "city": "洛天依"
+    },
+    {
+      "value": 5212,
+      "city": "言和"
+    },
+    {
+      "value": 5440,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2287,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 597,
+      "city": "墨清弦"
+    },
+    {
+      "value": 803,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2913,
+      "city": "星尘"
+    },
+    {
+      "value": 2346,
+      "city": "心华"
+    }
+  ],
+  "2019-12": [
+    {
+      "value": 15646,
+      "city": "洛天依"
+    },
+    {
+      "value": 5269,
+      "city": "言和"
+    },
+    {
+      "value": 5540,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2326,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 613,
+      "city": "墨清弦"
+    },
+    {
+      "value": 845,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 2968,
+      "city": "星尘"
+    },
+    {
+      "value": 2382,
+      "city": "心华"
+    }
+  ],
+  "2020-01": [
+    {
+      "value": 16049,
+      "city": "洛天依"
+    },
+    {
+      "value": 5371,
+      "city": "言和"
+    },
+    {
+      "value": 5688,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2381,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 632,
+      "city": "墨清弦"
+    },
+    {
+      "value": 887,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3074,
+      "city": "星尘"
+    },
+    {
+      "value": 2439,
+      "city": "心华"
+    }
+  ],
+  "2020-02": [
+    {
+      "value": 16570,
+      "city": "洛天依"
+    },
+    {
+      "value": 5521,
+      "city": "言和"
+    },
+    {
+      "value": 5881,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2468,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 665,
+      "city": "墨清弦"
+    },
+    {
+      "value": 932,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3196,
+      "city": "星尘"
+    },
+    {
+      "value": 2559,
+      "city": "心华"
+    }
+  ],
+  "2020-03": [
+    {
+      "value": 17026,
+      "city": "洛天依"
+    },
+    {
+      "value": 5683,
+      "city": "言和"
+    },
+    {
+      "value": 6073,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2532,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 700,
+      "city": "墨清弦"
+    },
+    {
+      "value": 970,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3303,
+      "city": "星尘"
+    },
+    {
+      "value": 2636,
+      "city": "心华"
+    }
+  ],
+  "2020-04": [
+    {
+      "value": 17432,
+      "city": "洛天依"
+    },
+    {
+      "value": 5807,
+      "city": "言和"
+    },
+    {
+      "value": 6365,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2607,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 727,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1013,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3396,
+      "city": "星尘"
+    },
+    {
+      "value": 2706,
+      "city": "心华"
+    }
+  ],
+  "2020-05": [
+    {
+      "value": 17903,
+      "city": "洛天依"
+    },
+    {
+      "value": 5916,
+      "city": "言和"
+    },
+    {
+      "value": 6510,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2657,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 775,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1037,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3479,
+      "city": "星尘"
+    },
+    {
+      "value": 2777,
+      "city": "心华"
+    }
+  ],
+  "2020-06": [
+    {
+      "value": 18190,
+      "city": "洛天依"
+    },
+    {
+      "value": 5999,
+      "city": "言和"
+    },
+    {
+      "value": 6601,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2695,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 784,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1054,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3530,
+      "city": "星尘"
+    },
+    {
+      "value": 2822,
+      "city": "心华"
+    }
+  ],
+  "2020-07": [
+    {
+      "value": 18691,
+      "city": "洛天依"
+    },
+    {
+      "value": 6162,
+      "city": "言和"
+    },
+    {
+      "value": 6712,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2733,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 799,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1073,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3587,
+      "city": "星尘"
+    },
+    {
+      "value": 2853,
+      "city": "心华"
+    }
+  ],
+  "2020-08": [
+    {
+      "value": 19115,
+      "city": "洛天依"
+    },
+    {
+      "value": 6266,
+      "city": "言和"
+    },
+    {
+      "value": 6860,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2800,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 821,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1109,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3724,
+      "city": "星尘"
+    },
+    {
+      "value": 2918,
+      "city": "心华"
+    }
+  ],
+  "2020-09": [
+    {
+      "value": 19312,
+      "city": "洛天依"
+    },
+    {
+      "value": 6316,
+      "city": "言和"
+    },
+    {
+      "value": 6922,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2828,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 828,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1123,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3807,
+      "city": "星尘"
+    },
+    {
+      "value": 2952,
+      "city": "心华"
+    }
+  ],
+  "2020-10": [
+    {
+      "value": 19546,
+      "city": "洛天依"
+    },
+    {
+      "value": 6389,
+      "city": "言和"
+    },
+    {
+      "value": 6999,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2877,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 846,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1133,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3884,
+      "city": "星尘"
+    },
+    {
+      "value": 2985,
+      "city": "心华"
+    }
+  ],
+  "2020-11": [
+    {
+      "value": 19757,
+      "city": "洛天依"
+    },
+    {
+      "value": 6444,
+      "city": "言和"
+    },
+    {
+      "value": 7063,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2901,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 854,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1151,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3949,
+      "city": "星尘"
+    },
+    {
+      "value": 3006,
+      "city": "心华"
+    }
+  ],
+  "2020-12": [
+    {
+      "value": 19961,
+      "city": "洛天依"
+    },
+    {
+      "value": 6512,
+      "city": "言和"
+    },
+    {
+      "value": 7118,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2932,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 864,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1192,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3993,
+      "city": "星尘"
+    },
+    {
+      "value": 3036,
+      "city": "心华"
+    }
+  ],
+  "2021-01": [
+    {
+      "value": 19990,
+      "city": "洛天依"
+    },
+    {
+      "value": 6527,
+      "city": "言和"
+    },
+    {
+      "value": 7129,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2938,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 864,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1192,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 3997,
+      "city": "星尘"
+    },
+    {
+      "value": 3038,
+      "city": "心华"
+    }
+  ],
+  "2021-02": [
+    {
+      "value": 20053,
+      "city": "洛天依"
+    },
+    {
+      "value": 6550,
+      "city": "言和"
+    },
+    {
+      "value": 7147,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2949,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 866,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1198,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4016,
+      "city": "星尘"
+    },
+    {
+      "value": 3051,
+      "city": "心华"
+    }
+  ],
+  "2021-03": [
+    {
+      "value": 20080,
+      "city": "洛天依"
+    },
+    {
+      "value": 6559,
+      "city": "言和"
+    },
+    {
+      "value": 7160,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2952,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 868,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1201,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4021,
+      "city": "星尘"
+    },
+    {
+      "value": 3055,
+      "city": "心华"
+    }
+  ],
+  "2021-04": [
+    {
+      "value": 20109,
+      "city": "洛天依"
+    },
+    {
+      "value": 6567,
+      "city": "言和"
+    },
+    {
+      "value": 7183,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2952,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 868,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1203,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4030,
+      "city": "星尘"
+    },
+    {
+      "value": 3061,
+      "city": "心华"
+    }
+  ],
+  "2021-05": [
+    {
+      "value": 20145,
+      "city": "洛天依"
+    },
+    {
+      "value": 6581,
+      "city": "言和"
+    },
+    {
+      "value": 7204,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2956,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 873,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1206,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4041,
+      "city": "星尘"
+    },
+    {
+      "value": 3065,
+      "city": "心华"
+    }
+  ],
+  "2021-06": [
+    {
+      "value": 20180,
+      "city": "洛天依"
+    },
+    {
+      "value": 6590,
+      "city": "言和"
+    },
+    {
+      "value": 7213,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2957,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 873,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1207,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4051,
+      "city": "星尘"
+    },
+    {
+      "value": 3069,
+      "city": "心华"
+    }
+  ],
+  "2021-07": [
+    {
+      "value": 20287,
+      "city": "洛天依"
+    },
+    {
+      "value": 6623,
+      "city": "言和"
+    },
+    {
+      "value": 7250,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2961,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 875,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1214,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4067,
+      "city": "星尘"
+    },
+    {
+      "value": 3077,
+      "city": "心华"
+    }
+  ],
+  "2021-08": [
+    {
+      "value": 20377,
+      "city": "洛天依"
+    },
+    {
+      "value": 6658,
+      "city": "言和"
+    },
+    {
+      "value": 7295,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2972,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 880,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1222,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4105,
+      "city": "星尘"
+    },
+    {
+      "value": 3085,
+      "city": "心华"
+    }
+  ],
+  "2021-09": [
+    {
+      "value": 20420,
+      "city": "洛天依"
+    },
+    {
+      "value": 6669,
+      "city": "言和"
+    },
+    {
+      "value": 7310,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2975,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 886,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1225,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4117,
+      "city": "星尘"
+    },
+    {
+      "value": 3091,
+      "city": "心华"
+    }
+  ],
+  "2021-10": [
+    {
+      "value": 20477,
+      "city": "洛天依"
+    },
+    {
+      "value": 6687,
+      "city": "言和"
+    },
+    {
+      "value": 7342,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2983,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 887,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1228,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4129,
+      "city": "星尘"
+    },
+    {
+      "value": 3093,
+      "city": "心华"
+    }
+  ],
+  "2021-11": [
+    {
+      "value": 20559,
+      "city": "洛天依"
+    },
+    {
+      "value": 6720,
+      "city": "言和"
+    },
+    {
+      "value": 7374,
+      "city": "乐正绫"
+    },
+    {
+      "value": 2989,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 888,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1231,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4136,
+      "city": "星尘"
+    },
+    {
+      "value": 3098,
+      "city": "心华"
+    }
+  ],
+  "2021-12": [
+    {
+      "value": 20779,
+      "city": "洛天依"
+    },
+    {
+      "value": 6794,
+      "city": "言和"
+    },
+    {
+      "value": 7468,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3010,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 897,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1273,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4178,
+      "city": "星尘"
+    },
+    {
+      "value": 3129,
+      "city": "心华"
+    }
+  ],
+  "2022-01": [
+    {
+      "value": 21135,
+      "city": "洛天依"
+    },
+    {
+      "value": 6894,
+      "city": "言和"
+    },
+    {
+      "value": 7583,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3055,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 914,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1296,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4277,
+      "city": "星尘"
+    },
+    {
+      "value": 3179,
+      "city": "心华"
+    }
+  ],
+  "2022-02": [
+    {
+      "value": 21592,
+      "city": "洛天依"
+    },
+    {
+      "value": 7021,
+      "city": "言和"
+    },
+    {
+      "value": 7725,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3082,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 931,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1322,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 4860,
+      "city": "星尘"
+    },
+    {
+      "value": 3289,
+      "city": "心华"
+    }
+  ],
+  "2022-03": [
+    {
+      "value": 21980,
+      "city": "洛天依"
+    },
+    {
+      "value": 7098,
+      "city": "言和"
+    },
+    {
+      "value": 7815,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3098,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 942,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1341,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 5333,
+      "city": "星尘"
+    },
+    {
+      "value": 3336,
+      "city": "心华"
+    }
+  ],
+  "2022-04": [
+    {
+      "value": 22367,
+      "city": "洛天依"
+    },
+    {
+      "value": 7179,
+      "city": "言和"
+    },
+    {
+      "value": 8001,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3128,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 954,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1363,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 5693,
+      "city": "星尘"
+    },
+    {
+      "value": 3384,
+      "city": "心华"
+    }
+  ],
+  "2022-05": [
+    {
+      "value": 22940,
+      "city": "洛天依"
+    },
+    {
+      "value": 7264,
+      "city": "言和"
+    },
+    {
+      "value": 8116,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3153,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 994,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1389,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 5974,
+      "city": "星尘"
+    },
+    {
+      "value": 3431,
+      "city": "心华"
+    }
+  ],
+  "2022-06": [
+    {
+      "value": 23398,
+      "city": "洛天依"
+    },
+    {
+      "value": 7349,
+      "city": "言和"
+    },
+    {
+      "value": 8206,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3176,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1002,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1410,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6188,
+      "city": "星尘"
+    },
+    {
+      "value": 3475,
+      "city": "心华"
+    }
+  ],
+  "2022-07": [
+    {
+      "value": 24261,
+      "city": "洛天依"
+    },
+    {
+      "value": 7526,
+      "city": "言和"
+    },
+    {
+      "value": 8325,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3212,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1012,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1434,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6427,
+      "city": "星尘"
+    },
+    {
+      "value": 3527,
+      "city": "心华"
+    }
+  ],
+  "2022-08": [
+    {
+      "value": 25206,
+      "city": "洛天依"
+    },
+    {
+      "value": 7642,
+      "city": "言和"
+    },
+    {
+      "value": 8468,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3240,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1020,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1462,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6801,
+      "city": "星尘"
+    },
+    {
+      "value": 3586,
+      "city": "心华"
+    }
+  ],
+  "2022-09": [
+    {
+      "value": 26058,
+      "city": "洛天依"
+    },
+    {
+      "value": 7701,
+      "city": "言和"
+    },
+    {
+      "value": 8527,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3255,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1029,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1474,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 6944,
+      "city": "星尘"
+    },
+    {
+      "value": 3612,
+      "city": "心华"
+    }
+  ],
+  "2022-10": [
+    {
+      "value": 26642,
+      "city": "洛天依"
+    },
+    {
+      "value": 7755,
+      "city": "言和"
+    },
+    {
+      "value": 8601,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3300,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1036,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1488,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 7090,
+      "city": "星尘"
+    },
+    {
+      "value": 3649,
+      "city": "心华"
+    }
+  ],
+  "2022-11": [
+    {
+      "value": 27203,
+      "city": "洛天依"
+    },
+    {
+      "value": 7951,
+      "city": "言和"
+    },
+    {
+      "value": 8654,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3311,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1038,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1499,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 7232,
+      "city": "星尘"
+    },
+    {
+      "value": 3670,
+      "city": "心华"
+    }
+  ],
+  "2022-12": [
+    {
+      "value": 27888,
+      "city": "洛天依"
+    },
+    {
+      "value": 8138,
+      "city": "言和"
+    },
+    {
+      "value": 8729,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3331,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1044,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1549,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 7377,
+      "city": "星尘"
+    },
+    {
+      "value": 3696,
+      "city": "心华"
+    }
+  ],
+  "2023-01": [
+    {
+      "value": 28819,
+      "city": "洛天依"
+    },
+    {
+      "value": 8258,
+      "city": "言和"
+    },
+    {
+      "value": 9041,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3354,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1057,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1565,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 7595,
+      "city": "星尘"
+    },
+    {
+      "value": 3757,
+      "city": "心华"
+    }
+  ],
+  "2023-02": [
+    {
+      "value": 29427,
+      "city": "洛天依"
+    },
+    {
+      "value": 8327,
+      "city": "言和"
+    },
+    {
+      "value": 9146,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3370,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1061,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1585,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 7731,
+      "city": "星尘"
+    },
+    {
+      "value": 3842,
+      "city": "心华"
+    }
+  ],
+  "2023-03": [
+    {
+      "value": 30038,
+      "city": "洛天依"
+    },
+    {
+      "value": 8420,
+      "city": "言和"
+    },
+    {
+      "value": 9272,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3386,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1067,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1598,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 7877,
+      "city": "星尘"
+    },
+    {
+      "value": 3860,
+      "city": "心华"
+    }
+  ],
+  "2023-04": [
+    {
+      "value": 30453,
+      "city": "洛天依"
+    },
+    {
+      "value": 8486,
+      "city": "言和"
+    },
+    {
+      "value": 9440,
+      "city": "乐正绫"
+    },
+    {
+      "value": 3393,
+      "city": "乐正龙牙"
+    },
+    {
+      "value": 1071,
+      "city": "墨清弦"
+    },
+    {
+      "value": 1608,
+      "city": "徵羽摩柯"
+    },
+    {
+      "value": 7967,
+      "city": "星尘"
+    },
+    {
+      "value": 3870,
+      "city": "心华"
+    }
   ]
 }
