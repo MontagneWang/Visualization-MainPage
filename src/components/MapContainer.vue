@@ -7,7 +7,7 @@ function initMap() {
 	AMapLoader.load({
 		key: "0f680fc17ef03445c8e5548cc28a7225",             // 申请好的Web端开发者Key，首次调用 load 时必填
 		version: "2.0",      // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
-		plugins: ['AMap.Geolocation', 'AMap.Marker',''],       // 需要使用的的插件列表，如比例尺'AMap.Scale'等
+		plugins: ['AMap.Geolocation', 'AMap.Marker','AMap.MarkerCluster'],       // 需要使用的的插件列表，如比例尺'AMap.Scale'等
 	}).then((AMap) => {
 		let map = new AMap.Map('container', {
 			resizeEnable: true,
@@ -74,7 +74,7 @@ function initMap() {
 			div.style.width = div.style.height = size + 'px';
 			div.style.border = 'solid 1px rgba(' + bgColor + ',1)';
 			div.style.borderRadius = size / 2 + 'px';
-			div.innerHTML = context.count;
+			// div.innerHTML = context.count;
 			div.style.lineHeight = size + 'px';
 			div.style.color = '#ffffff';
 			div.style.fontSize = '12px';
