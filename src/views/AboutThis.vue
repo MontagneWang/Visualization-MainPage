@@ -45,6 +45,7 @@ let chartAttrs = {
 				<!--todo 放置地图显示各区域的投稿总数-->
 				<!--<h1>这里放地图</h1>-->
 				<!--<h3>右上方使用液晶数字显示总播放量</h3>-->
+				<span>不同地理区域的投稿量</span>
 				<map-container v-bind="chartAttrs"/>
 			</div>
 			<div class="c5 border">
@@ -119,6 +120,13 @@ let chartAttrs = {
 		writing-mode: vertical-rl;
 		top: 7%;
 		left: 2%;
+	}
+
+	&.c4 span {
+		top: 4%;
+		left: 3%;
+		font-size: 1.5rem;
+		z-index: 2;
 	}
 
 	&.c5 span {

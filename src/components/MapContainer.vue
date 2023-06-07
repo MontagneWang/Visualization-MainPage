@@ -1,6 +1,6 @@
 <script setup>
 import AMapLoader from '@amap/amap-jsapi-loader'
-import {onMounted} from "vue";
+import {onMounted, ref} from "vue";
 
 function initMap() {
 	AMapLoader.load({
@@ -11,44 +11,115 @@ function initMap() {
 		let map = new AMap.Map('container', {
 			resizeEnable: true,
 			viewMode: '3D', //是否为3D地图模式
-			zoom: 4, //初始化地图级别
-			center: [110.699242, 35.99375], //初始化地图中心点位置
+			zoom: 5, //初始化地图级别
+			center: [110, 33], //初始化地图中心点位置
 			mapStyle: 'amap://styles/fresh',  //设置地图的显示样式
 		})
-		// let marker = new AMap.Marker({
-		// 	position: [110.699242, 35.99375] // 基点坐标
-		// });
-		// map.add(marker)
 
-		//设置圆形位置
-		var center = new AMap.LngLat(116.433322, 39.900255);
-		//设置圆的半径大小
-		var radius = 100000;
-		// 创建圆形 Circle实例
-		var circle = new AMap.Circle({
-			center: center, //圆心
-			radius: radius, //半径
-			fillOpacity: 0.4,
-			fillColor: '#1791fc',
-			zIndex: 5,
+		locData.forEach(item => {
+			let center = new AMap.LngLat(item['LngLat'][0], item['LngLat'][1]);
+			let multiples = () => {
+				if (item['value'] > 3000){
+					return 70
+				}
+				if (item['value'] > 2000){
+					return 80
+				}
+				if (item['value'] > 1000){
+					return 90
+				}
+				if (item['value'] > 500){
+					return 100
+				}
+				if (item['value'] > 100){
+					return 200
+				}
+				if (item['value'] > 50){
+					return 300
+				}
+				if (item['value'] > 10){
+					return 500
+				}
+				if (item['value'] > 1){
+					return 2000
+				}
+			}
+			let radius = item['value'] * multiples();
+			// 创建圆形 Circle实例
+			let circle = new AMap.Circle({
+				// todo 完善更多样式 https://lbs.amap.com/api/javascript-api-v2/documentation#circle
+				center: center, //圆心
+				radius: radius, //半径
+				strokeColor: '#fec87e',
+				strokeOpacity: 1,
+				strokeWeight: 1.5,
+				strokeStyle: 'dashed',
+				fillOpacity: 0.4,
+				fillColor: '#66ccff',
+				zIndex: 5,
+				extData: [item['name'], item['value']]
+			})
+			circle.on('mouseover', e => {
+				showText.value = true
+				positionTop.value = e.originEvent.offsetY
+				positionLeft.value = e.originEvent.offsetX
+				cityName.value = e.target._opts.extData[0]
+				pubCount.value = e.target._opts.extData[1]
+			});
+			map.on('mouseout', () => {
+				showText.value = false
+			});
+			map.add(circle);
 		})
-		map.add(circle);
-		map.setFitView([circle])
+
 	}).catch(err => {
 		console.dir(err);
 	})
 }
 
+let showText = ref(false)
+let positionTop = ref(0)
+let positionLeft = ref(0)
+let cityName = ref('')
+let pubCount = ref(0)
+let locData = []
 onMounted(() => {
 	initMap()
+	fetch('/src/assets/dataForLocation.json')
+			.then(res => res.json())
+			.then(data => {
+				locData = data
+			})
 })
+
 </script>
 
 <template>
-	<div id="container"></div>
+	<div id="container">
+		<div v-show="showText"
+		     :style="{top: positionTop+'px',left: positionLeft+'px',}"
+		     class="text">
+			<span>城市：{{ cityName }}</span>
+			<br>
+			<span>投稿数：{{ pubCount }}</span>
+		</div>
+	</div>
+
 </template>
 
 <style lang="scss" scoped>
+.text {
+	z-index: 2;
+	position: absolute;
+	font-size: 1.2rem;
+	line-height: 1.8rem;
+	padding: 10px;
+	border: 1px solid #fff;
+	background: #ffffffa0;
+	border-radius: 15px;
+	user-select: none;
+}
+
 #container {
 	padding: 0;
 	margin: 0;
