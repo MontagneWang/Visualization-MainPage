@@ -8,12 +8,14 @@ import ChartHistogram from "../components/charts/ChartHistogram.vue"
 import ChartTranspose from "../components/charts/ChartTranspose.vue";
 import ChartCalendar from "../components/charts/ChartCalendar.vue";
 import ChartRadar from "../components/charts/ChartRadar.vue";
+import ChartMap from "../components/charts/ChartMap.vue";
+import MapContainer from "../components/MapContainer.vue"
 
 let counter = 1
 
 let chartAttrs = {
 	'class': "chart",
-	'style': "overflow-x: hidden"
+	'style': "overflow: hidden"
 }
 
 </script>
@@ -43,6 +45,7 @@ let chartAttrs = {
 				<!--todo 放置地图显示各区域的投稿总数-->
 				<!--<h1>这里放地图</h1>-->
 				<!--<h3>右上方使用液晶数字显示总播放量</h3>-->
+				<map-container v-bind="chartAttrs"/>
 			</div>
 			<div class="c5 border">
 				<!--放置 vc/sv/ace 人物的投稿数量-->
