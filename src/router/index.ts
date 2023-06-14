@@ -8,7 +8,7 @@ const routes = [
 		component: Home,
 		meta: {
 			title: '首页',
-			keepAlive: false,
+			keepAlive: true,
 			requireAuth: false
 		}
 	},
@@ -18,7 +18,7 @@ const routes = [
 		component: () => import('../views/AboutThis.vue'),
 		meta: {
 			title: '关于',
-			keepAlive: false,
+			keepAlive: true,
 			requireAuth: false
 		}
 	},

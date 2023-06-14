@@ -10,17 +10,14 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ChartBubble: typeof import('./src/components/charts/ChartBubble.vue')['default']
-    ChartBubbleStatic: typeof import('./src/components/charts/ChartBubbleStatic.vue')['default']
     ChartCalendar: typeof import('./src/components/charts/ChartCalendar.vue')['default']
     ChartCircle: typeof import('./src/components/charts/ChartCircle.vue')['default']
     ChartHistogram: typeof import('./src/components/charts/ChartHistogram.vue')['default']
     ChartLine: typeof import('./src/components/charts/ChartLine.vue')['default']
-    ChartMap: typeof import('./src/components/charts/ChartMap.vue')['default']
     ChartPie: typeof import('./src/components/charts/ChartPie.vue')['default']
     ChartRadar: typeof import('./src/components/charts/ChartRadar.vue')['default']
     ChartRank: typeof import('./src/components/charts/ChartRank.vue')['default']
     ChartTranspose: typeof import('./src/components/charts/ChartTranspose.vue')['default']
-    ChartWordCloud: typeof import('./src/components/charts/ChartWordCloud.vue')['default']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']

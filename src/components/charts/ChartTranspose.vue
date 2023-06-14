@@ -48,7 +48,7 @@ onMounted(() => {
 	const axisWidth = 50;
 
 	// fetch('https://gw.alipayobjects.com/os/antvdemo/assets/data/population.json')
-	fetch('/src/assets/testDataForTranspose.json')
+	fetch('/dataForTranspose.json')
 			.then(res => res.json())
 			.then(data => {
 				const chart = new Chart({
@@ -97,6 +97,7 @@ onMounted(() => {
 							},
 							offset: rWidth / 2 - vWidth - rX - vX + axisWidth / 2
 						},
+						//@ts-ignore
 						tickLine: false
 					})
 					view.render()

@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 import AMapLoader from '@amap/amap-jsapi-loader'
 import {onMounted, ref} from "vue";
 
@@ -17,34 +17,35 @@ function initMap() {
 		})
 
 		locData.forEach(item => {
+			// todo 圈改小 中心加点
 			let center = new AMap.LngLat(item['LngLat'][0], item['LngLat'][1]);
 			let multiples = () => {
-				if (item['value'] > 3000){
+				if (item['value'] > 3000) {
+					return 60
+				}
+				if (item['value'] > 2000) {
 					return 70
 				}
-				if (item['value'] > 2000){
+				if (item['value'] > 1000) {
 					return 80
 				}
-				if (item['value'] > 1000){
-					return 90
-				}
-				if (item['value'] > 500){
+				if (item['value'] > 500) {
 					return 100
 				}
-				if (item['value'] > 100){
+				if (item['value'] > 100) {
 					return 200
 				}
-				if (item['value'] > 50){
+				if (item['value'] > 50) {
 					return 300
 				}
-				if (item['value'] > 10){
+				if (item['value'] > 10) {
 					return 500
 				}
-				if (item['value'] > 1){
+				if (item['value'] > 1) {
 					return 2000
 				}
 			}
-			let radius = item['value'] * multiples();
+			let radius = item['value'] * multiples()!;
 			// 创建圆形 Circle实例
 			let circle = new AMap.Circle({
 				// todo 完善更多样式 https://lbs.amap.com/api/javascript-api-v2/documentation#circle
@@ -59,7 +60,7 @@ function initMap() {
 				zIndex: 5,
 				extData: [item['name'], item['value']]
 			})
-			circle.on('mouseover', e => {
+			circle.on('mouseover', (e: { originEvent: { offsetY: number; offsetX: number; }; target: { _opts: { extData: any[]; }; }; }) => {
 				showText.value = true
 				positionTop.value = e.originEvent.offsetY
 				positionLeft.value = e.originEvent.offsetX
@@ -82,10 +83,10 @@ let positionTop = ref(0)
 let positionLeft = ref(0)
 let cityName = ref('')
 let pubCount = ref(0)
-let locData = []
+let locData: any[] = []
 onMounted(() => {
 	initMap()
-	fetch('/src/assets/dataForLocation.json')
+	fetch('/dataForLocation.json')
 			.then(res => res.json())
 			.then(data => {
 				locData = data

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import {onMounted} from "vue";
 import DataSet from '@antv/data-set';
-import { Chart, registerShape } from '@antv/g2';
-import { isEmpty } from 'lodash';
+import {Chart, registerShape} from '@antv/g2';
+import {isEmpty} from 'lodash';
 
 const props = defineProps<{
 	containerName: string
@@ -22,35 +22,48 @@ onMounted(() => {
 				};
 				const points = cfg.points;
 				const path = [
+					//@ts-ignore
 					['M', points[0].x, points[0].y],
+					//@ts-ignore
 					['L', points[1].x, points[1].y],
+					//@ts-ignore
 					['L', points[2].x, points[2].y],
+					//@ts-ignore
 					['L', points[3].x, points[3].y],
 					['Z']
 				];
+				//@ts-ignore
 				attrs.path = this.parsePath(path);
 				group.addShape('path', {
 					attrs
 				});
 
+				//@ts-ignore
 				if (cfg.data.lastWeek) {
 					const linePath = [
+						//@ts-ignore
 						['M', points[2].x, points[2].y],
+						//@ts-ignore
 						['L', points[3].x, points[3].y]
 					];
 					// 最后一周的多边形添加右侧边框
 					group.addShape('path', {
 						attrs: {
+							//@ts-ignore
 							path: this.parsePath(linePath),
 							lineWidth: 4,
 							stroke: '#404040'
 						}
 					});
+					//@ts-ignore
 					if (cfg.data.lastDay) {
 						group.addShape('path', {
 							attrs: {
+								//@ts-ignore
 								path: this.parsePath([
+									//@ts-ignore
 									['M', points[1].x, points[1].y],
+									//@ts-ignore
 									['L', points[2].x, points[2].y]
 								]),
 								lineWidth: 4,
@@ -65,19 +78,19 @@ onMounted(() => {
 		}
 	});
 
-	fetch('/src/assets/dataForCommit.json')
+	fetch('/dataForCommit.json')
 			.then(res => res.json())
 			.then(data => {
 				const chart = new Chart({
 					container: containerName,
 					autoFit: true,
-					padding: [ 10]
+					padding: [10]
 				});
 				chart.data(data);
 				chart.scale({
 					day: {
 						type: 'cat',
-						values: ['', '', '', '', '', '', '','']
+						values: ['', '', '', '', '', '', '', '']
 					},
 					week: {
 						type: 'cat'
@@ -85,7 +98,7 @@ onMounted(() => {
 					commits: {
 						sync: true
 					},
-					date:{
+					date: {
 						type: 'cat'
 					}
 				});

@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import {useCounterStore} from '../stores'
-import {onMounted, watchEffect} from "vue";
 import ChartRank from "../components/charts/ChartRank.vue";
 import ChartPie from "../components/charts/ChartPie.vue";
 import ChartLine from "../components/charts/ChartLine.vue";
@@ -8,16 +6,18 @@ import ChartHistogram from "../components/charts/ChartHistogram.vue"
 import ChartTranspose from "../components/charts/ChartTranspose.vue";
 import ChartCalendar from "../components/charts/ChartCalendar.vue";
 import ChartRadar from "../components/charts/ChartRadar.vue";
-import ChartMap from "../components/charts/ChartMap.vue";
 import MapContainer from "../components/MapContainer.vue"
-
-let counter = 1
+import {computed, ref} from "vue";
 
 let chartAttrs = {
 	'class': "chart",
 	'style': "overflow: hidden"
 }
-
+// let counter = ref(1)
+// const containerName = computed(() => {
+// 	return 'container' + counter.value++;
+// });
+// :container-name="'container'+counter++"
 </script>
 
 <template>
@@ -26,23 +26,23 @@ let chartAttrs = {
 			<div class="c1 border">
 				<!--统计所有的原创曲与翻唱曲的对比数据-->
 				<span>原创 | 翻唱 数据对比</span>
-				<chart-radar :container-name="'container'+counter++"
+				<chart-radar container-name="container1"
 				             v-bind="chartAttrs"/>
 			</div>
 			<div class="c2 border">
 				<!--用于展示到「当年」曲目的总播放量-->
 				<span>2012-2023 每年总播放量</span>
-				<chart-histogram :container-name="'container'+counter++"
+				<chart-histogram container-name="container2"
 				                 v-bind="chartAttrs"/>
 			</div>
 			<div class="c3 border">
 				<!--殿堂、传说、神话，1w+等曲子占比，左侧为总数，右侧为绫-->
 				<span>播放量阶层 总数占比</span>
-				<chart-transpose :container-name="'container'+counter++"
+				<chart-transpose container-name="container3"
 				                 v-bind="chartAttrs"/>
 			</div>
 			<div class="c4 border">
-				<!--todo 放置地图显示各区域的投稿总数-->
+				<!--放置地图显示各区域的投稿总数-->
 				<!--<h1>这里放地图</h1>-->
 				<!--<h3>右上方使用液晶数字显示总播放量</h3>-->
 				<span>不同地理区域的投稿量</span>
@@ -51,26 +51,26 @@ let chartAttrs = {
 			<div class="c5 border">
 				<!--放置 vc/sv/ace 人物的投稿数量-->
 				<span>不同歌手的「投稿数」随时间的变化</span>
-				<chart-rank :container-name="'container'+counter++"
+				<chart-rank container-name="container4"
 				            v-bind="chartAttrs"/>
 			</div>
 			<div class="c6 border">
 				<!--用来展示 12-23 这十一年中 每月 的投稿数量-->
 				<span>2012-2023 十一年间每月投稿数量</span>
-				<chart-calendar :container-name="'container'+counter++"
+				<chart-calendar container-name="container5"
 				                v-bind="chartAttrs"/>
 			</div>
 			<div class="c7 border">
 				<!--用于展示到该年为止的「原创曲」总播放量（如2015年则包含之前全部年份「12,13,14,15」）-->
 				<!--另外一条线用于展示到该年为止的「翻唱曲」总播放量）-->
 				<span>原创|翻唱 总播放曲线</span>
-				<chart-line :container-name="'container'+counter++"
+				<chart-line container-name="container6"
 				            v-bind="chartAttrs"/>
 			</div>
 			<div class="c8 border">
 				<!-- vs六位歌手的投稿总数，对比数据大小(差异不宜过大)-->
 				<span>Vocaloid 人气对比</span>
-				<chart-pie :container-name="'container'+counter++"
+				<chart-pie container-name="container7"
 				           v-bind="chartAttrs"/>
 			</div>
 		</div>

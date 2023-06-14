@@ -66,8 +66,7 @@ onMounted(() => {
 		return source;
 	}
 
-	// fetch('https://raw.githubusercontent.com/antvis/G2/master/examples/data/china-gdp.json')
-	fetch('/src/assets/testDataForRank.json')
+	fetch('/dataForRank.json')
 			.then(res => res.json())
 			.then(data => {
 				let count = 0;
