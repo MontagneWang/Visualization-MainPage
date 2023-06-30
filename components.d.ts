@@ -18,7 +18,10 @@ declare module '@vue/runtime-core' {
     ChartRadar: typeof import('./src/components/charts/ChartRadar.vue')['default']
     ChartRank: typeof import('./src/components/charts/ChartRank.vue')['default']
     ChartTranspose: typeof import('./src/components/charts/ChartTranspose.vue')['default']
+    ElAutoResizer: typeof import('element-plus/es')['ElAutoResizer']
     ElCard: typeof import('element-plus/es')['ElCard']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     MapContainer: typeof import('./src/components/MapContainer.vue')['default']
@@ -27,5 +30,8 @@ declare module '@vue/runtime-core' {
     TheBackTop: typeof import('./src/components/TheBackTop.vue')['default']
     TheCircularNav: typeof import('./src/components/TheCircularNav.vue')['default']
     TheRightMenu: typeof import('./src/components/TheRightMenu.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

@@ -79,7 +79,7 @@ onMounted(() => {
 							container: containerName,
 							autoFit: true,
 							height: 500,
-							padding: [10,50,25, 65]
+							padding: [10,50,20, 65]
 						});
 						// @ts-ignore
 						chart.data(handleData(Object.values(data)[count]));

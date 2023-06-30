@@ -6,7 +6,7 @@ import TheRightMenu from "./components/TheRightMenu.vue";
 import IntroLing from "./views/IntroLing.vue"
 // 跳转到 ling 路由
 const router = useRouter()
-router.push('/about')
+// router.push('/message')
 
 // 标题切换
 // let timer: number | undefined
@@ -46,7 +46,7 @@ document.addEventListener('keydown', e => {
 </script>
 
 <template>
-	<!--<the-circular-nav/>-->
+	<the-circular-nav/>
 	<the-back-top/>
 	<the-right-menu/>
 	<router-view v-slot="{ Component }">

@@ -67,7 +67,12 @@ function initMap() {
 				cityName.value = e.target._opts.extData[0]
 				pubCount.value = e.target._opts.extData[1]
 			});
-			map.on('mouseout', () => {
+			window.addEventListener('mousemove',e => {
+					positionTop.value = e.offsetY
+					positionLeft.value = e.offsetX
+			})
+			// map.on('mouseout', () => {
+			circle.on('mouseout', () => {
 				showText.value = false
 			});
 			map.add(circle);

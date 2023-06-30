@@ -58,7 +58,7 @@ const routes = [
 		component: () => import('../views/ProducerClub.vue'),
 		meta: {
 			title: '创作社团',
-			keepAlive: false,
+			keepAlive: true,
 			requireAuth: false
 		}
 	},
