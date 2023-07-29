@@ -21,6 +21,7 @@ let chartAttribute = () => {
 		'containerName': `container${counter++}`
 	}
 }
+
 </script>
 
 <template>
