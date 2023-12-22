@@ -91,7 +91,7 @@ let wow = new WOW({
 wow.init();
 
 // idea 可能需要考虑通过动态获取屏幕高度来设置每页高度（比如获取文本总高度后，与用户当前界面大小进行计算转换，判断需要多少个 vh），当前在不同屏幕下效果不好
-// idea 修改 font-size
+// idea 修改 font-size 为 vw
 // idea 撑大缩小盒子时也添加动效
 // 当前页数计算，传入对应数据
 window.addEventListener('scroll', function () {
@@ -113,7 +113,7 @@ window.addEventListener('scroll', function () {
 })
 
 // 判断鼠标位置，显隐气泡框
-// fixme 这个通过位置判断似乎并不太好，在不同分辨率的屏幕下容易错位
+// fixme 这个通过位置判断似乎并不太好，在不同分辨率的屏幕下容易错位,考虑修改为 vw 实现
 let screenWidth = window.innerWidth;
 let screenHeight = window.innerHeight;
 let startX = screenWidth * 0.625;
@@ -611,7 +611,7 @@ onBeforeUnmount(() => {
 					<el-timeline-item icon="Avatar" placement="top" timestamp="2023.04.12" type="success">
 						<el-card>
 							<h2>乐正绫 Ai 形象敲定🎉</h2>
-							<!-- todo 更新-->
+							<!-- todo ai 更新-->
 							<p>在数十个优秀作品中，[Miz 团一] 老师的设计脱颖而出，成功当选乐正绫 Ai 形象</p>
 							<del>终稿还在调整中，右侧立绘暂缺</del>
 						</el-card>
@@ -642,7 +642,7 @@ onBeforeUnmount(() => {
 					<p style="color:#ee0000">从零开始万千景象延伸远方</p>
 				</div>
 				<!--fixme 标记点位置可能在不同的屏幕分辨率下会错位，需要根据以下修复-->
-				<!--idea 画线算法返回所有点位置的数组，然后每个自设标记点的位置从数组中获取-->
+				<!--idea 画线算法返回所有点位置的数组，然后每个自设标记点的位置从数组中获取，或者划线位置通过vw确认-->
 				<div class="tips tips0">2012 - 01 - 17<br/>绫彩音人设入选</div>
 				<div class="tips tips1">2012 - 03 - 21<br/>乐正绫形象公布</div>
 				<div class="tips tips2">2015 - 07 - 17<br/>乐正绫声库发售</div>
@@ -662,7 +662,7 @@ onBeforeUnmount(() => {
 					<img alt="" src="https://article.biliimg.com/bfs/article/9b14ff130dbdd0c8c32661806864f4760ae21ac1.png">
 				</div>
 				<div class="finalTachie finalAi">
-					<!--todo-->
+					<!--todo 需要更新 AI　设定-->
 					<!--<img alt="" src="https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png">-->
 				</div>
 			</div>
@@ -1150,7 +1150,7 @@ $pageHeight: 320vh;
 	background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png), url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg);
 
 	.bg {
-		// todo fixme
+		// todo 需要更新 AI 设定
 		//background: url(../assets/ai.png) 81% bottom no-repeat fixed;
 		//background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png) 81% bottom no-repeat fixed;
 		background-size: auto 71vh !important;

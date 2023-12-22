@@ -235,19 +235,6 @@ $eachHeight: var(--item-diameter);
       // background-color: #00000070;
     }
   }
-  // &:nth-child(2n-1) {
-  //   border: 0.2vw #ff0099 solid;
-  //   &::before {
-  //     color: #ff0099;
-  //   }
-  // }
-  // &:nth-child(2n) {
-  //   border: 0.2vw #99ff00 solid;
-  //   &::before {
-  //     color: #99ff00;
-  //     background-color: #00000070;
-  //   }
-  // }
   // 每个 item 的文字内容
   $contents: $cont1, $cont2, $cont3, $cont4, $cont5, $cont6;
   @for $i from 1 through length($contents) {

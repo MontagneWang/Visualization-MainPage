@@ -127,10 +127,7 @@ document.addEventListener('keydown', e => {
 		<component :is="Component" :key="$route.name" v-if="!$route.meta.keepAlive" />
 	</router-view>
 </template>
-<!--todo 修改 CSS 样式（大小 + 颜色）-->
-<!--todo 修改 HTML 类名-->
-<!--todo 不同屏幕尺寸适配-->
-<!--todo 移动端适配-->
+<!--todo 不同屏幕尺寸适配、移动端适配-->
 <style>
 html *
 {
