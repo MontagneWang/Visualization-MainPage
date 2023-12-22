@@ -28,7 +28,7 @@ const routes = [
 		component: () => import('../views/IntroVocaloid.vue'),
 		meta: {
 			title: 'Vocaloid™ China',
-			keepAlive: false,
+			keepAlive: true,
 			requireAuth: false
 		}
 	},
@@ -67,7 +67,7 @@ const routes = [
 		name: 'song',
 		component: () => import('../views/BirthOfSong.vue'),
 		meta: {
-			title: '歌曲的诞生',
+			title: '词曲站',
 			keepAlive: false,
 			requireAuth: false
 		}

@@ -8,7 +8,7 @@ let rightMenuContainer = ref<HTMLDivElement | null>(null);
 
 // 设置整个菜单圆盘的半径 radius；并将小圆的直径存入浏览器根样式（以便 SCSS 调用）
 // 1920÷12.8 = 150，此时小圆直径为 150*0.6 = 90;
-let [menuRate, itemRate, offset] = [12.8, 0.6, 38]; // 设置大圆比例、小圆比例、小圆到圆心的偏移百分比
+let [menuRate, itemRate, offset] = [12.8, 0.6, 38]; // 设置大圆比例、小圆比例、小圆到圆心的偏移量
 let radius = ref(window.innerWidth / menuRate);
 document.documentElement.style.setProperty(
   "--item-diameter",
@@ -144,43 +144,70 @@ onMounted(() => {
 
 <template>
   <Teleport to="body">
-    <!-- 使用这个 modal 组件，传入 prop -->
     <modal :show="showModal" @close="showModal = false">
       <template #header>
-        <h3>嵌入内容</h3>
+        <h3>欢迎加入『起氏双子』官方 QQ 群 ~</h3>
       </template>
-      <template #body> </template>
+      <template #body>
+        <p>一群：234143343（起氏双子萌萌萌萌萌萌哒）</p>
+        <p>二群：808408382（起氏双子团团团团团团转）</p>
+      </template>
     </modal>
   </Teleport>
 
   <div ref="rightMenuContainer" class="rightMenu circleMenu">
-    <div id="rightCircle" class="circle">
+    <div id="rightCircle" ref="rightCircle" class="circle">
       <div
         :style="{ height: radius * 2 + 'px', width: radius * 2 + 'px' }"
         class="item"
       >
-        <a class="eachItem"></a>
-        <a class="eachItem"></a>
-        <a class="eachItem"></a>
-        <a class="eachItem" @click.prevent="showModal = true"></a>
-        <a class="eachItem"></a>
-        <a class="eachItem" href="mailto:ling.vc@foxmail.com"></a>
+        <a
+          class="eachItem"
+          href="https://space.bilibili.com/193181849"
+          target="_blank"
+        ></a>
+        <a
+          class="eachItem"
+          href="https://weibo.com/7670516154"
+          target="_blank"
+        ></a>
+        <a
+          class="eachItem"
+          href="https://www.bilibili.com/read/cv16388511"
+          target="_blank"
+        ></a>
+        <a
+          class="eachItem"
+          href="/"
+          target="_blank"
+          @click.prevent="showModal = true"
+        ></a>
+        <a
+          class="eachItem"
+          href="https://space.bilibili.com/193181849/video"
+          target="_blank"
+        ></a>
+        <a
+          class="eachItem"
+          href="mailto:ling.vc@foxmail.com"
+          target="_blank"
+        ></a>
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
-$bgUrl1: "../assets/Icon/1.ico";
-$bgUrl2: "../assets/Icon/2.ico";
-$bgUrl3: "../assets/Icon/3.ico";
-$bgUrl4: "../assets/Icon/4.ico";
-$bgUrl5: "../assets/Icon/5.ico";
-$bgUrl6: "../assets/Icon/6.ico";
-$cont1: "占位\A字符";
-$cont2: "占位\A字符";
-$cont3: "占位\A字符";
-$cont4: "占位\A字符";
-$cont5: "占位\A字符";
+$bgUrl1: "https://article.biliimg.com/bfs/article/5456879a3ea125f5fdb6e1fd7f7e380d3e83dab1.jpg@1e_1c.webp";
+$bgUrl2: "https://article.biliimg.com/bfs/article/6beb9223cabc578bf4478f342e6288cd6f6d3d6e.jpg@1e_1c.webp";
+$bgUrl3: "https://article.biliimg.com/bfs/article/6f647cb01240601158f33c9bb265ba52b902ddea.jpg@1e_1c.webp";
+$bgUrl4: "https://article.biliimg.com/bfs/article/5fe5a42f956d08fc5455c8321c3f758fa1e1aba4.jpg@1e_1c.webp";
+$bgUrl5: "https://article.biliimg.com/bfs/article/07a346ab03789c65ec95b40846dfacb90d1d220e.jpg@1e_1c.webp";
+$bgUrl6: "https://article.biliimg.com/bfs/article/48e203f62461899c8b4070907576005cd2944db9.jpg@1e_1c.webp";
+$cont1: "B站\A账号";
+$cont2: "微博\A账号";
+$cont3: "官方\A百科";
+$cont4: "加入\A Q群";
+$cont5: "双子\A作品";
 $cont6: "反馈\A Bug";
 // 使用设置好的根样式 带有单位 ($eachHeight:90px;)
 $eachHeight: var(--item-diameter);
@@ -228,26 +255,19 @@ $eachHeight: var(--item-diameter);
     }
   }
   // 边框颜色 + 文字颜色
-  &:nth-child(n) {
-    border: 0.2vw #ee0000 solid;
+  &:nth-child(2n-1) {
+    border: 0.2vw #ff0099 solid;
     &::before {
-      color: #ee0000;
-      // background-color: #00000070;
+      color: #ff0099;
     }
   }
-  // &:nth-child(2n-1) {
-  //   border: 0.2vw #ff0099 solid;
-  //   &::before {
-  //     color: #ff0099;
-  //   }
-  // }
-  // &:nth-child(2n) {
-  //   border: 0.2vw #99ff00 solid;
-  //   &::before {
-  //     color: #99ff00;
-  //     background-color: #00000070;
-  //   }
-  // }
+  &:nth-child(2n) {
+    border: 0.2vw #99ff00 solid;
+    &::before {
+      color: #99ff00;
+      background-color: #00000070;
+    }
+  }
   // 每个 item 的文字内容
   $contents: $cont1, $cont2, $cont3, $cont4, $cont5, $cont6;
   @for $i from 1 through length($contents) {

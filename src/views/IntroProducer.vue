@@ -22,11 +22,9 @@ onMounted(() => {
 <template>
 	<!--todo 完成整页滚动内容-->
 	<!--todo 这里可以加一个 固钉 affix （可以使用 naive UI）-->
-	<div>
+	<!-- <div> -->
 		<full-page ref="fullpage" :options="options">
 			<div class="section">
-				<!--@click="$refs.fullpage.api.moveSectionDown()"-->
-				<!--@click="$refs.fullpage.api.moveSectionUp()"-->
 				<p>大体介绍 Vocaloid (Logo)</p>
 				<p>vocaloid 是什么</p>
 			</div>
@@ -37,7 +35,9 @@ onMounted(() => {
 				<p>乐正绫（如果您想知道更多有关绫的内容，可以移步 <a href="/#/ling" target="_blank">[此处]</a> ）</p>
 			</div>
 		</full-page>
-	</div>
+	<!-- </div> -->
+	<center style="line-height: 100vh;font-size: 3rem;">这里是 Producer 页面, 还在开发中</center>
+
 </template>
 
 <style lang="scss" scoped>

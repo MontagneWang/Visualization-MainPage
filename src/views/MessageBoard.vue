@@ -72,6 +72,8 @@
 </script>
 
 <template>
+		<center style="line-height: 100vh;font-size: 3rem;">这里是 留言板 页面, 还在开发中</center>
+
 	<!--<div style="height: 70vh;width:80vw;margin:10vh auto">-->
 	<!--	<el-auto-resizer>-->
 	<!--		<template #default="{ height, width }">-->

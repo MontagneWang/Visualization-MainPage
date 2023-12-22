@@ -405,7 +405,7 @@ onBeforeUnmount(() => {
 							<p>『如果说　有一天　再相见</p>
 							<p>&emsp;将这份无用思念　与你再讲一遍</p>
 							<p>&emsp;那我再看一眼　在你眼中流转的世界</p>
-							<p><span style="color: #ee0000;font-size:1.5em;">&emsp;一瞬永远&nbsp;</span>』</p>
+							<p><span style="color: #ee0000;font-size:1.5rem;">&emsp;一瞬永远&nbsp;</span>』</p>
 						</el-card>
 					</el-timeline-item>
 					<el-timeline-item color="rgb(238,0,0)" icon="mic"
@@ -683,7 +683,7 @@ onBeforeUnmount(() => {
 
 .head {
 	.inside {
-		font-size: 5em;
+		font-size: 5rem;
 
 		div {
 			text-align: center;
@@ -936,7 +936,7 @@ html {
 
 			&.finalWord {
 				white-space: nowrap;
-				font-size: 1.2em;
+				font-size: 1.2rem;
 				//transform: rotate(-45deg);
 				top: 2vh;
 				left: 0vw;

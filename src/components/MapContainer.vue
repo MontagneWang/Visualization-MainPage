@@ -117,12 +117,12 @@ onMounted(() => {
 .text {
 	z-index: 2;
 	position: absolute;
-	font-size: 1.2rem;
-	line-height: 1.8rem;
-	padding: 10px;
-	border: 1px solid #fff;
+	font-size: 1.5vw;
+	line-height: 2vw;
+	padding: 1vw;
+	border: 0.1vw solid #fff;
 	background: #ffffffa0;
-	border-radius: 15px;
+	border-radius: 1.5vw;
 	user-select: none;
 }
 
