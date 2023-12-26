@@ -100,13 +100,13 @@ onMounted(() => {
   // 延时添加 id 属性，让路由变宽（不使用添加类名，因为会在路由切换时被覆盖类名）
   navCircle.addEventListener("mouseenter", function () {
     setTimeout(function () {
-      routerLink.forEach(item => {
+      routerLink.forEach((item) => {
         item.setAttribute("id", "expand");
       });
     }, 500);
   });
   navCircle.addEventListener("mouseleave", function () {
-    routerLink.forEach(item => {
+    routerLink.forEach((item) => {
       item.removeAttribute("id");
     });
   });
@@ -146,9 +146,7 @@ onMounted(() => {
     </div>
   </div>
 </template>
-<!--todo idea 可以添加背景（刻度与指针等等）参考[炽星轨道]的背景图,背景图不动,线条转动做成gif盖在上面-->
-<!--todo idea 可以在每个导航按钮前加一个圆形的图标,里面放入[月相图 Icon]-->
-
+<!--todo 可以添加背景（刻度与指针等等），让其变成一个更帅的轮盘-->
 <style lang="scss" scoped>
 .hide {
   transform: translateX(-30vh);
@@ -178,14 +176,10 @@ onMounted(() => {
   opacity: 0.6;
   transition: all 0.5s;
 
-  background: url("https://i0.hdslb.com/bfs/article/a24c9b7506fce57b923db8acd7d414621402305269.png@1e_1c.webp")
-    no-repeat center;
-  background-size: cover;
-
   .words {
     float: left;
     width: 1vh;
-    transform: translate(31.5vh, 15vh) !important;
+    transform: translate(32vh, 15vh) !important;
 
     line-height: 1em;
     transition: all 0.5s;
@@ -196,13 +190,11 @@ onMounted(() => {
 
     opacity: 1;
     // background:radial-gradient(black, white);
-    // background: rgba(0, 0, 0, 0.4);
-
+    background: rgba(0, 0, 0, 0.4);
     transition: all 0.5s;
 
-    // 文字左移
     span {
-      transform: translate(28.5vh, 15vh) !important;
+      transform: translate(23vh, 15vh) !important;
       transition: all 0.5s;
     }
 
@@ -230,11 +222,8 @@ onMounted(() => {
   margin: 20vh;
 
   border-radius: 50%;
-  // background-color: #66ccff;
-  // todo 考虑只旋转background
-  background: url("https://i0.hdslb.com/bfs/article/a24c9b7506fce57b923db8acd7d414621402305269.png@1e_1c.webp")
-    no-repeat center;
-  background-size: cover;
+  background-color: #66ccff;
+  // background:  no-repeat center url('https://img-qn.51miz.com/preview/element/00/01/04/50/E-1045059-4BE5FE79.jpg');
 
   text-align: center;
   font-size: 1.75rem;
@@ -243,15 +232,11 @@ onMounted(() => {
 
   .menu {
     position: absolute;
-    // top: -13vh;
-    // left: 17vh;
-    top: -11vh;
-    left: 19vh;
+    top: -13vh;
+    left: 17vh;
     padding: 0;
     margin: 0;
-    zoom:0.9; // todo 最后的方法,想其他方法缩小右键菜单
-    // z-index: -1;
-    z-index: 1;
+    z-index: -1;
     list-style: none;
     transition: transform 1.4s 0.07s;
 
