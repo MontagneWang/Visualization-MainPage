@@ -283,7 +283,7 @@ onBeforeUnmount(() => {
 	     class="bubbleBox">
 		<ul>
 			<li v-for="(value, key) in items[nowPage-1]" :key="key">
-				{{ key }} {{ key === '' ? '' : '-' }} {{ value }}
+				{{ key }} {{ !key? '' : '-' }} {{ value }}
 			</li>
 		</ul>
 	</div>

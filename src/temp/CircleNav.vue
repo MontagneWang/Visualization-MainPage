@@ -103,7 +103,7 @@ onMounted(() => {
       routerLink.forEach(item => {
         item.setAttribute("id", "expand");
       });
-    }, 750);
+    }, 500);
   });
   navCircle.addEventListener("mouseleave", function () {
     routerLink.forEach(item => {
@@ -157,12 +157,12 @@ onMounted(() => {
 }
 
 #expand {
-  width: 16vh;
-  border-radius: 3vh;
-  transition: all 0.5s 0.1s; // 延时放大路由文本框
-  // position: absolute !important;
-  // top: 0 !important;
-  // left: -1vh !important;
+  width: 16vh !important;
+  border-radius: 3vh !important;
+  transition: all 0.5s 0.15s !important; // 延时放大路由文本框
+  position: absolute !important;
+  top: 0 !important;
+  left: -1vh !important;
 }
 // todo 外圆盘太大了，想办法不hover时变小/淡点或者隐藏
 .mainCircularNav {
@@ -171,39 +171,19 @@ onMounted(() => {
   border-radius: 50%; // 防止边角触发
   opacity: 0.6;
   z-index: 100;
-  transform: scale(0.5);
-
-  &::before {
-    content: "";
-    position: absolute;
-    border-radius: 50%; // 防止边角触发
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: url("https://i0.hdslb.com/bfs/article/960112201a2bc6d8ac24c33ad7faad2a1402305269.png@1e_1c.webp")
-      no-repeat center;
-    background-size: cover;
-    transition: all 0.5s ease-in-out; // 缩放背景圆盘
-  }
-  &:hover {
-    transform: scale(1);
-    &::before {
-      animation: rotate 10s linear infinite;
-    }
-  }
+  background: no-repeat center
+    url("https://i0.hdslb.com/bfs/article/a24c9b7506fce57b923db8acd7d414621402305269.png@1e_1c.webp");
+  background-size: cover;
   position: fixed;
   top: 10vh;
   left: -50vh; // 隐藏一半
   transition: all 0.5s;
   .nav-text {
-    // font-size: 2.3vw;
-    font-size: 4.6vw;
+    font-size: 2.3vw;
     writing-mode: vertical-lr;
     user-select: none;
     float: left;
-    // transform: translate(15vw, 14.5vh) !important;
-    transform: translate(20.3vw, 9.3vh) !important;
+    transform: translate(15vw, 14.5vh) !important;
     transition: all 0.5s;
   }
 
@@ -211,19 +191,17 @@ onMounted(() => {
   &:hover {
     left: -35vh; // 隐藏 1/3
     opacity: 1;
-    transition: all 0.5s; // 右移效果
+    transition: all 0.5s;
     // 文字左移
     .nav-text {
       // color: #99b977;
-      opacity: 0;
-      font-size: 2.4vw;
+      font-size: 3vw;
       transform: translate(13.3vw, 13.3vh) !important;
       transition: all 0.5s;
     }
     .menu li {
       opacity: 1;
-      transition: all 0.6s; // 每项路由显隐，等圆盘伸展完再显示
-      // transition-delay: 1s !important; // 这里如果设置延时会导致转动也延时，应该单独给expand添加
+      transition: all 0.6s;
     }
     // .insideNav::before {
     //   animation: rotate 7s linear infinite;
@@ -242,31 +220,35 @@ onMounted(() => {
   &::before {
     content: "";
     position: absolute;
-    left: 25%;
-    top: 25%;
-    width: 50%;
-    height: 50%;
-    background: no-repeat center
-      url("https://i0.hdslb.com/bfs/article/4c617509707471d5a0435ce88f0e9fad1402305269.png@1e_1c.webp");
-    background-size: cover !important;
-    // animation: rotate 7s linear infinite;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://i0.hdslb.com/bfs/article/a24c9b7506fce57b923db8acd7d414621402305269.png@1e_1c.webp")
+      no-repeat center;
+    background-size: cover;
+    animation: rotate 7s linear infinite;
   }
   .menu {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: -11vh;
+    left: 19vh;
+    // todo 最后的方法,想其他方法缩小右键菜单
+    zoom: 0.9;
     li {
       opacity: 0;
       text-align: center;
-      position: absolute;
-      top: -7.3vh;
-      left: 17vh;
-      transform-origin: 3vh 27vh; // 3vh 33vh
+      transform-origin: 3vh 33vh;
       transition: all 0.5s 0.1s; // 控制显隐时间
       a {
+        color: #99b977;
+        font-size: 1.4vw;
+        font-weight: bold;
         position: absolute;
         top: 0;
         left: 0;
-        color: #99b977;
-        font-size: 1.3vw;
-        font-weight: bold;
         width: 6vh;
         height: 6vh;
         border-radius: 50%;
@@ -279,30 +261,20 @@ onMounted(() => {
         &:hover {
           color: #66ccff;
           background-color: #f4d5a6;
-          overflow: visible;
-          &::after {
-            opacity: 1;
-            transition: all 0.5s;
-            // width: 20vw !important;
-            // height: 20vh !important;
-            // transform: translate(10vw, -10vh) !important;
-          }
-          // idea hover 路由时右边显示一个气泡方框来告诉读者其中的内容（左边再加个小三角）
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          left: 80%;
-          top: 25%;
-          width: 50%;
-          height: 50%;
-          background: #66ccff;
-          opacity: 0;
-          transition: all 0.5s;
         }
         &.router-link-exact-active {
           color: #ee0000; // 当前路由高亮
         }
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // line-height: 6vh;
+
+        // border-radius: 50%;
+        // background: #fff;
+        // font-size: 60%;
+        // text-decoration: none;
+        // transition: 0.6s;
       }
     }
   }
@@ -326,4 +298,5 @@ onMounted(() => {
     }
   }
 }
+
 </style>

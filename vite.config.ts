@@ -22,6 +22,13 @@ export default defineConfig({
 			open: true
 		}) as PluginOption,
 	],
+	css: {
+		preprocessorOptions: {
+				scss: {
+						additionalData: `@import './src/global.scss';`,
+				},
+		},
+},
 	// server: {
 	// 	port: 5173,
 	// 	proxy: {
