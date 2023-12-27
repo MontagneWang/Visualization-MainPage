@@ -52,9 +52,8 @@ function scroll() {
 		width: 87px;
 		height: 1200px;
 		transition: all 1s;
-		background: url(../assets/backTop/拉环绳子.gif) no-repeat bottom !important;
+		background: url(../assets/backTop/拉环绳子.gif) no-repeat bottom / contain!important;
 		//background: url("https://i0.hdslb.com/bfs/album/6c38c791008ecda41c14a561d6ceac257dab0e50.gif") no-repeat bottom !important;
-		background-size: contain !important;
 	}
 
 	/* 本体 */
@@ -65,9 +64,8 @@ function scroll() {
 		margin-top: -20px;
 		border: none;
 		transition: all 0.75s;
-		background: url(../assets/backTop/拉环按钮.gif) no-repeat bottom !important;
+		background: url(../assets/backTop/拉环按钮.gif) no-repeat bottom / contain  !important ; 
 		//background: url("https://i0.hdslb.com/bfs/album/72db6a29c5de085d09a1fd50e3f9b38c58469f89.gif") no-repeat bottom !important;
-		background-size: contain !important;
 		cursor: pointer;
 	}
 

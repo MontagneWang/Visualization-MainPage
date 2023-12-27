@@ -9,7 +9,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    '变量提升': typeof import('./src/components/终稿 变量提升.vue')['default']
     ChartBubble: typeof import('./src/components/charts/ChartBubble.vue')['default']
     ChartCalendar: typeof import('./src/components/charts/ChartCalendar.vue')['default']
     ChartCircle: typeof import('./src/components/charts/ChartCircle.vue')['default']
@@ -28,7 +27,6 @@ declare module '@vue/runtime-core' {
     MapContainer: typeof import('./src/components/MapContainer.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    The: typeof import('./src/components/The.vue')['default']
     TheBackTop: typeof import('./src/components/TheBackTop.vue')['default']
     TheCircularNav: typeof import('./src/components/TheCircularNav.vue')['default']
     TheRightMenu: typeof import('./src/components/TheRightMenu.vue')['default']

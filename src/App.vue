@@ -110,7 +110,7 @@ document.addEventListener('keydown', e => {
 				'background: #35495e; padding: 4px; border-radius: 3px 0 0 3px; color: #fff;color: #66ccff; font-size: 16px;margin-bottom:10px;',
 				'background: #41b883; padding: 4px; border-radius: 0 3px 3px 0; color: #fff;color: #00ffcc; font-size: 16px;margin-bottom:10px;',
 				'color: #ee0000; font-size: 16px;margin: 0 0 10px 0 ;',
-				"font-size:880px;line-height:335px;margin-bottom:-1000px;background:url('https://i0.hdslb.com/bfs/album/9126b8133d66830b8e74cc8b5feca8f787efd42d.png') no-repeat",
+				"font-size:880px;line-height:335px;margin-bottom:-1000px;background:url('https://i0.hdslb.com/bfs/album/9126b8133d66830b8e74cc8b5feca8f787efd42d.png@1e_1c.webp') no-repeat",
 		);
 	}
 })

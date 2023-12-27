@@ -103,7 +103,7 @@ onMounted(() => {
       routerLink.forEach(item => {
         item.setAttribute("id", "expand");
       });
-    }, 750);
+    }, 1000);
   });
   navCircle.addEventListener("mouseleave", function () {
     routerLink.forEach(item => {
@@ -147,74 +147,46 @@ onMounted(() => {
   </div>
 </template>
 <!--todo idea 可以添加背景（刻度与指针等等）参考[炽星轨道]的背景图,背景图不动,线条转动做成gif盖在上面-->
-<!--todo idea 可以在每个导航按钮前加一个圆形的图标,里面放入[月相图 Icon]-->
 
 <style lang="scss" scoped>
-// .mainCircularNav .insideNav .menu
+// .mainCircularNav .insideNav .menu/.nav-text
 .hide {
   transform: translateX(-30vh);
   transition: all 0.5s;
 }
 
-#expand {
-  width: 16vh;
-  border-radius: 3vh;
-  transition: all 0.5s 0.1s; // 延时放大路由文本框
-  // position: absolute !important;
-  // top: 0 !important;
-  // left: -1vh !important;
-}
 // todo 外圆盘太大了，想办法不hover时变小/淡点或者隐藏
 .mainCircularNav {
   height: 80vh;
   width: 80vh;
-  border-radius: 50%; // 防止边角触发
   opacity: 0.6;
   z-index: 100;
+  border-radius: 50%; // 防止边角触发
+  position: fixed;
+  top: 10vh;
+  left: -50vh; // 左移隐藏一半
   transform: scale(0.5);
-
+  transition: all 0.5s 0.35s; // 鼠标离开时延迟缩回，先隐藏路由项
   &::before {
     content: "";
     position: absolute;
-    border-radius: 50%; // 防止边角触发
-    left: 0;
-    top: 0;
+    border-radius: 50%; // 防止边角停留
     width: 100%;
     height: 100%;
     background: url("https://i0.hdslb.com/bfs/article/960112201a2bc6d8ac24c33ad7faad2a1402305269.png@1e_1c.webp")
-      no-repeat center;
-    background-size: cover;
+      no-repeat center / cover;
     transition: all 0.5s ease-in-out; // 缩放背景圆盘
   }
-  &:hover {
-    transform: scale(1);
-    &::before {
-      animation: rotate 10s linear infinite;
-    }
-  }
-  position: fixed;
-  top: 10vh;
-  left: -50vh; // 隐藏一半
-  transition: all 0.5s;
-  .nav-text {
-    // font-size: 2.3vw;
-    font-size: 4.6vw;
-    writing-mode: vertical-lr;
-    user-select: none;
-    float: left;
-    // transform: translate(15vw, 14.5vh) !important;
-    transform: translate(20.3vw, 9.3vh) !important;
-    transition: all 0.5s;
-  }
-
   // 动效
   &:hover {
     left: -35vh; // 隐藏 1/3
     opacity: 1;
     transition: all 0.5s; // 右移效果
-    // 文字左移
+    transform: scale(1);
+    &::before {
+      animation: rotate 10s linear infinite;
+    }
     .nav-text {
-      // color: #99b977;
       opacity: 0;
       font-size: 2.4vw;
       transform: translate(13.3vw, 13.3vh) !important;
@@ -222,13 +194,10 @@ onMounted(() => {
     }
     .menu li {
       opacity: 1;
-      transition: all 0.6s; // 每项路由显隐，等圆盘伸展完再显示
-      // transition-delay: 1s !important; // 这里如果设置延时会导致转动也延时，应该单独给expand添加
+      transition-property: all, opacity !important;
+      transition-duration: 0.6s !important;
+      transition-delay: 0s, 0.5s !important; // opacity 单独延时
     }
-    // .insideNav::before {
-    //   animation: rotate 7s linear infinite;
-    //   animation-play-state: paused;
-    // }
   }
 }
 
@@ -236,7 +205,6 @@ onMounted(() => {
   height: 40vh;
   width: 40vh;
   margin: 20vh;
-  // opacity: 1 !important;
   position: relative;
   // 在伪元素处设置，实现只旋转背景图
   &::before {
@@ -246,67 +214,82 @@ onMounted(() => {
     top: 25%;
     width: 50%;
     height: 50%;
-    background: no-repeat center
-      url("https://i0.hdslb.com/bfs/article/4c617509707471d5a0435ce88f0e9fad1402305269.png@1e_1c.webp");
-    background-size: cover !important;
+    background: url("https://i0.hdslb.com/bfs/article/4c617509707471d5a0435ce88f0e9fad1402305269.png@1e_1c.webp")
+      no-repeat center / cover !important;
     // animation: rotate 7s linear infinite;
   }
-  .menu {
-    li {
-      opacity: 0;
-      text-align: center;
+  .nav-text {
+    // font-size: 2.3vw;
+    font-size: 4.6vw;
+    writing-mode: vertical-lr;
+    user-select: none;
+    float: left;
+    // transform: translate(15vw, 14.5vh) !important;
+    transform: translate(20.3vw, 9.3vh) !important;
+    transition: all 0.5s 0.5s;
+  }
+}
+
+.insideNav li {
+  opacity: 0;
+  text-align: center;
+  position: absolute;
+  top: -7.3vh;
+  left: 17vh;
+  transform-origin: 3vh 27vh; // 3vh 33vh
+  transition: all 0.5s; // 控制显隐时间
+  #expand {
+    width: 16vh;
+    border-radius: 3vh;
+    transition: all 0.5s; // 延时放在 JS 设置，不然回去时也会有延时
+  }
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #99b977;
+    font-size: 1.3vw;
+    font-weight: bold;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    border: 0.15vw solid #f4d5a6;
+    line-height: calc(6vh - 0.15vw);
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: 0.6s;
+    background: rgba($color: #fff, $alpha: 0.7);
+    &.router-link-exact-active {
+      color: #ee0000; // 高亮当前路由
+    }
+    // idea hover 路由时右边显示一个气泡方框来告诉读者其中的内容（左边再加个小三角）
+    &::after {
+      content: "";
       position: absolute;
-      top: -7.3vh;
-      left: 17vh;
-      transform-origin: 3vh 27vh; // 3vh 33vh
-      transition: all 0.5s 0.1s; // 控制显隐时间
-      a {
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: #99b977;
-        font-size: 1.3vw;
-        font-weight: bold;
-        width: 6vh;
-        height: 6vh;
-        border-radius: 50%;
-        border: 0.15vw solid #f4d5a6;
-        line-height: calc(6vh - 0.15vw);
-        box-sizing: border-box;
-        overflow: hidden;
-        transition: 0.6s;
-        background: rgba($color: #fff, $alpha: 0.7);
-        &:hover {
-          color: #66ccff;
-          background-color: #f4d5a6;
-          overflow: visible;
-          &::after {
-            opacity: 1;
-            transition: all 0.5s;
-            // width: 20vw !important;
-            // height: 20vh !important;
-            // transform: translate(10vw, -10vh) !important;
-          }
-          // idea hover 路由时右边显示一个气泡方框来告诉读者其中的内容（左边再加个小三角）
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          left: 80%;
-          top: 25%;
-          width: 50%;
-          height: 50%;
-          background: #66ccff;
-          opacity: 0;
-          transition: all 0.5s;
-        }
-        &.router-link-exact-active {
-          color: #ee0000; // 当前路由高亮
-        }
+      left: 80%;
+      top: 25%;
+      width: 50%;
+      height: 50%;
+      background: #66ccff;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+    &:hover {
+      color: #66ccff;
+      background-color: #f4d5a6;
+      overflow: visible;
+      // idea hover 路由时右边显示一个气泡方框来告诉读者其中的内容（左边再加个小三角）
+      &::after {
+        opacity: 1;
+        transition: all 0.5s;
+        // width: 20vw !important;
+        // height: 20vh !important;
+        // transform: translate(10vw, -10vh) !important;
       }
     }
   }
 }
+// 设置反向角度
 .mainCircularNav:hover {
   $delayIncrement: 0.02s;
   $angleIncrement: 45deg;
@@ -315,6 +298,7 @@ onMounted(() => {
     $delay: $delayIncrement * ($i - 1);
     $angle: $angleIncrement * ($i - 1);
 
+    // idea 或许可以通过放入JS中设置实现旋转后依旧生效
     .menu li:nth-child(#{$i}) {
       transition-delay: $delay;
       transform: rotate($angle);

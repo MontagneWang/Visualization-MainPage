@@ -171,9 +171,8 @@ onMounted(() => {
   border-radius: 50%; // 防止边角触发
   opacity: 0.6;
   z-index: 100;
-  background: no-repeat center
-    url("https://i0.hdslb.com/bfs/article/a24c9b7506fce57b923db8acd7d414621402305269.png@1e_1c.webp");
-  background-size: cover;
+  background: url("https://i0.hdslb.com/bfs/article/a24c9b7506fce57b923db8acd7d414621402305269.png@1e_1c.webp")
+    no-repeat center / cover;
   position: fixed;
   top: 10vh;
   left: -50vh; // 隐藏一半
@@ -225,8 +224,7 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     background: url("https://i0.hdslb.com/bfs/article/a24c9b7506fce57b923db8acd7d414621402305269.png@1e_1c.webp")
-      no-repeat center;
-    background-size: cover;
+      no-repeat center / cover;
     animation: rotate 7s linear infinite;
   }
   .menu {
@@ -298,5 +296,4 @@ onMounted(() => {
     }
   }
 }
-
 </style>
