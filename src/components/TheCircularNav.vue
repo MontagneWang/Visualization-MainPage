@@ -27,22 +27,20 @@ window.addEventListener("scroll", () => {
   isScrollingDown.value = judgeScrollDirection();
 });
 
+let circularNav = ref<HTMLDivElement | null>(null);
 onMounted(() => {
-  //  ref.value 获取元素添加 addEventListener 报错
-  let navCircle: HTMLElement = document.querySelector(
-    ".mainCircularNav"
-  ) as HTMLElement;
+  let navCircle = circularNav.value as HTMLElement;
   let routerLink: NodeListOf<HTMLAnchorElement> = document.querySelectorAll(
     ".mainCircularNav > div > ul > li a"
   );
   let menuItems: NodeListOf<HTMLAnchorElement> =
     document.querySelectorAll(".menu li");
-
   // 初始化一个角度数组变量，用于保存每一个路由的旋转角度，然后做加减运算【此方法可同时解决上锁问题】
   let angleArray = [0, 45, 90, 135, 180, 225, 270, 315];
-
   // 滚动时修改角度数组，然后将角度赋给每一项路由，最后将是否为第一次滚动的 flag 设置为 false
   function handleWheel() {
+    navCircle.classList.add("active");
+
     angleArray.forEach((eachAngle, index) => {
       angleArray[index] = eachAngle + 45 * wheelDirection;
     });
@@ -53,7 +51,6 @@ onMounted(() => {
       ).style.transform = `rotate(${-angleArray[index]}deg)`;
     });
   }
-
   // 将当前路由动态展示在右上方
   let menuLi = document.querySelectorAll(".menu li");
   watchEffect(() => {
@@ -81,7 +78,6 @@ onMounted(() => {
       }
     });
   });
-
   // 节流滚动事件，throttle() 函数会返回一个新的函数，该函数会在指定时间间隔内执行一次原始函数。
   // 必须将它返回的新函数保存到一个变量，然后使用该变量作为事件监听器
   let throttledHandleWheel = throttle(handleWheel, 500);
@@ -99,6 +95,7 @@ onMounted(() => {
 
   // 延时添加 id 属性，让路由变宽（不使用添加类名，因为会在路由切换时被覆盖类名）
   navCircle.addEventListener("mouseenter", function () {
+    // navCircle.classList.remove("paused");
     setTimeout(function () {
       routerLink.forEach(item => {
         item.setAttribute("id", "expand");
@@ -106,17 +103,30 @@ onMounted(() => {
     }, 1000);
   });
   navCircle.addEventListener("mouseleave", function () {
+    // navCircle.classList.add("paused");
     routerLink.forEach(item => {
       item.removeAttribute("id");
     });
   });
 });
+// 供路由使用
+const routerContent = [
+  { path: "/about", name: "关于本站", describe: "" },
+  { path: "", name: "", describe: "" },
+  { path: "", name: "", describe: "" },
+  { path: "", name: "", describe: "" },
+];
 </script>
 
 <template>
-  <div :class="{ hide: isScrollingDown }" class="mainCircularNav">
+  <div
+    ref="circularNav"
+    :class="{ hide: isScrollingDown }"
+    class="mainCircularNav"
+  >
     <div class="insideNav">
       <span class="nav-text">导航</span>
+      <!-- todo 实在来不及就把一些页面导入到已有页面 -->
       <ul class="menu">
         <li>
           <router-link to="/about">关于本站</router-link>
@@ -155,7 +165,6 @@ onMounted(() => {
   transition: all 0.5s;
 }
 
-// todo 外圆盘太大了，想办法不hover时变小/淡点或者隐藏
 .mainCircularNav {
   height: 80vh;
   width: 80vh;
@@ -166,7 +175,7 @@ onMounted(() => {
   top: 10vh;
   left: -50vh; // 左移隐藏一半
   transform: scale(0.5);
-  transition: all 0.5s 0.35s; // 鼠标离开时延迟缩回，先隐藏路由项
+  transition: all 0.5s 0.25s; // 鼠标离开时延迟缩回，先隐藏路由项
   &::before {
     content: "";
     position: absolute;
@@ -177,6 +186,9 @@ onMounted(() => {
       no-repeat center / cover;
     transition: all 0.5s ease-in-out; // 缩放背景圆盘
   }
+  // &.paused::before {
+  //   animation-play-state: paused !important;
+  // }
   // 动效
   &:hover {
     left: -35vh; // 隐藏 1/3
@@ -184,7 +196,7 @@ onMounted(() => {
     transition: all 0.5s; // 右移效果
     transform: scale(1);
     &::before {
-      animation: rotate 10s linear infinite;
+      animation: rotate 8s linear infinite;
     }
     .nav-text {
       opacity: 0;
@@ -194,10 +206,13 @@ onMounted(() => {
     }
     .menu li {
       opacity: 1;
-      transition-property: all, opacity !important;
-      transition-duration: 0.6s !important;
-      transition-delay: 0s, 0.5s !important; // opacity 单独延时
+      transition-property: all, opacity;
+      transition-duration: 0.6s;
     }
+  }
+  // 转过一次后添加延时(如果一开始就添加会导致第一次开屏动画被覆盖)
+  &.active:hover .menu li {
+    transition-delay: 0s, 0.5s !important;
   }
 }
 
@@ -224,7 +239,6 @@ onMounted(() => {
     writing-mode: vertical-lr;
     user-select: none;
     float: left;
-    // transform: translate(15vw, 14.5vh) !important;
     transform: translate(20.3vw, 9.3vh) !important;
     transition: all 0.5s 0.5s;
   }
@@ -262,43 +276,56 @@ onMounted(() => {
     &.router-link-exact-active {
       color: #ee0000; // 高亮当前路由
     }
-    // idea hover 路由时右边显示一个气泡方框来告诉读者其中的内容（左边再加个小三角）
-    &::after {
-      content: "";
-      position: absolute;
-      left: 80%;
-      top: 25%;
-      width: 50%;
-      height: 50%;
-      background: #66ccff;
-      opacity: 0;
-      transition: all 0.5s;
-    }
+    // idea hover 路由时右边显示一个气泡方框来告诉读者其中的内容（左边再加个小三角） 当前问题:无法给每个a元素的伪元素都添加content,只会显示第一个content
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   left: 0vw;
+    //   top: -0.1vw;
+    //   box-sizing: border-box;
+    //   background: rgba($color: #f4d5a6, $alpha: 1);
+    //   border: 0.15vw solid #fff;
+    //   opacity: 0;
+    //   transition: all 0.5s;
+    //   border-radius: 1vw;
+    //   border-top-left-radius: 0;
+    // }
     &:hover {
       color: #66ccff;
       background-color: #f4d5a6;
+      border: 0.15vw solid #fff;
       overflow: visible;
-      // idea hover 路由时右边显示一个气泡方框来告诉读者其中的内容（左边再加个小三角）
-      &::after {
-        opacity: 1;
-        transition: all 0.5s;
-        // width: 20vw !important;
-        // height: 20vh !important;
-        // transform: translate(10vw, -10vh) !important;
-      }
+      // &::before {
+      //   opacity: 1;
+      //   transition: all 0.5s;
+      //   width: 10vw;
+      //   height: 5vw;
+      //   transform: translateX(6.5vw);
+      // }
     }
+    // $cont1: "1";
+    // $cont2: "2";
+    // $cont3: "3";
+    // $cont4: "4";
+    // $cont5: "5";
+    // $cont6: "6";
+    // $contents: $cont1, $cont2, $cont3, $cont4, $cont5, $cont6;
+    // @for $i from 1 through length($contents) {
+    //   &:nth-child(#{$i})::before {
+    //     content: nth($contents, $i); // content: $cont(i);
+    //   }
+    // }
   }
 }
-// 设置反向角度
+
+// 设置开屏动画 初始化位置
 .mainCircularNav:hover {
-  $delayIncrement: 0.02s;
+  $delayIncrement: 0.03s;
   $angleIncrement: 45deg;
 
   @for $i from 1 through 8 {
     $delay: $delayIncrement * ($i - 1);
     $angle: $angleIncrement * ($i - 1);
-
-    // idea 或许可以通过放入JS中设置实现旋转后依旧生效
     .menu li:nth-child(#{$i}) {
       transition-delay: $delay;
       transform: rotate($angle);

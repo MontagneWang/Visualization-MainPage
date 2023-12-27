@@ -127,7 +127,8 @@ document.addEventListener('keydown', e => {
 		<component :is="Component" :key="$route.name" v-if="!$route.meta.keepAlive" />
 	</router-view>
 </template>
-<!--todo 不同屏幕尺寸适配、移动端适配-->
+<!-- todo 先把项目大框架完成,再去扣样式的小细节 -->
+<!-- todo 不同屏幕尺寸适配、移动端适配-->
 <style>
 html *
 {

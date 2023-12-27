@@ -74,11 +74,9 @@ const items = ref([
     代表色: "#EE0000",
     声源: "祈Inory",
     声库制作人: "阿元",
-    声库版本: "ACE-Studio",
-    发布日期: "2023.__.__",
-    音色: "______",
-    擅长节奏: "____ BPM",
-    擅长音域: "F2-F4",
+    声库版本: "ACE Studio",
+    发布日期: "2023.05.06",
+    语言:"支持中日英三语合成",
   },
 ]);
 let wow = new WOW({
@@ -306,6 +304,7 @@ onBeforeUnmount(() => {
 
 <template>
   <!--idea 通过 <Transition> 来增加过渡 -->
+    <!-- todo 右侧添加小三角 参考最后一页的做法 -->
   <div
     v-show="nowPage !== 0 && nowPage !== 5"
     ref="bubbleBox"
@@ -318,6 +317,7 @@ onBeforeUnmount(() => {
       </li>
     </ul>
   </div>
+
   <div ref="headPage" class="page head" @click="smoothScroll(pageHeight)">
     <div class="history show">
       <div class="inside">
@@ -400,7 +400,7 @@ onBeforeUnmount(() => {
             class="is-loading"
             icon="Loading"
             placement="top"
-            timestamp="2012 年 7 月 12 日，VOCALOID™3「洛天依」中文声库首发，只是在之后三年时间里，「乐正绫」却依旧找不到属于她的声音"
+            timestamp="只是在之后三年时间里，「乐正绫」依旧找不到属于她的声音"
             type="primary"
           >
             <br />
@@ -415,9 +415,9 @@ onBeforeUnmount(() => {
             timestamp="2014.04.05"
             type="primary"
           >
-            <p>《云端》发布 —— 「三年孤寂愿与你相伴」</p>
+            <h3>《云端》发布 —— 「三年孤寂愿与你相伴」</h3>
             <p>P 主与 STAFF 们以这一首无声歌曲，献给当时仍未发售声库的乐正绫</p>
-            <p>某种意义上算是阿绫的<strong> 第一首 </strong>歌曲</p>
+            <p>某种意义上算是阿绫的第一首歌曲</p>
             <p>
               「作曲：卫星（音绕阁） | 填词：萌兔（音绕阁） |
               绘师：碎影无痕、锦冲田 | 编曲：bz86nick | PV：墨兰花语 |
@@ -503,7 +503,7 @@ onBeforeUnmount(() => {
               <p>&emsp;将这份无用思念　与你再讲一遍</p>
               <p>&emsp;那我再看一眼　在你眼中流转的世界</p>
               <p>
-                <span style="color: #ee0000; font-size: 1.5rem"
+                <span style="color: #ee0000; font-size: 1.5vw"
                   >&emsp;一瞬永远&nbsp;</span
                 >』
               </p>
@@ -556,13 +556,13 @@ onBeforeUnmount(() => {
               「时之歌Project」，不知道如今的你，还在听这些曲子吗
             </p>
             <p>
+              2016-12-03&nbsp;《为战而生》【乐正绫原创】<br />
               2016-08-06&nbsp;《破晓将至》【乐正绫原创】<br />
               2016-04-09&nbsp;《黑暗审判》【乐正绫原创】<br />
               2016-03-19&nbsp;《光流终焉》【乐正绫原创】<br />
-              2016-12-03&nbsp;《为战而生》【乐正绫原创】<br />
-              2016-02-27&nbsp;《虚拟神明》【言和&乐正绫原创】<br />
-              2016-01-30&nbsp;&emsp;《悬空》&emsp;【洛天依&乐正绫原创】<br />
-              2016-01-10&nbsp;&emsp;《归一》&emsp;【洛天依&乐正绫&心华原创】<br />
+              2016-02-27&nbsp;《虚拟神明》【乐正绫&言和原创】<br />
+              2016-01-30&nbsp;《悬空》&emsp;&emsp;【乐正绫&洛天依原创】<br />
+              2016-01-10&nbsp;《归一》&emsp;&emsp;【乐正绫&洛天依&心华原创】<br />
             </p>
             <h3>『心跳沉沉试图召唤着哀伤&emsp;而你用双手拨开我所有匆忙』</h3>
           </el-timeline-item>
@@ -613,11 +613,11 @@ onBeforeUnmount(() => {
             </p>
             <hr />
           </el-timeline-item>
-          <!--<el-timeline-item icon="" placement="top" timestamp="2018.07.28" type="primary">-->
-          <!--	<p>忘川风华录投稿了南北合唱的《易水诀》，这是忘川第一次选取乐正绫作为歌手来演唱歌曲-->
-          <!--		<del> 可惜也是最后一次</del>-->
-          <!--	</p>-->
-          <!--</el-timeline-item>-->
+          <el-timeline-item icon="" placement="top" timestamp="2018.07.28" type="primary">
+          	<p>忘川风华录投稿了南北合唱的《易水诀》，这是忘川第一次选取乐正绫作为歌手来演唱歌曲
+          		<!-- <del> 可惜也是最后一次</del> -->
+          	</p>
+          </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <hr />
             <p>
@@ -695,7 +695,7 @@ onBeforeUnmount(() => {
           >
             <el-card>
               <h3>乐正绫五周年，『为你而来 而存在』——《花》</h3>
-              <p>官方也在今天发布了乐正绫官方 EP《告白诗》专辑试听 PV</p>
+              <p>禾念也在今天发布了乐正绫官方 EP《告白诗》专辑试听 PV</p>
               <p>
                 《告白诗》是 2020
                 年乐正绫诞生祭企划作品，也是乐正绫的第二张官方专辑
@@ -740,7 +740,7 @@ onBeforeUnmount(() => {
                 乐正绫六周年，『我看见一匹丑马有了双翼
                 飞进了七彩的云里』《丑马》
               </h3>
-              <p>官方还投稿了一份互动视频</p>
+              <p>Vsinger 官方还投稿了一份互动视频</p>
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -750,11 +750,11 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <p>
-              Vsinger官方微博发文，正式宣布乐正绫 V5
+              Vsinger 官方微博发文，正式宣布乐正绫 V5
               声库进入测试阶段，同时公开了 V5 初版形象。
             </p>
             <p>
-              但该初版形象引起了非常大的争议，官方表示会考虑大家的意见进行修改。
+              但该初版形象引起了非常大的争议，禾念表示会考虑大家的意见进行修改。
             </p>
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
@@ -802,13 +802,13 @@ onBeforeUnmount(() => {
           >
             <p>2022年5月11日，官方敲定并公开了乐正绫 V5 最终形象</p>
             <p>
-              但该形象依旧没能得到大家的认可，由于改版形象已提交给雅马哈官方，因此无法再进行修改
+              但该形象依旧没能得到大家的认可，由于禾念已将改版形象提交给雅马哈，因此无法再进行修改
             </p>
-            <p>
+            <!-- <p>
               <del
                 >（笔者对审美方面一窍不通故不做评价，但戴着手套是不方便弹吉他的吧）</del
               >
-            </p>
+            </p> -->
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
@@ -818,10 +818,8 @@ onBeforeUnmount(() => {
           >
             <el-card>
               <h2>乐正绫 Vocaloid5 声库正式发售</h2>
-              <p>值得一提的是，声库的形式不再是以碟片，而是使用 U 盘来启动。</p>
-              <p>
-                <del>并且盒子上并未使用争议较大的 V5 立绘</del>
-              </p>
+              <p>值得一提的是，声库的形式不再是以碟片的形式，而是使用 U 盘来启动。</p>
+              <p>并且盒子上并未使用争议较大的 V5 立绘</p>
             </el-card>
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
@@ -852,11 +850,12 @@ onBeforeUnmount(() => {
           >
             <el-card>
               <h2>
-                卫星哥官方发文，正式宣布 ACE-Studio「乐正绫」Ai 声库开启内测
+                Vsinger 官方正式宣布「乐正绫」AI 声库开启内测
               </h2>
-              <del
+              <p>AI 声库依托于 ACE Studio 平台</p>
+              <!-- <del
                 >但出了点意外，官方又一直没有消息，调教老师们等了十八天才收到内测码</del
-              >
+              > -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -865,7 +864,7 @@ onBeforeUnmount(() => {
             timestamp="2023.01.13"
             type="success"
           >
-            <h3>乐正绫第一首 Ai 曲投稿</h3>
+            <h3>乐正绫第一首 AI 曲投稿</h3>
             <p>【乐正绫AI】云端 —— 愿我们都能在云端歌唱</p>
           </el-timeline-item>
           <el-timeline-item
@@ -902,11 +901,11 @@ onBeforeUnmount(() => {
             type="success"
           >
             <el-card>
-              <h2>乐正绫 Ai 形象敲定🎉</h2>
+              <h2>乐正绫 AI 形象敲定🎉</h2>
               <!-- todo ai 更新-->
               <p>
                 在数十个优秀作品中，[Miz 团一]
-                老师的设计脱颖而出，成功当选乐正绫 Ai 形象
+                老师的设计脱颖而出，成功当选乐正绫 AI 形象
               </p>
               <del>终稿还在调整中，右侧立绘暂缺</del>
             </el-card>
@@ -950,8 +949,8 @@ onBeforeUnmount(() => {
         <div class="tips tips3">2017 - 12 - 02<br />首张官方专辑《绫》发布</div>
         <div class="tips tips4">2020 - 04 - 12<br />官专《告白诗》发布</div>
         <div class="tips tips5">2022 - 10 - 14<br />Vocaloid5 声库发售</div>
-        <div class="tips tips6">2022 - 12 - 25<br />Ai 声库开始内测</div>
-        <div class="tips tips7">2023 - 04 - 12<br />Ai 形象公布</div>
+        <div class="tips tips6">2022 - 12 - 25<br />AI 声库开始内测</div>
+        <div class="tips tips7">2023 - 04 - 12<br />AI 形象公布</div>
         <div class="tips tips8">
           悠悠十年，一瞬永远<br />『为你而来 而存在』
         </div>
@@ -993,7 +992,7 @@ onBeforeUnmount(() => {
 
 .head {
   .inside {
-    font-size: 5rem;
+    font-size: 5vw;
 
     div {
       text-align: center;
@@ -1029,13 +1028,13 @@ html {
 .bubbleBox {
   opacity: 0;
   width: 20vw;
-  max-height: 1000px;
   position: fixed;
   left: calc(80vw - 32vw);
+  font-size: 1.2vw;
   top: 20vh;
-  background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid #66ccff;
+  background-color: rgba($color: #fff, $alpha: 0.85);
+  border-radius: 1vw;
+  border: 0.15vw solid #66ccff;
   transition: all 0.5s;
   z-index: 100;
   user-select: none;
@@ -1080,10 +1079,7 @@ html {
     .inside {
       overflow: hidden;
       margin: 5vh 3vw;
-      //canvas{
-      //	height: 500px;
-      //	width: 1200px;
-      //}
+
     }
   }
 }
@@ -1098,11 +1094,11 @@ html {
 
     .tips {
       display: inline-block;
-      float: left;
+      // float: left;
       color: white;
       padding: 1em;
       user-select: none;
-      border-radius: 10px;
+      border-radius: 0.8vw;
       background-color: rgba(0, 0, 0, 0.5);
       position: relative;
 
@@ -1250,24 +1246,24 @@ html {
 
       &.finalWord {
         white-space: nowrap;
-        font-size: 1.2rem;
+        font-size: 1.5vw;
         //transform: rotate(-45deg);
         top: 2vh;
         left: 0vw;
 
         p {
-          width: 16rem;
-          padding: 1vw 2vw;
+          width: 12em;
+          padding: 0.5em 1.5em;
           background-color: rgba(0, 0, 0, 0.3);
           margin: 0;
         }
 
         p:nth-child(1) {
-          padding-top: 2vw;
+          padding-top: 1.5em;
         }
 
         p:last-child {
-          padding-bottom: 2vw;
+          padding-bottom: 1.5em;
         }
       }
 
@@ -1300,6 +1296,9 @@ html {
 
 $pageHeight: 320vh;
 .page {
+  // fixme 修改字号大小
+  font-size: 1.2vw !important;
+
   height: $pageHeight;
   background-size: cover !important;
   background-position: center, top;
@@ -1351,6 +1350,7 @@ $pageHeight: 320vh;
 
 #lingcaiyin {
   // 每一页的独特高度
+  // todo 直接在JavaScript中把这些数据放入根样式
   $pageHeight: 190vh;
 
   height: $pageHeight;
@@ -1449,7 +1449,7 @@ $pageHeight: 320vh;
   }
 
   background-image: url(https://article.biliimg.com/bfs/article/3b373ba97060d3b0f43da260e6d44cdf85633533.png@1e_1c.webp),
-    url(https://article.biliimg.com/bfs/article/54f15a16f5554c03056011570f8ff1c4557b749b.png@1e_1c.webp);
+    url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg@1e_1c.webp);
 
   .bg {
     background: url(https://article.biliimg.com/bfs/article/9b14ff130dbdd0c8c32661806864f4760ae21ac1.png@1e_1c.webp)
@@ -1484,7 +1484,7 @@ $pageHeight: 320vh;
     }
   }
   background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png@1e_1c.webp),
-    url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg@1e_1c.webp);
+    url(https://i0.hdslb.com/bfs/article/e636c24f9c4ced88a99b4ea1d9c17cef1402305269.png@1e_1c.webp);
 
   .bg {
     // todo 需要更新 AI 设定

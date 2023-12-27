@@ -49,16 +49,17 @@ function initMap() {
 			// 创建圆形 Circle实例
 			let circle = new AMap.Circle({
 				// todo 完善更多样式 https://lbs.amap.com/api/javascript-api-v2/documentation#circle
+				// idea 最好是有动态效果,像电波那样向外推出
 				center: center, //圆心
 				radius: radius, //半径
-				strokeColor: '#fec87e',
+				strokeColor: '#fd9b50',
 				strokeOpacity: 1,
 				strokeWeight: 1.5,
 				strokeStyle: 'dashed',
 				fillOpacity: 0.4,
 				fillColor: '#66ccff',
 				zIndex: 5,
-				extData: [item['name'], item['value']]
+				extData: [item['name'], item['value']],
 			})
 			circle.on('mouseover', (e: { originEvent: { offsetY: number; offsetX: number; }; target: { _opts: { extData: any[]; }; }; }) => {
 				showText.value = true
