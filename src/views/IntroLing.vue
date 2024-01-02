@@ -347,10 +347,10 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
+              <el-icon color="#ee0000" class="avatar">
+                <Aim />
               </el-icon> </template
-            >&emsp; VOCALOID China Project 项目启动
+            >&emsp;VOCALOID China Project 项目启动
           </el-timeline-item>
           <el-timeline-item
             icon="Management"
@@ -359,10 +359,10 @@ onBeforeUnmount(() => {
             type="warning"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
+              <el-icon color="#ee0000" class="avatar">
+                <Management />
               </el-icon> </template
-            >&emsp; 开始征集 VOCALOID China Project 企划人物形象设计
+            >&emsp;开始征集 VOCALOID China Project 企划人物形象设计
           </el-timeline-item>
           <el-timeline-item
             icon="Checked"
@@ -371,10 +371,10 @@ onBeforeUnmount(() => {
             type="danger"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
+              <el-icon color="#ee0000" class="avatar">
+                <FolderChecked />
               </el-icon> </template
-            >&emsp; VOCALOID China Project 形象征集结束
+            >&emsp;VOCALOID China Project 形象征集结束
           </el-timeline-item>
           <el-timeline-item
             icon="FolderChecked"
@@ -383,19 +383,22 @@ onBeforeUnmount(() => {
             type="success"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
+              <el-icon color="#ee0000" class="avatar">
+                <Checked />
               </el-icon>
             </template>
             <el-card>
               <h2>「雅音宫羽、绫彩音、MOKO、牙音、蝶音」五位人设入选</h2>
               <p>
-                VOCALOID China Project
-                形象评选结果公布，分别是「雅音宫羽、绫彩音、MOKO、牙音、蝶音」
+                &emsp;VOCALOID China Project
+                形象评选结果公布，分别是「雅音宫羽、<span
+                  style="color: #ee0000a0"
+                  >绫</span
+                >彩音、MOKO、牙音、蝶音」
               </p>
-              <h3>
-                『元气十足的可爱外表和带有浓郁中国风的新颖设计，赢得了大批粉丝的青睐。』
-              </h3>
+              <h4>
+                &emsp;其中「绫彩音」因其『元气十足的可爱外表和带有浓郁中国风的新颖设计，赢得了大批粉丝的青睐』
+              </h4>
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -405,15 +408,17 @@ onBeforeUnmount(() => {
             type="success"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
+              <el-icon color="#ee0000" class="avatar">
+                <Place />
               </el-icon>
             </template>
             <el-card>
-              <h3>VOCALOID China Project 最终形象定稿公布</h3>
-              <p>
-                确定最终形象为「洛天依、乐正绫、徵羽摩柯、乐正龙牙、墨清弦」
-              </p>
+              <h2>VOCALOID China Project 最终形象定稿公布</h2>
+              <h3>
+                确定最终形象为「洛天依、乐正<span style="color: #ee0000"
+                  >绫</span
+                >、徵羽摩柯、乐正龙牙、墨清弦」
+              </h3>
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -424,10 +429,11 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
+              <el-icon color="#ee0000" class="avatar">
+                <MoonNight />
               </el-icon>
             </template>
+            <br />
             <br />
             <br />
             <br />
@@ -441,29 +447,59 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon>
             </template>
-            <h3>《云端》发布 —— 「三年孤寂愿与你相伴」</h3>
-            <p>P 主与 STAFF 们以这一首无声歌曲，献给当时仍未发售声库的乐正绫</p>
-            <p>某种意义上算是阿绫的第一首歌曲</p>
-            <p>
-              「作曲：卫星（音绕阁） | 填词：萌兔（音绕阁） |
-              绘师：碎影无痕、锦冲田 | 编曲：bz86nick | PV：墨兰花语 |
-              演唱：乐正绫」
-            </p>
-            <p>『乐正绫作为同洛天依一起第一批被VC选中的人设，一直没有音源，</p>
-            <p>&emsp;UP 主和众多喜欢她的小伙伴一直都很想听她唱歌，</p>
-            <p>
-              &emsp;但是，两年了，UP
-              主终于等不起了，和一些喜欢绫的人一起创作了这首属于这个没有音源的歌姬的曲子，
-            </p>
-            <p>
-              &emsp;希望喜欢绫的大家不要忘记她，也希望有更多的人能喜欢上这个中国红元气娘
-              —— 乐正绫』 —— 萌兔兔兔子
-            </p>
-            <hr />
+            <el-card class="box-card">
+              <template #header>
+                <h2 class="card-header" style="margin: 0.5vw 0vw">
+                  无声曲『云端』发布 —— 「三年孤寂愿与你相伴」
+                </h2>
+              </template>
+              <div class="text item">
+                <p style="margin-top: 0.5vw">
+                  P 主与 STAFF 们以这一首无声歌曲，献给当时仍未发售声库的乐正绫
+                </p>
+                <p>某种意义上算是阿绫的第一首歌曲</p>
+                <el-row :gutter="20" style="margin-top: -1.5vw">
+                  <el-col :span="7"
+                    ><div class="grid-content ep-bg-purple">
+                      <h3>Staff</h3>
+                      <p>&emsp;作曲：卫星（音绕阁）</p>
+                      <p>&emsp;填词：萌兔（音绕阁）</p>
+                      <p>&emsp;绘师：碎影无痕、锦冲田</p>
+                      <p>&emsp;编曲：bz86nick</p>
+                      <p>&emsp;PV：墨兰花语</p>
+                      <p>&emsp;演唱：乐正绫</p>
+                    </div>
+                  </el-col>
+                  <el-col :span="15"
+                    ><div class="grid-content ep-bg-purple">
+                      <h3>作者寄语</h3>
+                      <p
+                        style="
+                          margin-top: -0.5em;
+                          line-height: 2em;
+                          transform: translateX(1em);
+                        "
+                      >
+                        &emsp;&emsp;乐正绫作为同洛天依一起第一批被 VC
+                        选中的人设，一直没有音源，UP
+                        主和众多喜欢她的小伙伴一直都很想听她唱歌，但是，两年了，UP
+                        主终于等不起了，和一些喜欢绫的人一起创作了这首属于这个没有音源的歌姬的曲子，希望喜欢绫的大家不要忘记她，也希望有更多的人能喜欢上这个中国红元气娘
+                        —— 乐正绫
+                        <el-divider content-position="right"
+                          ><h2 style="color: #ee0000">
+                            「哪怕没有声音 也依然为你们而歌唱」
+                          </h2></el-divider
+                        >
+                      </p>
+                    </div>
+                  </el-col>
+                </el-row>
+              </div>
+            </el-card>
           </el-timeline-item>
         </el-timeline>
       </div>
@@ -483,11 +519,10 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
+              <el-icon color="#ee0000" class="avatar">
+                <microphone />
               </el-icon> </template
-            >&emsp; 「乐正绫」声源公布，「祈Inory」为乐正绫 VOCALOID™3
-            中文声库声源
+            >「乐正绫」声源公布，「祈Inory」为乐正绫 VOCALOID™3 中文声库声源
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
@@ -496,20 +531,23 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2015.06.12"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
-              </el-icon> </template
-            >&emsp;
+              <el-icon color="#ee0000" class="avatar">
+                <mic />
+              </el-icon>
+            </template>
             <el-card>
-              <h2 style="color: #ee0000">「记住我&emsp;鲜艳的红色」</h2>
-              <h3>
-                &nbsp;官方发布了「乐正绫」第一首试听曲 —— 《Scarlet Drop》
-              </h3>
+              <h2>
+                「乐正绫」第一首试听曲发布 ——
+                <span style="color: #ee0000">《Scarlet Drop》</span>
+              </h2>
+              <el-divider content-position="right"
+                ><h2 style="color: #ee0000">
+                  「记住我&emsp;鲜艳的红色」
+                </h2></el-divider
+              >
               <p>
                 “作为乐正绫爱好者们急切期盼的曲目，激昂的旋律从头至尾弥漫着重金属的味道，<br />
-                &nbsp;歌词字里行间抒发着乐正绫不顾被世间
-                <del>官方</del>
-                与未来所阻隔和遗忘，努力唱响自己的歌声。”
+                &ensp;歌词字里行间抒发着乐正绫不顾被世间与未来所阻隔和遗忘，努力唱响自己的歌声。”
               </p>
               <p>『抵达梦的尽头　之后放声而歌</p>
               <p>
@@ -526,23 +564,22 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
-              </el-icon> </template
-            >&emsp;
+              <el-icon color="#ee0000" class="avatar">
+                <StarFilled />
+              </el-icon>
+            </template>
             <el-card>
               <h2 style="color: rgb(64, 88, 164)">
                 「将这份无用思念&emsp;与你再讲一遍」
               </h2>
-              <h3>&nbsp;乐正绫第二首官方试听曲《梦语》发布</h3>
+              <h3>&nbsp;「乐正绫」第二首官方试听曲《梦语》发布</h3>
               <p>
-                “本曲是 Vsinger 官方发布的第二首乐正绫无参试听 Demo 曲。<br />
-                &nbsp;与前一首试听曲《Scarlet
+                &emsp;“本曲是 Vsinger 官方发布的第二首乐正绫无参试听 Demo
+                曲。<br />
+                &emsp;与前一首试听曲《Scarlet
                 Drop》不同，本曲采用了柔美抒情的曲风。<br />
-                &nbsp;歌词的字里行间都充满了温柔的思念之情，<br />
-                &nbsp;强烈地抒发了乐正绫作为一个
-                <del>被官方遗忘许久的</del>
-                虚拟歌手，对观众的思念之情。”
+                &emsp;歌词的字里行间都充满了温柔的思念之情，<br />
+                &emsp;强烈地抒发了乐正绫作为一个虚拟歌手，对观众的思念之情。”
               </p>
               <p>『如果说　有一天　再相见</p>
               <p>&emsp;将这份无用思念　与你再讲一遍</p>
@@ -560,10 +597,10 @@ onBeforeUnmount(() => {
             placement="top"
             timestamp="&ensp;2015.07.17"
             ><template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
-              </el-icon> </template
-            >&emsp;
+              <el-icon color="#ee0000" class="avatar">
+                <mic />
+              </el-icon>
+            </template>
             <el-card>
               <h1>「乐正绫」VOCALOID™3 中文声库发售</h1>
               <p>
@@ -574,10 +611,10 @@ onBeforeUnmount(() => {
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
-                <Promotion />
-              </el-icon> </template
-            >&emsp;
+              <el-icon color="#ee0000" class="avatar">
+                <Management />
+              </el-icon>
+            </template>
             <hr />
             <p>
               2015
@@ -592,10 +629,10 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2016 年"
             type="primary"
             ><template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <p>
               2016
               是一个神奇的年份，在这一年，乐正绫登上了拜年祭的舞台，留下了一曲传唱千古的《九九八十一》
@@ -626,10 +663,10 @@ onBeforeUnmount(() => {
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <hr />
             <p>
               2016
@@ -645,7 +682,7 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon> </template
             >&emsp;
@@ -662,7 +699,7 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon> </template
             ><el-card>
@@ -678,10 +715,10 @@ onBeforeUnmount(() => {
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <hr />
             <p>
               2017
@@ -697,7 +734,7 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon> </template
             >&emsp;
@@ -708,10 +745,10 @@ onBeforeUnmount(() => {
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <hr />
             <p>
               2018
@@ -732,7 +769,7 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon> </template
             ><el-card>
@@ -752,7 +789,7 @@ onBeforeUnmount(() => {
             type="danger"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon> </template
             >&emsp;
@@ -772,10 +809,10 @@ onBeforeUnmount(() => {
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <hr />
             <p>
               2019 年，乐正绫参与演唱的专辑有：《从众效应》《Les Fleurs Du Mal
@@ -801,10 +838,10 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2020.04.12"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <el-card>
               <h3>乐正绫五周年，『为你而来 而存在』——《花》</h3>
               <p>禾念也在今天发布了乐正绫官方 EP《告白诗》专辑试听 PV</p>
@@ -827,10 +864,10 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <h3>「快走吧，山遥路远」</h3>
             <p>ChiliChill 投稿了《山遥路远》，本曲使用了尚未发售的 V5 音源</p>
             <p>
@@ -843,10 +880,10 @@ onBeforeUnmount(() => {
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <hr />
             <p>2020 年，乐正绫参与演唱的专辑有：《告白诗》《Cotton_Candy》等</p>
             <hr />
@@ -858,10 +895,10 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2021.04.12"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <el-card>
               <h3>
                 乐正绫六周年，『我看见一匹丑马有了双翼
@@ -877,7 +914,7 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon> </template
             >&emsp;
@@ -891,10 +928,10 @@ onBeforeUnmount(() => {
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <hr />
             <p>
               2021
@@ -915,10 +952,10 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <h3 style="color: #ee0000">唢呐一响，好戏开场！</h3>
             <p>2022 的春节，我们已经有了自己举办的「虚拟歌手贺岁纪」</p>
             <p>
@@ -932,10 +969,10 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2022.04.12"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon> </template
-            >&emsp;<el-card>
+            ><el-card>
               <h3>乐正绫七周年，『结伴冲向未知的彼岸』——《未知旅行FM》</h3>
               <p>同时，同人也举办了七周年生日接龙活动，创作了许多歌曲</p>
             </el-card>
@@ -947,7 +984,7 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon> </template
             >&emsp;
@@ -968,10 +1005,10 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2022.10.14"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon> </template
-            >&emsp;<el-card>
+            ><el-card>
               <h2>乐正绫 Vocaloid5 声库正式发售</h2>
               <p>
                 值得一提的是，声库的形式不再是以碟片的形式，而是使用 U
@@ -982,10 +1019,10 @@ onBeforeUnmount(() => {
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <hr />
             <p>
               2022
@@ -1012,10 +1049,10 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2022.12.25"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
               </el-icon> </template
-            >&emsp;<el-card>
+            ><el-card>
               <h2>Vsinger 官方正式宣布「乐正绫」AI 声库开启内测</h2>
               <p>AI 声库依托于 ACE Studio 平台</p>
               <!-- <del
@@ -1029,10 +1066,10 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2023.01.13"
             type="success"
             ><template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <h3>乐正绫第一首 AI 曲投稿</h3>
             <p>【乐正绫AI】云端 —— 愿我们都能在云端歌唱</p>
           </el-timeline-item>
@@ -1043,10 +1080,10 @@ onBeforeUnmount(() => {
             type="primary"
           >
             <template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <h3>Vsinger 官方发布，开启形象创作征集活动</h3>
           </el-timeline-item>
           <el-timeline-item
@@ -1055,10 +1092,10 @@ onBeforeUnmount(() => {
             placement="top"
             timestamp="&ensp;2023.04.12"
             ><template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <el-card>
               <h2>乐正绫八周年生日快乐🎂</h2>
               <p>『要我的骄傲随生命 — 喧嚣』——《Break Out》</p>
@@ -1078,10 +1115,10 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2023.04.12"
             type="success"
             ><template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <el-card>
               <h2>乐正绫 AI 形象敲定🎉</h2>
               <!-- todo ai 更新-->
@@ -1098,10 +1135,10 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2023.04.30"
             type="primary"
             ><template #dot>
-              <el-icon color="#ff0099" class="avatar">
+              <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
             <h3>乐正绫八周年生贺纪念 EP 发行</h3>
             <hr />
           </el-timeline-item>
@@ -1172,44 +1209,51 @@ onBeforeUnmount(() => {
 </template>
 
 <style lang="scss" scoped>
+$CyPosition: 86%;
+$V3Position: 85.7%;
+$V5Position: 90%;
+$AiPosition: 88%;
+$CySize: 72vh;
+$V3Size: 70vh;
+$V5Size: 73vh;
+$AiSize: 72vh;
 .avatar {
-  border: 0.2vw solid #ff0099;
+  border: 0.2vw solid #ee0000;
   background-color: #ffffff34;
   border-radius: 50%;
   width: 1.6vw;
   height: 1.6vw;
-  top: -0.2vw;
+  top: 0vw;
   left: calc(100% - 150% + 5px);
   font-size: 1.1vw;
   position: relative;
 }
+.el-divider {
+  --el-bg-color: transparent !important;
+}
 .el-timeline {
-  width: 92%;
-  margin: 3.5% auto;
+  width: 95%;
+  margin: 1vw 2vw;
   --el-fill-color-blank: rgba(255, 255, 255, 0.5);
   --el-font-size-small: 1.75vw; // 修改日期字号
-  --el-text-color-secondary: #ee0000a0;
-  --el-timeline-node-size-large: 2vw;
-  --el-timeline-node-size-large: 18px !important;
+  --el-text-color-secondary: #ee0000a0; // 修改日期颜色
   .el-timeline-item {
-    font-size: 1.5vw;
-    width: 80%;
+    font-size: 1.3vw;
+    width: 75%;
     --el-text-color-primary: #000;
     padding-bottom: 1vw;
     .el-card {
       --el-card-bg-color: rgba(0, 0, 0, 0.1);
       border: 0.1vw solid rgba(0, 0, 0, 0.15);
       font-size: 1.2vw;
-      width: 90%;
-      margin-top: 1vw;
-      margin-bottom: 0.25vw;
-      margin-left: 1vw;
+      width: 95%;
+      margin: 1.25vw auto 0.25vw 1vw;
       padding: 0.2vw 0 0.2vw 1vw;
       border-radius: 0.7vw;
-      h3,
-      p {
-        margin: 1.2vw 0;
-      }
+      // h3,
+      // p {
+      //   margin: 1.2vw 0;
+      // }
     }
   }
 }
@@ -1247,7 +1291,7 @@ onBeforeUnmount(() => {
 .head,
 .final {
   @include content(100vh);
-  height:100vh !important;
+  height: 100vh !important;
   overflow: hidden;
   .content {
     height: 75vh !important;
@@ -1522,13 +1566,13 @@ onBeforeUnmount(() => {
 }
 
 #lingcaiyin {
-  @include content(190vh);
+  @include content(240vh);
   background-image: url(https://article.biliimg.com/bfs/article/77f11eee1f298e29095747608cb090c62eadb81c.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/f73d67839c71eb90352b6945ffd807ab2d5f369a.png@1e_1c.webp);
   .bg {
     background: url(https://article.biliimg.com/bfs/article/3a6184943556ceb4c6216a0099770274d7b9ffa2.png@1e_1c.webp)
-      no-repeat fixed 80% bottom !important;
-    background-size: auto 72.5vh !important;
+      no-repeat fixed $CyPosition bottom !important;
+    background-size: auto $CySize !important;
   }
 }
 
@@ -1538,7 +1582,8 @@ onBeforeUnmount(() => {
     url(https://article.biliimg.com/bfs/article/e1143590da779c44243f54a685a9a7f410d169ae.png@1e_1c.webp);
   .bg {
     background: url(https://article.biliimg.com/bfs/article/1c4505061ad44ae244932752d3d794f29c2684ad.png@1e_1c.webp)
-      no-repeat fixed 80% bottom;
+      no-repeat fixed $V3Position bottom;
+    background-size: auto $V3Size !important;
   }
 }
 
@@ -1548,20 +1593,20 @@ onBeforeUnmount(() => {
     url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg@1e_1c.webp);
   .bg {
     background: url(https://article.biliimg.com/bfs/article/9b14ff130dbdd0c8c32661806864f4760ae21ac1.png@1e_1c.webp)
-      83.5% bottom no-repeat fixed;
-    background-size: auto 71vh !important;
+      $V5Position bottom no-repeat fixed;
+    background-size: auto $V5Size !important;
   }
 }
 
 #ai {
-  @include content(180vh);
+  @include content(200vh);
   background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png@1e_1c.webp),
     url(https://i0.hdslb.com/bfs/article/e636c24f9c4ced88a99b4ea1d9c17cef1402305269.png@1e_1c.webp);
   .bg {
     // todo 需要更新 AI 设定
-    background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp)
-      81% bottom no-repeat fixed;
-    background-size: auto 71vh !important;
+    // background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp)
+    // $AiPosition  bottom  no-repeat fixed;
+    background-size: auto $AiSize !important;
   }
 }
 
