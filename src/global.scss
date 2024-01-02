@@ -19,3 +19,37 @@
 a {
   text-decoration: none;
 }
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin content($pageHeight) {
+  height: $pageHeight;
+  .bg {
+    height: $pageHeight;
+  }
+  .content {
+    height: $pageHeight - 20vh;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 10vh,
+      rgba(255, 255, 255, 0.8) 10vh,
+      rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
+      transparent $pageHeight - 10vh,
+      transparent $pageHeight
+    );
+    .inside {
+      height: $pageHeight - 30vh;
+    }
+  }
+}

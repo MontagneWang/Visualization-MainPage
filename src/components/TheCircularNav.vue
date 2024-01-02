@@ -100,7 +100,7 @@ onMounted(() => {
       routerLink.forEach(item => {
         item.setAttribute("id", "expand");
       });
-    }, 1000);
+    }, 750);
   });
   navCircle.addEventListener("mouseleave", function () {
     // navCircle.classList.add("paused");

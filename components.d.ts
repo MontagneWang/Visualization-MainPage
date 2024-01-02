@@ -20,6 +20,7 @@ declare module '@vue/runtime-core' {
     ChartTranspose: typeof import('./src/components/charts/ChartTranspose.vue')['default']
     ElAutoResizer: typeof import('element-plus/es')['ElAutoResizer']
     ElCard: typeof import('element-plus/es')['ElCard']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']

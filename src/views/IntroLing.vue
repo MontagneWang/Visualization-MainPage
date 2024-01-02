@@ -20,7 +20,6 @@ let lingcaiyin = ref<HTMLInputElement | null>(null);
 let nowPage = ref(0);
 let finalPageShowFlag = ref(false);
 let bubbleBoxShowFlag = ref(false);
-// fixme change ref to reactive
 const items = ref([
   {
     "": "绫彩音「Ling Caiyin」",
@@ -76,7 +75,7 @@ const items = ref([
     声库制作人: "阿元",
     声库版本: "ACE Studio",
     发布日期: "2023.05.06",
-    语言:"支持中日英三语合成",
+    语言: "支持中日英三语合成",
   },
 ]);
 let wow = new WOW({
@@ -94,7 +93,6 @@ let wow = new WOW({
 wow.init();
 
 // idea 可能需要考虑通过动态获取屏幕高度来设置每页高度（比如获取文本总高度后，与用户当前界面大小进行计算转换，判断需要多少个 vh），当前在不同屏幕下效果不好
-// idea 修改 font-size 为 vw
 // idea 撑大缩小盒子时也添加动效
 // 当前页数计算，传入对应数据
 window.addEventListener("scroll", function () {
@@ -304,7 +302,7 @@ onBeforeUnmount(() => {
 
 <template>
   <!--idea 通过 <Transition> 来增加过渡 -->
-    <!-- todo 右侧添加小三角 参考最后一页的做法 -->
+  <!-- todo 右侧添加小三角 参考最后一页的做法 -->
   <div
     v-show="nowPage !== 0 && nowPage !== 5"
     ref="bubbleBox"
@@ -319,7 +317,7 @@ onBeforeUnmount(() => {
   </div>
 
   <div ref="headPage" class="page head" @click="smoothScroll(pageHeight)">
-    <div class="history show">
+    <div class="history show content">
       <div class="inside">
         <div class="words">
           <span class="animate__animated animate__fadeIn animate__delay-1s"
@@ -345,33 +343,50 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="Aim"
             placement="top"
-            timestamp="2011.11.20"
+            timestamp="&ensp;2011.11.20"
             type="primary"
           >
-            VOCALOID China Project 项目启动
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp; VOCALOID China Project 项目启动
           </el-timeline-item>
           <el-timeline-item
             icon="Management"
             placement="top"
-            timestamp="2011.12.01"
+            timestamp="&ensp;2011.12.01"
             type="warning"
           >
-            开始征集 VOCALOID China Project 企划人物形象设计
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp; 开始征集 VOCALOID China Project 企划人物形象设计
           </el-timeline-item>
           <el-timeline-item
             icon="Checked"
             placement="top"
-            timestamp="2012.01.03"
+            timestamp="&ensp;2012.01.03"
             type="danger"
           >
-            VOCALOID China Project 形象征集结束
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp; VOCALOID China Project 形象征集结束
           </el-timeline-item>
           <el-timeline-item
             icon="FolderChecked"
             placement="top"
-            timestamp="2012.01.17"
+            timestamp="&ensp;2012.01.17"
             type="success"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon>
+            </template>
             <el-card>
               <h2>「雅音宫羽、绫彩音、MOKO、牙音、蝶音」五位人设入选</h2>
               <p>
@@ -386,9 +401,14 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="Place"
             placement="top"
-            timestamp="2012.03.21"
+            timestamp="&ensp;2012.03.21"
             type="success"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon>
+            </template>
             <el-card>
               <h3>VOCALOID China Project 最终形象定稿公布</h3>
               <p>
@@ -400,9 +420,14 @@ onBeforeUnmount(() => {
             class="is-loading"
             icon="Loading"
             placement="top"
-            timestamp="只是在之后三年时间里，「乐正绫」依旧找不到属于她的声音"
+            timestamp="&ensp;只是在之后三年时间里，「乐正绫」依旧找不到属于她的声音"
             type="primary"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon>
+            </template>
             <br />
             <br />
             <br />
@@ -412,9 +437,14 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="Promotion"
             placement="top"
-            timestamp="2014.04.05"
+            timestamp="&ensp;2014.04.05"
             type="primary"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon>
+            </template>
             <h3>《云端》发布 —— 「三年孤寂愿与你相伴」</h3>
             <p>P 主与 STAFF 们以这一首无声歌曲，献给当时仍未发售声库的乐正绫</p>
             <p>某种意义上算是阿绫的第一首歌曲</p>
@@ -449,17 +479,27 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="microphone"
             placement="top"
-            timestamp="2014.10.15"
+            timestamp="&ensp;2014.10.15"
             type="primary"
           >
-            「乐正绫」声源公布，「祈Inory」为其 VOCALOID™3 中文声库声源
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp; 「乐正绫」声源公布，「祈Inory」为乐正绫 VOCALOID™3
+            中文声库声源
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
             icon="StarFilled"
             placement="top"
-            timestamp="2015.06.12"
+            timestamp="&ensp;2015.06.12"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <el-card>
               <h2 style="color: #ee0000">「记住我&emsp;鲜艳的红色」</h2>
               <h3>
@@ -482,9 +522,14 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="headset"
             placement="top"
-            timestamp="2015.07.04"
+            timestamp="&ensp;2015.07.04"
             type="primary"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <el-card>
               <h2 style="color: rgb(64, 88, 164)">
                 「将这份无用思念&emsp;与你再讲一遍」
@@ -513,8 +558,12 @@ onBeforeUnmount(() => {
             color="rgb(238,0,0)"
             icon="mic"
             placement="top"
-            timestamp="2015.07.17"
-          >
+            timestamp="&ensp;2015.07.17"
+            ><template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <el-card>
               <h1>「乐正绫」VOCALOID™3 中文声库发售</h1>
               <p>
@@ -524,20 +573,29 @@ onBeforeUnmount(() => {
             </el-card>
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <hr />
             <p>
               2015
               年，乐正绫参与演唱的专辑有：《南北寻光》《Saligia系列》《双向·轮回与幸福》《Travel
-              Days》《平行四界Quadimension 3 & 4》
+              Days》《平行四界Quadimension 3 & 4》等
             </p>
             <hr />
           </el-timeline-item>
           <el-timeline-item
             icon="List"
             placement="top"
-            timestamp="2016 年"
+            timestamp="&ensp;2016 年"
             type="primary"
-          >
+            ><template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <p>
               2016
               是一个神奇的年份，在这一年，乐正绫登上了拜年祭的舞台，留下了一曲传唱千古的《九九八十一》
@@ -567,20 +625,30 @@ onBeforeUnmount(() => {
             <h3>『心跳沉沉试图召唤着哀伤&emsp;而你用双手拨开我所有匆忙』</h3>
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <hr />
             <p>
               2016
               年，乐正绫参与演唱的专辑有：《中华少女Project》《恋爱理论》《Dear:》《节气物语》《南北极星
-              Vol.1》《平行四界Quadimension 5 》
+              Vol.1》《平行四界Quadimension 5 》等
             </p>
             <hr />
           </el-timeline-item>
           <el-timeline-item
             icon="Promotion"
             placement="top"
-            timestamp="2017.04.28"
+            timestamp="&ensp;2017.04.28"
             type="primary"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <p>
               Vsinger 官方投稿了乐正绫独唱曲《未来的我》 ——
               「励志歌词与旋律，搭配明亮坚定的歌声和史诗般恢弘的编曲，充满了希望与力量。」
@@ -590,10 +658,14 @@ onBeforeUnmount(() => {
             color="rgb(238,0,0)"
             icon="Checked"
             placement="top"
-            timestamp="2017.12.02"
+            timestamp="&ensp;2017.12.02"
             type="primary"
           >
-            <el-card>
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            ><el-card>
               <h2>
                 「乐正绫」首张官方专辑<span style="color: #ee0000">《绫》</span
                 >正式发售
@@ -605,20 +677,41 @@ onBeforeUnmount(() => {
             </el-card>
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <hr />
             <p>
               2017
               年，乐正绫参与演唱的专辑有：《绫》《Ling聽》《妄想症Paranoia》《无名》《四季四世》《人·間》《平行四界Quadimension
-              5》
+              5》等
             </p>
             <hr />
           </el-timeline-item>
-          <el-timeline-item icon="" placement="top" timestamp="2018.07.28" type="primary">
-          	<p>忘川风华录投稿了南北合唱的《易水诀》，这是忘川第一次选取乐正绫作为歌手来演唱歌曲
-          		<!-- <del> 可惜也是最后一次</del> -->
-          	</p>
+          <el-timeline-item
+            icon=""
+            placement="top"
+            timestamp="&ensp;2018.07.28"
+            type="primary"
+          >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
+            <p>
+              忘川风华录投稿了南北合唱的《易水诀》，这是忘川第一次选取乐正绫作为歌手来演唱歌曲
+              <!-- <del> 可惜也是最后一次</del> -->
+            </p>
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <hr />
             <p>
               2018
@@ -626,7 +719,7 @@ onBeforeUnmount(() => {
             </p>
             <p>
               《秘密邮件》《Godrose》《卡纳塔幻想曲》《平行四界Quadimension
-              6》《No.13852》
+              6》《No.13852》等
             </p>
             <hr />
           </el-timeline-item>
@@ -635,10 +728,14 @@ onBeforeUnmount(() => {
             color="rgb(238,0,0)"
             icon="Mic"
             placement="top"
-            timestamp="2019.04.12"
+            timestamp="&ensp;2019.04.12"
             type="primary"
           >
-            <el-card>
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            ><el-card>
               <h3>
                 乐正绫四周年，『在此歌唱 从零开始万千景象延伸远方』——《我在》
               </h3>
@@ -651,9 +748,14 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="TrendCharts"
             placement="top"
-            timestamp="2019.12.07"
+            timestamp="&ensp;2019.12.07"
             type="danger"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <p>沙雕教投稿了【赤羽x乐正绫】《赤伶》【原创剧情向pv附】</p>
             <p>
               『原曲为李建衡作曲、何天程编曲、清彦作词、HITA演唱的同名歌曲，收录于同名专辑中。
@@ -669,10 +771,15 @@ onBeforeUnmount(() => {
             </p>
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <hr />
             <p>
               2019 年，乐正绫参与演唱的专辑有：《从众效应》《Les Fleurs Du Mal
-              恶之花》《名字》《柒》
+              恶之花》《名字》《柒》等
             </p>
             <hr />
           </el-timeline-item>
@@ -691,8 +798,13 @@ onBeforeUnmount(() => {
             color="rgb(238,0,0)"
             icon="Mic"
             placement="top"
-            timestamp="2020.04.12"
+            timestamp="&ensp;2020.04.12"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <el-card>
               <h3>乐正绫五周年，『为你而来 而存在』——《花》</h3>
               <p>禾念也在今天发布了乐正绫官方 EP《告白诗》专辑试听 PV</p>
@@ -711,9 +823,14 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="guide"
             placement="top"
-            timestamp="2020.05.22"
+            timestamp="&ensp;2020.05.22"
             type="primary"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <h3>「快走吧，山遥路远」</h3>
             <p>ChiliChill 投稿了《山遥路远》，本曲使用了尚未发售的 V5 音源</p>
             <p>
@@ -725,16 +842,26 @@ onBeforeUnmount(() => {
             </p>
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <hr />
-            <p>2020 年，乐正绫参与演唱的专辑有：《告白诗》《Cotton_Candy》</p>
+            <p>2020 年，乐正绫参与演唱的专辑有：《告白诗》《Cotton_Candy》等</p>
             <hr />
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
             icon="Mic"
             placement="top"
-            timestamp="2021.04.12"
+            timestamp="&ensp;2021.04.12"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <el-card>
               <h3>
                 乐正绫六周年，『我看见一匹丑马有了双翼
@@ -746,9 +873,14 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="User"
             placement="top"
-            timestamp="2021.06.18"
+            timestamp="&ensp;2021.06.18"
             type="primary"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <p>
               Vsinger 官方微博发文，正式宣布乐正绫 V5
               声库进入测试阶段，同时公开了 V5 初版形象。
@@ -758,6 +890,11 @@ onBeforeUnmount(() => {
             </p>
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <hr />
             <p>
               2021
@@ -766,7 +903,7 @@ onBeforeUnmount(() => {
             </p>
             <p>
               《现实逃避Project》《甘泽谣》《Dear:2
-              异类与群羊》《αrtist5系列》《Special Wishes 2021》
+              异类与群羊》《αrtist5系列》《Special Wishes 2021》等
             </p>
             <hr />
           </el-timeline-item>
@@ -774,9 +911,14 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="Film"
             placement="top"
-            timestamp="2022.02.01"
+            timestamp="&ensp;2022.02.01"
             type="primary"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <h3 style="color: #ee0000">唢呐一响，好戏开场！</h3>
             <p>2022 的春节，我们已经有了自己举办的「虚拟歌手贺岁纪」</p>
             <p>
@@ -787,9 +929,13 @@ onBeforeUnmount(() => {
             color="rgb(238,0,0)"
             icon="Mic"
             placement="top"
-            timestamp="2022.04.12"
+            timestamp="&ensp;2022.04.12"
           >
-            <el-card>
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;<el-card>
               <h3>乐正绫七周年，『结伴冲向未知的彼岸』——《未知旅行FM》</h3>
               <p>同时，同人也举办了七周年生日接龙活动，创作了许多歌曲</p>
             </el-card>
@@ -797,9 +943,14 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="User"
             placement="top"
-            timestamp="2022.05.11"
+            timestamp="&ensp;2022.05.11"
             type="primary"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <p>2022年5月11日，官方敲定并公开了乐正绫 V5 最终形象</p>
             <p>
               但该形象依旧没能得到大家的认可，由于禾念已将改版形象提交给雅马哈，因此无法再进行修改
@@ -814,20 +965,32 @@ onBeforeUnmount(() => {
             color="rgb(238,0,0)"
             icon="Mic"
             placement="top"
-            timestamp="2022.10.14"
+            timestamp="&ensp;2022.10.14"
           >
-            <el-card>
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;<el-card>
               <h2>乐正绫 Vocaloid5 声库正式发售</h2>
-              <p>值得一提的是，声库的形式不再是以碟片的形式，而是使用 U 盘来启动。</p>
+              <p>
+                值得一提的是，声库的形式不再是以碟片的形式，而是使用 U
+                盘来启动。
+              </p>
               <p>并且盒子上并未使用争议较大的 V5 立绘</p>
             </el-card>
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <hr />
             <p>
               2022
               年，乐正绫参与演唱的专辑有：《拾》《南北》《喧闹世界》《Special
-              Wishes 2022》
+              Wishes 2022》等
             </p>
             <hr />
           </el-timeline-item>
@@ -846,12 +1009,14 @@ onBeforeUnmount(() => {
             color="rgb(238,0,0)"
             icon="Mic"
             placement="top"
-            timestamp="2022.12.25"
+            timestamp="&ensp;2022.12.25"
           >
-            <el-card>
-              <h2>
-                Vsinger 官方正式宣布「乐正绫」AI 声库开启内测
-              </h2>
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;<el-card>
+              <h2>Vsinger 官方正式宣布「乐正绫」AI 声库开启内测</h2>
               <p>AI 声库依托于 ACE Studio 平台</p>
               <!-- <del
                 >但出了点意外，官方又一直没有消息，调教老师们等了十八天才收到内测码</del
@@ -861,26 +1026,39 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="Headset"
             placement="top"
-            timestamp="2023.01.13"
+            timestamp="&ensp;2023.01.13"
             type="success"
-          >
+            ><template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <h3>乐正绫第一首 AI 曲投稿</h3>
             <p>【乐正绫AI】云端 —— 愿我们都能在云端歌唱</p>
           </el-timeline-item>
           <el-timeline-item
             icon="User"
             placement="top"
-            timestamp="2023.01.14"
+            timestamp="&ensp;2023.01.14"
             type="primary"
           >
+            <template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <h3>Vsinger 官方发布，开启形象创作征集活动</h3>
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
             icon="Mic"
             placement="top"
-            timestamp="2023.04.12"
-          >
+            timestamp="&ensp;2023.04.12"
+            ><template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <el-card>
               <h2>乐正绫八周年生日快乐🎂</h2>
               <p>『要我的骄傲随生命 — 喧嚣』——《Break Out》</p>
@@ -897,9 +1075,13 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="Avatar"
             placement="top"
-            timestamp="2023.04.12"
+            timestamp="&ensp;2023.04.12"
             type="success"
-          >
+            ><template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <el-card>
               <h2>乐正绫 AI 形象敲定🎉</h2>
               <!-- todo ai 更新-->
@@ -913,9 +1095,13 @@ onBeforeUnmount(() => {
           <el-timeline-item
             icon="User"
             placement="top"
-            timestamp="2023.04.30"
+            timestamp="&ensp;2023.04.30"
             type="primary"
-          >
+            ><template #dot>
+              <el-icon color="#ff0099" class="avatar">
+                <Promotion />
+              </el-icon> </template
+            >&emsp;
             <h3>乐正绫八周年生贺纪念 EP 发行</h3>
             <hr />
           </el-timeline-item>
@@ -925,7 +1111,11 @@ onBeforeUnmount(() => {
   </div>
   <!--todo 最后一页fadeInUp出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid-->
   <div class="page final">
-    <div ref="history" :class="{ show: finalPageShowFlag }" class="history">
+    <div
+      ref="history"
+      :class="{ show: finalPageShowFlag }"
+      class="history content"
+    >
       <div class="inside">
         <!--<p>在此歌唱 从零开始万千景象延伸远方</p>-->
         <canvas
@@ -942,7 +1132,7 @@ onBeforeUnmount(() => {
           <p style="color: #ee0000">从零开始万千景象延伸远方</p>
         </div>
         <!--fixme 标记点位置可能在不同的屏幕分辨率下会错位，需要根据以下修复-->
-        <!--idea 画线算法返回所有点位置的数组，然后每个自设标记点的位置从数组中获取，或者划线位置通过vw确认-->
+        <!--画线算法返回所有点位置的数组，然后每个自设标记点的位置从数组中获取，或者划线位置通过vw确认-->
         <div class="tips tips0">2012 - 01 - 17<br />绫彩音人设入选</div>
         <div class="tips tips1">2012 - 03 - 21<br />乐正绫形象公布</div>
         <div class="tips tips2">2015 - 07 - 17<br />乐正绫声库发售</div>
@@ -982,49 +1172,49 @@ onBeforeUnmount(() => {
 </template>
 
 <style lang="scss" scoped>
+.avatar {
+  border: 0.2vw solid #ff0099;
+  background-color: #ffffff34;
+  border-radius: 50%;
+  width: 1.6vw;
+  height: 1.6vw;
+  top: -0.2vw;
+  left: calc(100% - 150% + 5px);
+  font-size: 1.1vw;
+  position: relative;
+}
 .el-timeline {
+  width: 92%;
+  margin: 3.5% auto;
+  --el-fill-color-blank: rgba(255, 255, 255, 0.5);
+  --el-font-size-small: 1.75vw; // 修改日期字号
+  --el-text-color-secondary: #ee0000a0;
+  --el-timeline-node-size-large: 2vw;
   --el-timeline-node-size-large: 18px !important;
-}
-
-.el-timeline-item {
-  width: 75vw;
-}
-
-.head {
-  .inside {
-    font-size: 5vw;
-
-    div {
-      text-align: center;
-      line-height: 70vh;
-      //color: rgba(238, 0, 0,0.7);
-      white-space: nowrap;
-      overflow: hidden;
-
-      span.titleMid {
-        animation: blink 1.5s infinite;
+  .el-timeline-item {
+    font-size: 1.5vw;
+    width: 80%;
+    --el-text-color-primary: #000;
+    padding-bottom: 1vw;
+    .el-card {
+      --el-card-bg-color: rgba(0, 0, 0, 0.1);
+      border: 0.1vw solid rgba(0, 0, 0, 0.15);
+      font-size: 1.2vw;
+      width: 90%;
+      margin-top: 1vw;
+      margin-bottom: 0.25vw;
+      margin-left: 1vw;
+      padding: 0.2vw 0 0.2vw 1vw;
+      border-radius: 0.7vw;
+      h3,
+      p {
+        margin: 1.2vw 0;
       }
     }
   }
 }
 
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-body,
-html {
-  height: 100vh;
-}
-
+// todo 隐藏右侧滚动条（参考博客做法
 .bubbleBox {
   opacity: 0;
   width: 20vw;
@@ -1056,34 +1246,38 @@ html {
 
 .head,
 .final {
-  height: 100vh !important;
+  @include content(100vh);
+  height:100vh !important;
   overflow: hidden;
-
-  .history {
-    height: 90vh;
+  .content {
+    height: 75vh !important;
     width: 90vw;
-    background-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 10vh,
-      rgba(255, 255, 255, 0.5) 10vh,
-      rgba(255, 255, 255, 0.5) 90vh,
-      transparent 90vh,
-      transparent 100vh
-    );
     margin: 0 auto;
     opacity: 0;
     transition: all 0.5s;
     padding: 10vh 0 0 0;
-
     .inside {
+      height: 80vh !important;
       overflow: hidden;
       margin: 5vh 3vw;
-
     }
   }
 }
 
+.head {
+  .inside {
+    font-size: 5vw;
+    div {
+      text-align: center;
+      line-height: 70vh;
+      white-space: nowrap;
+      overflow: hidden;
+      span.titleMid {
+        animation: blink 1.5s infinite;
+      }
+    }
+  }
+}
 .final {
   .inside {
     position: relative;
@@ -1294,12 +1488,7 @@ html {
   }
 }
 
-$pageHeight: 320vh;
 .page {
-  // fixme 修改字号大小
-  font-size: 1.2vw !important;
-
-  height: $pageHeight;
   background-size: cover !important;
   background-position: center, top;
   background-attachment: fixed !important;
@@ -1307,33 +1496,17 @@ $pageHeight: 320vh;
   // 注意：这里不可以通过 margin 值设置，background-image 需要与背景同高为 120vh，上下 10vh 设置为透明
   .content {
     width: 90vw;
-    height: $pageHeight - 20vh;
-    background-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 10vh,
-      rgba(255, 255, 255, 0.8) 10vh,
-      rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
-      transparent $pageHeight - 10vh,
-      transparent $pageHeight
-    );
-
     text-align: left;
     margin: 0 auto;
     padding: 15vh 0 0 0;
-
     .inside {
       overflow: hidden;
       margin: 3vh 1vw;
-      height: $pageHeight - 30vh;
     }
   }
-
   .story {
     width: 100vw;
-
     .bg {
-      height: $pageHeight;
       position: absolute;
       width: 98vw;
       z-index: 10;
@@ -1349,38 +1522,10 @@ $pageHeight: 320vh;
 }
 
 #lingcaiyin {
-  // 每一页的独特高度
-  // todo 直接在JavaScript中把这些数据放入根样式
-  $pageHeight: 190vh;
-
-  height: $pageHeight;
-
-  .bg {
-    height: $pageHeight;
-  }
-
-  .content {
-    height: $pageHeight - 20vh;
-    background-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 10vh,
-      rgba(255, 255, 255, 0.8) 10vh,
-      rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
-      transparent $pageHeight - 10vh,
-      transparent $pageHeight
-    );
-
-    .inside {
-      height: $pageHeight - 30vh;
-    }
-  }
-
+  @include content(190vh);
   background-image: url(https://article.biliimg.com/bfs/article/77f11eee1f298e29095747608cb090c62eadb81c.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/f73d67839c71eb90352b6945ffd807ab2d5f369a.png@1e_1c.webp);
-
   .bg {
-    // fixme 为什么简写无效
     background: url(https://article.biliimg.com/bfs/article/3a6184943556ceb4c6216a0099770274d7b9ffa2.png@1e_1c.webp)
       no-repeat fixed 80% bottom !important;
     background-size: auto 72.5vh !important;
@@ -1388,34 +1533,9 @@ $pageHeight: 320vh;
 }
 
 #v3 {
-  $pageHeight: 420vh;
-
-  height: $pageHeight;
-
-  .bg {
-    height: $pageHeight;
-  }
-
-  .content {
-    height: $pageHeight - 20vh;
-    background-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 10vh,
-      rgba(255, 255, 255, 0.8) 10vh,
-      rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
-      transparent $pageHeight - 10vh,
-      transparent $pageHeight
-    );
-
-    .inside {
-      height: $pageHeight - 30vh;
-    }
-  }
-
+  @include content(420vh);
   background-image: url(https://article.biliimg.com/bfs/article/9d857ae5dc05626cc44cecd4b18ff88a3d096b48.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/e1143590da779c44243f54a685a9a7f410d169ae.png@1e_1c.webp);
-
   .bg {
     background: url(https://article.biliimg.com/bfs/article/1c4505061ad44ae244932752d3d794f29c2684ad.png@1e_1c.webp)
       no-repeat fixed 80% bottom;
@@ -1423,34 +1543,9 @@ $pageHeight: 320vh;
 }
 
 #v5 {
-  $pageHeight: 310vh;
-
-  height: $pageHeight;
-
-  .bg {
-    height: $pageHeight;
-  }
-
-  .content {
-    height: $pageHeight - 20vh;
-    background-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 10vh,
-      rgba(255, 255, 255, 0.8) 10vh,
-      rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
-      transparent $pageHeight - 10vh,
-      transparent $pageHeight
-    );
-
-    .inside {
-      height: $pageHeight - 30vh;
-    }
-  }
-
+  @include content(310vh);
   background-image: url(https://article.biliimg.com/bfs/article/3b373ba97060d3b0f43da260e6d44cdf85633533.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg@1e_1c.webp);
-
   .bg {
     background: url(https://article.biliimg.com/bfs/article/9b14ff130dbdd0c8c32661806864f4760ae21ac1.png@1e_1c.webp)
       83.5% bottom no-repeat fixed;
@@ -1459,36 +1554,13 @@ $pageHeight: 320vh;
 }
 
 #ai {
-  $pageHeight: 180vh;
-
-  height: $pageHeight;
-
-  .bg {
-    height: $pageHeight;
-  }
-
-  .content {
-    height: $pageHeight - 20vh;
-    background-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 10vh,
-      rgba(255, 255, 255, 0.8) 10vh,
-      rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
-      transparent $pageHeight - 10vh,
-      transparent $pageHeight
-    );
-
-    .inside {
-      height: $pageHeight - 30vh;
-    }
-  }
+  @include content(180vh);
   background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png@1e_1c.webp),
     url(https://i0.hdslb.com/bfs/article/e636c24f9c4ced88a99b4ea1d9c17cef1402305269.png@1e_1c.webp);
-
   .bg {
     // todo 需要更新 AI 设定
-    background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp) 81% bottom no-repeat fixed;
+    background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp)
+      81% bottom no-repeat fixed;
     background-size: auto 71vh !important;
   }
 }
