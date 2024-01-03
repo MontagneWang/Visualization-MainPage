@@ -99,7 +99,7 @@ window.addEventListener("scroll", function () {
   finalPageShowFlag.value =
     window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100;
   // 存储每页高度，单位为 vh
-  let pageHeight = [100, 190, 420, 310, 180, 100];
+  let pageHeight = [100, 240, 420, 310, 200, 100];
   let totalHeight = 0;
   for (let i = 0; i < pageHeight.length; i++) {
     totalHeight += pageHeight[i];
@@ -121,8 +121,8 @@ window.addEventListener("scroll", function () {
 // fixme 这个通过位置判断似乎并不太好，在不同分辨率的屏幕下容易错位,考虑修改为 vw 实现
 let screenWidth = window.innerWidth;
 let screenHeight = window.innerHeight;
-let startX = screenWidth * 0.625;
-let endX = screenWidth * 0.85;
+let startX = screenWidth * 0.75;
+let endX = screenWidth * 0.9;
 let startY = screenHeight * 0.3;
 let endY = screenHeight;
 
@@ -537,12 +537,13 @@ onBeforeUnmount(() => {
             </template>
             <el-card>
               <h2>
-                「乐正绫」第一首试听曲发布 ——
-                <span style="color: #ee0000">《Scarlet Drop》</span>
+                「乐正绫」第一首官方试听曲<span style="color: #ee0000"
+                  >《Scarlet Drop》</span
+                >发布
               </h2>
               <el-divider content-position="right"
                 ><h2 style="color: #ee0000">
-                  「记住我&emsp;鲜艳的红色」
+                  「记住我&ensp;鲜艳的红色」
                 </h2></el-divider
               >
               <p>
@@ -569,10 +570,17 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <el-card>
-              <h2 style="color: rgb(64, 88, 164)">
-                「将这份无用思念&emsp;与你再讲一遍」
+              <h2>
+                &nbsp;「乐正绫」第二首官方试听曲<span
+                  style="color: rgb(64, 88, 164)"
+                  >《梦语》</span
+                >发布
               </h2>
-              <h3>&nbsp;「乐正绫」第二首官方试听曲《梦语》发布</h3>
+              <el-divider content-position="right">
+                <h2 style="color: rgb(64, 88, 164)">
+                  「将这份无用思念&ensp;与你再讲一遍」
+                </h2></el-divider
+              >
               <p>
                 &emsp;“本曲是 Vsinger 官方发布的第二首乐正绫无参试听 Demo
                 曲。<br />
@@ -585,7 +593,7 @@ onBeforeUnmount(() => {
               <p>&emsp;将这份无用思念　与你再讲一遍</p>
               <p>&emsp;那我再看一眼　在你眼中流转的世界</p>
               <p>
-                <span style="color: #ee0000; font-size: 1.5vw"
+                <span style="color: rgb(64, 88, 164); font-size: 1.5vw"
                   >&emsp;一瞬永远&nbsp;</span
                 >』
               </p>
@@ -602,24 +610,30 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <el-card>
-              <h1>「乐正绫」VOCALOID™3 中文声库发售</h1>
+              <h1>「乐正绫」VOCALOID 3 中文声库发售</h1>
               <p>
-                VOCALOID™3
-                中文声库「乐正绫」正式发售，从此声库走向民间创作者，一个新的时代开启了
+                VOCALOID™3 中文声库「乐正绫」正式发售，从此声库走向民间创作者
+              </p>
+              <p>
+                创作者们借由「乐正绫」之口，抒发心中所想，一个新的时代开启了
               </p>
             </el-card>
           </el-timeline-item>
-          <el-timeline-item icon="Calendar" placement="top" type="success">
+          <el-timeline-item
+            icon="Calendar"
+            timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+            placement="top"
+            type="success"
+          >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Management />
+                <Calendar />
               </el-icon>
             </template>
-            <hr />
+
             <p>
-              2015
-              年，乐正绫参与演唱的专辑有：《南北寻光》《Saligia系列》《双向·轮回与幸福》《Travel
-              Days》《平行四界Quadimension 3 & 4》等
+              《南北寻光》《Saligia系列》《双向·轮回与幸福》《Travel
+              Days》《平行四界Quadimension3&4》等
             </p>
             <hr />
           </el-timeline-item>
@@ -630,25 +644,23 @@ onBeforeUnmount(() => {
             type="primary"
             ><template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <List />
               </el-icon>
             </template>
             <p>
               2016
-              是一个神奇的年份，在这一年，乐正绫登上了拜年祭的舞台，留下了一曲传唱千古的《九九八十一》
+              是一个神奇的年份，这一年，乐正绫登上了拜年祭的舞台，留下了一曲传唱千古的《九九八十一》
             </p>
             <p>
               8 月 25 日，COP
-              投稿了《世末歌者》，这首歌后来成为了乐正绫再生数第二高的歌曲，
-              <del>同时也为 V 家留下了 2018 coming soon 的传说</del>
+              投稿了《世末歌者》，这首歌成为了再生数第二高的绫曲，被众多歌手翻唱
             </p>
             <p>
-              同年还有「妄想症系列」、「白石溪」、「节气物语」等作品，越来越多的
-              P 主开始借绫之口抒发心中所想。
+              同年「妄想症系列」「节气物语系列」「白石溪」等作品投稿，越来越多创作者们开始借绫之口抒情达意
             </p>
             <p>
-              当然，16 年还有一个企划 ——
-              「时之歌Project」，不知道如今的你，还在听这些曲子吗
+              16
+              年还有一个企划，那便是「时之歌Project」，不知道如今的你，还在听这些曲子吗
             </p>
             <p>
               2016-12-03&nbsp;《为战而生》【乐正绫原创】<br />
@@ -659,19 +671,25 @@ onBeforeUnmount(() => {
               2016-01-30&nbsp;《悬空》&emsp;&emsp;【乐正绫&洛天依原创】<br />
               2016-01-10&nbsp;《归一》&emsp;&emsp;【乐正绫&洛天依&心华原创】<br />
             </p>
-            <h3>『心跳沉沉试图召唤着哀伤&emsp;而你用双手拨开我所有匆忙』</h3>
+            <el-divider content-position="right">
+              <h2 style="color: rgb(64, 88, 164)">
+                『心跳沉沉试图召唤着哀伤&ensp;而你用双手拨开我所有匆忙』
+              </h2></el-divider
+            >
           </el-timeline-item>
-          <el-timeline-item icon="Calendar" placement="top" type="success">
+          <el-timeline-item
+            icon="Calendar"
+            timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+            placement="top"
+            type="success"
+          >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <Calendar />
               </el-icon>
             </template>
-            <hr />
             <p>
-              2016
-              年，乐正绫参与演唱的专辑有：《中华少女Project》《恋爱理论》《Dear:》《节气物语》《南北极星
-              Vol.1》《平行四界Quadimension 5 》等
+              《中华少女Project》《恋爱理论》《Dear:》《节气物语》《南北极星》《平行四界Quadimension5》等
             </p>
             <hr />
           </el-timeline-item>
@@ -684,12 +702,36 @@ onBeforeUnmount(() => {
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
                 <Promotion />
-              </el-icon> </template
-            >&emsp;
+              </el-icon>
+            </template>
+            <h2>
+              &ensp;&ensp;Vsinger 官方投稿了第三首乐正绫独唱曲<span
+                style="color: #ee0000"
+                >《未来的我》</span
+              >
+            </h2>
             <p>
-              Vsinger 官方投稿了乐正绫独唱曲《未来的我》 ——
-              「励志歌词与旋律，搭配明亮坚定的歌声和史诗般恢弘的编曲，充满了希望与力量。」
+              &ensp;「励志歌词与旋律，搭配明亮坚定的歌声和史诗般恢弘的编曲，充满了希望与力量」
             </p>
+          </el-timeline-item>
+          <el-timeline-item
+            color="rgb(238,0,0)"
+            icon="Checked"
+            placement="top"
+            timestamp="&ensp;2017.06.17"
+            type="primary"
+          >
+            <template #dot>
+              <el-icon color="#ee0000" class="avatar">
+                <Mic />
+              </el-icon>
+            </template>
+            <h3>&ensp;参与 Vsinger Live 2017 演唱会</h3>
+            <p>
+              &ensp;本次演唱会是以洛天依为首的 Vsinger
+              全员举行的首次大型演唱会，六名成员均有参与演唱歌曲
+            </p>
+            <!-- <p>todo 这里可以添加各歌曲名称作曲等,参考萌百复制过来</p> -->
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
@@ -700,7 +742,7 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <Management />
               </el-icon> </template
             ><el-card>
               <h2>
@@ -711,53 +753,62 @@ onBeforeUnmount(() => {
                 2017 年 12 月 2 日，Vsinger
                 发布了乐正绫的首张官方单人专辑《绫》，该专辑内共有7首单曲。
               </p>
+              <!-- <p>todo 这里可以添加各歌曲名称作曲等,参考萌百复制过来</p> -->
             </el-card>
           </el-timeline-item>
-          <el-timeline-item icon="Calendar" placement="top" type="success">
+          <el-timeline-item
+            icon="Calendar"
+            timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+            placement="top"
+            type="success"
+          >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <Calendar />
               </el-icon>
             </template>
-            <hr />
             <p>
-              2017
-              年，乐正绫参与演唱的专辑有：《绫》《Ling聽》《妄想症Paranoia》《无名》《四季四世》《人·間》《平行四界Quadimension
+              《绫》《Ling聽》《妄想症Paranoia》《无名》《四季四世》《人·間》《平行四界Quadimension
               5》等
             </p>
             <hr />
           </el-timeline-item>
           <el-timeline-item
-            icon=""
+            color="rgb(238,0,0)"
+            icon="Checked"
             placement="top"
-            timestamp="&ensp;2018.07.28"
+            timestamp="&ensp;2018.07.20"
             type="primary"
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
-              </el-icon> </template
-            >&emsp;
-            <p>
-              忘川风华录投稿了南北合唱的《易水诀》，这是忘川第一次选取乐正绫作为歌手来演唱歌曲
-              <!-- <del> 可惜也是最后一次</del> -->
-            </p>
-          </el-timeline-item>
-          <el-timeline-item icon="Calendar" placement="top" type="success">
-            <template #dot>
-              <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <Mic />
               </el-icon>
             </template>
-            <hr />
+            <h3>&ensp;参与 Vsinger Live 2018 演唱会</h3>
             <p>
-              2018
-              年，乐正绫参与演唱的专辑有：《华哉有夏》《如是我闻》《八月的幽灵》
+              &ensp;本次演唱会为 Vsinger 全员携手 BML 共同举办的「BML VR×VSINGER
+              LIVE」2018 全息演唱会
             </p>
             <p>
-              《秘密邮件》《Godrose》《卡纳塔幻想曲》《平行四界Quadimension
-              6》《No.13852》等
+              &ensp;此次演出为 Vsinger 专场，除 2233 站娘外，整个舞台将全部交给
+              Vsinger 洛天依、乐正绫、言和、乐正龙牙、墨清弦、徵羽摩柯 6 人
             </p>
+            <!-- <p>todo 这里可以添加各歌曲名称作曲等,参考萌百复制过来</p> -->
+          </el-timeline-item>
+          <el-timeline-item
+            icon="Calendar"
+            timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+            placement="top"
+            type="success"
+          >
+            <template #dot>
+              <el-icon color="#ee0000" class="avatar">
+                <Calendar />
+              </el-icon>
+            </template>
+            <p>《华哉有夏》《如是我闻》《八月的幽灵》《秘密邮件》《Godrose》</p>
+            <p>《卡纳塔幻想曲》《平行四界Quadimension 6》《No.13852》等</p>
             <hr />
           </el-timeline-item>
           <!--todo 繁华唱遍-->
@@ -770,19 +821,25 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <Present />
               </el-icon> </template
             ><el-card>
-              <h3>
-                乐正绫四周年，『在此歌唱 从零开始万千景象延伸远方』——《我在》
-              </h3>
+              <h2>
+                乐正绫四周年，官方发布生贺曲<span style="color: #ee0000">《我在》
+                </span>
+              </h2>
+              <el-divider content-position="right">
+                <h2 style="color: #ee0000">
+                  『在此歌唱 从零开始万千景象延伸远方』
+                </h2></el-divider
+              >
               <p>
                 《我在》以绫的视角描写自诞生以来的心境，以及对听众们的感谢。
               </p>
-              <p>同日，官方宣布与游戏联动，投稿了游戏联动曲《蝶恋花·何处谣》</p>
+              <p>同日，官方宣布与游戏联动，发布了游戏联动曲《蝶恋花·何处谣》</p>
             </el-card>
           </el-timeline-item>
-          <el-timeline-item
+          <!-- <el-timeline-item
             icon="TrendCharts"
             placement="top"
             timestamp="&ensp;2019.12.07"
@@ -806,17 +863,17 @@ onBeforeUnmount(() => {
             <p>
               &emsp;纯熟调教下的戏腔高亢优美、极具震撼力，令人身临其境，回溯那场热烈而悲壮的绝唱。』
             </p>
-          </el-timeline-item>
-          <el-timeline-item icon="Calendar" placement="top" type="success">
+          </el-timeline-item> -->
+          <el-timeline-item icon="Calendar" 
+          timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+          placement="top" type="success">
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <Calendar />
               </el-icon>
             </template>
-            <hr />
             <p>
-              2019 年，乐正绫参与演唱的专辑有：《从众效应》《Les Fleurs Du Mal
-              恶之花》《名字》《柒》等
+             《从众效应》《Les Fleurs Du Mal 恶之花》《柒》《名字》等
             </p>
             <hr />
           </el-timeline-item>
@@ -974,7 +1031,9 @@ onBeforeUnmount(() => {
               </el-icon> </template
             ><el-card>
               <h3>乐正绫七周年，『结伴冲向未知的彼岸』——《未知旅行FM》</h3>
-              <p>同时，同人也举办了七周年生日接龙活动，创作了许多歌曲</p>
+              <p>
+                同时，民间创作者们也举办了七周年生日接龙活动，创作了许多作品
+              </p>
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1027,7 +1086,7 @@ onBeforeUnmount(() => {
             <p>
               2022
               年，乐正绫参与演唱的专辑有：《拾》《南北》《喧闹世界》《Special
-              Wishes 2022》等
+              Wishes 2022》《和光同尘》等
             </p>
             <hr />
           </el-timeline-item>
@@ -1140,6 +1199,16 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <h3>乐正绫八周年生贺纪念 EP 发行</h3>
+            <hr />
+          </el-timeline-item>
+          <el-timeline-item icon="Calendar" placement="top" type="success">
+            <template #dot>
+              <el-icon color="#ee0000" class="avatar">
+                <Promotion />
+              </el-icon>
+            </template>
+            <hr />
+            <p>2023 年，乐正绫参与演唱的专辑有：《炽星轨迹》等</p>
             <hr />
           </el-timeline-item>
         </el-timeline>
@@ -1263,7 +1332,7 @@ $AiSize: 72vh;
   opacity: 0;
   width: 20vw;
   position: fixed;
-  left: calc(80vw - 32vw);
+  left: calc(80vw - 27vw);
   font-size: 1.2vw;
   top: 20vh;
   background-color: rgba($color: #fff, $alpha: 0.85);
@@ -1577,7 +1646,7 @@ $AiSize: 72vh;
 }
 
 #v3 {
-  @include content(420vh);
+  @include content(500vh);
   background-image: url(https://article.biliimg.com/bfs/article/9d857ae5dc05626cc44cecd4b18ff88a3d096b48.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/e1143590da779c44243f54a685a9a7f410d169ae.png@1e_1c.webp);
   .bg {
