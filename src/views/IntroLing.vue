@@ -543,7 +543,7 @@ onBeforeUnmount(() => {
               </h2>
               <el-divider content-position="right"
                 ><h2 style="color: #ee0000">
-                  「记住我&ensp;鲜艳的红色」
+                  『记住我&ensp;鲜艳的红色』
                 </h2></el-divider
               >
               <p>
@@ -578,7 +578,7 @@ onBeforeUnmount(() => {
               </h2>
               <el-divider content-position="right">
                 <h2 style="color: rgb(64, 88, 164)">
-                  「将这份无用思念&ensp;与你再讲一遍」
+                  『将这份无用思念&ensp;与你再讲一遍』
                 </h2></el-divider
               >
               <p>
@@ -825,7 +825,8 @@ onBeforeUnmount(() => {
               </el-icon> </template
             ><el-card>
               <h2>
-                乐正绫四周年，官方发布生贺曲<span style="color: #ee0000">《我在》
+                乐正绫四周年，官方发布生贺曲<span style="color: #ee0000"
+                  >《我在》
                 </span>
               </h2>
               <el-divider content-position="right">
@@ -864,17 +865,18 @@ onBeforeUnmount(() => {
               &emsp;纯熟调教下的戏腔高亢优美、极具震撼力，令人身临其境，回溯那场热烈而悲壮的绝唱。』
             </p>
           </el-timeline-item> -->
-          <el-timeline-item icon="Calendar" 
-          timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
-          placement="top" type="success">
+          <el-timeline-item
+            icon="Calendar"
+            timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+            placement="top"
+            type="success"
+          >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
                 <Calendar />
               </el-icon>
             </template>
-            <p>
-             《从众效应》《Les Fleurs Du Mal 恶之花》《柒》《名字》等
-            </p>
+            <p>《从众效应》《Les Fleurs Du Mal 恶之花》《柒》《名字》等</p>
             <hr />
           </el-timeline-item>
         </el-timeline>
@@ -900,18 +902,25 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <el-card>
-              <h3>乐正绫五周年，『为你而来 而存在』——《花》</h3>
-              <p>禾念也在今天发布了乐正绫官方 EP《告白诗》专辑试听 PV</p>
+              <h2>
+                乐正绫五周年，官方发布生贺曲<span style="color: #ee0000"
+                  >《花》
+                </span>
+              </h2>
+              <el-divider content-position="right">
+                <h2 style="color: #ee0000">『为你而来 而存在』</h2></el-divider
+              >
+              <p>禾念也在这一天发布了乐正绫官方 EP《告白诗》专辑试听 PV</p>
               <p>
                 《告白诗》是 2020
                 年乐正绫诞生祭企划作品，也是乐正绫的第二张官方专辑
               </p>
-              <p>该专辑内共有4首单曲【《花》《多数人》《酒心吻》《悸动》】</p>
+              <p>该专辑内共有 4 首单曲《花》《多数人》《酒心吻》《悸动》</p>
               <p>
-                值得一提的是，《花》第一次使用了绫的 Vocaloid5
+                特别值得一提的是，《花》第一次使用了绫的 Vocaloid5
                 音源，给予无数听众以希望。
               </p>
-              <h3 style="color: #ee0000">「请你知晓　—— <i>好不好</i>」</h3>
+              <!-- todo 专辑采用萌百 -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -925,15 +934,26 @@ onBeforeUnmount(() => {
                 <Promotion />
               </el-icon>
             </template>
-            <h3>「快走吧，山遥路远」</h3>
-            <p>ChiliChill 投稿了《山遥路远》，本曲使用了尚未发售的 V5 音源</p>
+            <h3>&emsp;ChiliChill 投稿了《山遥路远》，本曲是第二次使用尚未发售的 V5 音源</h3>
             <p>
-              『然后非常感谢人老师和动老师。前些日子听了《花》，眼前一亮，真的一亮，
+              「然后非常感谢人老师和动老师。前些日子听了《花》，眼前一亮，真的一亮，
             </p>
             <p>
-              非常快就决定想让阿绫来唱这首，于是我们联系到了人老师，这才有了接下来的故事。』——
+              &emsp;非常快就决定想让阿绫来唱这首，于是我们联系到了人老师，这才有了接下来的故事。」——
               Yu H.
             </p>
+            <hr>
+            <p>&emsp;其实笔者也是在听到这首曲子后才开始深入了解 Vocaloid 文化的。</p>
+            <p>&emsp;每个人都有自己的山遥路远。即使现在交通便利，但有的路，依然很远。</p>
+            <p>&emsp;不必留念，不必驻足不前，故乡是我，我亦是故乡。</p>
+            <p>&emsp;我会为未来的自己献上全部的祝福，只是盼望着你走远，走得足够遥远。</p>
+            <p>&emsp;我们还年轻，路还很长。山遥路远，愿我们在飘散着花瓣的清风中相遇。</p>
+
+            <el-divider content-position="right">
+              <h2 style="color: rgb(64, 88, 164)">
+                『快走吧，山遥路远』
+              </h2></el-divider
+            >
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <template #dot>
