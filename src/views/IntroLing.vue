@@ -647,6 +647,7 @@ onBeforeUnmount(() => {
                 <List />
               </el-icon>
             </template>
+            <div style="transform:translateX(0.5em)"> 
             <p>
               2016
               是一个神奇的年份，这一年，乐正绫登上了拜年祭的舞台，留下了一曲传唱千古的《九九八十一》
@@ -671,6 +672,7 @@ onBeforeUnmount(() => {
               2016-01-30&nbsp;《悬空》&emsp;&emsp;【乐正绫&洛天依原创】<br />
               2016-01-10&nbsp;《归一》&emsp;&emsp;【乐正绫&洛天依&心华原创】<br />
             </p>
+          </div>
             <el-divider content-position="right">
               <h2 style="color: rgb(64, 88, 164)">
                 『心跳沉沉试图召唤着哀伤&ensp;而你用双手拨开我所有匆忙』
@@ -898,7 +900,7 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <Present />
               </el-icon>
             </template>
             <el-card>
@@ -943,7 +945,11 @@ onBeforeUnmount(() => {
               Yu H.
             </p>
             <hr>
-            <p>&emsp;其实笔者也是在听到这首曲子后才开始深入了解 Vocaloid 文化的。</p>
+            <el-divider content-position="left">
+              <h3 style="color: rgb(64, 88, 164)">
+                笔者正是在听到这曲《山遥路远》后真正坚定了追寻儿时梦想的决心，在第二年完成 318 川藏线的骑行。
+              </h3></el-divider
+            >
             <p>&emsp;每个人都有自己的山遥路远。即使现在交通便利，但有的路，依然很远。</p>
             <p>&emsp;不必留念，不必驻足不前，故乡是我，我亦是故乡。</p>
             <p>&emsp;我会为未来的自己献上全部的祝福，只是盼望着你走远，走得足够遥远。</p>
@@ -955,14 +961,15 @@ onBeforeUnmount(() => {
               </h2></el-divider
             >
           </el-timeline-item>
-          <el-timeline-item icon="Calendar" placement="top" type="success">
+          <el-timeline-item icon="Calendar" 
+          timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+          placement="top" type="success">
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <calendar />
               </el-icon>
             </template>
-            <hr />
-            <p>2020 年，乐正绫参与演唱的专辑有：《告白诗》《Cotton_Candy》等</p>
+            <p>《告白诗》《Cotton_Candy》等</p>
             <hr />
           </el-timeline-item>
           <el-timeline-item
@@ -973,15 +980,21 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <present />
               </el-icon>
             </template>
             <el-card>
-              <h3>
-                乐正绫六周年，『我看见一匹丑马有了双翼
-                飞进了七彩的云里』《丑马》
-              </h3>
+              <h2>
+                乐正绫六周年，官方发布生贺曲<span style="color: #ee0000"
+                  >《丑马》
+                </span>
+              </h2>
+              <el-divider content-position="right">
+                <h2 style="color: #ee0000">『我看见一匹丑马有了双翼
+                飞进了七彩的云里』</h2></el-divider
+              >
               <p>Vsinger 官方还投稿了一份互动视频</p>
+              <!-- todo 补充说明是游乐园的 -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -992,31 +1005,32 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <avatar />
               </el-icon> </template
-            >&emsp;
+            >
             <p>
-              Vsinger 官方微博发文，正式宣布乐正绫 V5
+              &emsp;Vsinger 官方微博发文，正式宣布乐正绫 V5
               声库进入测试阶段，同时公开了 V5 初版形象。
             </p>
             <p>
-              但该初版形象引起了非常大的争议，禾念表示会考虑大家的意见进行修改。
+              &emsp;但该初版形象引起了非常大的争议，禾念表示会考虑大家的意见进行修改。
             </p>
           </el-timeline-item>
-          <el-timeline-item icon="Calendar" placement="top" type="success">
+          <el-timeline-item icon="Calendar"
+          timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+ placement="top" type="success">
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <calendar />
               </el-icon>
             </template>
             <hr />
             <p>
-              2021
-              年，乐正绫参与演唱的专辑有：《华哉有夏·贰》《百变绫绫》《Color
-              Flow》《桃花雪》
+              《华哉有夏·贰》《百变绫绫》《Color
+              Flow》《桃花雪》《现实逃避Project》
             </p>
             <p>
-              《现实逃避Project》《甘泽谣》《Dear:2
+              《甘泽谣》《Dear:2
               异类与群羊》《αrtist5系列》《Special Wishes 2021》等
             </p>
             <hr />
@@ -1030,14 +1044,20 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <sunset />
               </el-icon>
             </template>
-            <h3 style="color: #ee0000">唢呐一响，好戏开场！</h3>
-            <p>2022 的春节，我们已经有了自己举办的「虚拟歌手贺岁纪」</p>
+            <el-card>
+              <h2 style="color: #ee0000">「龙腾虎跃，再振旗鼓」</h2>
+              <el-divider content-position="right">
+                <h2 style="color: #ee0000">唢呐一响，好戏开场！</h2></el-divider
+              >
+              <p>在 2022 的春节，我们有了自己举办的「虚拟歌手贺岁纪」</p>
             <p>
               在这次贺岁纪中，涌现出了许多优秀的歌曲，绫参与演唱的原创歌曲有：《扬旗鸣鼓》《布虎记》
             </p>
+              <!-- todo 补充说明是游乐园的 -->
+            </el-card>
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
@@ -1047,7 +1067,7 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <present />
               </el-icon> </template
             ><el-card>
               <h3>乐正绫七周年，『结伴冲向未知的彼岸』——《未知旅行FM》</h3>
