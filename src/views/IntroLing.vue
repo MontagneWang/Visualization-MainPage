@@ -409,7 +409,7 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Place />
+                <avatar />
               </el-icon>
             </template>
             <el-card>
@@ -647,32 +647,32 @@ onBeforeUnmount(() => {
                 <List />
               </el-icon>
             </template>
-            <div style="transform:translateX(0.5em)"> 
-            <p>
-              2016
-              是一个神奇的年份，这一年，乐正绫登上了拜年祭的舞台，留下了一曲传唱千古的《九九八十一》
-            </p>
-            <p>
-              8 月 25 日，COP
-              投稿了《世末歌者》，这首歌成为了再生数第二高的绫曲，被众多歌手翻唱
-            </p>
-            <p>
-              同年「妄想症系列」「节气物语系列」「白石溪」等作品投稿，越来越多创作者们开始借绫之口抒情达意
-            </p>
-            <p>
-              16
-              年还有一个企划，那便是「时之歌Project」，不知道如今的你，还在听这些曲子吗
-            </p>
-            <p>
-              2016-12-03&nbsp;《为战而生》【乐正绫原创】<br />
-              2016-08-06&nbsp;《破晓将至》【乐正绫原创】<br />
-              2016-04-09&nbsp;《黑暗审判》【乐正绫原创】<br />
-              2016-03-19&nbsp;《光流终焉》【乐正绫原创】<br />
-              2016-02-27&nbsp;《虚拟神明》【乐正绫&言和原创】<br />
-              2016-01-30&nbsp;《悬空》&emsp;&emsp;【乐正绫&洛天依原创】<br />
-              2016-01-10&nbsp;《归一》&emsp;&emsp;【乐正绫&洛天依&心华原创】<br />
-            </p>
-          </div>
+            <div style="transform: translateX(0.5em)">
+              <p>
+                2016
+                是一个神奇的年份，这一年，乐正绫登上了拜年祭的舞台，留下了一曲传唱千古的《九九八十一》
+              </p>
+              <p>
+                8 月 25 日，COP
+                投稿了《世末歌者》，这首歌成为了再生数第二高的绫曲，被众多歌手翻唱
+              </p>
+              <p>
+                同年「妄想症系列」「节气物语系列」「白石溪」等作品投稿，越来越多创作者们开始借绫之口抒情达意
+              </p>
+              <p>
+                16
+                年还有一个企划，那便是「时之歌Project」，不知道如今的你，还在听这些曲子吗
+              </p>
+              <p>
+                2016-12-03&nbsp;《为战而生》【乐正绫原创】<br />
+                2016-08-06&nbsp;《破晓将至》【乐正绫原创】<br />
+                2016-04-09&nbsp;《黑暗审判》【乐正绫原创】<br />
+                2016-03-19&nbsp;《光流终焉》【乐正绫原创】<br />
+                2016-02-27&nbsp;《虚拟神明》【乐正绫&言和原创】<br />
+                2016-01-30&nbsp;《悬空》&emsp;&emsp;【乐正绫&洛天依原创】<br />
+                2016-01-10&nbsp;《归一》&emsp;&emsp;【乐正绫&洛天依&心华原创】<br />
+              </p>
+            </div>
             <el-divider content-position="right">
               <h2 style="color: rgb(64, 88, 164)">
                 『心跳沉沉试图召唤着哀伤&ensp;而你用双手拨开我所有匆忙』
@@ -936,7 +936,10 @@ onBeforeUnmount(() => {
                 <Promotion />
               </el-icon>
             </template>
-            <h3>&emsp;ChiliChill 投稿了《山遥路远》，本曲是第二次使用尚未发售的 V5 音源</h3>
+            <h3>
+              &emsp;ChiliChill 投稿了《山遥路远》，本曲是第二次使用尚未发售的 V5
+              音源
+            </h3>
             <p>
               「然后非常感谢人老师和动老师。前些日子听了《花》，眼前一亮，真的一亮，
             </p>
@@ -944,16 +947,23 @@ onBeforeUnmount(() => {
               &emsp;非常快就决定想让阿绫来唱这首，于是我们联系到了人老师，这才有了接下来的故事。」——
               Yu H.
             </p>
-            <hr>
+            <hr />
             <el-divider content-position="left">
               <h3 style="color: rgb(64, 88, 164)">
-                笔者正是在听到这曲《山遥路远》后真正坚定了追寻儿时梦想的决心，在第二年完成 318 川藏线的骑行。
+                笔者正是在听到这曲《山遥路远》后真正坚定了追寻儿时梦想的决心，在第二年完成
+                318 川藏线的骑行。
               </h3></el-divider
             >
-            <p>&emsp;每个人都有自己的山遥路远。即使现在交通便利，但有的路，依然很远。</p>
+            <p>
+              &emsp;每个人都有自己的山遥路远。即使现在交通便利，但有的路，依然很远。
+            </p>
             <p>&emsp;不必留念，不必驻足不前，故乡是我，我亦是故乡。</p>
-            <p>&emsp;我会为未来的自己献上全部的祝福，只是盼望着你走远，走得足够遥远。</p>
-            <p>&emsp;我们还年轻，路还很长。山遥路远，愿我们在飘散着花瓣的清风中相遇。</p>
+            <p>
+              &emsp;我会为未来的自己献上全部的祝福，只是盼望着你走远，走得足够遥远。
+            </p>
+            <p>
+              &emsp;我们还年轻，路还很长。山遥路远，愿我们在飘散着花瓣的清风中相遇。
+            </p>
 
             <el-divider content-position="right">
               <h2 style="color: rgb(64, 88, 164)">
@@ -961,9 +971,12 @@ onBeforeUnmount(() => {
               </h2></el-divider
             >
           </el-timeline-item>
-          <el-timeline-item icon="Calendar" 
-          timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
-          placement="top" type="success">
+          <el-timeline-item
+            icon="Calendar"
+            timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+            placement="top"
+            type="success"
+          >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
                 <calendar />
@@ -990,8 +1003,9 @@ onBeforeUnmount(() => {
                 </span>
               </h2>
               <el-divider content-position="right">
-                <h2 style="color: #ee0000">『我看见一匹丑马有了双翼
-                飞进了七彩的云里』</h2></el-divider
+                <h2 style="color: #ee0000">
+                  『我看见一匹丑马有了双翼 飞进了七彩的云里』
+                </h2></el-divider
               >
               <p>Vsinger 官方还投稿了一份互动视频</p>
               <!-- todo 补充说明是游乐园的 -->
@@ -1006,19 +1020,22 @@ onBeforeUnmount(() => {
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
                 <avatar />
-              </el-icon> </template
-            >
+              </el-icon>
+            </template>
             <p>
               &emsp;Vsinger 官方微博发文，正式宣布乐正绫 V5
-              声库进入测试阶段，同时公开了 V5 初版形象。
+              声库进入测试阶段，同时公开了 V5 初版形象
             </p>
             <p>
-              &emsp;但该初版形象引起了非常大的争议，禾念表示会考虑大家的意见进行修改。
+              &emsp;但该初版形象引起了非常大的争议，禾念表示会考虑大家的意见进行修改
             </p>
           </el-timeline-item>
-          <el-timeline-item icon="Calendar"
-          timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
- placement="top" type="success">
+          <el-timeline-item
+            icon="Calendar"
+            timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+            placement="top"
+            type="success"
+          >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
                 <calendar />
@@ -1030,8 +1047,8 @@ onBeforeUnmount(() => {
               Flow》《桃花雪》《现实逃避Project》
             </p>
             <p>
-              《甘泽谣》《Dear:2
-              异类与群羊》《αrtist5系列》《Special Wishes 2021》等
+              《甘泽谣》《Dear:2 异类与群羊》《αrtist5系列》《Special Wishes
+              2021》等
             </p>
             <hr />
           </el-timeline-item>
@@ -1047,18 +1064,14 @@ onBeforeUnmount(() => {
                 <sunset />
               </el-icon>
             </template>
-            <el-card>
               <h2 style="color: #ee0000">「龙腾虎跃，再振旗鼓」</h2>
-              <el-divider content-position="right">
+              
+              <p>&emsp;在 2022 的春节，我们有了自己举办的「虚拟歌手贺岁纪」</p>
+              <p>&emsp;在这次贺岁纪中，涌现出了许多优秀的歌曲，绫参与演唱的原创歌曲有：《扬旗鸣鼓》《布虎记》
+              </p><el-divider content-position="right">
                 <h2 style="color: #ee0000">唢呐一响，好戏开场！</h2></el-divider
-              >
-              <p>在 2022 的春节，我们有了自己举办的「虚拟歌手贺岁纪」</p>
-            <p>
-              在这次贺岁纪中，涌现出了许多优秀的歌曲，绫参与演唱的原创歌曲有：《扬旗鸣鼓》《布虎记》
-            </p>
-              <!-- todo 补充说明是游乐园的 -->
-            </el-card>
-          </el-timeline-item>
+              >          
+            </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
             icon="Mic"
@@ -1069,11 +1082,22 @@ onBeforeUnmount(() => {
               <el-icon color="#ee0000" class="avatar">
                 <present />
               </el-icon> </template
-            ><el-card>
-              <h3>乐正绫七周年，『结伴冲向未知的彼岸』——《未知旅行FM》</h3>
+            >
+            <el-card>
+              <h2>
+                乐正绫七周年，官方发布生贺曲<span style="color: #ee0000"
+                  >《未知旅行FM》
+                </span>
+              </h2>
+              <el-divider content-position="right">
+                <h2 style="color: #ee0000">
+                  『结伴冲向未知的彼岸』
+                </h2></el-divider
+              >
               <p>
                 同时，民间创作者们也举办了七周年生日接龙活动，创作了许多作品
               </p>
+              <!-- todo 可以把博客对这首歌的点评内容移过来 -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1084,18 +1108,12 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <avatar />
               </el-icon> </template
-            >&emsp;
-            <p>2022年5月11日，官方敲定并公开了乐正绫 V5 最终形象</p>
-            <p>
-              但该形象依旧没能得到大家的认可，由于禾念已将改版形象提交给雅马哈，因此无法再进行修改
+            >
+            <p>&emsp;2022年5月11日，官方敲定并公开了乐正绫 V5 最终形象</p>
+            <p>&emsp;但该形象依旧没能得到大家的认可，由于禾念已将改版形象提交给雅马哈，因此无法再进行修改
             </p>
-            <!-- <p>
-              <del
-                >（笔者对审美方面一窍不通故不做评价，但戴着手套是不方便弹吉他的吧）</del
-              >
-            </p> -->
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
@@ -1105,7 +1123,7 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <mic />
               </el-icon> </template
             ><el-card>
               <h2>乐正绫 Vocaloid5 声库正式发售</h2>
@@ -1116,16 +1134,18 @@ onBeforeUnmount(() => {
               <p>并且盒子上并未使用争议较大的 V5 立绘</p>
             </el-card>
           </el-timeline-item>
-          <el-timeline-item icon="Calendar" placement="top" type="success">
+          <el-timeline-item
+            icon="Calendar"
+            timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+            placement="top"
+            type="success"
+          >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <calendar />
               </el-icon>
             </template>
-            <hr />
-            <p>
-              2022
-              年，乐正绫参与演唱的专辑有：《拾》《南北》《喧闹世界》《Special
+            <p>《拾》《南北》《喧闹世界》《Special
               Wishes 2022》《和光同尘》等
             </p>
             <hr />
@@ -1149,12 +1169,12 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <mic />
               </el-icon> </template
             ><el-card>
               <h2>Vsinger 官方正式宣布「乐正绫」AI 声库开启内测</h2>
               <p>AI 声库依托于 ACE Studio 平台</p>
-              <!-- <del
+              <!-- todo 统一结尾句号 <del
                 >但出了点意外，官方又一直没有消息，调教老师们等了十八天才收到内测码</del
               > -->
             </el-card>
@@ -1169,8 +1189,8 @@ onBeforeUnmount(() => {
                 <Promotion />
               </el-icon>
             </template>
-            <h3>乐正绫第一首 AI 曲投稿</h3>
-            <p>【乐正绫AI】云端 —— 愿我们都能在云端歌唱</p>
+            <h3>&emsp;乐正绫第一首 AI 曲投稿</h3>
+            <p>&emsp;【乐正绫AI】云端 —— 愿我们都能在云端歌唱</p>
           </el-timeline-item>
           <el-timeline-item
             icon="User"
@@ -1180,10 +1200,10 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <avatar />
               </el-icon>
             </template>
-            <h3>Vsinger 官方发布，开启形象创作征集活动</h3>
+            <h3>&emsp;Vsinger 官方发布，开启「乐正绫」AI 声库形象创作征集活动</h3>
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
@@ -1196,14 +1216,21 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <el-card>
-              <h2>乐正绫八周年生日快乐🎂</h2>
-              <p>『要我的骄傲随生命 — 喧嚣』——《Break Out》</p>
+              <h2>
+                乐正绫八周年，官方发布生贺曲<span style="color: #ee0000"
+                  >《Break Out》
+                </span>
+              </h2>
+              <el-divider content-position="right">
+                <h2 style="color: #ee0000">『要我的骄傲随生命 — 喧嚣』</h2></el-divider
+              >
               <p>特别值得一提的是，今年的主题很有意思，也很能让人共鸣</p>
               <p>
                 如果说去年官方给出的“旅行”主题偏向于题材创作，那么今年“成为自己”的主题则更具有人文关怀
               </p>
               <p>
-                时隔三年，官方也推出了绫的第二套主题装扮，同时将选取三首民间原创曲与生贺曲一起作为生贺纪念
+                时隔三年，官方也推出了绫的第二套主题装扮
+              </p><p>同时将选取三首民间原创曲与生贺曲一起作为生贺纪念
                 EP 发行
               </p>
             </el-card>
@@ -1215,15 +1242,15 @@ onBeforeUnmount(() => {
             type="success"
             ><template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <avatar />
               </el-icon>
             </template>
             <el-card>
-              <h2>乐正绫 AI 形象敲定🎉</h2>
+              <h2>乐正绫 AI 形象公布</h2>
               <!-- todo ai 更新-->
               <p>
                 在数十个优秀作品中，[Miz 团一]
-                老师的设计脱颖而出，成功当选乐正绫 AI 形象
+                老师的设计拔得头筹，成功当选乐正绫 AI 形象
               </p>
               <del>终稿还在调整中，右侧立绘暂缺</del>
             </el-card>
@@ -1239,6 +1266,49 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <h3>乐正绫八周年生贺纪念 EP 发行</h3>
+            <p>todo 需要添加专辑信息</p>
+            <hr />
+          </el-timeline-item>
+          <el-timeline-item
+            icon="User"
+            placement="top"
+            timestamp="&ensp;2023.04.30"
+            type="primary"
+            ><template #dot>
+              <el-icon color="#ee0000" class="avatar">
+                <user />
+              </el-icon>
+            </template>
+            <h3>AI 声库公测</h3>
+            <p>todo 需要添加专辑信息</p>
+            <hr />
+          </el-timeline-item>
+          <el-timeline-item
+            icon="User"
+            placement="top"
+            timestamp="&ensp;2023.04.30"
+            type="primary"
+            ><template #dot>
+              <el-icon color="#ee0000" class="avatar">
+                <Promotion />
+              </el-icon>
+            </template>
+            <h3>南北夏日歌会</h3>
+            <p>todo 需要添加专辑信息</p>
+            <hr />
+          </el-timeline-item>
+          <el-timeline-item
+            icon="User"
+            placement="top"
+            timestamp="&ensp;2023.04.30"
+            type="primary"
+            ><template #dot>
+              <el-icon color="#ee0000" class="avatar">
+                <Promotion />
+              </el-icon>
+            </template>
+            <h3>乐正绫八周年生贺纪念 EP 发行</h3>
+            <p>todo 需要添加专辑信息</p>
             <hr />
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
@@ -1248,13 +1318,15 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <hr />
-            <p>2023 年，乐正绫参与演唱的专辑有：《炽星轨迹》等</p>
-            <hr />
+            <p>2023 年，乐正绫参与演唱的专辑有：《炽星轨迹》南北 海客谈 依路相随 故事 《双星波形》等</p>
+            <hr />    
           </el-timeline-item>
         </el-timeline>
       </div>
     </div>
   </div>
+  <!--todo 更新所有 参与的专辑 数据库查找，然后自己补充 2023 的 -->
+  <!-- todo 页面中的专辑介绍需要补充为 表格形式，列出曲目与staff -->
   <!--todo 最后一页fadeInUp出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid-->
   <div class="page final">
     <div
@@ -1697,7 +1769,7 @@ $AiSize: 72vh;
 }
 
 #v5 {
-  @include content(310vh);
+  @include content(400vh);
   background-image: url(https://article.biliimg.com/bfs/article/3b373ba97060d3b0f43da260e6d44cdf85633533.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg@1e_1c.webp);
   .bg {
@@ -1708,7 +1780,7 @@ $AiSize: 72vh;
 }
 
 #ai {
-  @include content(200vh);
+  @include content(400vh);
   background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png@1e_1c.webp),
     url(https://i0.hdslb.com/bfs/article/e636c24f9c4ced88a99b4ea1d9c17cef1402305269.png@1e_1c.webp);
   .bg {
