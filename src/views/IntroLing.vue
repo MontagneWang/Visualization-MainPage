@@ -92,8 +92,7 @@ let wow = new WOW({
 });
 wow.init();
 
-// idea 可能需要考虑通过动态获取屏幕高度来设置每页高度（比如获取文本总高度后，与用户当前界面大小进行计算转换，判断需要多少个 vh），当前在不同屏幕下效果不好
-// idea 撑大缩小盒子时也添加动效
+// idea 撑大缩小盒子时也添加动效，先设置好盒子高度 XXem，并在hover盒子时为盒子添加对应高度的类名，然后添加过渡
 // 当前页数计算，传入对应数据
 window.addEventListener("scroll", function () {
   finalPageShowFlag.value =
@@ -118,7 +117,6 @@ window.addEventListener("scroll", function () {
 });
 
 // 判断鼠标位置，显隐气泡框
-// fixme 这个通过位置判断似乎并不太好，在不同分辨率的屏幕下容易错位,考虑修改为 vw 实现
 let screenWidth = window.innerWidth;
 let screenHeight = window.innerHeight;
 let startX = screenWidth * 0.75;
@@ -301,8 +299,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <!--idea 通过 <Transition> 来增加过渡 -->
-  <!-- todo 右侧添加小三角 参考最后一页的做法 -->
+  <!-- todo 气泡框右侧添加小三角 参考最后一页的做法 -->
+  <!-- todo 并在显示时添加渐入动画效果 -->
   <div
     v-show="nowPage !== 0 && nowPage !== 5"
     ref="bubbleBox"
@@ -813,7 +811,7 @@ onBeforeUnmount(() => {
             <p>《卡纳塔幻想曲》《平行四界Quadimension 6》《No.13852》等</p>
             <hr />
           </el-timeline-item>
-          <!--todo 繁华唱遍-->
+          <!--todo 查找拜年祭内容，添加繁华唱遍-->
           <el-timeline-item
             color="rgb(238,0,0)"
             icon="Mic"
@@ -1064,14 +1062,16 @@ onBeforeUnmount(() => {
                 <sunset />
               </el-icon>
             </template>
-              <h2 style="color: #ee0000">「龙腾虎跃，再振旗鼓」</h2>
-              
-              <p>&emsp;在 2022 的春节，我们有了自己举办的「虚拟歌手贺岁纪」</p>
-              <p>&emsp;在这次贺岁纪中，涌现出了许多优秀的歌曲，绫参与演唱的原创歌曲有：《扬旗鸣鼓》《布虎记》
-              </p><el-divider content-position="right">
-                <h2 style="color: #ee0000">唢呐一响，好戏开场！</h2></el-divider
-              >          
-            </el-timeline-item>
+            <h2 style="color: #ee0000">「龙腾虎跃，再振旗鼓」</h2>
+
+            <p>&emsp;在 2022 的春节，我们有了自己举办的「虚拟歌手贺岁纪」</p>
+            <p>
+              &emsp;在这次贺岁纪中，涌现出了许多优秀的歌曲，绫参与演唱的原创歌曲有：《扬旗鸣鼓》《布虎记》
+            </p>
+            <el-divider content-position="right">
+              <h2 style="color: #ee0000">唢呐一响，好戏开场！</h2></el-divider
+            >
+          </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
             icon="Mic"
@@ -1081,8 +1081,8 @@ onBeforeUnmount(() => {
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
                 <present />
-              </el-icon> </template
-            >
+              </el-icon>
+            </template>
             <el-card>
               <h2>
                 乐正绫七周年，官方发布生贺曲<span style="color: #ee0000"
@@ -1109,10 +1109,11 @@ onBeforeUnmount(() => {
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
                 <avatar />
-              </el-icon> </template
-            >
+              </el-icon>
+            </template>
             <p>&emsp;2022年5月11日，官方敲定并公开了乐正绫 V5 最终形象</p>
-            <p>&emsp;但该形象依旧没能得到大家的认可，由于禾念已将改版形象提交给雅马哈，因此无法再进行修改
+            <p>
+              &emsp;但该形象依旧没能得到大家的认可，由于禾念已将改版形象提交给雅马哈，因此无法再进行修改
             </p>
           </el-timeline-item>
           <el-timeline-item
@@ -1145,8 +1146,8 @@ onBeforeUnmount(() => {
                 <calendar />
               </el-icon>
             </template>
-            <p>《拾》《南北》《喧闹世界》《Special
-              Wishes 2022》《和光同尘》等
+            <p>
+              《拾》《南北》《喧闹世界》《Special Wishes 2022》《和光同尘》等
             </p>
             <hr />
           </el-timeline-item>
@@ -1174,9 +1175,6 @@ onBeforeUnmount(() => {
             ><el-card>
               <h2>Vsinger 官方正式宣布「乐正绫」AI 声库开启内测</h2>
               <p>AI 声库依托于 ACE Studio 平台</p>
-              <!-- todo 统一结尾句号 <del
-                >但出了点意外，官方又一直没有消息，调教老师们等了十八天才收到内测码</del
-              > -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1203,7 +1201,9 @@ onBeforeUnmount(() => {
                 <avatar />
               </el-icon>
             </template>
-            <h3>&emsp;Vsinger 官方发布，开启「乐正绫」AI 声库形象创作征集活动</h3>
+            <h3>
+              &emsp;Vsinger 官方发布，开启「乐正绫」AI 声库形象创作征集活动
+            </h3>
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
@@ -1222,17 +1222,16 @@ onBeforeUnmount(() => {
                 </span>
               </h2>
               <el-divider content-position="right">
-                <h2 style="color: #ee0000">『要我的骄傲随生命 — 喧嚣』</h2></el-divider
+                <h2 style="color: #ee0000">
+                  『要我的骄傲随生命 — 喧嚣』
+                </h2></el-divider
               >
               <p>特别值得一提的是，今年的主题很有意思，也很能让人共鸣</p>
               <p>
                 如果说去年官方给出的“旅行”主题偏向于题材创作，那么今年“成为自己”的主题则更具有人文关怀
               </p>
-              <p>
-                时隔三年，官方也推出了绫的第二套主题装扮
-              </p><p>同时将选取三首民间原创曲与生贺曲一起作为生贺纪念
-                EP 发行
-              </p>
+              <p>时隔三年，官方也推出了绫的第二套主题装扮</p>
+              <p>同时将选取三首民间原创曲与生贺曲一起作为生贺纪念 EP 发行</p>
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1247,7 +1246,6 @@ onBeforeUnmount(() => {
             </template>
             <el-card>
               <h2>乐正绫 AI 形象公布</h2>
-              <!-- todo ai 更新-->
               <p>
                 在数十个优秀作品中，[Miz 团一]
                 老师的设计拔得头筹，成功当选乐正绫 AI 形象
@@ -1318,16 +1316,21 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <hr />
-            <p>2023 年，乐正绫参与演唱的专辑有：《炽星轨迹》南北 海客谈 依路相随 故事 《双星波形》等</p>
-            <hr />    
+            <p>
+              2023 年，乐正绫参与演唱的专辑有：《炽星轨迹》南北 海客谈 依路相随
+              故事 《双星波形》等
+            </p>
+            <hr />
           </el-timeline-item>
         </el-timeline>
       </div>
     </div>
   </div>
-  <!--todo 更新所有 参与的专辑 数据库查找，然后自己补充 2023 的 -->
-  <!-- todo 页面中的专辑介绍需要补充为 表格形式，列出曲目与staff -->
-  <!--todo 最后一页fadeInUp出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid-->
+  <!-- // todo 需要改进的地方
+  更新所有 参与的专辑 数据库查找，然后自己补充 2023 的。页面中的专辑介绍需要补充为 表格形式，列出曲目与staff
+  统一每句结尾句号（可以都加上）
+  AI 立绘放出后后需要更新两处，一个是 ai 页面的打立绘，一个是结尾时候的 ai 小立绘 
+  最后一页 fadeInUp 出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid -->
   <div class="page final">
     <div
       ref="history"
@@ -1381,7 +1384,6 @@ onBeforeUnmount(() => {
           />
         </div>
         <div class="finalTachie finalAi">
-          <!--todo 需要更新 AI　设定-->
           <!--<img alt="" src="https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp">-->
         </div>
       </div>
@@ -1784,7 +1786,6 @@ $AiSize: 72vh;
   background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png@1e_1c.webp),
     url(https://i0.hdslb.com/bfs/article/e636c24f9c4ced88a99b4ea1d9c17cef1402305269.png@1e_1c.webp);
   .bg {
-    // todo 需要更新 AI 设定
     // background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp)
     // $AiPosition  bottom  no-repeat fixed;
     background-size: auto $AiSize !important;

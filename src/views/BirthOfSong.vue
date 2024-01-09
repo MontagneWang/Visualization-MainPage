@@ -20,8 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<!--todo 完成整页滚动内容-->
-	<!--todo 这里可以加一个 固钉 affix （可以使用 naive UI）-->
+	<!--todo 完成整页滚动内容 可以考虑加一个 固钉 affix （可以使用 naive UI）-->
 	<!-- <div>
 		<full-page ref="fullpage" :options="options">
 			<div class="section">
