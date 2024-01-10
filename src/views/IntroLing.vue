@@ -299,14 +299,14 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <!-- todo 气泡框右侧添加小三角 参考最后一页的做法 -->
-  <!-- todo 并在显示时添加渐入动画效果 -->
   <div
     v-show="nowPage !== 0 && nowPage !== 5"
     ref="bubbleBox"
     :class="{ show: bubbleBoxShowFlag }"
     class="bubbleBox"
   >
+    <!-- todo 气泡框右侧添加小三角 参考最后一页的做法 -->
+    <!-- todo 并在显示时添加渐入动画效果 -->
     <ul>
       <li v-for="(value, key) in items[nowPage - 1]" :key="key">
         {{ key }} {{ !key ? "" : "-" }} {{ value }}

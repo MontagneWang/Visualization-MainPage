@@ -15,8 +15,8 @@ import {onMounted, reactive, ref, toRaw, watchEffect} from "vue";
 </script>
 
 <template>
-	<!--todo 完成整页滚动内容,可以加一个 固钉 affix （可以使用 naive UI）-->
 	<center style="line-height: 100vh;font-size: 3rem;">这里是 About 页面, 还在开发中</center>
+	<!--todo 完成整页滚动内容,可以加一个 固钉 affix （可以使用 naive UI）-->
 </template>
 
 <style scoped>

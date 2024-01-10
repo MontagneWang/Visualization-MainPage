@@ -20,6 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
+	<center style="line-height: 100vh;font-size: 3rem;">这里是 词曲站 页面, 还在开发中</center>
 	<!--todo 完成整页滚动内容 可以考虑加一个 固钉 affix （可以使用 naive UI）-->
 	<!-- <div>
 		<full-page ref="fullpage" :options="options">
@@ -35,7 +36,6 @@ onMounted(() => {
 			</div>
 		</full-page>
 	</div> -->
-	<center style="line-height: 100vh;font-size: 3rem;">这里是 词曲站 页面, 还在开发中</center>
 </template>
 
 <style lang="scss" scoped>

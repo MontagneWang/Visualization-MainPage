@@ -303,18 +303,6 @@ const routerContent = [
       //   transform: translateX(6.5vw);
       // }
     }
-    // $cont1: "1";
-    // $cont2: "2";
-    // $cont3: "3";
-    // $cont4: "4";
-    // $cont5: "5";
-    // $cont6: "6";
-    // $contents: $cont1, $cont2, $cont3, $cont4, $cont5, $cont6;
-    // @for $i from 1 through length($contents) {
-    //   &:nth-child(#{$i})::before {
-    //     content: nth($contents, $i); // content: $cont(i);
-    //   }
-    // }
   }
 }
 
