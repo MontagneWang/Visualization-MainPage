@@ -1311,14 +1311,15 @@ onBeforeUnmount(() => {
           </el-timeline-item>
           <el-timeline-item icon="Calendar" placement="top" type="success">
             <template #dot>
-              <el-icon color="#ee0000" class="avatar">
+              <el-icon color="#ee0000" 
+              timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
+              class="avatar">
                 <Promotion />
               </el-icon>
             </template>
             <hr />
             <p>
-              2023 年，乐正绫参与演唱的专辑有：《炽星轨迹》南北 海客谈 依路相随
-              故事 《双星波形》等
+              《炽星轨迹》《南北》《海客谈》《依路相随》《故事》《双星波形》等
             </p>
             <hr />
           </el-timeline-item>
