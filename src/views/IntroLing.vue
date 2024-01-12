@@ -407,7 +407,7 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <avatar />
+                <UserFilled />
               </el-icon>
             </template>
             <el-card>
@@ -1017,7 +1017,7 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <avatar />
+                <UserFilled />
               </el-icon>
             </template>
             <p>
@@ -1108,7 +1108,7 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <avatar />
+                <UserFilled />
               </el-icon>
             </template>
             <p>&emsp;2022年5月11日，官方敲定并公开了乐正绫 V5 最终形象</p>
@@ -1187,8 +1187,8 @@ onBeforeUnmount(() => {
                 <Promotion />
               </el-icon>
             </template>
-            <h3>&emsp;乐正绫第一首 AI 曲投稿</h3>
-            <p>&emsp;【乐正绫AI】云端 —— 愿我们都能在云端歌唱</p>
+            <h3>&ensp;乐正绫第一首 AI 曲投稿</h3>
+            <p>&ensp;【乐正绫AI】云端 —— 愿我们都能在云端歌唱</p>
           </el-timeline-item>
           <el-timeline-item
             icon="User"
@@ -1198,7 +1198,7 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <avatar />
+                <UserFilled />
               </el-icon>
             </template>
             <h3>
@@ -1212,7 +1212,7 @@ onBeforeUnmount(() => {
             timestamp="&ensp;2023.04.12"
             ><template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <Present />
               </el-icon>
             </template>
             <el-card>
@@ -1241,14 +1241,13 @@ onBeforeUnmount(() => {
             type="success"
             ><template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <avatar />
+                <UserFilled />
               </el-icon>
             </template>
             <el-card>
               <h2>乐正绫 AI 形象公布</h2>
               <p>
-                在数十个优秀作品中，[Miz 团一]
-                老师的设计拔得头筹，成功当选乐正绫 AI 形象
+                在数十个优秀作品中，[Miz 团一]老师的设计拔得头筹，成功当选乐正绫 AI 形象
               </p>
               <del>终稿还在调整中，右侧立绘暂缺</del>
             </el-card>
@@ -1260,64 +1259,49 @@ onBeforeUnmount(() => {
             type="primary"
             ><template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <Management />
               </el-icon>
             </template>
-            <h3>乐正绫八周年生贺纪念 EP 发行</h3>
-            <p>todo 需要添加专辑信息</p>
-            <hr />
+            <h3>&ensp;乐正绫八周年生贺纪念 EP 发行</h3>
+            <p>&ensp; todo 需要添加专辑信息</p>
           </el-timeline-item>
           <el-timeline-item
             icon="User"
             placement="top"
-            timestamp="&ensp;2023.04.30"
+            timestamp="&ensp;2023.05.06"
             type="primary"
             ><template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <user />
+                <Mic />
               </el-icon>
             </template>
-            <h3>AI 声库公测</h3>
-            <p>todo 需要添加专辑信息</p>
-            <hr />
+            <h3>&ensp;AI 声库公测</h3>
+            <p>&ensp;todo 需要添加专辑信息</p>
           </el-timeline-item>
           <el-timeline-item
             icon="User"
             placement="top"
-            timestamp="&ensp;2023.04.30"
+            timestamp="&ensp;2023.07.29"
             type="primary"
             ><template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <Promotion />
+                <Headset />
               </el-icon>
             </template>
-            <h3>南北夏日歌会</h3>
-            <p>todo 需要添加专辑信息</p>
-            <hr />
+            <h3>&ensp;南北夏日歌会</h3>
+            <p>&ensp; todo 需要添加专辑信息</p>
           </el-timeline-item>
           <el-timeline-item
-            icon="User"
+            icon="Calendar"
+            timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
             placement="top"
-            timestamp="&ensp;2023.04.30"
-            type="primary"
-            ><template #dot>
-              <el-icon color="#ee0000" class="avatar">
-                <Promotion />
-              </el-icon>
-            </template>
-            <h3>乐正绫八周年生贺纪念 EP 发行</h3>
-            <p>todo 需要添加专辑信息</p>
-            <hr />
-          </el-timeline-item>
-          <el-timeline-item icon="Calendar" placement="top" type="success">
+            type="success"
+          >
             <template #dot>
-              <el-icon color="#ee0000" 
-              timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
-              class="avatar">
-                <Promotion />
+              <el-icon color="#ee0000" class="avatar">
+                <calendar />
               </el-icon>
             </template>
-            <hr />
             <p>
               《炽星轨迹》《南北》《海客谈》《依路相随》《故事》《双星波形》等
             </p>
