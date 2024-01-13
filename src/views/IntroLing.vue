@@ -1006,7 +1006,7 @@ onBeforeUnmount(() => {
                 </h2></el-divider
               >
               <p>Vsinger 官方还投稿了一份互动视频</p>
-              <!-- todo 补充说明是游乐园的 -->
+              <!-- todo 补充说明 游乐园 内容 -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1263,7 +1263,6 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <h3>&ensp;乐正绫八周年生贺纪念 EP 发行</h3>
-            <p>&ensp; todo 需要添加专辑信息</p>
           </el-timeline-item>
           <el-timeline-item
             icon="User"
@@ -1276,7 +1275,6 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <h3>&ensp;AI 声库公测</h3>
-            <p>&ensp;todo 需要添加专辑信息</p>
           </el-timeline-item>
           <el-timeline-item
             icon="User"
@@ -1289,7 +1287,6 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <h3>&ensp;南北夏日歌会</h3>
-            <p>&ensp; todo 需要添加专辑信息</p>
           </el-timeline-item>
           <el-timeline-item
             icon="Calendar"
