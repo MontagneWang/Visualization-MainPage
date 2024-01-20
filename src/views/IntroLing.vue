@@ -98,7 +98,7 @@ window.addEventListener("scroll", function () {
   finalPageShowFlag.value =
     window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100;
   // 存储每页高度，单位为 vh
-  let pageHeight = [100, 240, 420, 310, 200, 100];
+  let pageHeight = [100, 240, 420, 400, 300, 100];
   let totalHeight = 0;
   for (let i = 0; i < pageHeight.length; i++) {
     totalHeight += pageHeight[i];
@@ -1173,7 +1173,7 @@ onBeforeUnmount(() => {
                 <mic />
               </el-icon> </template
             ><el-card>
-              <h2>Vsinger 官方正式宣布「乐正绫」AI 声库开启内测</h2>
+              <h2>Vsinger 官方宣布「乐正绫」AI 声库开启内测</h2>
               <p>AI 声库依托于 ACE Studio 平台</p>
             </el-card>
           </el-timeline-item>
@@ -1201,13 +1201,11 @@ onBeforeUnmount(() => {
                 <UserFilled />
               </el-icon>
             </template>
-            <h3>
-              &emsp;Vsinger 官方发布，开启「乐正绫」AI 声库形象创作征集活动
-            </h3>
+            <h3>&emsp;Vsinger 官方开启「乐正绫」AI 声库形象创作征集活动</h3>
             <p>
-              &emsp;在投稿的作品中，第一轮得票数最多的十个作品将进入第二轮终选
+              &emsp;在众多投稿的作品中，第一轮得票数最多的十个作品将进入第二轮终选
             </p>
-            <p>&emsp;第二轮终选票数最高的作品将成为乐正绫 AI 声库的形象</p>
+            <p>&emsp;而第二轮终选票数最高的作品将成为乐正绫 AI 声库的形象</p>
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
@@ -1251,10 +1249,9 @@ onBeforeUnmount(() => {
             <el-card>
               <h2>乐正绫 AI 形象公布</h2>
               <p>
-                在数十个优秀作品中，[Miz 团一]老师的设计拔得头筹，成功当选乐正绫
+                在数十个优秀作品中，[Miz 团一]老师的设计拔得头筹，当选乐正绫
                 AI 形象
               </p>
-              <del>终稿还在调整中，右侧立绘暂缺</del>
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1268,12 +1265,18 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <h3>&ensp;乐正绫八周年生贺纪念 EP 发行</h3>
-            <p>《炽星轨迹》是 乐正绫 的第三张官方单人 EP
+            <p>&ensp;《炽星轨迹》是「乐正绫」的第三张官方单人 EP</p>
+            <p>
+              &ensp;本张生贺纪念 EP 由一首官方生贺曲《Break Out》
+              与三首同人原创生贺曲构成
             </p>
-            <p>本张生贺纪念 EP 由一首官方生贺曲《Break Out》 与三首同人原创生贺曲构成
+            <p>
+              &ensp;其中官方 Pick《礼物pre-Sent》为高手作品，《烁光回流》为人气作品，《雾都来客》为新星作品
             </p>
-            <p>同时官方对这三首同人原创生贺曲进行了一定程度的改编（如编曲、混音、调校等环节）</p>
-            <br/>
+            <p>
+              &ensp;同时官方对这三首同人原创生贺曲进行了一定程度的改编（如编曲、混音、调校等环节）
+            </p>
+            <!-- <br />
             <p>
               当炽热星芒划过四月的天边，你与我再次相遇，于彼此眼中刻下最动人的热烈。
             </p>
@@ -1283,9 +1286,7 @@ onBeforeUnmount(() => {
             </p>
             <p>
               这份礼物，一定会成为我心中永远珍藏的美好，一段夜空中最闪耀的轨迹。
-            </p>
-
-            
+            </p> -->
           </el-timeline-item>
           <el-timeline-item
             icon="User"
@@ -1318,7 +1319,7 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <p>
-              《炽星轨迹》《南北》《海客谈》《依路相随》《故事》《双星波形》等
+              《炽星轨迹》《南北》《海客谈》《故事》《双星波形》等
             </p>
             <hr />
           </el-timeline-item>
@@ -1782,7 +1783,7 @@ $AiSize: 72vh;
 }
 
 #ai {
-  @include content(400vh);
+  @include content(300vh);
   background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png@1e_1c.webp),
     url(https://i0.hdslb.com/bfs/article/e636c24f9c4ced88a99b4ea1d9c17cef1402305269.png@1e_1c.webp);
   .bg {
