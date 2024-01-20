@@ -1204,6 +1204,10 @@ onBeforeUnmount(() => {
             <h3>
               &emsp;Vsinger 官方发布，开启「乐正绫」AI 声库形象创作征集活动
             </h3>
+            <p>
+              &emsp;在投稿的作品中，第一轮得票数最多的十个作品将进入第二轮终选
+            </p>
+            <p>&emsp;第二轮终选票数最高的作品将成为乐正绫 AI 声库的形象</p>
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
@@ -1247,7 +1251,8 @@ onBeforeUnmount(() => {
             <el-card>
               <h2>乐正绫 AI 形象公布</h2>
               <p>
-                在数十个优秀作品中，[Miz 团一]老师的设计拔得头筹，成功当选乐正绫 AI 形象
+                在数十个优秀作品中，[Miz 团一]老师的设计拔得头筹，成功当选乐正绫
+                AI 形象
               </p>
               <del>终稿还在调整中，右侧立绘暂缺</del>
             </el-card>
@@ -1263,6 +1268,24 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <h3>&ensp;乐正绫八周年生贺纪念 EP 发行</h3>
+            <p>《炽星轨迹》是 乐正绫 的第三张官方单人 EP
+            </p>
+            <p>本张生贺纪念 EP 由一首官方生贺曲《Break Out》 与三首同人原创生贺曲构成
+            </p>
+            <p>同时官方对这三首同人原创生贺曲进行了一定程度的改编（如编曲、混音、调校等环节）</p>
+            <br/>
+            <p>
+              当炽热星芒划过四月的天边，你与我再次相遇，于彼此眼中刻下最动人的热烈。
+            </p>
+            <p>我们共同编制的旋律，是一朵朵逆着光却仍恣意绽放的向日葵；</p>
+            <p>
+              是雾都中穿透雨幕的那声电吉他；也是永远相伴，互相照亮的星与月……
+            </p>
+            <p>
+              这份礼物，一定会成为我心中永远珍藏的美好，一段夜空中最闪耀的轨迹。
+            </p>
+
+            
           </el-timeline-item>
           <el-timeline-item
             icon="User"
@@ -1274,19 +1297,14 @@ onBeforeUnmount(() => {
                 <Mic />
               </el-icon>
             </template>
-            <h3>&ensp;AI 声库公测</h3>
-          </el-timeline-item>
-          <el-timeline-item
-            icon="User"
-            placement="top"
-            timestamp="&ensp;2023.07.29"
-            type="primary"
-            ><template #dot>
-              <el-icon color="#ee0000" class="avatar">
-                <Headset />
-              </el-icon>
-            </template>
-            <h3>&ensp;南北夏日歌会</h3>
+            <el-card>
+              <h2>乐正绫 AI 声库公测</h2>
+              <p>ACE_Studio 官方进行了 AI 合成模型的更新升级（v1.7.0）</p>
+              <p>
+                乐正绫 AI
+                声库同步升级并开启公测，具备[中文、日文、英文]三语合成功能
+              </p>
+            </el-card>
           </el-timeline-item>
           <el-timeline-item
             icon="Calendar"
