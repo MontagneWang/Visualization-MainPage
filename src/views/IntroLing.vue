@@ -305,8 +305,6 @@ onBeforeUnmount(() => {
     :class="{ show: bubbleBoxShowFlag }"
     class="bubbleBox"
   >
-    <!-- todo 气泡框右侧添加小三角 参考最后一页的做法 -->
-    <!-- todo 并在显示时添加渐入动画效果 -->
     <ul>
       <li v-for="(value, key) in items[nowPage - 1]" :key="key">
         {{ key }} {{ !key ? "" : "-" }} {{ value }}
@@ -1005,8 +1003,8 @@ onBeforeUnmount(() => {
                   『我看见一匹丑马有了双翼 飞进了七彩的云里』
                 </h2></el-divider
               >
-              <p>Vsinger 官方还投稿了一份互动视频</p>
-              <!-- todo 补充说明 游乐园 内容 -->
+              <p>生日当天还投稿了一份互动视频</p>
+              <p>内容是与阿绫在游乐园共度的一天</p>
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1249,8 +1247,8 @@ onBeforeUnmount(() => {
             <el-card>
               <h2>乐正绫 AI 形象公布</h2>
               <p>
-                在数十个优秀作品中，[Miz 团一]老师的设计拔得头筹，当选乐正绫
-                AI 形象
+                在数十个优秀作品中，[Miz 团一]老师的设计拔得头筹，当选乐正绫 AI
+                形象
               </p>
             </el-card>
           </el-timeline-item>
@@ -1271,7 +1269,8 @@ onBeforeUnmount(() => {
               与三首同人原创生贺曲构成
             </p>
             <p>
-              &ensp;其中官方 Pick《礼物pre-Sent》为高手作品，《烁光回流》为人气作品，《雾都来客》为新星作品
+              &ensp;其中官方
+              Pick《礼物pre-Sent》为高手作品，《烁光回流》为人气作品，《雾都来客》为新星作品
             </p>
             <p>
               &ensp;同时官方对这三首同人原创生贺曲进行了一定程度的改编（如编曲、混音、调校等环节）
@@ -1318,9 +1317,7 @@ onBeforeUnmount(() => {
                 <calendar />
               </el-icon>
             </template>
-            <p>
-              《炽星轨迹》《南北》《海客谈》《故事》《双星波形》等
-            </p>
+            <p>《炽星轨迹》《南北》《海客谈》《故事》《双星波形》等</p>
             <hr />
           </el-timeline-item>
         </el-timeline>
@@ -1456,7 +1453,16 @@ $AiSize: 72vh;
   transition: all 0.5s;
   z-index: 100;
   user-select: none;
-
+  &::after {
+    content: "";
+    position: absolute;
+    top: 70%;
+    right: -0.5vw;
+    transform: translateY(-50%);
+    border-top: 0.5vw solid transparent;
+    border-bottom: 0.5vw solid transparent;
+    border-left: 0.5vw solid #66ccff;
+  }
   ul {
     margin: 0;
     padding: 10%;
