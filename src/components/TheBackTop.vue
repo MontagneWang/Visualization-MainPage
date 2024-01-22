@@ -35,7 +35,7 @@ function scroll() {
 #backToTop {
   position: fixed;
   bottom: 15vh;
-  right: 1vw;
+  right: 1.7vw;
   z-index: 100;
   transition: all 1s;
 
