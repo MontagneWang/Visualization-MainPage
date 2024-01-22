@@ -918,7 +918,6 @@ onBeforeUnmount(() => {
                 特别值得一提的是，《花》第一次使用了绫的 Vocaloid5
                 音源，给予无数听众以希望。
               </p>
-              <!-- todo 专辑采用萌百 -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1095,7 +1094,6 @@ onBeforeUnmount(() => {
               <p>
                 同时，民间创作者们也举办了七周年生日接龙活动，创作了许多作品
               </p>
-              <!-- todo 可以把博客对这首歌的点评内容移过来 -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1439,7 +1437,6 @@ $AiSize: 72vh;
   }
 }
 
-// todo 隐藏右侧滚动条（参考博客做法
 .bubbleBox {
   opacity: 0;
   width: 20vw;

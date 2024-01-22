@@ -152,6 +152,14 @@ document.addEventListener("keydown", e => {
 <!-- todo 不同屏幕尺寸适配、移动端适配-->
 <!-- fixme 添加页面路由切换动效失败，只有退出动画，没有进入动画 -->
 <style>
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+	display: none;
+}
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 html * {
   font-family: LXGW WenKai Lite, serif !important;
