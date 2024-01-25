@@ -751,7 +751,6 @@ onBeforeUnmount(() => {
                 2017 年 12 月 2 日，Vsinger
                 发布了乐正绫的首张官方单人专辑《绫》，该专辑内共有7首单曲。
               </p>
-              <!-- <p>todo 这里可以添加各歌曲名称作曲等,参考萌百复制过来</p> -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -809,7 +808,32 @@ onBeforeUnmount(() => {
             <p>《卡纳塔幻想曲》《平行四界Quadimension 6》《No.13852》等</p>
             <hr />
           </el-timeline-item>
-          <!--todo 查找拜年祭内容，添加繁华唱遍-->
+          <!--todo 繁华唱遍 完善-->
+          <el-timeline-item
+            color="rgb(238,0,0)"
+            icon="Mic"
+            placement="top"
+            timestamp="&ensp;2019.02.04"
+            type="primary"
+          >
+            <template #dot>
+              <el-icon color="#ee0000" class="avatar">
+                <calendar />
+              </el-icon> </template
+            ><el-card>
+              <h2>
+                拜年祭 - 繁华唱遍
+                第二次登上
+              </h2>
+              <el-divider content-position="right">
+                <h2 style="color: #ee0000">
+                  『戏里繁华 戏外江山』
+                </h2></el-divider
+              >
+              <p>
+              </p>
+            </el-card>
+          </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
             icon="Mic"
@@ -1322,12 +1346,11 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
-  <!-- // todo 需要改进的地方
-  更新所有 参与的专辑 数据库查找，然后自己补充 2023 的。
-  页面中的专辑介绍需要补充为 表格形式，列出曲目与staff
-  统一每句结尾句号（可以都加上）
-  AI 立绘放出后后需要更新两处，一个是 ai 页面的打立绘，一个是结尾时候的 ai 小立绘 
-  最后一页 fadeInUp 出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid -->
+  <!-- todo 更新所有 参与的专辑 数据库查找，然后自己补充 2023 的。
+  todo 页面中的专辑介绍需要补充为 表格形式，列出曲目与staff
+  todo 统一每句结尾句号（可以都加上）
+  todo AI 立绘放出后后需要更新两处，一个是 ai 页面的打立绘，一个是结尾时候的 ai 小立绘 
+  todo 最后一页 fadeInUp 出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid -->
   <div class="page final">
     <div
       ref="history"
