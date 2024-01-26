@@ -1346,11 +1346,11 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
-  <!-- todo 更新所有 参与的专辑 数据库查找，然后自己补充 2023 的。
-  todo 页面中的专辑介绍需要补充为 表格形式，列出曲目与staff
-  todo 统一每句结尾句号（可以都加上）
-  todo AI 立绘放出后后需要更新两处，一个是 ai 页面的打立绘，一个是结尾时候的 ai 小立绘 
-  todo 最后一页 fadeInUp 出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid -->
+  <!-- todo 1 更新所有 参与的专辑 数据库查找，然后自己补充 2023 的。
+  todo 2 页面中的专辑介绍需要补充为 表格形式，列出曲目与staff
+  todo 3 统一每句结尾句号（可以都加上）
+  todo 4 AI 立绘放出后后需要更新两处，一个是 ai 页面的打立绘，一个是结尾时候的 ai 小立绘 
+  todo 5 最后一页 fadeInUp 出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid -->
   <div class="page final">
     <div
       ref="history"
