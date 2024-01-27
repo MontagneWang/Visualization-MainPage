@@ -50,7 +50,7 @@ let chartAttribute = () => {
         <!--<h3>右上方使用液晶数字显示总播放量</h3>-->
 
         <h1 style="text-align: center; font-size: 2vw">
-          中文 Vocaloid 十年投稿数据
+          中文 Vocaloid 十二年投稿数据
         </h1>
 				<p style="text-align: center; font-size: 1.3vw;margin-top: -1vh;"> —— 愿你唱出心中的歌 </p>
         <!-- <span>不同地理区域的投稿量</span> -->

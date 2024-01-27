@@ -52,32 +52,33 @@ onMounted(() => {
     });
   }
   // 将当前路由动态展示在右上方
-  let menuLi = document.querySelectorAll(".menu li");
-  watchEffect(() => {
-    menuLi.forEach((item, index) => {
-      // 找到当前 active 路由
-      if (
-        routerMap[route.path] === (item as HTMLElement).innerText &&
-        angleArray[index] % 360 !== 45
-      ) {
-        let num, delta;
-        // 计算 active 路由距离右上方的角度差，推算出需要调用滚动函数的次数
-        delta = (angleArray[index] % 360) - 45;
-        delta < 0 ? (delta += 360) : delta;
-        // 差值小于一半 上滚
-        if (delta < 180) {
-          wheelDirection = -1;
-          num = delta / 45;
-        } else {
-          wheelDirection = 1;
-          num = (360 - delta) / 45;
-        }
-        for (let i = 0; i < num; i++) {
-          handleWheel();
-        }
-      }
-    });
-  });
+  // let menuLi = document.querySelectorAll(".menu li");
+  // watchEffect(() => {
+  //   menuLi.forEach((item, index) => {
+  //     // 找到当前 active 路由
+  //     if (
+  //       routerMap[route.path] === (item as HTMLElement).innerText &&
+  //       angleArray[index] % 360 !== 45
+  //     ) {
+  //       let num, delta;
+  //       // 计算 active 路由距离右上方的角度差，推算出需要调用滚动函数的次数
+  //       delta = (angleArray[index] % 360) - 45;
+  //       delta < 0 ? (delta += 360) : delta;
+  //       // 差值小于一半 上滚
+  //       if (delta < 180) {
+  //         wheelDirection = -1;
+  //         num = delta / 45;
+  //       } else {
+  //         wheelDirection = 1;
+  //         num = (360 - delta) / 45;
+  //       }
+  //       for (let i = 0; i < num; i++) {
+  //         handleWheel();
+  //       }
+  //     }
+  //   });
+  // });
+
   // 节流滚动事件，throttle() 函数会返回一个新的函数，该函数会在指定时间间隔内执行一次原始函数。
   // 必须将它返回的新函数保存到一个变量，然后使用该变量作为事件监听器
   let throttledHandleWheel = throttle(handleWheel, 500);
@@ -85,7 +86,7 @@ onMounted(() => {
     "wheel",
     function (e) {
       e.preventDefault();
-      e.stopPropagation(); //
+      e.stopPropagation();
       // 下滚时为 1，上滚为 -1
       e.deltaY > 0 ? (wheelDirection = 1) : (wheelDirection = -1);
       throttledHandleWheel();
@@ -128,8 +129,14 @@ const routerContent = [
       <span class="nav-text">导航</span>
       <!-- todo 实在来不及就把一些页面导入到已有页面 -->
       <ul class="menu">
-        <li>
+        <!-- <li>
           <router-link to="/about">关于本站</router-link>
+        </li> -->
+        <li>
+          <router-link to="/">歌曲数据</router-link>
+        </li>
+        <li>
+          <router-link to="/ling">乐正绫</router-link>
         </li>
         <li>
           <router-link to="/">歌曲数据</router-link>
@@ -138,6 +145,19 @@ const routerContent = [
           <router-link to="/ling">乐正绫</router-link>
         </li>
         <li>
+          <router-link to="/">歌曲数据</router-link>
+        </li>
+        <li>
+          <router-link to="/ling">乐正绫</router-link>
+        </li>
+        <li>
+          <router-link to="/">歌曲数据</router-link>
+        </li>
+        <li>
+          <router-link to="/ling">乐正绫</router-link>
+        </li>
+       
+        <!-- <li>
           <router-link to="/vocaloid">Vocaloid</router-link>
         </li>
         <li>
@@ -151,7 +171,7 @@ const routerContent = [
         </li>
         <li>
           <router-link to="/message">留言板</router-link>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>

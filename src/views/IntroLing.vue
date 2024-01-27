@@ -791,7 +791,6 @@ onBeforeUnmount(() => {
               &ensp;此次演出为 Vsinger 专场，除 2233 站娘外，整个舞台将全部交给
               Vsinger 洛天依、乐正绫、言和、乐正龙牙、墨清弦、徵羽摩柯 6 人
             </p>
-            <!-- <p>todo 这里可以添加各歌曲名称作曲等,参考萌百复制过来</p> -->
           </el-timeline-item>
           <el-timeline-item
             icon="Calendar"
@@ -1272,6 +1271,7 @@ onBeforeUnmount(() => {
                 在数十个优秀作品中，[Miz 团一]老师的设计拔得头筹，当选乐正绫 AI
                 形象
               </p>
+              <p style="text-decoration: underline;text-underline-offset: 0.3em;"><strong>⚠ 官方暂未放出 AI 形象的终稿，故右侧立绘采用投稿较早的「渺纱飘雪」老师的设定，见谅</strong></p>
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1404,7 +1404,7 @@ onBeforeUnmount(() => {
           />
         </div>
         <div class="finalTachie finalAi">
-          <!--<img alt="" src="https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp">-->
+          <img alt="" src="https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp">
         </div>
       </div>
     </div>
@@ -1814,8 +1814,8 @@ $AiSize: 72vh;
   background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png@1e_1c.webp),
     url(https://i0.hdslb.com/bfs/article/e636c24f9c4ced88a99b4ea1d9c17cef1402305269.png@1e_1c.webp);
   .bg {
-    // background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp)
-    // $AiPosition  bottom  no-repeat fixed;
+    background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp)
+    $AiPosition  bottom  no-repeat fixed;
     background-size: auto $AiSize !important;
   }
 }

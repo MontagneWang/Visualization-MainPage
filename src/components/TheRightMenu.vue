@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed, onMounted, watch } from "vue";
 import Modal from "../utils/ToastComp.vue";
+import { smoothScroll } from "../utils/scrollToPosition";
 import { ref } from "vue";
 
 const showModal = ref(false);
@@ -147,9 +148,19 @@ onMounted(() => {
     <!-- 使用这个 modal 组件，传入 prop -->
     <modal :show="showModal" @close="showModal = false">
       <template #header>
-        <h3>嵌入内容</h3>
+        <h3>关于本站</h3>
       </template>
-      <template #body> </template>
+      <template #body>
+          <p style="margin-top: -0.5em">
+            <strong>「站点主页面」</strong>收录自 B 站 12 年以来投稿的中文
+            Vocaloid 歌曲
+          </p>
+          <p>
+            <strong>「站点介绍页面」</strong>收录软件歌手「乐正绫」自立项起发生的大事件
+          </p>
+          <p style="text-align: center;text-decoration: underline;text-underline-offset: 0.3em;">数据与事件可能会有所遗漏，还请见谅</p>
+          <p style="text-align: center;">您可以前往我的「<a target="_blank" href="https://乐正绫.cn">博客</a>」获取更多信息</p>
+      </template>
     </modal>
   </Teleport>
 
@@ -159,11 +170,11 @@ onMounted(() => {
         :style="{ height: radius * 2 + 'px', width: radius * 2 + 'px' }"
         class="item"
       >
-        <a class="eachItem"></a>
-        <a class="eachItem"></a>
-        <a class="eachItem"></a>
+        <a class="eachItem" @click.prevent="smoothScroll(0)"></a>
+        <a class="eachItem" @click.prevent="$router.push('/')"></a>
+        <a class="eachItem" @click.prevent="$router.push('/ling')"></a>
         <a class="eachItem" @click.prevent="showModal = true"></a>
-        <a class="eachItem"></a>
+        <a class="eachItem" target="_blank" href="https://乐正绫.cn"></a>
         <a class="eachItem" href="mailto:ling.vc@foxmail.com"></a>
       </div>
     </div>
@@ -176,11 +187,11 @@ $bgUrl3: "../assets/Icon/3.ico";
 $bgUrl4: "../assets/Icon/4.ico";
 $bgUrl5: "../assets/Icon/5.ico";
 $bgUrl6: "../assets/Icon/6.ico";
-$cont1: "占位\A字符";
-$cont2: "占位\A字符";
-$cont3: "占位\A字符";
-$cont4: "占位\A字符";
-$cont5: "占位\A字符";
+$cont1: "回到\A顶部";
+$cont2: "数据\A页面";
+$cont3: "介绍\A页面";
+$cont4: "关于\A本站";
+$cont5: "前往\A博客";
 $cont6: "反馈\A Bug";
 // 使用设置好的根样式 带有单位 ($eachHeight:90px;)
 $eachHeight: var(--item-diameter);
