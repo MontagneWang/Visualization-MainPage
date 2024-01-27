@@ -807,7 +807,6 @@ onBeforeUnmount(() => {
             <p>《卡纳塔幻想曲》《平行四界Quadimension 6》《No.13852》等</p>
             <hr />
           </el-timeline-item>
-          <!--todo 繁华唱遍 完善-->
           <el-timeline-item
             color="rgb(238,0,0)"
             icon="Mic"
@@ -817,10 +816,11 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
+                <!-- todo 繁华唱遍 内容 + Icon -->
                 <calendar />
               </el-icon> </template
             ><el-card>
-              <h2>
+              <!-- <h2>
                 拜年祭 - 繁华唱遍
                 第二次登上
               </h2>
@@ -830,7 +830,7 @@ onBeforeUnmount(() => {
                 </h2></el-divider
               >
               <p>
-              </p>
+              </p> -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1271,7 +1271,14 @@ onBeforeUnmount(() => {
                 在数十个优秀作品中，[Miz 团一]老师的设计拔得头筹，当选乐正绫 AI
                 形象
               </p>
-              <p style="text-decoration: underline;text-underline-offset: 0.3em;"><strong>⚠ 官方暂未放出 AI 形象的终稿，故右侧立绘采用投稿较早的「渺纱飘雪」老师的设定，见谅</strong></p>
+              <p
+                style="text-decoration: underline; text-underline-offset: 0.3em"
+              >
+                <strong
+                  >⚠ 官方暂未放出 AI
+                  形象的终稿，故右侧立绘采用投稿较早的「渺纱飘雪」老师的设定，见谅</strong
+                >
+              </p>
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1350,7 +1357,9 @@ onBeforeUnmount(() => {
   todo 2 页面中的专辑介绍需要补充为 表格形式，列出曲目与staff
   todo 3 统一每句结尾句号（可以都加上）
   todo 4 AI 立绘放出后后需要更新两处，一个是 ai 页面的打立绘，一个是结尾时候的 ai 小立绘 
-  todo 5 最后一页 fadeInUp 出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid -->
+  todo 5 最后一页 fadeInUp 出小框，提示‘去看看其他歌手的’跳转到/#/vocaloid
+  todo 6 需要确认各事件 是否使用card 应该统一，比如v5形象公布就应该使用card表示着重注意 -->
+
   <div class="page final">
     <div
       ref="history"
@@ -1358,23 +1367,22 @@ onBeforeUnmount(() => {
       class="history content"
     >
       <div class="inside">
-        <!--<p>在此歌唱 从零开始万千景象延伸远方</p>-->
-        <canvas
+        <!--fixme 标记点位置可能在不同的屏幕分辨率下会错位，需要根据以下修复-->
+        <!--画线算法返回所有点位置的数组，然后每个自设标记点的位置从数组中获取，或者划线位置通过vw确认-->
+        <!-- <canvas
           id="myCanvas"
           ref="myCanvas"
           :height="screenHeight * 0.7"
           :width="screenWidth * 0.85"
         >
-        </canvas>
+        </canvas> -->
         <div class="finalTachie finalWord">
           <p>就让我将未来编成一双翅膀</p>
           <p style="color: #ee0000">随着荧光飞跃红色海洋</p>
           <p>再次歌唱</p>
           <p style="color: #ee0000">从零开始万千景象延伸远方</p>
         </div>
-        <!--fixme 标记点位置可能在不同的屏幕分辨率下会错位，需要根据以下修复-->
-        <!--画线算法返回所有点位置的数组，然后每个自设标记点的位置从数组中获取，或者划线位置通过vw确认-->
-        <div class="tips tips0">2012 - 01 - 17<br />绫彩音人设入选</div>
+        <!-- <div class="tips tips0">2012 - 01 - 17<br />绫彩音人设入选</div>
         <div class="tips tips1">2012 - 03 - 21<br />乐正绫形象公布</div>
         <div class="tips tips2">2015 - 07 - 17<br />乐正绫声库发售</div>
         <div class="tips tips3">2017 - 12 - 02<br />首张官方专辑《绫》发布</div>
@@ -1405,7 +1413,7 @@ onBeforeUnmount(() => {
         </div>
         <div class="finalTachie finalAi">
           <img alt="" src="https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp">
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -1690,15 +1698,15 @@ $AiSize: 72vh;
 
     .finalTachie {
       position: absolute;
-      width: 7vw;
+      // width: 7vw;
       user-select: none;
 
       &.finalWord {
         white-space: nowrap;
         font-size: 1.5vw;
         //transform: rotate(-45deg);
-        top: 2vh;
-        left: 0vw;
+        top: 0vh;
+        left: 2vw;
 
         p {
           width: 12em;
@@ -1815,7 +1823,7 @@ $AiSize: 72vh;
     url(https://i0.hdslb.com/bfs/article/e636c24f9c4ced88a99b4ea1d9c17cef1402305269.png@1e_1c.webp);
   .bg {
     background: url(https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp)
-    $AiPosition  bottom  no-repeat fixed;
+      $AiPosition bottom no-repeat fixed;
     background-size: auto $AiSize !important;
   }
 }
