@@ -42,8 +42,8 @@ function scroll() {
   /* 绳子 */
   .tie {
     height: 200vh;
-    background: url(../assets/backTop/拉环绳子.gif) no-repeat bottom / contain !important;
-    //background: url("https://i0.hdslb.com/bfs/album/6c38c791008ecda41c14a561d6ceac257dab0e50.gif@1e_1c.webp") no-repeat bottom !important;
+    // background: url(../assets/backTop/拉环绳子.gif) no-repeat bottom / contain !important;
+    background: url("https://i0.hdslb.com/bfs/album/6c38c791008ecda41c14a561d6ceac257dab0e50.gif@1e_1c.webp") no-repeat bottom / contain !important;
   }
 
   /* 本体 */
@@ -54,8 +54,8 @@ function scroll() {
     transform: translateY(-5vh);
     border: none;
     cursor: pointer;
-    background: url(../assets/backTop/拉环按钮.gif) no-repeat bottom / contain !important ;
-    //background: url("https://i0.hdslb.com/bfs/album/72db6a29c5de085d09a1fd50e3f9b38c58469f89.gif@1e_1c.webp") no-repeat bottom !important;
+    // background: url(../assets/backTop/拉环按钮.gif) no-repeat bottom / contain !important ;
+    background: url("https://i0.hdslb.com/bfs/album/72db6a29c5de085d09a1fd50e3f9b38c58469f89.gif@1e_1c.webp") no-repeat bottom / contain !important;
   }
 
   &:hover {

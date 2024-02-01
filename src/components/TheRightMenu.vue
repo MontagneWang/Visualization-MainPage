@@ -181,12 +181,12 @@ onMounted(() => {
   </div>
 </template>
 <style lang="scss" scoped>
-$bgUrl1: "../assets/Icon/1.ico";
-$bgUrl2: "../assets/Icon/2.ico";
-$bgUrl3: "../assets/Icon/3.ico";
-$bgUrl4: "../assets/Icon/4.ico";
-$bgUrl5: "../assets/Icon/5.ico";
-$bgUrl6: "../assets/Icon/6.ico";
+$bgUrl1: "https://i0.hdslb.com/bfs/article/88d9f38bb9f1f19d81cf7616f45043441402305269.png@1e_1c.webp";
+$bgUrl2: "https://i0.hdslb.com/bfs/article/3fceeffb1d70a147bc75a169bea44cc21402305269.png@1e_1c.webp";
+$bgUrl3: "https://i0.hdslb.com/bfs/article/b827525d40b536cb40b139e3d59d0b4b1402305269.png@1e_1c.webp";
+$bgUrl4: "https://i0.hdslb.com/bfs/article/c506859af60a57e6c32d04cce222184f1402305269.png@1e_1c.webp";
+$bgUrl5: "https://i0.hdslb.com/bfs/article/0ac8f2d311b789645ae0cab9a7e339b01402305269.png@1e_1c.webp";
+$bgUrl6: "https://i0.hdslb.com/bfs/article/7b9fab423bb2b180f793f1eee3a934df1402305269.png@1e_1c.webp";
 $cont1: "回到\A顶部";
 $cont2: "数据\A页面";
 $cont3: "介绍\A页面";
