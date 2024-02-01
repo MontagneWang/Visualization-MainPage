@@ -148,8 +148,6 @@ document.addEventListener("keydown", e => {
       />
   </router-view>
 </template>
-<!-- todo 先把项目大框架完成,再去扣样式的小细节 -->
-<!-- todo 不同屏幕尺寸适配、移动端适配-->
 <!-- fixme 添加页面路由切换动效失败，只有退出动画，没有进入动画 -->
 <style>
 /* 隐藏滚动条 */

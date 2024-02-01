@@ -92,7 +92,6 @@ let wow = new WOW({
 });
 wow.init();
 
-// idea 撑大缩小盒子时也添加动效，先设置好盒子高度 XXem，并在hover盒子时为盒子添加对应高度的类名，然后添加过渡
 // 当前页数计算，传入对应数据
 window.addEventListener("scroll", function () {
   finalPageShowFlag.value =

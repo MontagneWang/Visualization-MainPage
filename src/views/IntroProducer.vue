@@ -1,11 +1,9 @@
 <script lang="ts" setup>
 import { onMounted } from "vue";
-// todo 减少滚动的等待时间间隔
 let options = {
   scrollBar: true,
   // scrollingSpeed: 700
 };
-// fixme vue-fullpage 只能被初始化一次，在两个页面使用时由于前一个路由缓存了所以不会被销毁，导致二次初始化
 onMounted(() => {
   // 隐藏签名 + 报错
   document.querySelector(".fp-enabled");
@@ -23,7 +21,6 @@ onMounted(() => {
 
 <template>
   <full-page ref="fullpage" :options="options">
-    <!--todo 完成整页滚动内容，可以加一个 固钉 affix （可以使用 naive UI）-->
     <div class="section">
       <p>大体介绍 Vocaloid (Logo)</p>
       <p>vocaloid 是什么</p>

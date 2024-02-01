@@ -17,7 +17,6 @@ function initMap() {
 		})
 
 		locData.forEach(item => {
-			// todo 圈改小 中心加点
 			let center = new AMap.LngLat(item['LngLat'][0], item['LngLat'][1]);
 			let multiples = () => {
 				if (item['value'] > 3000) {
@@ -48,8 +47,7 @@ function initMap() {
 			let radius = item['value'] * multiples()!;
 			// 创建圆形 Circle实例
 			let circle = new AMap.Circle({
-				// todo 完善更多样式 https://lbs.amap.com/api/javascript-api-v2/documentation#circle
-				// idea 最好是有动态效果,像电波那样向外推出
+				// 样式列表 https://lbs.amap.com/api/javascript-api-v2/documentation#circle
 				center: center, //圆心
 				radius: radius, //半径
 				strokeColor: '#fd9b50',

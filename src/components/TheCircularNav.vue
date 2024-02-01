@@ -127,7 +127,6 @@ const routerContent = [
   >
     <div class="insideNav">
       <span class="nav-text">导航</span>
-      <!-- todo 实在来不及就把一些页面导入到已有页面 -->
       <ul class="menu">
         <!-- <li>
           <router-link to="/about">关于本站</router-link>
@@ -176,7 +175,6 @@ const routerContent = [
     </div>
   </div>
 </template>
-<!--todo idea 可以添加背景（刻度与指针等等）参考[炽星轨道]的背景图,背景图不动,线条转动做成gif盖在上面-->
 
 <style lang="scss" scoped>
 // .mainCircularNav .insideNav .menu/.nav-text
@@ -296,7 +294,6 @@ const routerContent = [
     &.router-link-exact-active {
       color: #ee0000; // 高亮当前路由
     }
-    // idea hover 路由时右边显示一个气泡方框来告诉读者其中的内容（左边再加个小三角） 当前问题:无法给每个a元素的伪元素都添加content,只会显示第一个content
     // &::before {
     //   content: "";
     //   position: absolute;
