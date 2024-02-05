@@ -97,7 +97,7 @@ window.addEventListener("scroll", function () {
   finalPageShowFlag.value =
     window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100;
   // 存储每页高度，单位为 vh
-  let pageHeight = [100, 240, 420, 400, 300, 100];
+  let pageHeight = [100, 240, 550, 400, 300, 100];
   let totalHeight = 0;
   for (let i = 0; i < pageHeight.length; i++) {
     totalHeight += pageHeight[i];
@@ -577,8 +577,7 @@ onBeforeUnmount(() => {
                 </h2></el-divider
               >
               <p>
-               「本曲是 Vsinger 官方发布的第二首乐正绫无参试听 Demo
-                曲<br />
+                「本曲是 Vsinger 官方发布的第二首乐正绫无参试听 Demo 曲<br />
                 &emsp;与前一首试听曲《Scarlet
                 Drop》不同，本曲采用了柔美抒情的曲风<br />
                 &emsp;歌词的字里行间都充满了温柔的思念之情<br />
@@ -815,22 +814,27 @@ onBeforeUnmount(() => {
           >
             <template #dot>
               <el-icon color="#ee0000" class="avatar">
-                <!-- todo 繁华唱遍 内容 + Icon -->
-                <calendar />
-              </el-icon> </template
-            ><el-card>
-              <!-- <h2>
-                拜年祭 - 繁华唱遍
-                第二次登上
-              </h2>
-              <el-divider content-position="right">
-                <h2 style="color: #ee0000">
-                  『戏里繁华 戏外江山』
-                </h2></el-divider
-              >
-              <p>
-              </p> -->
-            </el-card>
+                <flag />
+              </el-icon>
+            </template>
+            <h3>&ensp;参与 19 年拜年祭，演唱「繁华唱遍」</h3>
+            <el-divider content-position="right">
+              <h2 style="color: #ee0000">『我以为那个时代已过去，殊不知当你歌唱时，属于那个时代的一切都在归来 —— 题记』</h2></el-divider
+            >
+            <!-- <p>&ensp;台前一眼，把戏缘偷染，从此后生世不倦。</p>
+            <p>&ensp;以心火绵绵，护薪火相传。</p>
+            <p>
+              &ensp;这一切，世间看不尽演不完的美的好的真的易逝的永恒的一切，都在继续。
+            </p>
+            <p>&ensp;有人继，有人承，有人守，有人传。</p>
+            <p>&ensp;你我亦然。</p> -->
+            <p>
+              &ensp;台前一眼，把戏缘偷染，从此后生世不倦。
+              <br />&ensp;以心火绵绵，护薪火相传。
+              <br />&ensp;这一切，世间看不尽演不完的美的好的真的易逝的永恒的一切，都在继续。
+              <br />&ensp;有人继，有人承，有人守，有人传。
+              <br />&ensp;你我亦然。
+            </p>
           </el-timeline-item>
           <el-timeline-item
             color="rgb(238,0,0)"
@@ -854,9 +858,7 @@ onBeforeUnmount(() => {
                   『在此歌唱 从零开始万千景象延伸远方』
                 </h2></el-divider
               >
-              <p>
-                《我在》以绫的视角描写自诞生以来的心境，以及对听众们的感谢
-              </p>
+              <p>《我在》以绫的视角描写自诞生以来的心境，以及对听众们的感谢</p>
               <p>同日，官方宣布与游戏联动，发布了游戏联动曲《蝶恋花·何处谣》</p>
             </el-card>
           </el-timeline-item>
@@ -1058,7 +1060,6 @@ onBeforeUnmount(() => {
                 <calendar />
               </el-icon>
             </template>
-            <hr />
             <p>
               《华哉有夏·贰》《百变绫绫》《Color
               Flow》《桃花雪》《现实逃避Project》
@@ -1147,8 +1148,7 @@ onBeforeUnmount(() => {
             ><el-card>
               <h2>乐正绫 Vocaloid5 声库正式发售</h2>
               <p>
-                值得一提的是，声库的形式不再是以碟片的形式，而是使用 U
-                盘来启动
+                值得一提的是，声库的形式不再是以碟片的形式，而是使用 U 盘来启动
               </p>
               <p>并且盒子上并未使用争议较大的 V5 立绘</p>
             </el-card>
@@ -1424,6 +1424,20 @@ $CySize: 72vh;
 $V3Size: 70vh;
 $V5Size: 73vh;
 $AiSize: 72vh;
+
+#lingcaiyin {
+  @include content(240vh);
+}
+#v3 {
+  @include content(550vh);
+}
+#v5 {
+  @include content(400vh);
+}
+#ai {
+  @include content(300vh);
+}
+
 .avatar {
   border: 0.2vw solid #ee0000;
   background-color: #ffffff34;
@@ -1437,6 +1451,9 @@ $AiSize: 72vh;
 }
 .el-divider {
   --el-bg-color: transparent !important;
+  h2,h3{
+    font-size: 1vw;
+  }
 }
 .el-timeline {
   width: 95%;
@@ -1781,7 +1798,6 @@ $AiSize: 72vh;
 }
 
 #lingcaiyin {
-  @include content(240vh);
   background-image: url(https://article.biliimg.com/bfs/article/77f11eee1f298e29095747608cb090c62eadb81c.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/f73d67839c71eb90352b6945ffd807ab2d5f369a.png@1e_1c.webp);
   .bg {
@@ -1792,7 +1808,6 @@ $AiSize: 72vh;
 }
 
 #v3 {
-  @include content(500vh);
   background-image: url(https://article.biliimg.com/bfs/article/9d857ae5dc05626cc44cecd4b18ff88a3d096b48.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/e1143590da779c44243f54a685a9a7f410d169ae.png@1e_1c.webp);
   .bg {
@@ -1803,7 +1818,6 @@ $AiSize: 72vh;
 }
 
 #v5 {
-  @include content(400vh);
   background-image: url(https://article.biliimg.com/bfs/article/3b373ba97060d3b0f43da260e6d44cdf85633533.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg@1e_1c.webp);
   .bg {
@@ -1814,7 +1828,6 @@ $AiSize: 72vh;
 }
 
 #ai {
-  @include content(300vh);
   background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png@1e_1c.webp),
     url(https://i0.hdslb.com/bfs/article/e636c24f9c4ced88a99b4ea1d9c17cef1402305269.png@1e_1c.webp);
   .bg {
