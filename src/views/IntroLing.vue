@@ -92,12 +92,23 @@ let wow = new WOW({
 });
 wow.init();
 
+// 将每页高度设置到根元素样式变量，供 下方气泡框判断 与 scss 使用
+// 存储每页高度，单位为 vh
+const pageHeight = [100, 240, 550, 400, 300, 100];
+const rootStyle = {
+  "--lingCaiyin": `${pageHeight[1]}vh`,
+  "--lingV3": `${pageHeight[2]}vh`,
+  "--lingV5": `${pageHeight[3]}vh`,
+  "--lingAi": `${pageHeight[4]}vh`,
+};
+Object.entries(rootStyle).forEach(([styleName, styleValue]) =>
+  document.documentElement.style.setProperty(styleName, styleValue)
+);
+
 // 当前页数计算，传入对应数据
 window.addEventListener("scroll", function () {
   finalPageShowFlag.value =
     window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100;
-  // 存储每页高度，单位为 vh
-  let pageHeight = [100, 240, 550, 400, 300, 100];
   let totalHeight = 0;
   for (let i = 0; i < pageHeight.length; i++) {
     totalHeight += pageHeight[i];
@@ -150,9 +161,9 @@ function judgeMousePosition(event: { clientX: number; clientY: number }) {
 
 document.addEventListener("mousemove", judgeMousePosition);
 
-let pageHeight: number;
+let topPageHeight: number;
 onMounted(() => {
-  pageHeight = (lingcaiyin.value as HTMLElement).offsetTop;
+  topPageHeight = (lingcaiyin.value as HTMLElement).offsetTop;
   // 获取每项时间轴
   document.querySelectorAll(".el-timeline-item").forEach((item, index) => {
     item.classList.add("wow", "animate__animated", "animate__fadeInUp");
@@ -187,7 +198,7 @@ onMounted(() => {
   // 5 秒后整屏滚动
   timer = setTimeout(() => {
     if (document.documentElement.scrollTop === 0) {
-      smoothScroll(pageHeight, 600, 1);
+      smoothScroll(topPageHeight, 600, 1);
     }
   }, 4000);
 
@@ -311,7 +322,7 @@ onBeforeUnmount(() => {
     </ul>
   </div>
 
-  <div ref="headPage" class="page head" @click="smoothScroll(pageHeight)">
+  <div ref="headPage" class="page head" @click="smoothScroll(topPageHeight)">
     <div class="history show content">
       <div class="inside">
         <div class="words">
@@ -685,7 +696,10 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <p>
-              《中华少女Project》《红颜志》《朝花夕拾》《Dear:》《节气物语》《南北极星》《平行四界Quadimension5》《幻想·幻境》《恋爱理论》等
+              《中华少女Project》《红颜志》《朝花夕拾》《Dear:》《节气物语》
+            </p>
+            <p>
+              《南北极星》《平行四界Quadimension5》《幻想·幻境》《恋爱理论》等
             </p>
             <hr />
           </el-timeline-item>
@@ -762,10 +776,8 @@ onBeforeUnmount(() => {
                 <Calendar />
               </el-icon>
             </template>
-            <p>
-              《绫》《Ling聽》《妄想症Paranoia》《无名》《四季四世》《人·間》《平行四界Quadimension
-              5》等
-            </p>
+            <p>《绫》《Ling聽》《人·間》《妄想症Paranoia》《四季四世》</p>
+            <p>《无名》《平行四界Quadimension 5》《殿堂 3》《One·一个》等</p>
             <hr />
           </el-timeline-item>
           <el-timeline-item
@@ -801,8 +813,14 @@ onBeforeUnmount(() => {
                 <Calendar />
               </el-icon>
             </template>
-            <p>《华哉有夏》《如是我闻》《八月的幽灵》《秘密邮件》《Godrose》</p>
-            <p>《卡纳塔幻想曲》《平行四界Quadimension 6》《No.13852》等</p>
+            <p>
+              《华哉有夏》《如是我闻》《朝花夕拾
+              2》《八月的幽灵》《秘密邮件》《Godrose》
+            </p>
+            <p>
+              《卡纳塔幻想曲》《平行四界Quadimension
+              6》《表情包》《No.13852》《天宫九问》等
+            </p>
             <hr />
           </el-timeline-item>
           <el-timeline-item
@@ -819,7 +837,10 @@ onBeforeUnmount(() => {
             </template>
             <h3>&ensp;参与 19 年拜年祭，演唱「繁华唱遍」</h3>
             <el-divider content-position="right">
-              <h2 style="color: #ee0000">『我以为那个时代已过去，殊不知当你歌唱时，属于那个时代的一切都在归来 —— 题记』</h2></el-divider
+              <h2 style="color: #ee0000">
+                『我以为那个时代已过去，殊不知当你歌唱时，属于那个时代的一切都在归来
+                —— 题记』
+              </h2></el-divider
             >
             <!-- <p>&ensp;台前一眼，把戏缘偷染，从此后生世不倦。</p>
             <p>&ensp;以心火绵绵，护薪火相传。</p>
@@ -898,7 +919,10 @@ onBeforeUnmount(() => {
                 <Calendar />
               </el-icon>
             </template>
-            <p>《从众效应》《Les Fleurs Du Mal 恶之花》《柒》《名字》等</p>
+            <p>
+              《从众效应》《Les Fleurs Du Mal
+              恶之花》《柒》《名字》《1&0》《飞行梦》等
+            </p>
             <hr />
           </el-timeline-item>
         </el-timeline>
@@ -1001,7 +1025,7 @@ onBeforeUnmount(() => {
                 <calendar />
               </el-icon>
             </template>
-            <p>《告白诗》《Cotton_Candy》等</p>
+            <p>《告白诗》《Cotton_Candy》《ReSist》《终贰为诗》《星座》等</p>
             <hr />
           </el-timeline-item>
           <el-timeline-item
@@ -1061,11 +1085,11 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <p>
-              《华哉有夏·贰》《百变绫绫》《Color
-              Flow》《桃花雪》《现实逃避Project》
+              《华哉有夏·贰》《百变绫绫》《Color Flow》《桃花雪》《现实逃避
+              Project》《水花》
             </p>
             <p>
-              《甘泽谣》《Dear:2 异类与群羊》《αrtist5系列》《Special Wishes
+              《甘泽谣》《Dear:2》《αrtist5 系列》《以念之名》《Special Wishes
               2021》等
             </p>
             <hr />
@@ -1165,7 +1189,8 @@ onBeforeUnmount(() => {
               </el-icon>
             </template>
             <p>
-              《拾》《南北》《喧闹世界》《Special Wishes 2022》《和光同尘》等
+              《拾》《南北》《喧闹世界》《Special Wishes
+              2022》《和光同尘》《微塵》等
             </p>
             <hr />
           </el-timeline-item>
@@ -1345,16 +1370,15 @@ onBeforeUnmount(() => {
                 <calendar />
               </el-icon>
             </template>
-            <p>《炽星轨迹》《南北》《海客谈》《故事》《双星波形》等</p>
+            <p>《炽星轨迹》《海客谈》《故事》《双星波形》《依路相随》等</p>
             <hr />
           </el-timeline-item>
         </el-timeline>
       </div>
     </div>
   </div>
-  <!-- todo 1 更新「参与的专辑」，数据库中 2023 的不全
-  todo 2 专辑介绍 修改为 表格形式
-  todo 3 统一事件重要程度，例如 是否使用card，v5形象公布就应该使用 -->
+  <!-- todo 1 专辑介绍 修改为 表格形式
+  todo 2 统一事件重要程度，例如 是否使用card，v5形象公布就应该使用 -->
 
   <div class="page final">
     <div
@@ -1425,18 +1449,7 @@ $V3Size: 70vh;
 $V5Size: 73vh;
 $AiSize: 72vh;
 
-#lingcaiyin {
-  @include content(240vh);
-}
-#v3 {
-  @include content(550vh);
-}
-#v5 {
-  @include content(400vh);
-}
-#ai {
-  @include content(300vh);
-}
+
 
 .avatar {
   border: 0.2vw solid #ee0000;
@@ -1451,7 +1464,8 @@ $AiSize: 72vh;
 }
 .el-divider {
   --el-bg-color: transparent !important;
-  h2,h3{
+  h2,
+  h3 {
     font-size: 1vw;
   }
 }
@@ -1798,6 +1812,7 @@ $AiSize: 72vh;
 }
 
 #lingcaiyin {
+  @include content(var(--lingCaiyin));
   background-image: url(https://article.biliimg.com/bfs/article/77f11eee1f298e29095747608cb090c62eadb81c.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/f73d67839c71eb90352b6945ffd807ab2d5f369a.png@1e_1c.webp);
   .bg {
@@ -1808,6 +1823,7 @@ $AiSize: 72vh;
 }
 
 #v3 {
+  @include content(var(--lingV3));
   background-image: url(https://article.biliimg.com/bfs/article/9d857ae5dc05626cc44cecd4b18ff88a3d096b48.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/e1143590da779c44243f54a685a9a7f410d169ae.png@1e_1c.webp);
   .bg {
@@ -1818,6 +1834,7 @@ $AiSize: 72vh;
 }
 
 #v5 {
+  @include content(var(--lingV5));
   background-image: url(https://article.biliimg.com/bfs/article/3b373ba97060d3b0f43da260e6d44cdf85633533.png@1e_1c.webp),
     url(https://article.biliimg.com/bfs/article/c06ba9fa33e09d6c6d7df2ff420a24c919e688f2.jpg@1e_1c.webp);
   .bg {
@@ -1828,6 +1845,7 @@ $AiSize: 72vh;
 }
 
 #ai {
+  @include content(var(--lingAi));
   background-image: url(https://article.biliimg.com/bfs/article/ddaf99a3cc247c44f8c1e9df24adbbc0d211831d.png@1e_1c.webp),
     url(https://i0.hdslb.com/bfs/article/e636c24f9c4ced88a99b4ea1d9c17cef1402305269.png@1e_1c.webp);
   .bg {
