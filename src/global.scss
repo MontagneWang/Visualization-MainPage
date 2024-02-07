@@ -38,18 +38,18 @@ a {
     height: $pageHeight;
   }
   .content {
-    height: $pageHeight - 20vh;
+    height: calc($pageHeight - 20vh);
     background-image: linear-gradient(
       to bottom,
       transparent 0,
       transparent 10vh,
       rgba(255, 255, 255, 0.8) 10vh,
-      rgba(255, 255, 255, 0.8) $pageHeight - 10vh,
-      transparent $pageHeight - 10vh,
+      rgba(255, 255, 255, 0.8) calc($pageHeight - 10vh),
+      transparent calc($pageHeight - 10vh),
       transparent $pageHeight
     );
     .inside {
-      height: $pageHeight - 30vh;
+      height: calc($pageHeight - 30vh);
     }
   }
 }

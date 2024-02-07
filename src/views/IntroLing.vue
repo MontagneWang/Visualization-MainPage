@@ -94,7 +94,7 @@ wow.init();
 
 // 将每页高度设置到根元素样式变量，供 下方气泡框判断 与 scss 使用
 // 存储每页高度，单位为 vh
-const pageHeight = [100, 240, 550, 400, 300, 100];
+const pageHeight = [100, 240, 560, 400, 300, 100];
 const rootStyle = {
   "--lingCaiyin": `${pageHeight[1]}vh`,
   "--lingV3": `${pageHeight[2]}vh`,
@@ -306,6 +306,51 @@ onBeforeUnmount(() => {
   document.removeEventListener("mousemove", judgeMousePosition);
   clearTimeout(timer);
 });
+
+// const tableData = [
+//   {
+//     song: "遇见",
+//     lyricist: "大嘴巴狼",
+//     composer: "litterzy",
+//     arrangement: "litterzy",
+//   },
+//   {
+//     song: "乐行者",
+//     lyricist: "iKz",
+//     composer: "iKz",
+//     arrangement: "iKz",
+//   },
+//   {
+//     song: "山巅",
+//     lyricist: "战场原妖精",
+//     composer: "战场原妖精",
+//     arrangement: "战场原妖精",
+//   },
+//   {
+//     song: "傲娇系男孩的告白日",
+//     lyricist: "ilem",
+//     composer: "ilem",
+//     arrangement: "ilem",
+//   },
+//   {
+//     song: "九月不停雨",
+//     lyricist: "St色太",
+//     composer: "乌龟Sui",
+//     arrangement: "乌龟Sui",
+//   },
+//   {
+//     song: "一千绫一夜",
+//     lyricist: "古洛",
+//     composer: "泓",
+//     arrangement: "泓",
+//   },
+//   {
+//     song: "未来的我",
+//     lyricist: "和田野",
+//     composer: "Li Zong",
+//     arrangement: "Li Zong",
+//   },
+// ];
 </script>
 
 <template>
@@ -763,6 +808,18 @@ onBeforeUnmount(() => {
                 2017 年 12 月 2 日，Vsinger
                 发布了乐正绫的首张官方单人专辑《绫》，该专辑内共有7首单曲
               </p>
+              <!-- 使用表格会对适配产生影响，且不美观 -->
+              <!-- <el-table
+                :data="tableData"
+                border
+                stripe
+                style="width: 60%;  font-size: 1vw"
+              >
+                <el-table-column prop="song" label="歌曲" />
+                <el-table-column prop="lyricist" label="词作" />
+                <el-table-column prop="composer" label="作曲" />
+                <el-table-column prop="arrangement" label="编曲" />
+              </el-table> -->
             </el-card>
           </el-timeline-item>
           <el-timeline-item
@@ -1377,8 +1434,8 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
-  <!-- todo 1 专辑介绍 修改为 表格形式
-  todo 2 统一事件重要程度，例如 是否使用card，v5形象公布就应该使用 -->
+  <!-- todo 优化响应式布局，尽量减少不同分辨率下的高度差 -->
+  <!-- todo 统一事件重要程度，例如 是否使用card，v5形象公布就应该使用 -->
 
   <div class="page final">
     <div
@@ -1448,8 +1505,6 @@ $CySize: 72vh;
 $V3Size: 70vh;
 $V5Size: 73vh;
 $AiSize: 72vh;
-
-
 
 .avatar {
   border: 0.2vw solid #ee0000;
