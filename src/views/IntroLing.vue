@@ -94,7 +94,7 @@ wow.init();
 
 // 将每页高度设置到根元素样式变量，供 下方气泡框判断 与 scss 使用
 // 存储每页高度，单位为 vh
-const pageHeight = [100, 240, 560, 400, 300, 100];
+const pageHeight = [100, 240, 570, 410, 310, 100];
 const rootStyle = {
   "--lingCaiyin": `${pageHeight[1]}vh`,
   "--lingV3": `${pageHeight[2]}vh`,
