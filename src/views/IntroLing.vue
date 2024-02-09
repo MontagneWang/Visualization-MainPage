@@ -851,20 +851,12 @@ onBeforeUnmount(() => {
                   <flag />
                 </el-icon>
               </template>
-              <h3>&ensp;参与 19 年拜年祭，演唱「繁华唱遍」</h3>
+              <h3>&ensp;参与 19 年拜年祭，演唱《繁华唱遍》</h3>
               <el-divider content-position="right">
                 <h2 style="color: #ee0000">
-                  『我以为那个时代已过去，殊不知当你歌唱时，属于那个时代的一切都在归来
-                  —— 题记』
+                  『我以为那个时代已过去，殊不知当你歌唱时，属于那个时代的一切都在归来』
                 </h2></el-divider
               >
-              <!-- <p>&ensp;台前一眼，把戏缘偷染，从此后生世不倦。</p>
-            <p>&ensp;以心火绵绵，护薪火相传。</p>
-            <p>
-              &ensp;这一切，世间看不尽演不完的美的好的真的易逝的永恒的一切，都在继续。
-            </p>
-            <p>&ensp;有人继，有人承，有人守，有人传。</p>
-            <p>&ensp;你我亦然。</p> -->
               <p>
                 &ensp;台前一眼，把戏缘偷染，从此后生世不倦。
                 <br />&ensp;以心火绵绵，护薪火相传。
@@ -903,31 +895,6 @@ onBeforeUnmount(() => {
                 </p>
               </el-card>
             </el-timeline-item>
-            <!-- <el-timeline-item
-            icon="TrendCharts"
-            placement="top"
-            timestamp="&ensp;2019.12.07"
-            type="danger"
-          >
-            <template #dot>
-              <el-icon color="#ee0000" class="avatar">
-                <Promotion />
-              </el-icon> </template
-            >&emsp;
-            <p>沙雕教投稿了【赤羽x乐正绫】《赤伶》【原创剧情向pv附】</p>
-            <p>
-              『原曲为李建衡作曲、何天程编曲、清彦作词、HITA演唱的同名歌曲，收录于同名专辑中
-            </p>
-            <p>
-              &emsp;以中国抗日战争时期为背景，讲述名伶裴晏之受日军要求唱戏，设计纵火焚毁戏楼的故事，展现「位卑未敢忘忧国」的爱国情怀
-            </p>
-            <p>
-              &emsp;本作在原曲背景故事的基础上进行延伸，将乐正绫设定为裴晏之（赤羽饰）的后辈；两位歌手合称的「赤绫」与标题谐音，为人所津津乐道
-            </p>
-            <p>
-              &emsp;纯熟调教下的戏腔高亢优美、极具震撼力，令人身临其境，回溯那场热烈而悲壮的绝唱』
-            </p>
-          </el-timeline-item> -->
             <el-timeline-item
               icon="Calendar"
               timestamp="&ensp;这一年，乐正绫参与演唱了以下专辑"
@@ -1087,10 +1054,10 @@ onBeforeUnmount(() => {
                   <UserFilled />
                 </el-icon>
               </template>
-              <p>
-                &emsp;Vsinger 官方微博发文，正式宣布乐正绫 V5
+              <h3>
+                &emsp;Vsinger宣布乐正绫 V5
                 声库进入测试阶段，同时公开了 V5 初版形象
-              </p>
+              </h3>
               <p>
                 &emsp;但该初版形象引起了非常大的争议，禾念表示会考虑大家的意见进行修改
               </p>
@@ -1176,9 +1143,9 @@ onBeforeUnmount(() => {
                   <UserFilled />
                 </el-icon>
               </template>
-              <p>&emsp;2022年5月11日，官方敲定并公开了乐正绫 V5 最终形象</p>
+              <h3>&emsp;Vsinger 官方敲定并公开了乐正绫 V5 最终形象</h3>
               <p>
-                &emsp;但该形象依旧没能得到大家的认可，由于禾念已将改版形象提交给雅马哈，因此无法再进行修改
+                &emsp;大家对该版形象的认可度依旧未能如愿，由于禾念已将此形象提交给雅马哈，因此无法再进行修改
               </p>
             </el-timeline-item>
             <el-timeline-item
@@ -1238,10 +1205,9 @@ onBeforeUnmount(() => {
                 <el-icon color="#ee0000" class="avatar">
                   <mic />
                 </el-icon> </template
-              ><el-card>
-                <h2>Vsinger 官方宣布「乐正绫」AI 声库开启内测</h2>
-                <p>AI 声库依托于 ACE Studio 平台</p>
-              </el-card>
+              >
+                <h3>&ensp;Vsinger 官方宣布「乐正绫」AI 声库开启内测</h3>
+                <p>&ensp;AI 声库依托于 ACE Studio 平台，内测资格需要向官方提出申请，审核通过后才能获得</p>
             </el-timeline-item>
             <el-timeline-item
               icon="Headset"
@@ -1315,7 +1281,7 @@ onBeforeUnmount(() => {
               <el-card>
                 <h2>乐正绫 AI 形象公布</h2>
                 <p>
-                  在数十个优秀作品中，[Miz 团一]老师的设计拔得头筹，当选乐正绫
+                  在数十个优秀作品的两轮投票中，「Miz 团一」老师的设计稿得票最高，当选乐正绫
                   AI 形象
                 </p>
                 <p
@@ -1377,7 +1343,7 @@ onBeforeUnmount(() => {
                 </el-icon>
               </template>
               <el-card>
-                <h2>乐正绫 AI 声库公测</h2>
+                <h2>乐正绫 AI 声库开放公测</h2>
                 <p>ACE_Studio 官方进行了 AI 合成模型的更新升级（v1.7.0）</p>
                 <p>
                   乐正绫 AI
@@ -1404,7 +1370,6 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
-  <!-- todo 统一事件重要程度，例如 是否使用card，v5形象公布就应该使 用 -->
   <div style="display: none">
     <div class="page final">
       <div
