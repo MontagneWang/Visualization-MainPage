@@ -76,7 +76,7 @@ const items = ref([
     声库版本: "ACE Studio",
     发布日期: "2023.05.06",
     语言: "支持中日英三语合成",
-    注意: '官方暂未放出 AI 形象的终稿，故右侧立绘采用投稿较早的「渺纱飘雪」老师的设定，见谅',
+    注意: "官方暂未放出 AI 形象的终稿，故右侧立绘采用投稿较早的「渺纱飘雪」老师的设定，见谅",
   },
 ]);
 let wow = new WOW({
@@ -176,16 +176,16 @@ onMounted(() => {
     item.classList.add(
       "wow",
       "animate__animated",
-      "animate__fadeIn",
-      `animate__delay-${index + 1}s`
+      "animate__fadeIn"
+      // `animate__delay-${index + 2}s`
     );
   });
   document.querySelectorAll(".finalTachie").forEach((item, index) => {
     item.classList.add(
       "wow",
       "animate__animated",
-      "animate__fadeIn",
-      `animate__delay-${index}s`
+      "animate__fadeIn"
+      // `animate__delay-${index +1}s`
     );
   });
   // 获取并变大所有时间轴图标节点
@@ -199,89 +199,40 @@ onMounted(() => {
     }
   }, 4000);
 
-  // 通过增加控制点使得贝塞尔曲线贴近控制点
-  let points = [
-    [screenWidth * 0.3, screenHeight * 0.1],
-    [screenWidth * 0.3, screenHeight * 0.1],
-    [screenWidth * 0.3, screenHeight * 0.1],
-    [screenWidth * 0.3, screenHeight * 0.1],
-    [screenWidth * 0.3, screenHeight * 0.1],
-    [screenWidth * 0.3, screenHeight * 0.1],
-    [screenWidth * 0.3, screenHeight * 0.1],
+  // 通过增加控制点使得贝塞尔曲线贴近控制点，默认为八个点
+  let points: Array<[number, number]> = [];
+  const addPoints = (xRatio: number, yRatio: number, count = 8) => {
+    const x = screenWidth * xRatio;
+    const y = screenHeight * yRatio;
+    for (let i = 0; i < count; i++) {
+      points.push([x, y]);
+    }
+  };
+  addPoints(0.35, 0.2);
+  addPoints(0.3, 0.275);
+  addPoints(0.35, 0.35);
+  addPoints(0.45, 0.16);
+  5;
+  addPoints(0.9, 0.15, 10);
+  addPoints(0.9, 0.475, 10);
+  5;
+  addPoints(0.1, 0.525, 10);
+  addPoints(0.1, 0.8, 10);
 
-    [screenWidth * 0.25, screenHeight * 0.175],
-    [screenWidth * 0.25, screenHeight * 0.175],
-    [screenWidth * 0.25, screenHeight * 0.175],
-    [screenWidth * 0.25, screenHeight * 0.175],
-    [screenWidth * 0.25, screenHeight * 0.175],
-    [screenWidth * 0.25, screenHeight * 0.175],
-    [screenWidth * 0.25, screenHeight * 0.175],
+  addPoints(1, 0.75);
+  // addPoints(0.3, 0.1);
+  // addPoints(0.25, 0.175);
+  // addPoints(0.3, 0.25);
+  // addPoints(0.4, 0.06);
 
-    [screenWidth * 0.3, screenHeight * 0.25],
-    [screenWidth * 0.3, screenHeight * 0.25],
-    [screenWidth * 0.3, screenHeight * 0.25],
-    [screenWidth * 0.3, screenHeight * 0.25],
-    [screenWidth * 0.3, screenHeight * 0.25],
-    [screenWidth * 0.3, screenHeight * 0.25],
-    [screenWidth * 0.3, screenHeight * 0.25],
+  // addPoints(0.85, 0.05, 10);
+  // addPoints(0.85, 0.375, 10);
 
-    [screenWidth * 0.4, screenHeight * 0.06],
-    [screenWidth * 0.4, screenHeight * 0.06],
-    [screenWidth * 0.4, screenHeight * 0.06],
-    [screenWidth * 0.4, screenHeight * 0.06],
-    [screenWidth * 0.4, screenHeight * 0.06],
-    [screenWidth * 0.4, screenHeight * 0.06],
-    [screenWidth * 0.4, screenHeight * 0.06],
+  // addPoints(0.05, 0.425, 10);
+  // addPoints(0.05, 0.7, 10);
 
-    [screenWidth * 0.8, screenHeight * 0.05],
-    [screenWidth * 0.8, screenHeight * 0.05],
-    [screenWidth * 0.8, screenHeight * 0.05],
-    [screenWidth * 0.8, screenHeight * 0.05],
-    [screenWidth * 0.8, screenHeight * 0.05],
-    [screenWidth * 0.8, screenHeight * 0.05],
-    [screenWidth * 0.8, screenHeight * 0.05],
-    [screenWidth * 0.8, screenHeight * 0.05],
-    [screenWidth * 0.8, screenHeight * 0.05],
+  // addPoints(1, 0.65);
 
-    [screenWidth * 0.8, screenHeight * 0.35],
-    [screenWidth * 0.8, screenHeight * 0.35],
-    [screenWidth * 0.8, screenHeight * 0.35],
-    [screenWidth * 0.8, screenHeight * 0.35],
-    [screenWidth * 0.8, screenHeight * 0.35],
-    [screenWidth * 0.8, screenHeight * 0.35],
-    [screenWidth * 0.8, screenHeight * 0.35],
-    [screenWidth * 0.8, screenHeight * 0.35],
-    [screenWidth * 0.8, screenHeight * 0.35],
-    [screenWidth * 0.8, screenHeight * 0.35],
-
-    [screenWidth * 0.05, screenHeight * 0.35],
-    [screenWidth * 0.05, screenHeight * 0.35],
-    [screenWidth * 0.05, screenHeight * 0.35],
-    [screenWidth * 0.05, screenHeight * 0.35],
-    [screenWidth * 0.05, screenHeight * 0.35],
-    [screenWidth * 0.05, screenHeight * 0.35],
-    [screenWidth * 0.05, screenHeight * 0.35],
-    [screenWidth * 0.05, screenHeight * 0.35],
-    [screenWidth * 0.05, screenHeight * 0.35],
-
-    [screenWidth * 0.05, screenHeight * 0.7],
-    [screenWidth * 0.05, screenHeight * 0.7],
-    [screenWidth * 0.05, screenHeight * 0.7],
-    [screenWidth * 0.05, screenHeight * 0.7],
-    [screenWidth * 0.05, screenHeight * 0.7],
-    [screenWidth * 0.05, screenHeight * 0.7],
-    [screenWidth * 0.05, screenHeight * 0.7],
-    [screenWidth * 0.05, screenHeight * 0.7],
-    [screenWidth * 0.05, screenHeight * 0.7],
-
-    [screenWidth, screenHeight * 0.65],
-    [screenWidth, screenHeight * 0.65],
-    [screenWidth, screenHeight * 0.65],
-    [screenWidth, screenHeight * 0.65],
-    [screenWidth, screenHeight * 0.65],
-    [screenWidth, screenHeight * 0.65],
-    [screenWidth, screenHeight * 0.65],
-  ];
   let canvas = myCanvas.value as unknown as HTMLCanvasElement;
 
   // 滚动到最后页面时开始绘制曲线
@@ -290,7 +241,7 @@ onMounted(() => {
     if (finalPageShowFlag.value && isFirst) {
       isFirst = false;
       setTimeout(() => {
-        drawCurve(canvas, points, "rgb(238, 0, 0)", 0.65, 5, 4500);
+        drawCurve(canvas, points, "rgb(238, 0, 0)", 0.65, 5, 5000);
       }, 1000);
     }
   });
@@ -307,6 +258,11 @@ onBeforeUnmount(() => {
   document.removeEventListener("mousemove", judgeMousePosition);
   clearTimeout(timer);
 });
+
+let contentShow = "auto";
+// let contentShow =  'auto'
+let finalShow = "auto";
+// let finalShow ='none'
 </script>
 
 <template>
@@ -340,7 +296,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
-  <div style="display: auto">
+  <div :style="{ display: contentShow }">
     <div id="lingcaiyin" ref="lingcaiyin" class="page">
       <div class="story">
         <div class="bg"></div>
@@ -1056,8 +1012,8 @@ onBeforeUnmount(() => {
                 </el-icon>
               </template>
               <h3>
-                &emsp;Vsinger宣布乐正绫 V5
-                声库进入测试阶段，同时公开了 V5 初版形象
+                &emsp;Vsinger宣布乐正绫 V5 声库进入测试阶段，同时公开了 V5
+                初版形象
               </h3>
               <p>
                 &emsp;但该初版形象引起了非常大的争议，禾念表示会考虑大家的意见进行修改
@@ -1205,10 +1161,13 @@ onBeforeUnmount(() => {
               <template #dot>
                 <el-icon color="#ee0000" class="avatar">
                   <mic />
-                </el-icon> </template
-              >
-                <h3>&ensp;Vsinger 官方宣布「乐正绫」AI 声库开启内测</h3>
-                <p>&ensp;AI 声库依托于 ACE Studio 平台，内测资格需要向官方提出申请，审核通过后才能获得</p>
+                </el-icon>
+              </template>
+              <h3>&ensp;Vsinger 官方宣布「乐正绫」AI 声库开启内测</h3>
+              <p>
+                &ensp;AI 声库依托于 ACE Studio
+                平台，内测资格需要向官方提出申请，审核通过后才能获得
+              </p>
             </el-timeline-item>
             <el-timeline-item
               icon="Headset"
@@ -1282,8 +1241,8 @@ onBeforeUnmount(() => {
               <el-card>
                 <h2>乐正绫 AI 形象公布</h2>
                 <p>
-                  在数十个优秀作品的两轮投票中，「Miz 团一」老师的设计稿得票最高，当选乐正绫
-                  AI 形象
+                  在数十个优秀作品的两轮投票中，「Miz
+                  团一」老师的设计稿得票最高，当选乐正绫 AI 形象
                 </p>
                 <p
                   style="
@@ -1371,7 +1330,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
-  <div style="display: none">
+  <div :style="{ display: finalShow }">
     <div class="page final">
       <div
         ref="history"
@@ -1379,13 +1338,12 @@ onBeforeUnmount(() => {
         class="history content"
       >
         <div class="inside">
-          <!--fixme 标记点位置可能在不同的屏幕分辨率下会错位，需要根据以下修复-->
           <!--画线算法返回所有点位置的数组，然后每个自设标记点的位置从数组中获取，或者划线位置通过vw确认-->
           <canvas
             id="myCanvas"
             ref="myCanvas"
-            :height="screenHeight * 0.7"
-            :width="screenWidth * 0.85"
+            :height="screenHeight"
+            :width="screenWidth"
           >
           </canvas>
           <div class="finalTachie finalWord">
@@ -1394,12 +1352,12 @@ onBeforeUnmount(() => {
             <p>再次歌唱</p>
             <p style="color: #ee0000">从零开始万千景象延伸远方</p>
           </div>
+          <!-- 可以将tips原点位置添加到贝塞尔曲线的控制点 -->
+          <!-- todo 增删重要节点，设置动画持续时间 + 曲线与文本框立绘同步显示时间 -->
           <div class="tips tips0">2012 - 01 - 17<br />绫彩音人设入选</div>
           <div class="tips tips1">2012 - 03 - 21<br />乐正绫形象公布</div>
           <div class="tips tips2">2015 - 07 - 17<br />乐正绫声库发售</div>
-          <div class="tips tips3">
-            2017 - 12 - 02<br />首张官方专辑《绫》发布
-          </div>
+          <div class="tips tips3">2017 - 12 - 02<br />首张官专《绫》发布</div>
           <div class="tips tips4">2020 - 04 - 12<br />官专《告白诗》发布</div>
           <div class="tips tips5">2022 - 10 - 14<br />Vocaloid5 声库发售</div>
           <div class="tips tips6">2022 - 12 - 25<br />AI 声库开始内测</div>
@@ -1545,7 +1503,8 @@ $AiSize: 72vh;
     .inside {
       height: 80vh !important;
       overflow: hidden;
-      margin: 5vh 3vw;
+      // margin: 5vh 3vw;
+      margin: -5vh 0vw !important;
     }
   }
 }
@@ -1567,21 +1526,29 @@ $AiSize: 72vh;
 .final {
   .inside {
     position: relative;
+    margin: 0;
 
     img {
       width: inherit;
     }
 
+    // 回正
+    #myCanvas {
+      margin-top: -10vh;
+      margin-left: -5vw;
+    }
     .tips {
+      position: absolute;
       display: inline-block;
-      // float: left;
       color: white;
       padding: 1em;
+      // 添加字体大小严格控制方框大小，适配不同尺寸屏幕，防止曲线与文字框错位
+      font-size: 1vw;
       user-select: none;
       border-radius: 0.8vw;
       background-color: rgba(0, 0, 0, 0.5);
-      position: relative;
 
+      // 为所有 tips 设置三角
       &::before {
         content: "";
         position: absolute;
@@ -1591,7 +1558,7 @@ $AiSize: 72vh;
         border: 10px solid transparent;
         border-top-color: rgba(0, 0, 0, 0.5);
       }
-
+      // 为所有 tips 设置圆点
       &::after {
         content: "";
         position: absolute;
@@ -1605,18 +1572,18 @@ $AiSize: 72vh;
         border-radius: 50%;
       }
 
-      $animationDelay: 1s;
+      $animationDelay: 3s;
 
       &.tips0 {
-        top: -70.5vh;
-        left: 30vw;
+        top: 3.4vh;
+        left: 33vw;
         -webkit-animation-delay: $animationDelay;
         animation-delay: $animationDelay;
       }
 
       &.tips1 {
-        top: -61.3vh;
-        left: 40vw;
+        top: 9.3vh;
+        left: 48vw;
         -webkit-animation-delay: $animationDelay + 0.5s;
         animation-delay: $animationDelay + 0.5s;
         // 向上三角
@@ -1645,30 +1612,16 @@ $AiSize: 72vh;
       }
 
       &.tips2 {
-        top: -49.8vh;
-        left: 35vw;
+        top: 8.1vh;
+        left: 63vw;
         padding: 0.9vw;
         -webkit-animation-delay: $animationDelay + 1s;
         animation-delay: $animationDelay + 1s;
-      }
-
-      &.tips3 {
-        top: -49.5vh;
-        left: 3vw;
-        -webkit-animation-delay: $animationDelay + 1.5s;
-        animation-delay: $animationDelay + 1.5s;
-      }
-
-      &.tips4 {
-        top: -32vh;
-        left: -25vw;
-        -webkit-animation-delay: $animationDelay + 2s;
-        animation-delay: $animationDelay + 2s;
         // 向上三角
         &::before {
           content: "";
           position: absolute;
-          bottom: 4.3em;
+          bottom: 4.1em;
           left: 50%;
           margin-left: -10px; /* 三角形宽度的一半 */
           border: 10px solid transparent;
@@ -1678,7 +1631,7 @@ $AiSize: 72vh;
         &::after {
           content: "";
           position: absolute;
-          bottom: 5em;
+          bottom: 4.7em;
           left: 50%;
           margin-left: -4px; /* 圆形直径的一半 */
           width: 5px;
@@ -1689,29 +1642,43 @@ $AiSize: 72vh;
         }
       }
 
+      &.tips3 {
+        top: 27.2vh;
+        left: 55vw;
+        -webkit-animation-delay: $animationDelay + 1.5s;
+        animation-delay: $animationDelay + 1.5s;
+      }
+
+      &.tips4 {
+        top: 29.7vh;
+        left: 35vw;
+        -webkit-animation-delay: $animationDelay + 2s;
+        animation-delay: $animationDelay + 2s;
+      }
+
       &.tips5 {
-        top: -16vh;
-        left: -48vw;
+        top: 58vh;
+        left: 15vw;
         -webkit-animation-delay: $animationDelay + 2.5s;
         animation-delay: $animationDelay + 2.5s;
       }
 
       &.tips6 {
-        top: -27.3vh;
-        left: 33vw;
+        top: 57.3vh;
+        left: 35vw;
         -webkit-animation-delay: $animationDelay + 3s;
         animation-delay: $animationDelay + 3s;
       }
 
       &.tips7 {
-        top: -28.3vh;
-        left: 43vw;
+        top: 56vh;
+        left: 60vw;
         -webkit-animation-delay: $animationDelay + 3.5s;
         animation-delay: $animationDelay + 3.5s;
       }
 
       &.tips8 {
-        top: -31vh;
+        top: 80vh;
         left: 46vw;
         line-height: 1.5em;
         -webkit-animation-delay: $animationDelay + 4s;
@@ -1722,7 +1689,10 @@ $AiSize: 72vh;
     .finalTachie {
       position: absolute;
       // width: 7vw;
+      margin-top: 4vh;
       user-select: none;
+
+      $animationDelay: 2.25s;
 
       &.finalWord {
         white-space: nowrap;
@@ -1730,6 +1700,7 @@ $AiSize: 72vh;
         //transform: rotate(-45deg);
         top: 0vh;
         left: 2vw;
+
 
         p {
           width: 12em;
@@ -1740,10 +1711,17 @@ $AiSize: 72vh;
 
         p:nth-child(1) {
           padding-top: 1.5em;
+          animation-delay: $animationDelay;
         }
-
+        p:nth-child(2) {
+          animation-delay: $animationDelay + 2s;
+        }
+        p:nth-child(3) {
+          animation-delay: $animationDelay + 3s;
+        }
         p:last-child {
           padding-bottom: 1.5em;
+          animation-delay: $animationDelay + 4s;
         }
       }
 
@@ -1751,24 +1729,28 @@ $AiSize: 72vh;
         width: 7vw;
         top: -2vh;
         left: 25vw;
+        animation-delay: $animationDelay;
       }
 
       &.finalV3 {
         width: 6vw;
         top: 0vh;
         right: 8vw;
+        animation-delay: $animationDelay + 2s;
       }
 
       &.finalV5 {
         width: 8vw;
-        bottom: 10vh;
-        left: 4vw;
+        bottom: 4vh;
+        left: 6vw;
+        animation-delay: $animationDelay + 3s;
       }
 
       &.finalAi {
         width: 8.5vw;
-        bottom: 10vh;
-        right: 38vw;
+        bottom: 9vh;
+        right: 33vw;
+        animation-delay: $animationDelay + 4s;
       }
     }
   }

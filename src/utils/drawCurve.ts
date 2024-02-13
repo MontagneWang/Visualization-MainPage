@@ -12,7 +12,7 @@ export function drawCurve(canvas: HTMLCanvasElement,
                           points: number[][],
                           color: string = "black",
                           alpha: number = 1,
-                          lineWidth: number = 4,
+                          lineWidth: number = 3,
                           duration: number = 1000) {
     let ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
@@ -62,19 +62,19 @@ export function drawCurve(canvas: HTMLCanvasElement,
             ctx.stroke();
         }
 
-        if (t >= 1) {
-            // 重新绘制一遍线条
-            ctx.strokeStyle = `${color}`;
-            ctx.lineWidth = lineWidth;
-            ctx.beginPath();
-            ctx.moveTo(curvePoints[0][0], curvePoints[0][1]);
+        // if (t >= 1) {
+        //     // 重新绘制一遍线条
+        //     ctx.strokeStyle = `${color}`;
+        //     ctx.lineWidth = lineWidth;
+        //     ctx.beginPath();
+        //     ctx.moveTo(curvePoints[0][0], curvePoints[0][1]);
 
-            for (let i = 1; i < curvePoints.length; i++) {
-                ctx.lineTo(curvePoints[i][0], curvePoints[i][1]);
-            }
+        //     for (let i = 1; i < curvePoints.length; i++) {
+        //         ctx.lineTo(curvePoints[i][0], curvePoints[i][1]);
+        //     }
 
-            ctx.stroke();
-        }
+        //     ctx.stroke();
+        // }
     }
 
     animate(0);
