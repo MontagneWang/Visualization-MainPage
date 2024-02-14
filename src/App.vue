@@ -148,6 +148,7 @@ document.addEventListener("keydown", e => {
       />
   </router-view>
 </template>
+<!-- todo 移动端适配，尝试改为横屏显示 -->
 <!-- fixme 添加页面路由切换动效失败，只有退出动画，没有进入动画 -->
 <style>
 /* 隐藏滚动条 */

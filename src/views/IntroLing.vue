@@ -180,6 +180,7 @@ onMounted(() => {
       // `animate__delay-${index + 2}s`
     );
   });
+  // todo 通过js统一管理tips与立绘的动画延时，把人物立绘也作为一个tips放入，算入动画的计时
   document.querySelectorAll(".finalTachie").forEach((item, index) => {
     item.classList.add(
       "wow",
@@ -212,10 +213,10 @@ onMounted(() => {
   addPoints(0.3, 0.275);
   addPoints(0.35, 0.35);
   addPoints(0.45, 0.16);
-  5;
+
   addPoints(0.9, 0.15, 10);
   addPoints(0.9, 0.475, 10);
-  5;
+
   addPoints(0.1, 0.525, 10);
   addPoints(0.1, 0.8, 10);
 
