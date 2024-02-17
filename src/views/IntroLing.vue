@@ -171,6 +171,7 @@ onMounted(() => {
   });
   document.querySelectorAll(".tips").forEach((item, index) => {
     item.classList.add("wow", "animate__animated", "animate__fadeIn");
+    (item as HTMLElement).style.animationDelay = `${index * 0.9 +2}s`;
   });
   document.querySelectorAll(".finalWord p").forEach((item, index) => {
     item.classList.add(
@@ -179,15 +180,18 @@ onMounted(() => {
       "animate__fadeIn"
       // `animate__delay-${index + 2}s`
     );
+    // 这里设置四行文字的动画延时
+    (item as HTMLElement).style.animationDelay = `${index * 2 + 2}s`;
   });
-  // todo 通过js统一管理tips与立绘的动画延时，把人物立绘也作为一个tips放入，算入动画的计时
-  document.querySelectorAll(".finalTachie").forEach((item, index) => {
+  document.querySelectorAll(".tachie").forEach((item, index) => {
     item.classList.add(
       "wow",
       "animate__animated",
       "animate__fadeIn"
       // `animate__delay-${index +1}s`
     );
+    // 这里设置四个立绘的动画延时
+    (item as HTMLElement).style.animationDelay = `${index * 2 + 2}s`;
   });
   // 获取并变大所有时间轴图标节点
   document.querySelectorAll(".el-timeline-item__node--normal").forEach(item => {
@@ -1353,38 +1357,36 @@ let finalShow = "auto";
             <p>再次歌唱</p>
             <p style="color: #ee0000">从零开始万千景象延伸远方</p>
           </div>
-          <!-- 可以将tips原点位置添加到贝塞尔曲线的控制点 -->
-          <!-- todo 增删重要节点，设置动画持续时间 + 曲线与文本框立绘同步显示时间 -->
           <div class="tips tips0">2012 - 01 - 17<br />绫彩音人设入选</div>
           <div class="tips tips1">2012 - 03 - 21<br />乐正绫形象公布</div>
-          <div class="tips tips2">2015 - 07 - 17<br />乐正绫声库发售</div>
+          <div class="tips tips2">2015 - 07 - 17<br />Vocaloid3 声库发售</div>
           <div class="tips tips3">2017 - 12 - 02<br />首张官专《绫》发布</div>
           <div class="tips tips4">2020 - 04 - 12<br />官专《告白诗》发布</div>
           <div class="tips tips5">2022 - 10 - 14<br />Vocaloid5 声库发售</div>
-          <div class="tips tips6">2022 - 12 - 25<br />AI 声库开始内测</div>
-          <div class="tips tips7">2023 - 04 - 12<br />AI 形象公布</div>
+          <div class="tips tips6">2023 - 04 - 12<br />乐正绫 AI 形象公布</div>
+          <div class="tips tips7">2023 - 05 - 06<br />AI 声库开放公测</div>
           <div class="tips tips8">
-            悠悠十年，一瞬永远<br />『为你而来 而存在』
+            &ensp;悠悠十年&ensp;一瞬永远<br />『为你而来 而存在』
           </div>
-          <div class="finalTachie final0">
+          <div class="finalTachie tachie final0">
             <img
               alt=""
               src="https://article.biliimg.com/bfs/article/3a6184943556ceb4c6216a0099770274d7b9ffa2.png@1e_1c.webp"
             />
           </div>
-          <div class="finalTachie finalV3">
+          <div class="finalTachie tachie finalV3">
             <img
               alt=""
               src="https://article.biliimg.com/bfs/article/1c4505061ad44ae244932752d3d794f29c2684ad.png@1e_1c.webp"
             />
           </div>
-          <div class="finalTachie finalV5">
+          <div class="finalTachie tachie finalV5">
             <img
               alt=""
               src="https://article.biliimg.com/bfs/article/9b14ff130dbdd0c8c32661806864f4760ae21ac1.png@1e_1c.webp"
             />
           </div>
-          <div class="finalTachie finalAi">
+          <div class="finalTachie tachie finalAi">
             <img
               alt=""
               src="https://article.biliimg.com/bfs/article/4652649af358ea81f80eec4994596cb778457b88.png@1e_1c.webp"
@@ -1573,20 +1575,14 @@ $AiSize: 72vh;
         border-radius: 50%;
       }
 
-      $animationDelay: 3s;
-
       &.tips0 {
         top: 3.4vh;
         left: 33vw;
-        -webkit-animation-delay: $animationDelay;
-        animation-delay: $animationDelay;
       }
 
       &.tips1 {
         top: 9.3vh;
         left: 48vw;
-        -webkit-animation-delay: $animationDelay + 0.5s;
-        animation-delay: $animationDelay + 0.5s;
         // 向上三角
         &::before {
           content: "";
@@ -1616,8 +1612,6 @@ $AiSize: 72vh;
         top: 8.1vh;
         left: 63vw;
         padding: 0.9vw;
-        -webkit-animation-delay: $animationDelay + 1s;
-        animation-delay: $animationDelay + 1s;
         // 向上三角
         &::before {
           content: "";
@@ -1646,44 +1640,32 @@ $AiSize: 72vh;
       &.tips3 {
         top: 27.2vh;
         left: 55vw;
-        -webkit-animation-delay: $animationDelay + 1.5s;
-        animation-delay: $animationDelay + 1.5s;
       }
 
       &.tips4 {
         top: 29.7vh;
         left: 35vw;
-        -webkit-animation-delay: $animationDelay + 2s;
-        animation-delay: $animationDelay + 2s;
       }
 
       &.tips5 {
         top: 58vh;
         left: 15vw;
-        -webkit-animation-delay: $animationDelay + 2.5s;
-        animation-delay: $animationDelay + 2.5s;
       }
 
       &.tips6 {
         top: 57.3vh;
         left: 35vw;
-        -webkit-animation-delay: $animationDelay + 3s;
-        animation-delay: $animationDelay + 3s;
       }
 
       &.tips7 {
         top: 56vh;
         left: 60vw;
-        -webkit-animation-delay: $animationDelay + 3.5s;
-        animation-delay: $animationDelay + 3.5s;
       }
 
       &.tips8 {
-        top: 80vh;
-        left: 46vw;
+        top: 53.7vh;
+        left: 74vw;
         line-height: 1.5em;
-        -webkit-animation-delay: $animationDelay + 4s;
-        animation-delay: $animationDelay + 4s;
       }
     }
 
@@ -1693,15 +1675,12 @@ $AiSize: 72vh;
       margin-top: 4vh;
       user-select: none;
 
-      $animationDelay: 2.25s;
-
       &.finalWord {
         white-space: nowrap;
         font-size: 1.5vw;
         //transform: rotate(-45deg);
         top: 0vh;
         left: 2vw;
-
 
         p {
           width: 12em;
@@ -1712,17 +1691,9 @@ $AiSize: 72vh;
 
         p:nth-child(1) {
           padding-top: 1.5em;
-          animation-delay: $animationDelay;
-        }
-        p:nth-child(2) {
-          animation-delay: $animationDelay + 2s;
-        }
-        p:nth-child(3) {
-          animation-delay: $animationDelay + 3s;
         }
         p:last-child {
           padding-bottom: 1.5em;
-          animation-delay: $animationDelay + 4s;
         }
       }
 
@@ -1730,28 +1701,24 @@ $AiSize: 72vh;
         width: 7vw;
         top: -2vh;
         left: 25vw;
-        animation-delay: $animationDelay;
       }
 
       &.finalV3 {
         width: 6vw;
         top: 0vh;
         right: 8vw;
-        animation-delay: $animationDelay + 2s;
       }
 
       &.finalV5 {
         width: 8vw;
         bottom: 4vh;
         left: 6vw;
-        animation-delay: $animationDelay + 3s;
       }
 
       &.finalAi {
         width: 8.5vw;
         bottom: 9vh;
         right: 33vw;
-        animation-delay: $animationDelay + 4s;
       }
     }
   }
