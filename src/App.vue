@@ -106,7 +106,7 @@ function getPerformanceTiming() {
   console.log(times);
   return times;
 }
-getPerformanceTiming();
+// getPerformanceTiming();
 
 // 控制台输出
 document.addEventListener("keydown", e => {
@@ -134,30 +134,50 @@ document.addEventListener("keydown", e => {
   <the-circular-nav />
   <the-back-top />
   <the-right-menu />
+
   <router-view v-slot="{ Component, route }">
+    <transition name="scale" mode="out-in">
       <keep-alive>
-        <component
-          :is="Component"
-          :key="route.path"
-        />
+        <component :is="Component" :key="route.path" />
       </keep-alive>
+    </transition>
+    <transition name="scale" mode="out-in">
       <component
         :is="Component"
         :key="route.path"
         v-if="!route.meta.keepAlive"
       />
+    </transition>
   </router-view>
 </template>
 <!-- todo 移动端适配，尝试改为横屏显示 -->
-<!-- fixme 添加页面路由切换动效失败，只有退出动画，没有进入动画 -->
 <style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.5s ease;
+}
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
 /* 隐藏滚动条 */
 ::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 html {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 html * {
