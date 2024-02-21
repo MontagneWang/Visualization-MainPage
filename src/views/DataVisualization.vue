@@ -25,10 +25,7 @@ let chartAttribute = () => {
 <template>
   <div class="main">
     <!-- 把地图铺满 -->
-    <map-container
-      v-bind="chartAttrs"
-      style="position: absolute; top: 0; left: 0"
-    />
+    <map-container v-bind="chartAttrs" />
     <div class="container">
       <div class="c1 border">
         <!--统计所有的原创曲与翻唱曲的对比数据-->
@@ -52,7 +49,9 @@ let chartAttribute = () => {
         <h1 style="text-align: center; font-size: 2vw">
           中文 Vocaloid 十二年投稿数据
         </h1>
-				<p style="text-align: center; font-size: 1.3vw;margin-top: -1vh;"> —— 愿你唱出心中的歌 </p>
+        <p style="text-align: center; font-size: 1.3vw; margin-top: -1vh">
+          —— 愿你唱出心中的歌
+        </p>
         <!-- <span>不同地理区域的投稿量</span> -->
         <!-- <map-container v-bind="chartAttrs"/> -->
       </div>
@@ -105,9 +104,8 @@ let chartAttribute = () => {
 }
 
 .main {
-  width: 95vw;
-  height: 90vh;
-  margin: 5vh auto;
+  width: 100vw;
+  height: 100vh;
 }
 
 .container > div {
@@ -165,7 +163,10 @@ let chartAttribute = () => {
 }
 
 .container {
-  height: 100%;
+  width: 94vw;
+  height: 90vh;
+  padding: 5vh 3vw;
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

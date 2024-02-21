@@ -89,9 +89,9 @@ const router = VueRouter.createRouter({
 	history: VueRouter.createWebHashHistory(),
 	routes,
 	// 每次切换路由页面滚动到顶部
-	scrollBehavior() {
-		return {top: 0}
-	}
+	// scrollBehavior() {
+	// 	return {top: 0}
+	// }
 })
 
 //路由前置守卫；用来设置元信息

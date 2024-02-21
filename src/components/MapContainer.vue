@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import AMapLoader from '@amap/amap-jsapi-loader'
-import {onMounted, ref} from "vue";
+import {onActivated, onMounted, ref} from "vue";
 
 function initMap() {
 	AMapLoader.load({
@@ -96,7 +96,9 @@ onMounted(() => {
 				locData = data
 			})
 })
-
+onActivated(()=>{
+	
+})
 </script>
 
 <template>
@@ -126,8 +128,12 @@ onMounted(() => {
 }
 
 #container {
-	padding: 0;
-	margin: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	// padding: 0;
+	// margin: 0;
 
 	a, .amap-copyright {
 		display: none !important;
