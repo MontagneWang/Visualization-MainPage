@@ -29,40 +29,40 @@ document.addEventListener("keydown", e => {
   }
 });
 
-onMounted(() => {
-  let viewport = document.getElementById("viewport");
-  let screenChange = document.getElementById("screen-change");
-  let dw = 0;
-  if (document.body.clientHeight > document.body.clientWidth) {
-    dw = 750; //页面的高度
-    screenChange!.classList.remove("h");
-    screenChange!.classList.add("w");
-  } else if (document.body.clientHeight < document.body.clientWidth) {
-    dw = 1334; //页面的宽度
-  }
-  viewport!.setAttribute("content", "width=" + dw + ", user-scalable=no");
-  window.addEventListener(
-    "orientationchange",
-    function () {
-      if (window.orientation == 0) {
-        screenChange!.classList.remove("h");
-        screenChange!.classList.add("w");
-        dw = 750; //页面的高度
-        viewport!.setAttribute("content", "width=" + dw + ", user-scalable=no");
-      } else if (window.orientation == 90) {
-        screenChange!.classList.remove("w");
-        screenChange!.classList.add("h");
-        dw = 1334; //页面的宽度
-        viewport!.setAttribute("content", "width=" + dw + ", user-scalable=no");
-      }
-    },
-    false
-  );
-});
+// onMounted(() => {
+//   let viewport = document.getElementById("viewport");
+//   let screenChange = document.getElementById("screen-change");
+//   let dw = 0;
+//   if (document.body.clientHeight > document.body.clientWidth) {
+//     dw = 750; //页面的高度
+//     screenChange!.classList.remove("h");
+//     screenChange!.classList.add("w");
+//   } else if (document.body.clientHeight < document.body.clientWidth) {
+//     dw = 1334; //页面的宽度
+//   }
+//   viewport!.setAttribute("content", "width=" + dw + ", user-scalable=no");
+//   window.addEventListener(
+//     "orientationchange",
+//     function () {
+//       if (window.orientation == 0) {
+//         screenChange!.classList.remove("h");
+//         screenChange!.classList.add("w");
+//         dw = 750; //页面的高度
+//         viewport!.setAttribute("content", "width=" + dw + ", user-scalable=no");
+//       } else if (window.orientation == 90) {
+//         screenChange!.classList.remove("w");
+//         screenChange!.classList.add("h");
+//         dw = 1334; //页面的宽度
+//         viewport!.setAttribute("content", "width=" + dw + ", user-scalable=no");
+//       }
+//     },
+//     false
+//   );
+// });
 </script>
 
 <template>
-  <div id="screen-change" class="h">
+  <!-- <div id="screen-change" class="h"> -->
     <the-circular-nav />
     <the-back-top />
     <the-right-menu />
@@ -81,11 +81,11 @@ onMounted(() => {
         />
       </transition>
     </router-view>
-  </div>
+  <!-- </div> -->
 </template>
-<!-- todo 移动端适配，尝试改为横屏显示 -->
+<!-- todo 移动端适配，横屏显示 -->
 <style>
-#screen-change {
+/* #screen-change {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -103,7 +103,7 @@ onMounted(() => {
   width: 100vw;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-}
+} */
 
 .fade-enter-active,
 .fade-leave-active {
