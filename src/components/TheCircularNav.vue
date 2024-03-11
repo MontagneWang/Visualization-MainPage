@@ -138,16 +138,10 @@ const routerContent = [
           <router-link to="/ling">乐正绫</router-link>
         </li>
         <li>
-          <router-link to="/">歌曲数据</router-link>
+          <router-link to="/vocaloid">绫曲排行</router-link>
         </li>
         <li>
-          <router-link to="/ling">乐正绫</router-link>
-        </li>
-        <li>
-          <router-link to="/">歌曲数据</router-link>
-        </li>
-        <li>
-          <router-link to="/ling">乐正绫</router-link>
+          <router-link to="/about">关于本站</router-link>
         </li>
         <li>
           <router-link to="/">歌曲数据</router-link>
@@ -155,7 +149,13 @@ const routerContent = [
         <li>
           <router-link to="/ling">乐正绫</router-link>
         </li>
-       
+        <li>
+          <router-link to="/vocaloid">绫曲排行</router-link>
+        </li>
+        <li>
+          <router-link to="/about">关于本站</router-link>
+        </li>
+
         <!-- <li>
           <router-link to="/vocaloid">Vocaloid</router-link>
         </li>

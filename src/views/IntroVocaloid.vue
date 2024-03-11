@@ -1,70 +1,136 @@
 <template>
-	<div class="head">本次共收录 2023 上半年的 1084 首绫曲，您可以通过 [Shift + 鼠标滚轮] 来左右滑动查看</div>
-	<div style="height: 70vh;width:90vw;margin:10vh auto">
-		<!-- 修改为虚拟列表实现 -->
-		<el-auto-resizer>
-			<template #default="{ height, width }">
-				<el-table
-						:data="tableData"
-						border
-						v-loading="loading"
-						height="80vh"
-						stripe>
-					<el-table-column fixed label="分数排行" prop="rank" rfixed width="90%"/>
-					<el-table-column fixed label="作品名称" prop="title" rfixed width="400%"/>
-					<el-table-column label="周刊分数" prop="score" rfixed width="90%"/>
-					<el-table-column fit label="作者" prop="author" width="100%"/>
-					<el-table-column fit label="投稿时间" prop="createTime" width="110%"/>
-					<el-table-column fit label="播放" prop="play" width="90%"/>
-					<el-table-column fit label="弹幕" prop="danmaku"/>
-					<el-table-column fit label="评论" prop="reply"/>
-					<el-table-column fit label="点赞" prop="likePoint"/>
-					<el-table-column fit label="投币" prop="coin"/>
-					<el-table-column fit label="收藏" prop="favorite"/>
-					<el-table-column fit label="分享" prop="share"/>
-					<el-table-column fit label="链接" prop="link" width="250%"/>
-					<el-table-column fit label="简介" prop="description" width="2000%"/>
-				</el-table>
-			</template>
-		</el-auto-resizer>
-	</div>
+  <div>
+    <div class="head">
+      本次共收录 2023 上半年共 1084 首绫曲，您可以通过 [Shift + 鼠标滚轮]
+      来左右滑动查看
+    </div>
+    <div style="height: 80vh; width: 90vw; margin: 9vh auto">
+      <el-auto-resizer>
+        <template #default="{ height, width }">
+          <el-table-v2
+            fixed
+            v-loading="loading"
+            :columns="columns"
+            :data="data"
+            :width="width"
+            :height="height"
+            :estimated-row-height="83"
+            @column-sort="onSort"
+          />
+        </template>
+      </el-auto-resizer>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import {onMounted, reactive, ref} from "vue";
+import { onMounted, reactive, ref } from "vue";
+import { TableV2FixedDir, TableV2SortOrder } from "element-plus";
+import type { SortBy } from "element-plus";
 
-let tableData = reactive([])
-const loading = ref(true)
+interface Song {
+  title: string;
+  author: string;
+  createTime: string;
+  link: string;
+  play: number;
+  danmaku: number;
+  reply: number;
+  likePoint: number;
+  coin: number;
+  favorite: number;
+  share: number;
+  description: string;
+  score: number;
+  rank: number;
+}
+const loading = ref(true);
+let columnsName = [
+  { key: "title", name: "标题", width: 250 },
+  { key: "author", name: "作者", width: 150 },
+  { key: "createTime", name: "投稿日期", width: 120 },
+  { key: "link", name: "链接", width: 119 },
+  { key: "play", name: "播放量", width: 80 },
+  { key: "danmaku", name: "弹幕数", width: 60 },
+  { key: "reply", name: "评论数", width: 60 },
+  { key: "likePoint", name: "点赞数", width: 60 },
+  { key: "coin", name: "投币", width: 60 },
+  { key: "favorite", name: "收藏", width: 60 },
+  { key: "share", name: "分享", width: 60 },
+  { key: "description", name: "简介（鼠标悬浮可查看更多详细信息）", width: 500, class: "desc" },
+  { key: "score", name: "综合得分", width: 95 },
+  { key: "rank", name: "总排名", width: 60 },
+];
 
+const generateColumns = (length: number, dataKeys: any[], props?: any) =>
+  Array.from({ length }).map((_, index) => ({
+    ...props,
+    key: dataKeys[index]["key"],
+    dataKey: dataKeys[index]["key"],
+    title: dataKeys[index]["name"],
+    width: dataKeys[index]["width"],
+    class: dataKeys[index]["class"] || "",
+    // 更多属性 | https://element-plus.gitee.io/zh-CN/component/table-v2.html#column-%E5%B1%9E%E6%80%A7
+  }));
+let columns = generateColumns(columnsName.length, columnsName);
+
+const generateData = (
+  columns: ReturnType<typeof generateColumns>,
+  data: Array<any>
+) =>
+  data.map(item =>
+    columns.reduce(
+      (rowData, column) => {
+        // 绑定数据 可在此处对数据进行加工，但会影响到性能
+        rowData[column.dataKey] = item[column.dataKey];
+        return rowData;
+      },
+      { id: item.id }
+    )
+  );
+
+// 锁定表头表尾
+columns[0].fixed = TableV2FixedDir.LEFT;
+columns[13].fixed = TableV2FixedDir.RIGHT;
+let data = reactive<Song[]>([]);
 onMounted(async () => {
-	const response = await fetch('/data0623.json')
-	let newData = await response.json()
-	// 若直接替换会丢失响应式
-	Object.assign(tableData, newData)
-	loading.value = false
-	console.log(tableData)
-})
-// // 刷新懒加载后的数据
-// function refreshMenu(pid) {
-// 	loading.value = true
-// 	if (loadNodeMap.size > 0) {
-// 		const hasNode = loadNodeMap.has(pid)
-// 		if (hasNode) {
-// 			const { row, treeNode, resolve } = loadNodeMap.get(pid)
-// 			proxy.$refs.listRef.store.states.lazyTreeNodeMap[pid] = []
-// 			loadMenu(row, treeNode, resolve)
-// 		}
-// 		loading.value = false
-// 	} else {
-// 		getList()
-// 	}
-// }
+  // todo 分割大请求，先请求小文件渲染一部分，再不断请求数据并更新
+  const response = await fetch("/data0623.json");
+  const fetchData = await response.json();
+  // 将获取的数据加工后替换到表格渲染数据上
+  Object.assign(data, generateData(columns, fetchData));
+  loading.value = false;
+});
 
+// 排序优化 [2].[4].[5].[6].[7].[8].[9].[10][12][13]
+columns[13].sortable = true;
+const sortState = ref<SortBy>({
+  key: "rank",
+  order: TableV2SortOrder.ASC,
+});
+const onSort = (sortBy: SortBy) => {
+  data = data.reverse();
+  sortState.value = sortBy;
+};
 </script>
 
-<style scoped>
-.head{
-	font-size: 1.5rem;
-	margin: 4vh 0 -6vh 5vw;
+<style lang="scss" scoped>
+.head {
+  font-size: 1.5rem;
+  margin: 3vh 0 -6vh 5vw;
+}
+// 添加 深度选择器，保证影响到子组件。超过五行截取，显示省略号
+:deep(.desc) {
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+// 保证移动端可以滑动
+:deep(.el-table-v2__body) > div:nth-child(1) {
+  overflow: auto !important;
 }
 </style>

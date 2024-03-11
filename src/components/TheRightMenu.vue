@@ -170,7 +170,8 @@ onMounted(() => {
         :style="{ height: radius * 2 + 'px', width: radius * 2 + 'px' }"
         class="item"
       >
-        <a class="eachItem" @click.prevent="smoothScroll(0)"></a>
+        <!-- <a class="eachItem" @click.prevent="smoothScroll(0)"></a> -->
+        <a class="eachItem" @click.prevent="$router.push('/vocaloid')"></a>
         <a class="eachItem" @click.prevent="$router.push('/')"></a>
         <a class="eachItem" @click.prevent="$router.push('/ling')"></a>
         <a class="eachItem" @click.prevent="showModal = true"></a>
@@ -187,7 +188,7 @@ $bgUrl3: "https://i0.hdslb.com/bfs/article/b827525d40b536cb40b139e3d59d0b4b14023
 $bgUrl4: "https://i0.hdslb.com/bfs/article/c506859af60a57e6c32d04cce222184f1402305269.png@1e_1c.webp";
 $bgUrl5: "https://i0.hdslb.com/bfs/article/0ac8f2d311b789645ae0cab9a7e339b01402305269.png@1e_1c.webp";
 $bgUrl6: "https://i0.hdslb.com/bfs/article/7b9fab423bb2b180f793f1eee3a934df1402305269.png@1e_1c.webp";
-$cont1: "回到\A顶部";
+$cont1: "排行\A页面";
 $cont2: "数据\A页面";
 $cont3: "介绍\A页面";
 $cont4: "关于\A本站";

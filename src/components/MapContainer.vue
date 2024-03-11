@@ -15,7 +15,7 @@ function initMap() {
 			center: [110, 33], //初始化地图中心点位置
 			mapStyle: 'amap://styles/fresh',  //设置地图的显示样式
 		})
-
+		// fixme 有时地图上的圆点会不显示
 		locData.forEach(item => {
 			let center = new AMap.LngLat(item['LngLat'][0], item['LngLat'][1]);
 			let multiples = () => {
