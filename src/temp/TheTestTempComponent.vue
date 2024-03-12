@@ -9,6 +9,18 @@ watchEffect(() => {
 	Counter = useCounterStore()
 })
 
+// 直接请求 页面会卡死
+let handleRequest1 = async () => {
+  let time = performance.now();
+  // const response = await fetch("/data0623.json"); // 1mb
+  const response = await fetch("/data0623large.json"); // 36mb 压缩后 8m
+  const fetchData = await response.json();
+  // 将获取的数据加工后替换到表格渲染数据上
+  // Object.assign(data, generateData(columns, fetchData));
+  // loading.value = false;
+  console.log("直接请求:" + (performance.now() - time));
+};
+
 // 分块请求, 部署到服务器时无法获取到 contentLength
 let handleRequest3 = async (size: number) => {
   let time = performance.now();

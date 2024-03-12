@@ -3,28 +3,7 @@ import { onMounted, reactive, ref } from "vue";
 import { TableV2FixedDir, TableV2SortOrder } from "element-plus";
 import type { SortBy } from "element-plus";
 
-// import { fetchStreamJson, arrayItemSymbol } from "stream-json-parse";
-
-// fetchStreamJson({
-//   // 请求地址
-//   url: "/data0623large.json",
-//   // 解析配置
-//   JSONParseOption: {
-//     // 要求完整解析对应路径下的数据，才能上报（可选）, arrayItemSymbol 表示数组项
-//     completeItemPath: ["data", arrayItemSymbol],
-//     // json解析的回调
-//     jsonCallback: (error, isDone, value) => {
-//       console.log("jsonCallback", error, isDone, value);
-//     },
-//     diffCallBack: (json, isEq) => {
-//       console.log("diffCallBack", json, isEq);
-//     },
-//   },
-//   // fetch请求配置，同浏览器 fetch api
-//   fetchOptions: {
-//     method: "GET",
-//   },
-// });
+import { fetchStreamJson } from "stream-json-parse";
 
 interface Song {
   title: string;
@@ -97,41 +76,12 @@ const generateData = (
 columns[0].fixed = TableV2FixedDir.LEFT;
 columns[13].fixed = TableV2FixedDir.RIGHT;
 
-onMounted(async () => {
-	const response = await fetch("/data0623.json");
-  const reader = response.body!.getReader();
-  const stream = new ReadableStream({
-    async start(controller) {
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) {
-          controller.close();
-          break;
-        }
-        controller.enqueue(value);
-      }
-    },
-  });
-  const result = await new Response(stream).json();
-  Object.assign(data, generateData(columns, result));
-  loading.value = false;
-});
-
-// 直接请求 页面会卡死
-let handleRequest1 = async () => {
-  let time = performance.now();
-  // const response = await fetch("/data0623.json"); // 1mb
-  const response = await fetch("/data0623large.json"); // 36mb 压缩后 8m
-  const fetchData = await response.json();
-  // 将获取的数据加工后替换到表格渲染数据上
-  Object.assign(data, generateData(columns, fetchData));
-  loading.value = false;
-  console.log("直接请求:" + (performance.now() - time));
-};
+onMounted(async () => {});
 
 // fetch 流式传输 从7秒减少到3秒
 let handleRequest2 = async () => {
   let time = performance.now();
+  let accumulatedText = "";
   const response = await fetch("/data0623large.json");
   const reader = response.body!.getReader();
   const stream = new ReadableStream({
@@ -142,19 +92,54 @@ let handleRequest2 = async () => {
           controller.close();
           break;
         }
+
+        // 处理每个返回的数据块
+        // let partialResult;
+        // try {
+        //   // partialResult = JSON.parse(new TextDecoder().decode(value));
+        //   partialResult = new TextDecoder().decode(value);
+        //   accumulatedText += partialResult;
+        //   Object.assign(
+        //     data,
+        //     generateData(columns, JSON.parse(accumulatedText))
+        //   );
+        // } catch (e) {
+        //   console.error("解析错误", e);
+        // }
+
         controller.enqueue(value);
       }
     },
   });
   const result = await new Response(stream).json();
+  // Object.assign(data, generateData(columns, JSON.parse(accumulatedText)));
   Object.assign(data, generateData(columns, result));
   loading.value = false;
   console.log("流式传输:" + (performance.now() - time));
 };
 
-// todo 流式传输时同步处理部分渲染，对返回的部分数据需要先修正为 JSON 格式
+// todo 流式传输时同步处理部分渲染，对返回的部分数据修正为 JSON 格式
 let handleRequest3 = async () => {
-  
+  let time = performance.now();
+  await fetchStreamJson({
+    url: "/data0623large.json",
+    JSONParseOption: {
+      // completeItemPath: ["data", arrayItemSymbol], // 完整解析才上报
+      updatePeriod: 300, // 执行 jsonCallback 的间隔
+      // 对每次返回的部分 json 进行解析，添加到渲染列表
+      jsonCallback: (error, isDone, value) => {
+        if (loading.value) {
+          Object.assign(data, generateData(columns, value));
+          loading.value = false;
+          console.log("第一次渲染时间:" + (performance.now() - time));
+        }
+        if (isDone) {
+          Object.assign(data, generateData(columns, value));
+        }
+      },
+    },
+  });
+  console.log("流式传输总时间:" + (performance.now() - time));
 };
 
 // 排序优化 [2].[4].[5].[6].[7].[8].[9].[10][12][13]
@@ -174,9 +159,8 @@ const onSort = (sortBy: SortBy) => {
     <div class="head">
       本次共收录 2023 上半年共 1084 首绫曲，您可以通过 [Shift + 鼠标滚轮]
       来左右滑动查看
-      <!-- <button @click="handleRequest1()">直接请求</button>
       <button @click="handleRequest2()">流式传输</button>
-      <button @click="handleRequest3()">部分渲染</button> -->
+      <button @click="handleRequest3()">流式传输处理</button>
     </div>
     <div style="height: 80vh; width: 90vw; margin: 9vh auto">
       <el-auto-resizer>
