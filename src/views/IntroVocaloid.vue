@@ -88,7 +88,7 @@ const onSort = (sortBy: SortBy) => {
 onMounted(async () => {
   // fetch 流式传输同时处理数据，在第一次获取到流数据时返回给渲染数组
   let time = performance.now();
-  const response = await fetch("/data0623large.json");
+  const response = await fetch("/data0623.json");
   const reader = response.body!.getReader();
   const stream = new ReadableStream({
     async start(controller) {
@@ -100,6 +100,7 @@ onMounted(async () => {
         }
 
         // 在第一次未渲染时，将返回的流数据解码为字符串，找到最后一个「rank」后「,」的位置，截断之后的文本，构造一个合法的 JSON 并替换渲染数组
+        // 如果需要持续更新渲染，可以采用 reduce 累加新文本
         if (loading.value) {
           try {
             let partialResult = new TextDecoder().decode(value);
