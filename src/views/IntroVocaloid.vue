@@ -79,14 +79,14 @@ onMounted(async () => {
 
 // 直接请求，需要 7s，页面卡死
 let handleRequest1 = async () => {
-  let time = Date.now();
+  let time = performance.now();
   // const response = await fetch("/data0623.json"); // 1mb
-  const response = await fetch("/data0623large.json"); // 36mb
+  const response = await fetch("/data0623large.json"); // 36mb 压缩后 8m
   const fetchData = await response.json();
   // 将获取的数据加工后替换到表格渲染数据上
   Object.assign(data, generateData(columns, fetchData));
   loading.value = false;
-  console.log("直接请求:" + (Date.now() - time));
+  console.log("直接请求:" + (performance.now() - time));
   // todo 每个 添加计时模块
 };
 
@@ -95,7 +95,7 @@ let handleRequest1 = async () => {
 // todo 3 处理数据的同时读取数据：在你的代码中，你首先读取所有的数据，然后处理数据。你可以尝试边读取数据边处理数据，这样可能会更快。例如，如果你的数据是JSON格式的，你可以使用流式JSON解析器，如JSONStream或stream-json。
 // let data = reactive<Song[]>([]);
 let handleRequest2 = async () => {
-  let time = Date.now();
+  let time = performance.now();
   const response = await fetch("/data0623large.json");
   const reader = response.body!.getReader();
   const stream = new ReadableStream({
@@ -113,12 +113,12 @@ let handleRequest2 = async () => {
   const result = await new Response(stream).json();
   Object.assign(data, generateData(columns, result));
   loading.value = false;
-  console.log("流式传输:" + (Date.now() - time));
+  console.log("流式传输:" + (performance.now() - time));
 };
 
 // 分块请求
 let handleRequest3 = async (size: number) => {
-  let time = Date.now();
+  let time = performance.now();
 
   // 每个请求块的大小，单位是字节。
   const CHUNK_SIZE = size * 1024; // size KB
@@ -131,9 +131,9 @@ let handleRequest3 = async (size: number) => {
     const response = await fetch(dataUrl, { method: "HEAD" });
     const contentLength = response.headers.get("Content-Length");
 
-    if (contentLength === null) {
-      throw new Error("Content-Length header is missing");
-    }
+    // if (contentLength === null) {
+    //   throw new Error("Content-Length header is missing");
+    // }
 
     return Number(contentLength);
   };
@@ -172,7 +172,7 @@ let handleRequest3 = async (size: number) => {
 
   Object.assign(data, generateData(columns, fullJson));
   loading.value = false;
-  console.log("分块请求:" + (Date.now() - time));
+  console.log("分块请求:" + (performance.now() - time));
 };
 
 // 排序优化 [2].[4].[5].[6].[7].[8].[9].[10][12][13]
@@ -197,7 +197,6 @@ const onSort = (sortBy: SortBy) => {
       <button @click="handleRequest3(500)">分块请求500k</button>
       <button @click="handleRequest3(50)">分块请求50k</button>
       <button @click="handleRequest3(1000)">分块请求1m</button>
-      <button @click="handleRequest3(4000)">分块请求4m</button>
     </div>
     <div style="height: 80vh; width: 90vw; margin: 9vh auto">
       <el-auto-resizer>
