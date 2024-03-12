@@ -20,6 +20,7 @@
     "jquery": "^3.6.4",
     "pinia": "^2.0.33",
     "sass": "^1.59.3",
+    "stream-json-parse": "^0.2.1",
     "unplugin-auto-import": "^0.15.1",
     "unplugin-vue-components": "^0.24.1",
     "vue": "^3.2.47",
