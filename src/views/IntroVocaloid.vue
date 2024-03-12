@@ -24,15 +24,15 @@ let data = reactive<Song[]>([]);
 let columnsName = [
   { key: "title", name: "标题", width: 250 },
   { key: "author", name: "作者", width: 150 },
-  { key: "createTime", name: "投稿日期", width: 120 },
+  { key: "createTime", name: "投稿日期", width: 100 },
   { key: "link", name: "链接", width: 119 },
-  { key: "play", name: "播放量", width: 80 },
-  { key: "danmaku", name: "弹幕数", width: 60 },
-  { key: "reply", name: "评论数", width: 60 },
-  { key: "likePoint", name: "点赞数", width: 60 },
-  { key: "coin", name: "投币", width: 60 },
-  { key: "favorite", name: "收藏", width: 60 },
-  { key: "share", name: "分享", width: 60 },
+  { key: "play", name: "播放量", width: 90 },
+  { key: "danmaku", name: "弹幕数", width: 70 },
+  { key: "reply", name: "评论数", width: 70 },
+  { key: "likePoint", name: "点赞数", width: 70 },
+  { key: "coin", name: "投币", width: 70 },
+  { key: "favorite", name: "收藏", width: 70 },
+  { key: "share", name: "分享", width: 70 },
   {
     key: "description",
     name: "简介（鼠标悬浮可查看更多详细信息）",
@@ -62,7 +62,7 @@ const generateData = (
   data.map(item =>
     columns.reduce(
       (rowData, column) => {
-        // 绑定数据 可在此处对数据进行加工，但会影响到性能
+        // 绑定数据 可在此处对数据进行加工，比如添加链接
         rowData[column.dataKey] = item[column.dataKey];
         return rowData;
       },
@@ -89,7 +89,7 @@ onMounted(async () => {
   // fetch 流式传输同时处理数据，在第一次获取到流数据时返回给渲染数组
   let time = performance.now();
   // const response = await fetch("/data0623.json"); // 1mb
-  const response = await fetch("/data0623large.json"); // 12mb
+  const response = await fetch("/data0312.json"); // 10mb
   const reader = response.body!.getReader();
   const stream = new ReadableStream({
     async start(controller) {
@@ -129,12 +129,15 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div>
+  <div class="container">
     <div class="head">
-      本次共收录 2023 上半年共 1084 首绫曲，您可以通过 [Shift + 鼠标滚轮]
-      来左右滑动查看
+      <p>
+        共收录自 2015 年以来共 9833 个「乐正绫」相关歌曲/视频，您可以通过 [Shift
+        + 鼠标滚轮] 来左右滑动查看
+      </p>
+      <p>数据暂时粗筛，如有遗漏与不匹配还请见谅，将在之后的版本进行删补</p>
     </div>
-    <div style="height: 80vh; width: 90vw; margin: 9vh auto">
+    <div class="table">
       <el-auto-resizer>
         <template #default="{ height, width }">
           <el-table-v2
@@ -154,9 +157,28 @@ onMounted(async () => {
 </template>
 
 <style lang="scss" scoped>
-.head {
-  font-size: 1.5rem;
-  margin: 3vh 0 -6vh 5vw;
+.container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; 
+  background: url("https://article.biliimg.com/bfs/article/6b55f667d718fda42ffef7550188df246473e2f7.png@1e_1c.webp")
+    no-repeat top / cover !important;
+
+  .head {
+    font-size: 1.2vw;
+    display: inline-block;
+    margin: 4vh 0 2vh 5vw;
+    padding: 0 1em;
+    line-height: 0.5em;
+    background-color: #ffffff90;
+    border-radius: 0.3em;
+  }
+  .table {
+    height: 80vh;
+    width: 90vw;
+    margin: 0 auto;
+    opacity: 0.85;
+  }
 }
 // 添加 深度选择器，保证影响到子组件。超过五行截取，显示省略号
 :deep(.desc) {
