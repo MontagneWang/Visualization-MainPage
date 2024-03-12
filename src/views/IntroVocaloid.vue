@@ -81,7 +81,6 @@ onMounted(async () => {});
 // fetch 流式传输 从7秒减少到3秒
 let handleRequest2 = async () => {
   let time = performance.now();
-  let accumulatedText = "";
   const response = await fetch("/data0623large.json");
   const reader = response.body!.getReader();
   const stream = new ReadableStream({
@@ -93,26 +92,45 @@ let handleRequest2 = async () => {
           break;
         }
 
-        // 处理每个返回的数据块
-        // let partialResult;
-        // try {
-        //   // partialResult = JSON.parse(new TextDecoder().decode(value));
-        //   partialResult = new TextDecoder().decode(value);
-        //   accumulatedText += partialResult;
-        //   Object.assign(
-        //     data,
-        //     generateData(columns, JSON.parse(accumulatedText))
-        //   );
-        // } catch (e) {
-        //   console.error("解析错误", e);
-        // }
+        /**
+         * // todo 处理第一次返回的数据块，用于预渲染（第一次返回的也足够用户看了）
+         * 从尾部开始匹配 rank，然后截断 rank 位后的第一个','，添加']'
+         */
+        if (loading.value) {
+          let partialResult;
+          loading.value = false;
+          try {
+            function modifyString(input: string): string {
+              const rankIndex = input.lastIndexOf("rank");
+              if (rankIndex === -1) {
+                loading.value = true;
+                throw new Error("'rank' not found");
+              }
+              const commaIndex = input.indexOf(",", rankIndex);
+              if (commaIndex === -1) {
+                loading.value = true;
+                throw new Error("',' not found after 'rank'");
+              }
+              // 使用substring和concat方法对字符串进行修改。
+              // 这种方法比使用split和join方法更高效，因为它只需要创建两个新的字符串，而不是创建一个新的字符串数组。
+              return input.substring(0, commaIndex) + "]";
+            }
+            // 将返回的部分数据解码为字符串
+            partialResult = new TextDecoder().decode(value);
+            Object.assign(
+              data,
+              generateData(columns, JSON.parse(modifyString(partialResult)))
+            );
+          } catch (e) {
+            console.error("解析错误", e);
+          }
+        }
 
         controller.enqueue(value);
       }
     },
   });
   const result = await new Response(stream).json();
-  // Object.assign(data, generateData(columns, JSON.parse(accumulatedText)));
   Object.assign(data, generateData(columns, result));
   loading.value = false;
   console.log("流式传输:" + (performance.now() - time));
