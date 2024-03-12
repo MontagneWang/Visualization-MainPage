@@ -88,7 +88,8 @@ const onSort = (sortBy: SortBy) => {
 onMounted(async () => {
   // fetch 流式传输同时处理数据，在第一次获取到流数据时返回给渲染数组
   let time = performance.now();
-  const response = await fetch("/data0623.json");
+  // const response = await fetch("/data0623.json"); // 1mb
+  const response = await fetch("/data0623large.json"); // 12mb
   const reader = response.body!.getReader();
   const stream = new ReadableStream({
     async start(controller) {
@@ -111,7 +112,8 @@ onMounted(async () => {
             loading.value = false;
             console.log("首次渲染时间:" + (performance.now() - time));
           } catch (e) {
-            console.error("解析错误", e);
+            // 只有一种情况会引发异常：请求的总文本太少，第一次 Stream 直接返回了全部数据，导致无法匹配到最后的逗号
+            console.warn("数据已全部渲染完毕");
           }
         }
 
