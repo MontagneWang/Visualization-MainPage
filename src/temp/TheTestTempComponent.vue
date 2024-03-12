@@ -21,6 +21,30 @@ let handleRequest1 = async () => {
   console.log("直接请求:" + (performance.now() - time));
 };
 
+// [弃用] 采用json处理库，效果不好，改为原生实现
+// import { fetchStreamJson } from "stream-json-parse";
+// let handleRequest2 = async () => {
+//   let time = performance.now();
+//   await fetchStreamJson({
+//     url: "/data0623large.json",
+//     JSONParseOption: {
+//       // completeItemPath: ["data", arrayItemSymbol], // 完整解析才上报
+//       updatePeriod: 300, // 执行 jsonCallback 的间隔
+//       // 对每次返回的部分 json 进行解析，添加到渲染列表
+//       jsonCallback: (error, isDone, value) => {
+//         if (loading.value) {
+//           Object.assign(data, generateData(columns, value));
+//           loading.value = false;
+//           console.log("第一次渲染时间:" + (performance.now() - time));
+//         }
+//         if (isDone) {
+//           Object.assign(data, generateData(columns, value));
+//         }
+//       },
+//     },
+//   });
+//   console.log("流式传输总时间:" + (performance.now() - time));
+// };
 // 分块请求, 部署到服务器时无法获取到 contentLength
 let handleRequest3 = async (size: number) => {
   let time = performance.now();

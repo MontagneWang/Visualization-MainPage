@@ -3,8 +3,6 @@ import { onMounted, reactive, ref } from "vue";
 import { TableV2FixedDir, TableV2SortOrder } from "element-plus";
 import type { SortBy } from "element-plus";
 
-import { fetchStreamJson } from "stream-json-parse";
-
 interface Song {
   title: string;
   author: string;
@@ -76,10 +74,19 @@ const generateData = (
 columns[0].fixed = TableV2FixedDir.LEFT;
 columns[13].fixed = TableV2FixedDir.RIGHT;
 
-onMounted(async () => {});
+// 排序优化 [2].[4].[5].[6].[7].[8].[9].[10][12][13]
+columns[13].sortable = true;
+const sortState = ref<SortBy>({
+  key: "rank",
+  order: TableV2SortOrder.ASC,
+});
+const onSort = (sortBy: SortBy) => {
+  data = data.reverse();
+  sortState.value = sortBy;
+};
 
-// fetch 流式传输 从7秒减少到3秒
-let handleRequest2 = async () => {
+onMounted(async () => {
+  // fetch 流式传输同时处理数据，在第一次获取到流数据时返回给渲染数组
   let time = performance.now();
   const response = await fetch("/data0623large.json");
   const reader = response.body!.getReader();
@@ -92,35 +99,16 @@ let handleRequest2 = async () => {
           break;
         }
 
-        /**
-         * // todo 处理第一次返回的数据块，用于预渲染（第一次返回的也足够用户看了）
-         * 从尾部开始匹配 rank，然后截断 rank 位后的第一个','，添加']'
-         */
+        // 在第一次未渲染时，将返回的流数据解码为字符串，找到最后一个「rank」后「,」的位置，截断之后的文本，构造一个合法的 JSON 并替换渲染数组
         if (loading.value) {
-          let partialResult;
-          loading.value = false;
           try {
-            function modifyString(input: string): string {
-              const rankIndex = input.lastIndexOf("rank");
-              if (rankIndex === -1) {
-                loading.value = true;
-                throw new Error("'rank' not found");
-              }
-              const commaIndex = input.indexOf(",", rankIndex);
-              if (commaIndex === -1) {
-                loading.value = true;
-                throw new Error("',' not found after 'rank'");
-              }
-              // 使用substring和concat方法对字符串进行修改。
-              // 这种方法比使用split和join方法更高效，因为它只需要创建两个新的字符串，而不是创建一个新的字符串数组。
-              return input.substring(0, commaIndex) + "]";
-            }
-            // 将返回的部分数据解码为字符串
-            partialResult = new TextDecoder().decode(value);
-            Object.assign(
-              data,
-              generateData(columns, JSON.parse(modifyString(partialResult)))
-            );
+            let partialResult = new TextDecoder().decode(value);
+            let rankIndex = partialResult.lastIndexOf("rank");
+            let commaIndex = partialResult.indexOf(",", rankIndex);
+            let finalText = partialResult.substring(0, commaIndex) + "]";
+            Object.assign(data, generateData(columns, JSON.parse(finalText)));
+            loading.value = false;
+            console.log("首次渲染时间:" + (performance.now() - time));
           } catch (e) {
             console.error("解析错误", e);
           }
@@ -133,43 +121,8 @@ let handleRequest2 = async () => {
   const result = await new Response(stream).json();
   Object.assign(data, generateData(columns, result));
   loading.value = false;
-  console.log("流式传输:" + (performance.now() - time));
-};
-
-// todo 流式传输时同步处理部分渲染，对返回的部分数据修正为 JSON 格式
-let handleRequest3 = async () => {
-  let time = performance.now();
-  await fetchStreamJson({
-    url: "/data0623large.json",
-    JSONParseOption: {
-      // completeItemPath: ["data", arrayItemSymbol], // 完整解析才上报
-      updatePeriod: 300, // 执行 jsonCallback 的间隔
-      // 对每次返回的部分 json 进行解析，添加到渲染列表
-      jsonCallback: (error, isDone, value) => {
-        if (loading.value) {
-          Object.assign(data, generateData(columns, value));
-          loading.value = false;
-          console.log("第一次渲染时间:" + (performance.now() - time));
-        }
-        if (isDone) {
-          Object.assign(data, generateData(columns, value));
-        }
-      },
-    },
-  });
   console.log("流式传输总时间:" + (performance.now() - time));
-};
-
-// 排序优化 [2].[4].[5].[6].[7].[8].[9].[10][12][13]
-columns[13].sortable = true;
-const sortState = ref<SortBy>({
-  key: "rank",
-  order: TableV2SortOrder.ASC,
 });
-const onSort = (sortBy: SortBy) => {
-  data = data.reverse();
-  sortState.value = sortBy;
-};
 </script>
 
 <template>
@@ -177,8 +130,6 @@ const onSort = (sortBy: SortBy) => {
     <div class="head">
       本次共收录 2023 上半年共 1084 首绫曲，您可以通过 [Shift + 鼠标滚轮]
       来左右滑动查看
-      <button @click="handleRequest2()">流式传输</button>
-      <button @click="handleRequest3()">流式传输处理</button>
     </div>
     <div style="height: 80vh; width: 90vw; margin: 9vh auto">
       <el-auto-resizer>
