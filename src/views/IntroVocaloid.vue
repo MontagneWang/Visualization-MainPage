@@ -1,28 +1,3 @@
-<template>
-  <div>
-    <div class="head">
-      本次共收录 2023 上半年共 1084 首绫曲，您可以通过 [Shift + 鼠标滚轮]
-      来左右滑动查看
-    </div>
-    <div style="height: 80vh; width: 90vw; margin: 9vh auto">
-      <el-auto-resizer>
-        <template #default="{ height, width }">
-          <el-table-v2
-            fixed
-            v-loading="loading"
-            :columns="columns"
-            :data="data"
-            :width="width"
-            :height="height"
-            :estimated-row-height="83"
-            @column-sort="onSort"
-          />
-        </template>
-      </el-auto-resizer>
-    </div>
-  </div>
-</template>
-
 <script lang="ts" setup>
 import { onMounted, reactive, ref } from "vue";
 import { TableV2FixedDir, TableV2SortOrder } from "element-plus";
@@ -57,7 +32,12 @@ let columnsName = [
   { key: "coin", name: "投币", width: 60 },
   { key: "favorite", name: "收藏", width: 60 },
   { key: "share", name: "分享", width: 60 },
-  { key: "description", name: "简介（鼠标悬浮可查看更多详细信息）", width: 500, class: "desc" },
+  {
+    key: "description",
+    name: "简介（鼠标悬浮可查看更多详细信息）",
+    width: 500,
+    class: "desc",
+  },
   { key: "score", name: "综合得分", width: 95 },
   { key: "rank", name: "总排名", width: 60 },
 ];
@@ -95,12 +75,38 @@ columns[13].fixed = TableV2FixedDir.RIGHT;
 let data = reactive<Song[]>([]);
 onMounted(async () => {
   // todo 分割大请求，先请求小文件渲染一部分，再不断请求数据并更新
-  const response = await fetch("/data0623.json");
-  const fetchData = await response.json();
-  // 将获取的数据加工后替换到表格渲染数据上
-  Object.assign(data, generateData(columns, fetchData));
-  loading.value = false;
+  
 });
+
+let handleRequest1 = async () => {
+    // const response = await fetch("/data0623.json"); // 1mb
+    const response = await fetch("/data0623large.json"); // 36mb
+    const fetchData = await response.json();
+    // 将获取的数据加工后替换到表格渲染数据上
+    Object.assign(data, generateData(columns, fetchData));
+    loading.value = false;
+  };
+
+  // todo fetch 流式传输
+  let handleRequest2 = async () => {
+    const response = await fetch("/data0623large.json");
+    const reader = response.body!.getReader();
+    const stream = new ReadableStream({
+      async start(controller) {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) {
+            controller.close();
+            break;
+          }
+          controller.enqueue(value);
+        }
+      },
+    });
+    const result = await new Response(stream).json();
+    Object.assign(data, generateData(columns, result));
+    loading.value = false;
+  };
 
 // 排序优化 [2].[4].[5].[6].[7].[8].[9].[10][12][13]
 columns[13].sortable = true;
@@ -113,6 +119,33 @@ const onSort = (sortBy: SortBy) => {
   sortState.value = sortBy;
 };
 </script>
+
+<template>
+  <div>
+    <div class="head">
+      本次共收录 2023 上半年共 1084 首绫曲，您可以通过 [Shift + 鼠标滚轮]
+      来左右滑动查看
+      <button @click="handleRequest1()">直接请求</button>
+      <button @click="handleRequest2()">流式传输</button>
+    </div>
+    <div style="height: 80vh; width: 90vw; margin: 9vh auto">
+      <el-auto-resizer>
+        <template #default="{ height, width }">
+          <el-table-v2
+            fixed
+            v-loading="loading"
+            :columns="columns"
+            :data="data"
+            :width="width"
+            :height="height"
+            :estimated-row-height="83"
+            @column-sort="onSort"
+          />
+        </template>
+      </el-auto-resizer>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .head {
