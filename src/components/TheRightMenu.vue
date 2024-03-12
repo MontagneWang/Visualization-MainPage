@@ -228,7 +228,7 @@ $eachHeight: var(--item-diameter);
   }
   // 放大且变亮
   &:hover {
-    z-index: 1000;
+    z-index: 100001; // 覆盖住周边的两个圆按钮
     transition: all 0.5s;
     width: calc(1.6 * $eachHeight);
     height: calc(1.6 * $eachHeight);
@@ -261,7 +261,7 @@ $eachHeight: var(--item-diameter);
   padding: 0;
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 100000;
   font-size: 1.3vw;
   .circle {
     margin: 0 auto;

@@ -36,7 +36,7 @@ function scroll() {
   position: fixed;
   bottom: 15vh;
   right: 1.7vw;
-  z-index: 100;
+  z-index: 10000;
   transition: all 1s;
 
   /* 绳子 */

@@ -75,38 +75,105 @@ columns[13].fixed = TableV2FixedDir.RIGHT;
 let data = reactive<Song[]>([]);
 onMounted(async () => {
   // todo 分割大请求，先请求小文件渲染一部分，再不断请求数据并更新
-  
 });
 
+// 直接请求，需要 7s，页面卡死
 let handleRequest1 = async () => {
-    // const response = await fetch("/data0623.json"); // 1mb
-    const response = await fetch("/data0623large.json"); // 36mb
-    const fetchData = await response.json();
-    // 将获取的数据加工后替换到表格渲染数据上
-    Object.assign(data, generateData(columns, fetchData));
-    loading.value = false;
+  let time = Date.now();
+  // const response = await fetch("/data0623.json"); // 1mb
+  const response = await fetch("/data0623large.json"); // 36mb
+  const fetchData = await response.json();
+  // 将获取的数据加工后替换到表格渲染数据上
+  Object.assign(data, generateData(columns, fetchData));
+  loading.value = false;
+  console.log("直接请求:" + (Date.now() - time));
+  // todo 每个 添加计时模块
+};
+
+// fetch 流式传输 从7秒减少到3秒
+// todo 2 并发读取：你可以尝试使用多个读取器并发地从服务器读取数据。这可能需要服务器支持Range请求，这样每个读取器可以读取文件的不同部分。然而，这可能会使代码复杂化，因为你需要处理并发读取和数据合并。
+// todo 3 处理数据的同时读取数据：在你的代码中，你首先读取所有的数据，然后处理数据。你可以尝试边读取数据边处理数据，这样可能会更快。例如，如果你的数据是JSON格式的，你可以使用流式JSON解析器，如JSONStream或stream-json。
+// let data = reactive<Song[]>([]);
+let handleRequest2 = async () => {
+  let time = Date.now();
+  const response = await fetch("/data0623large.json");
+  const reader = response.body!.getReader();
+  const stream = new ReadableStream({
+    async start(controller) {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) {
+          controller.close();
+          break;
+        }
+        controller.enqueue(value);
+      }
+    },
+  });
+  const result = await new Response(stream).json();
+  Object.assign(data, generateData(columns, result));
+  loading.value = false;
+  console.log("流式传输:" + (Date.now() - time));
+};
+
+// 分块请求
+let handleRequest3 = async (size: number) => {
+  let time = Date.now();
+
+  // 每个请求块的大小，单位是字节。
+  const CHUNK_SIZE = size * 1024; // size KB
+
+  const dataUrl = "/data0623large.json";
+  const chunks = ref<string[]>([]);
+
+  // 先获取文件总大小
+  const fetchTotalSize = async () => {
+    const response = await fetch(dataUrl, { method: "HEAD" });
+    const contentLength = response.headers.get("Content-Length");
+
+    if (contentLength === null) {
+      throw new Error("Content-Length header is missing");
+    }
+
+    return Number(contentLength);
   };
 
-  // todo fetch 流式传输
-  let handleRequest2 = async () => {
-    const response = await fetch("/data0623large.json");
-    const reader = response.body!.getReader();
-    const stream = new ReadableStream({
-      async start(controller) {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) {
-            controller.close();
-            break;
-          }
-          controller.enqueue(value);
-        }
+  const fetchChunk = async (start: number, end: number) => {
+    const response = await fetch(dataUrl, {
+      headers: {
+        Range: `bytes=${start}-${end}`,
       },
     });
-    const result = await new Response(stream).json();
-    Object.assign(data, generateData(columns, result));
-    loading.value = false;
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const text = await response.text();
+    chunks.value.push(text);
   };
+
+  const totalSize = await fetchTotalSize();
+  const chunkCount = Math.ceil(totalSize / CHUNK_SIZE);
+
+  for (let i = 0; i < chunkCount; i++) {
+    const start = i * CHUNK_SIZE;
+    const end = Math.min((i + 1) * CHUNK_SIZE - 1, totalSize - 1);
+
+    try {
+      await fetchChunk(start, end);
+    } catch (error) {
+      console.error(`Failed to fetch chunk ${i + 1}:`, error);
+    }
+  }
+
+  const fullText = chunks.value.join("");
+  const fullJson = JSON.parse(fullText);
+
+  Object.assign(data, generateData(columns, fullJson));
+  loading.value = false;
+  console.log("分块请求:" + (Date.now() - time));
+};
 
 // 排序优化 [2].[4].[5].[6].[7].[8].[9].[10][12][13]
 columns[13].sortable = true;
@@ -127,6 +194,10 @@ const onSort = (sortBy: SortBy) => {
       来左右滑动查看
       <button @click="handleRequest1()">直接请求</button>
       <button @click="handleRequest2()">流式传输</button>
+      <button @click="handleRequest3(500)">分块请求500k</button>
+      <button @click="handleRequest3(50)">分块请求50k</button>
+      <button @click="handleRequest3(1000)">分块请求1m</button>
+      <button @click="handleRequest3(4000)">分块请求4m</button>
     </div>
     <div style="height: 80vh; width: 90vw; margin: 9vh auto">
       <el-auto-resizer>

@@ -187,7 +187,7 @@ const routerContent = [
   height: 80vh;
   width: 80vh;
   opacity: 0.6;
-  z-index: 100;
+  z-index: 10000;
   border-radius: 50%; // 防止边角触发
   position: fixed;
   top: 10vh;
