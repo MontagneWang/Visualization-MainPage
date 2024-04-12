@@ -134,7 +134,7 @@ html {
 }
 
 html * {
-  font-family: LXGW WenKai Lite, serif !important;
+  font-family: 'LXGW WenKai', LXGW WenKai Lite, serif !important;
 }
 body,
 html {

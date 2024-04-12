@@ -29,7 +29,7 @@ const props = defineProps({
 </template>
 <style>
 * {
-  font-family: LXGW WenKai Lite, serif !important;
+  font-family:'LXGW WenKai', LXGW WenKai Lite, serif !important;
 }
 
 .modal-mask {
