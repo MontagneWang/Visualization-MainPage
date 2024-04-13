@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import MobilePage from "./components/MobilePage.vue";
 import TheBackTop from "./components/TheBackTop.vue";
 import TheCircularNav from "./components/TheCircularNav.vue";
 import TheRightMenu from "./components/TheRightMenu.vue";
 import IntroLing from "./views/IntroLing.vue";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 const router = useRouter();
 // router.push('/message')
 
@@ -59,10 +60,18 @@ document.addEventListener("keydown", e => {
 //     false
 //   );
 // });
+
+// 移动端跳转
+
+let width = ref(window.innerWidth);
+window.addEventListener("resize", () => {
+  width.value = window.innerWidth;
+});
 </script>
 
 <template>
-  <!-- <div id="screen-change" class="h"> -->
+  <mobile-page v-if="width <= 768" />
+  <template v-else>
     <the-circular-nav />
     <the-back-top />
     <the-right-menu />
@@ -74,14 +83,10 @@ document.addEventListener("keydown", e => {
         </keep-alive>
       </transition>
       <transition name="scale" mode="out-in">
-        <component
-          :is="Component"
-          :key="route.path"
-          v-if="!route.meta.keepAlive"
-        />
+        <component :is="Component" :key="route.path" v-if="!route.meta.keepAlive" />
       </transition>
     </router-view>
-  <!-- </div> -->
+  </template>
 </template>
 <!-- todo 移动端适配，横屏显示 -->
 <style>
@@ -109,6 +114,7 @@ document.addEventListener("keydown", e => {
 .fade-leave-active {
   transition: opacity 0.5s ease;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
@@ -118,6 +124,7 @@ document.addEventListener("keydown", e => {
 .scale-leave-active {
   transition: all 0.5s ease;
 }
+
 .scale-enter-from,
 .scale-leave-to {
   opacity: 0;
@@ -128,14 +135,18 @@ document.addEventListener("keydown", e => {
 ::-webkit-scrollbar {
   display: none;
 }
+
 html {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 html * {
   font-family: 'LXGW WenKai', LXGW WenKai Lite, serif !important;
 }
+
 body,
 html {
   cursor: url(./assets/lingCursor/乐正绫-正常选择.cur), auto !important;

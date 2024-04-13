@@ -31,6 +31,7 @@ declare module '@vue/runtime-core' {
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     MapContainer: typeof import('./src/components/MapContainer.vue')['default']
+    MobilePage: typeof import('./src/components/MobilePage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheBackTop: typeof import('./src/components/TheBackTop.vue')['default']
