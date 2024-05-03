@@ -19,14 +19,11 @@ declare module '@vue/runtime-core' {
     ChartRank: typeof import('./src/components/charts/ChartRank.vue')['default']
     ChartTranspose: typeof import('./src/components/charts/ChartTranspose.vue')['default']
     ElAutoResizer: typeof import('element-plus/es')['ElAutoResizer']
-    ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElDivider: typeof import('element-plus/es')['ElDivider']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElRow: typeof import('element-plus/es')['ElRow']
-    ElTable: typeof import('element-plus/es')['ElTable']
-    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTableV2: typeof import('element-plus/es')['ElTableV2']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
@@ -37,7 +34,6 @@ declare module '@vue/runtime-core' {
     TheBackTop: typeof import('./src/components/TheBackTop.vue')['default']
     TheCircularNav: typeof import('./src/components/TheCircularNav.vue')['default']
     TheRightMenu: typeof import('./src/components/TheRightMenu.vue')['default']
-    TheZ: typeof import('./src/components/TheZ.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']

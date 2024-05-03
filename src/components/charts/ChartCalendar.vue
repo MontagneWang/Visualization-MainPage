@@ -1,19 +1,22 @@
 <script lang="ts" setup>
-import {onMounted} from "vue";
+import { onMounted } from "vue";
 import DataSet from '@antv/data-set';
-import {Chart, registerShape} from '@antv/g2';
-import {isEmpty} from 'lodash';
+import { Chart, registerShape } from '@antv/g2';
+// import { isEmpty } from 'lodash'; // 取消 lodash 依赖
 
 const props = defineProps<{
 	containerName: string
 }>()
-const {containerName} = props
+const { containerName } = props
 
 onMounted(() => {
 
 	registerShape('polygon', 'boundary-polygon', {
 		draw(cfg, container) {
-			if (!isEmpty(cfg.points)) {
+			console.log(cfg.points);
+			
+			// if (!isEmpty(cfg.points)) {
+			if (cfg.points) {
 				const group = container.addGroup();
 				const attrs = {
 					stroke: '#fff',
@@ -79,76 +82,76 @@ onMounted(() => {
 	});
 
 	fetch('/dataForCommit.json')
-			.then(res => res.json())
-			.then(data => {
-				const chart = new Chart({
-					container: containerName,
-					autoFit: true,
-					padding: [10]
-				});
-				chart.data(data);
-				chart.scale({
-					day: {
-						type: 'cat',
-						values: ['', '', '', '', '', '', '', '']
-					},
-					week: {
-						type: 'cat'
-					},
-					commits: {
-						sync: true
-					},
-					date: {
-						type: 'cat'
-					}
-				});
+		.then(res => res.json())
+		.then(data => {
+			const chart = new Chart({
+				container: containerName,
+				autoFit: true,
+				padding: [10]
+			});
+			chart.data(data);
+			chart.scale({
+				day: {
+					type: 'cat',
+					values: ['', '', '', '', '', '', '', '']
+				},
+				week: {
+					type: 'cat'
+				},
+				commits: {
+					sync: true
+				},
+				date: {
+					type: 'cat'
+				}
+			});
 
-				chart.axis('week', {
-					position: 'top',
-					tickLine: null,
-					line: null,
-					label: {
-						offset: 12,
-						style: {
-							fontSize: 12,
-							fill: '#666',
-							textBaseline: 'top'
-						},
-						formatter: val => {
-							if (val === '2') {
-								return '';
-							} else if (val === '6') {
-								return '';
-							} else if (val === '10') {
-								return '';
-							} else if (val === '15') {
-								return '';
-							} else if (val === '19') {
-								return '';
-							} else if (val === '24') {
-								return '';
-							}
+			chart.axis('week', {
+				position: 'top',
+				tickLine: null,
+				line: null,
+				label: {
+					offset: 12,
+					style: {
+						fontSize: 12,
+						fill: '#666',
+						textBaseline: 'top'
+					},
+					formatter: val => {
+						if (val === '2') {
+							return '';
+						} else if (val === '6') {
+							return '';
+						} else if (val === '10') {
+							return '';
+						} else if (val === '15') {
+							return '';
+						} else if (val === '19') {
+							return '';
+						} else if (val === '24') {
 							return '';
 						}
+						return '';
 					}
-				});
-				chart.axis('day', {
-					grid: null
-				});
-				chart.legend(false);
-				chart.tooltip({
-					title: 'date',
-					showMarkers: false,
-				});
-				chart.coordinate().reflect('y');
-				chart.polygon().position('week*day*date')
-						.color('投稿总数', '#BAE7FF-#1890FF-#0050B3')
-						.shape('boundary-polygon');
-
-				chart.interaction('element-active');
-
-				chart.render();
+				}
 			});
+			chart.axis('day', {
+				grid: null
+			});
+			chart.legend(false);
+			chart.tooltip({
+				title: 'date',
+				showMarkers: false,
+			});
+			chart.coordinate().reflect('y');
+			chart.polygon().position('week*day*date')
+				.color('投稿总数', '#BAE7FF-#1890FF-#0050B3')
+				.shape('boundary-polygon');
+
+			chart.interaction('element-active');
+
+			chart.render();
+		});
 })
 
 </script>
@@ -157,6 +160,4 @@ onMounted(() => {
 	<div :id="containerName"></div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
