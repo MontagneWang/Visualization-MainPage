@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { onMounted } from "vue";
-import DataSet from '@antv/data-set';
+// import DataSet from '@antv/data-set';
 import { Chart, registerShape } from '@antv/g2';
 // import { isEmpty } from 'lodash'; // 取消 lodash 依赖
 
@@ -13,8 +13,6 @@ onMounted(() => {
 
 	registerShape('polygon', 'boundary-polygon', {
 		draw(cfg, container) {
-			console.log(cfg.points);
-			
 			// if (!isEmpty(cfg.points)) {
 			if (cfg.points) {
 				const group = container.addGroup();
