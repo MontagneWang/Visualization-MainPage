@@ -12,7 +12,7 @@ import { smoothScroll } from "../utils/scrollToPosition";
 import WOW from "wow.js";
 import { drawCurve } from "../utils/drawCurve";
 
-let timer: NodeJS.Timeout;
+let timer: ReturnType<typeof setTimeout>;
 let history = ref(null);
 let headPage = ref(null);
 let myCanvas = ref(null);

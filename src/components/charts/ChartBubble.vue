@@ -24,7 +24,7 @@ onMounted(() => {
 
 				let count = 0;
 				let chart: Chart;
-				let interval: string | number | NodeJS.Timer | undefined;
+				let interval: ReturnType<typeof setInterval>;
 
 				function countUp() {
 					const year = years[count];
